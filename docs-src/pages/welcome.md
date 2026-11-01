@@ -33,5 +33,5 @@ This documentation explains every tool, step by step, in plain language.
 - **Honest limits.** DegenKit has not been audited by a third-party firm. Start small and rehearse on Devnet.
 
 :::tip Prefer to read the code?
-The website and app source is public: [github.com/yusufkngg/degenkit-app](https://github.com/yusufkngg/degenkit-app).
+The website and app source is public: [github.com/LuncroDev/degenkit-app](https://github.com/LuncroDev/degenkit-app).
 :::

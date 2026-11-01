@@ -16,7 +16,7 @@ Bookmark these and ignore lookalikes.
 | ✍️ Blog | [degenkit.app/blog](/blog/) |
 | 🔒 Security | [degenkit.app/security](/security/) |
 | 𝕏 X | [@DegenKitApp](https://x.com/DegenKitApp) |
-| 💻 GitHub | [yusufkngg/degenkit-app](https://github.com/yusufkngg/degenkit-app) |
+| 💻 GitHub | [LuncroDev/degenkit-app](https://github.com/LuncroDev/degenkit-app) |
 | ✉️ Support | support@degenkit.app |
 
 :::warning

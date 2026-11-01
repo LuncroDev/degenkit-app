@@ -25,7 +25,7 @@ With most wallets the fee is in the same transaction. With some wallets (such as
 
 ## 🔓 Open source
 
-The code is public: [github.com/yusufkngg/degenkit-app](https://github.com/yusufkngg/degenkit-app). Secrets such as storage credentials and the admin passcode live on the server side, never in the code.
+The code is public: [github.com/LuncroDev/degenkit-app](https://github.com/LuncroDev/degenkit-app). Secrets such as storage credentials and the admin passcode live on the server side, never in the code.
 
 ## ⚠️ Honest limits
 
