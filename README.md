@@ -8,7 +8,7 @@ No-code Solana token creator and toolkit. Create, manage, burn, airdrop, and swa
 
 ## What's here
 
-This repo contains the DegenKit website and web app — a static, client-side site with no backend server. Every on-chain action (creating a token, revoking an authority, burning, swapping) is a transaction built in the browser and signed directly by the user's own wallet. DegenKit never holds funds or private keys.
+This repo contains the DegenKit website and web app — a static, client-side site plus one small serverless function for image/metadata uploads (see `DEPLOY.md`). Every on-chain action (creating a token, revoking an authority, burning, swapping) is a transaction built in the browser and signed directly by the user's own wallet. DegenKit never holds funds or private keys.
 
 ```
 /                     Marketing homepage
@@ -47,13 +47,3 @@ If you find a security issue, please email [support@degenkit.app](mailto:support
 ## License
 
 See [LICENSE](./LICENSE).
-
-## Configuration (secrets are not included)
-
-This public copy has the private values replaced with placeholders: `YOUR_HELIUS_API_KEY`, `YOUR_R2_ACCESS_KEY_ID`, `YOUR_R2_SECRET_ACCESS_KEY` and `CHANGE_ME_ADMIN_PASSCODE` (see `launch/solana/index.html` and `free_wallets_setup.sql`). Put your own values there to run it. The production site uses its own keys.
-
-## Transparency notes
-
-- Non-custodial: transactions are built in the browser and signed by the user's own wallet. Private keys and seed phrases are never requested.
-- The service fee is a plain SOL transfer to the public fee address `A4zUeyAsG1R9JGgqAThryftTZdYDxtEe3fkXhGvkzCPB`, shown before signing.
-- Not audited by a third-party firm.

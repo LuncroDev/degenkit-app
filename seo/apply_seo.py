@@ -29,6 +29,8 @@ PAGES = {
  "launch/robinhood/index.html": dict(url="/launch/robinhood/", title="Create a Robinhood Chain Token Without Code | DegenKit",
    desc="Launch a fixed-supply or tax token on Robinhood Chain with no code. Same simple one-form, one-signature flow, non-custodial.",
    chain="Robinhood Chain"),
+ "security/index.html": dict(url="/security/", title="Security & Transparency | DegenKit",
+   desc="What DegenKit can and can't do, what you sign, the public fee address and how to verify the open-source code. Non-custodial, not audited."),
  "support/index.html": dict(url="/support/", title="Support | DegenKit",
    desc="Get help with DegenKit: how to contact support and what to include so we can resolve token launch questions faster."),
  "terms/index.html": dict(url="/terms/", title="Terms & Conditions | DegenKit",
@@ -179,6 +181,8 @@ Sitemap: {SITE}/sitemap.xml
 
 ## Learn
 - [Blog]({SITE}/blog/): guides on token launches, authorities, taxes, airdrops and risk checks
+- [Docs]({SITE}/docs/)
+- [Security]({SITE}/security/)
 - [Support]({SITE}/support/)
 - [Terms]({SITE}/terms/) · [Privacy]({SITE}/privacy/)
 """, encoding="utf-8")
@@ -190,7 +194,7 @@ Sitemap: {SITE}/sitemap.xml
     # sitemap: static section only; blog entries are (re)added by blog-src/build.py
     pri = {"/": ("weekly", "1.0"), "/launch/": ("weekly", "0.9"), "/launch/solana/": ("weekly", "0.9"),
            "/launch/ethereum/": ("weekly", "0.9"), "/launch/bnb/": ("weekly", "0.8"), "/launch/base/": ("weekly", "0.8"),
-           "/launch/robinhood/": ("weekly", "0.8"), "/support/": ("monthly", "0.5"), "/terms/": ("yearly", "0.3"),
+           "/launch/robinhood/": ("weekly", "0.8"), "/support/": ("monthly", "0.5"), "/security/": ("monthly", "0.6"), "/terms/": ("yearly", "0.3"),
            "/privacy/": ("yearly", "0.3")}
     rows = "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod><changefreq>{c}</changefreq><priority>{pr}</priority></url>\n" for u, (c, pr) in pri.items())
     (ROOT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{rows}</urlset>\n', encoding="utf-8")

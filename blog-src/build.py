@@ -116,6 +116,14 @@ def render(md):
             while i < len(lines) and lines[i].startswith(">"):
                 buf.append(lines[i][1:].lstrip()); i += 1
             out.append("<blockquote>%s</blockquote>" % "".join("<p>%s</p>" % inline(p) for p in "\n".join(buf).split("\n\n") if p.strip())); continue
+        if ln.lstrip().startswith("|") and i + 1 < len(lines) and re.match(r"^\s*\|?\s*:?-{2,}", lines[i + 1]):
+            flush(); rows = []
+            while i < len(lines) and lines[i].lstrip().startswith("|"):
+                rows.append([c.strip() for c in lines[i].strip().strip("|").split("|")]); i += 1
+            head, body = rows[0], rows[2:]
+            th = "".join("<th>%s</th>" % inline(c) for c in head)
+            tb = "".join("<tr>%s</tr>" % "".join("<td>%s</td>" % inline(c) for c in r) for r in body)
+            out.append('<div class="tbl"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (th, tb)); continue
         m = re.match(r"^(\s*)([-*]|\d+\.)\s+(.*)$", ln)
         if m:
             flush(); ordered = m.group(2)[0].isdigit(); items = []
@@ -177,6 +185,7 @@ HEADER = """<header>
     <nav class="site-nav">
       <a class="navlink" href="/#features">Features</a>
       <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/docs/">Docs</a>
       <a class="navlink" href="/blog/">Blog</a>
       <a class="navlink" href="/#faq">FAQ</a>
     </nav>
@@ -195,8 +204,8 @@ FOOTER = """<footer>
         <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base and Robinhood Chain.</p>
       </div>
       <div class="footer-cols">
-        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/blog/">Blog</a></div>
-        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
         <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
       </div>
     </div>

@@ -10,4 +10,4 @@ Deploy sonrası bir kez:          `python3 seo/indexnow.py`      (Bing, Yandex, 
 4. Netlify: Domain settings'te www → apex (degenkit.app) yönlendirmesi ve HTTPS açık olsun
 
 ## Sıra
-`python3 seo/apply_seo.py && python3 seo/add_guides.py && python3 blog-src/build.py` (add_guides, apply_seo'dan SONRA çalışmalı; FAQ schema'sını apply_seo siler).
+`python3 seo/apply_seo.py && python3 seo/add_guides.py && python3 blog-src/build.py && python3 docs-src/build.py` (add_guides, apply_seo'dan SONRA çalışmalı; FAQ schema'sını apply_seo siler).

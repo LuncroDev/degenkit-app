@@ -8,6 +8,7 @@
   <url><loc>https://degenkit.app/launch/base/</loc><lastmod>2026-11-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://degenkit.app/launch/robinhood/</loc><lastmod>2026-11-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://degenkit.app/support/</loc><lastmod>2026-11-01</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://degenkit.app/security/</loc><lastmod>2026-11-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/terms/</loc><lastmod>2026-11-01</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://degenkit.app/privacy/</loc><lastmod>2026-11-01</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://degenkit.app/blog/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -50,4 +51,28 @@
   <url><loc>https://degenkit.app/blog/how-token-buy-sell-tax-works/</loc><lastmod>2026-10-17</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/token-launch-checklist/</loc><lastmod>2026-10-17</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/welcome-to-degenkit/</loc><lastmod>2026-07-15</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://degenkit.app/docs/quick-start/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/wallets/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/networks/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/token-creator/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/my-tokens/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/authorities/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/update-metadata/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/burn/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/airdrop/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/multisender/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/scanner/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/vanity/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/swap/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/create-liquidity/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/remove-liquidity/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/evm-token-creator/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/tax-token/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/evm-my-tokens/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/fees/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/security/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/troubleshooting/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/faq/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/docs/official-links/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
 </urlset>

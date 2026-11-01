@@ -12,9 +12,7 @@ create table if not exists free_wallets (
 -- everything goes through the functions below.
 alter table free_wallets enable row level security;
 
--- Same passcode the admin panel already uses for set_tool_fee / get_action_logs.
-create or replace function dk_admin_ok(passcode text) returns boolean
-language sql immutable as $$ select passcode is not distinct from 'CHANGE_ME_ADMIN_PASSCODE' $$;
+-- Admin check: uses dk_admin_ok() from rotate_admin_passcode.sql (run that file first). The passcode is never stored in this file.
 
 -- Public: "is this wallet free for this tool?" -> true/false only (the list itself stays private).
 create or replace function is_free_wallet(p_wallet text, p_tool text default 'token_create')

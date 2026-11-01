@@ -1599,7 +1599,15 @@ twq('config','rfyik');
   ];
 
   const ADMIN_WALLET = "A4zUeyAsG1R9JGgqAThryftTZdYDxtEe3fkXhGvkzCPB";
-  const ADMIN_PASSCODE = "CHANGE_ME_ADMIN_PASSCODE";
+  // The admin passcode is NOT stored in this page. It's asked for when an admin action needs it,
+  // kept in memory only, and verified server-side by the database.
+  window.getAdminPass = function(){
+    if(window.__adminPassVal) return window.__adminPassVal;
+    const v = window.prompt("Admin passcode");
+    if(!v) throw new Error("Admin passcode required");
+    window.__adminPassVal = v; return v;
+  };
+  window.clearAdminPass = function(){ window.__adminPassVal = null; };
   const SUPABASE_URL = "https://dmryjxwglpdubjqpyapi.supabase.co";
   const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRtcnlqeHdnbHBkdWJqcXB5YXBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ2MzcyMTIsImV4cCI6MjEwMDIxMzIxMn0.iz-bCPNjiRkHYjzNyKaaid-WZkfTv0r7GLe0g3x_chc";
 
@@ -1772,9 +1780,9 @@ twq('config','rfyik');
           "apikey": SUPABASE_ANON_KEY,
           "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
         },
-        body: JSON.stringify({ passcode: ADMIN_PASSCODE })
+        body: JSON.stringify({ passcode: getAdminPass() })
       });
-      if(!res.ok) throw new Error("HTTP " + res.status);
+      if(!res.ok){ clearAdminPass(); throw new Error("HTTP " + res.status); }
       const rows = await res.json();
       statusEl.textContent = rows.length + window.T("admin_records_suffix");
       tbody.innerHTML = rows.map(r => {
@@ -2072,9 +2080,9 @@ twq('config','rfyik');
       const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_action_logs`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "apikey": SUPABASE_ANON_KEY, "Authorization": `Bearer ${SUPABASE_ANON_KEY}` },
-        body: JSON.stringify({ passcode: ADMIN_PASSCODE })
+        body: JSON.stringify({ passcode: getAdminPass() })
       });
-      if(!res.ok) throw new Error("HTTP " + res.status);
+      if(!res.ok){ clearAdminPass(); throw new Error("HTTP " + res.status); }
       const rows = await res.json();
       statusEl.textContent = rows.length + " records";
       tbody.innerHTML = rows.map(r => {
@@ -2120,9 +2128,9 @@ twq('config','rfyik');
             const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/set_tool_fee`, {
               method: "POST",
               headers: { "Content-Type": "application/json", "apikey": SUPABASE_ANON_KEY, "Authorization": `Bearer ${SUPABASE_ANON_KEY}` },
-              body: JSON.stringify({ passcode: ADMIN_PASSCODE, p_tool_key: key, p_fee_sol: newFee })
+              body: JSON.stringify({ passcode: getAdminPass(), p_tool_key: key, p_fee_sol: newFee })
             });
-            if(!res.ok) throw new Error("HTTP " + res.status);
+            if(!res.ok){ clearAdminPass(); throw new Error("HTTP " + res.status); }
             btn.textContent = "Saved ✓";
             setTimeout(() => btn.textContent = "Save", 1500);
           }catch(e){
@@ -2142,9 +2150,10 @@ twq('config','rfyik');
     const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
       method: "POST",
       headers: { "Content-Type": "application/json", "apikey": SUPABASE_ANON_KEY, "Authorization": `Bearer ${SUPABASE_ANON_KEY}` },
-      body: JSON.stringify({ passcode: ADMIN_PASSCODE, ...body })
+      body: JSON.stringify({ passcode: getAdminPass(), ...body })
     });
     if(!res.ok){
+      clearAdminPass();
       let msg = "HTTP " + res.status;
       try{ const j = await res.json(); if(j && j.message) msg = j.message; }catch(e){}
       throw new Error(msg);
@@ -2226,99 +2235,32 @@ twq('config','rfyik');
   const state = window.__state;
 
   const RPC = {
-    "devnet": "https://devnet.helius-rpc.com/?api-key=YOUR_HELIUS_API_KEY",
-    "mainnet-beta": "https://mainnet.helius-rpc.com/?api-key=YOUR_HELIUS_API_KEY"
+    "devnet": "https://devnet.helius-rpc.com/?api-key=74c953b1-4f9b-4f58-91b8-d59aa59a7a89",
+    "mainnet-beta": "https://mainnet.helius-rpc.com/?api-key=74c953b1-4f9b-4f58-91b8-d59aa59a7a89"
   };
 
-  // Cloudflare R2 (S3-compatible) storage config for token images/metadata.
-  // NOTE: this secret key is visible to anyone viewing the page source since
-  // the site has no backend — set a storage/usage alert on this bucket.
-  const R2_ACCOUNT_ID = "5560e072b53e211b3efe6d743704883d";
-  const R2_BUCKET = "degenkit-images";
-  const R2_ENDPOINT = `https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com`;
-  const R2_PUBLIC_URL = "https://pub-e413fcfff712459782b260fe2eb74c2c.r2.dev";
-  const R2_ACCESS_KEY_ID = "YOUR_R2_ACCESS_KEY_ID";
-  const R2_SECRET_ACCESS_KEY = "YOUR_R2_SECRET_ACCESS_KEY";
-  const R2_REGION = "auto";
-  const R2_SERVICE = "s3";
-
-  async function sha256Hex(data){
-    const buf = typeof data === "string" ? new TextEncoder().encode(data) : data;
-    const hashBuf = await crypto.subtle.digest("SHA-256", buf);
-    return Array.from(new Uint8Array(hashBuf)).map(b => b.toString(16).padStart(2, "0")).join("");
-  }
-
-  async function hmacSha256Raw(keyBytes, msg){
-    const key = await crypto.subtle.importKey("raw", keyBytes, { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
-    const msgBytes = typeof msg === "string" ? new TextEncoder().encode(msg) : msg;
-    return new Uint8Array(await crypto.subtle.sign("HMAC", key, msgBytes));
-  }
-
-  function toHex(bytes){
-    return Array.from(bytes).map(b => b.toString(16).padStart(2, "0")).join("");
-  }
-
-  async function r2PutObject(key, bodyBytes, contentType){
-    const now = new Date();
-    const amzdate = now.toISOString().replace(/[:-]|\.\d{3}/g, "");
-    const datestamp = amzdate.slice(0, 8);
-    const host = `${R2_ACCOUNT_ID}.r2.cloudflarestorage.com`;
-    const canonicalUri = `/${R2_BUCKET}/${key.split("/").map(encodeURIComponent).join("/")}`;
-    const payloadHash = await sha256Hex(bodyBytes);
-
-    const canonicalHeaders =
-      `content-type:${contentType}\n` +
-      `host:${host}\n` +
-      `x-amz-content-sha256:${payloadHash}\n` +
-      `x-amz-date:${amzdate}\n`;
-    const signedHeaders = "content-type;host;x-amz-content-sha256;x-amz-date";
-
-    const canonicalRequest = `PUT\n${canonicalUri}\n\n${canonicalHeaders}\n${signedHeaders}\n${payloadHash}`;
-    const credentialScope = `${datestamp}/${R2_REGION}/${R2_SERVICE}/aws4_request`;
-    const stringToSign = `AWS4-HMAC-SHA256\n${amzdate}\n${credentialScope}\n${await sha256Hex(canonicalRequest)}`;
-
-    const kDate = await hmacSha256Raw(new TextEncoder().encode("AWS4" + R2_SECRET_ACCESS_KEY), datestamp);
-    const kRegion = await hmacSha256Raw(kDate, R2_REGION);
-    const kService = await hmacSha256Raw(kRegion, R2_SERVICE);
-    const kSigning = await hmacSha256Raw(kService, "aws4_request");
-    const signature = toHex(await hmacSha256Raw(kSigning, stringToSign));
-
-    const authHeader = `AWS4-HMAC-SHA256 Credential=${R2_ACCESS_KEY_ID}/${credentialScope}, SignedHeaders=${signedHeaders}, Signature=${signature}`;
-
-    const res = await fetch(`${R2_ENDPOINT}${canonicalUri}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": contentType,
-        "x-amz-content-sha256": payloadHash,
-        "x-amz-date": amzdate,
-        "Authorization": authHeader,
-      },
-      body: bodyBytes,
-    });
-    if(!res.ok){
-      const text = await res.text().catch(() => "");
-      throw new Error(`R2 upload failed (${res.status}): ${text.slice(0, 300)}`);
-    }
-    return `${R2_PUBLIC_URL}/${key}`;
+  // Uploads go through our server-side function (/api/upload), which holds the storage credentials.
+  // Nothing secret lives in this page.
+  async function serverUpload(kind, body, contentType){
+    const res = await fetch("/api/upload", { method: "POST", headers: { "x-kind": kind, "Content-Type": contentType || "application/octet-stream" }, body });
+    let data = {};
+    try{ data = await res.json(); }catch(e){}
+    if(!res.ok || !data.url) throw new Error(data.error || ("Upload failed (" + res.status + ")"));
+    return data.url;
   }
 
   async function uploadImageToPinata(file){
-    const ext = (file.name.split(".").pop() || "png").toLowerCase().replace(/[^a-z0-9]/g, "") || "png";
-    const key = `images/${crypto.randomUUID()}.${ext}`;
-    const bytes = new Uint8Array(await file.arrayBuffer());
-    return r2PutObject(key, bytes, file.type || "application/octet-stream");
+    if(file.size > 2 * 1024 * 1024) throw new Error("Image must be under 2 MB.");
+    return serverUpload("image", await file.arrayBuffer(), file.type);
   }
 
   async function uploadMetadataJsonToPinata(json){
-    const key = `metadata/${crypto.randomUUID()}.json`;
-    const bytes = new TextEncoder().encode(JSON.stringify(json));
-    return r2PutObject(key, bytes, "application/json");
+    return serverUpload("json", JSON.stringify(json), "application/json");
   }
 
   // ---- Fee + admin config ----
   const FEE_WALLET = "A4zUeyAsG1R9JGgqAThryftTZdYDxtEe3fkXhGvkzCPB";
   const ADMIN_WALLET = "A4zUeyAsG1R9JGgqAThryftTZdYDxtEe3fkXhGvkzCPB";
-  const ADMIN_PASSCODE = "CHANGE_ME_ADMIN_PASSCODE";
 
   const SUPABASE_URL = "https://dmryjxwglpdubjqpyapi.supabase.co";
   const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRtcnlqeHdnbHBkdWJqcXB5YXBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ2MzcyMTIsImV4cCI6MjEwMDIxMzIxMn0.iz-bCPNjiRkHYjzNyKaaid-WZkfTv0r7GLe0g3x_chc";

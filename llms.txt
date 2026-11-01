@@ -12,5 +12,7 @@
 
 ## Learn
 - [Blog](https://degenkit.app/blog/): guides on token launches, authorities, taxes, airdrops and risk checks
+- [Docs](https://degenkit.app/docs/)
+- [Security](https://degenkit.app/security/)
 - [Support](https://degenkit.app/support/)
 - [Terms](https://degenkit.app/terms/) · [Privacy](https://degenkit.app/privacy/)
