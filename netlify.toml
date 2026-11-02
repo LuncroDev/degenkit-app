@@ -1,3 +1,7 @@
+# DegenKit — static site for a multi-chain token launcher (Solana, Ethereum,
+# BNB Chain / BSC / BNB Smart Chain, Base, Robinhood Chain).
+# One serverless function handles image uploads (/api/upload).
+
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
