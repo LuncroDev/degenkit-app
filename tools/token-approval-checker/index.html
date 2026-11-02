@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Token Approval Checker: Find &amp; Revoke ERC-20 Approvals | DegenKit</title>
+<meta name="description" content="Free token approval checker for Ethereum, Robinhood Chain, Base and BNB Chain. See which contracts can spend your tokens and revoke unlimited approvals.">
+<link rel="canonical" href="https://degenkit.app/tools/token-approval-checker/">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<link rel="stylesheet" href="/tools/tools.css">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Token Approval Checker: Find &amp; Revoke ERC-20 Approvals | DegenKit">
+<meta property="og:description" content="Free token approval checker for Ethereum, Robinhood Chain, Base and BNB Chain. See which contracts can spend your tokens and revoke unlimited approvals.">
+<meta property="og:url" content="https://degenkit.app/tools/token-approval-checker/">
+<meta property="og:image" content="https://degenkit.app/assets/mascot-hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="Token Approval Checker: Find &amp; Revoke ERC-20 Approvals | DegenKit">
+<meta name="twitter:description" content="Free token approval checker for Ethereum, Robinhood Chain, Base and BNB Chain. See which contracts can spend your tokens and revoke unlimited approvals.">
+<meta name="twitter:image" content="https://degenkit.app/assets/mascot-hero.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Token approval checker","url":"https://degenkit.app/tools/token-approval-checker/","applicationCategory":"DeveloperApplication","operatingSystem":"Any (web browser)","description":"Find and revoke ERC-20 token approvals on Ethereum, Robinhood Chain, Base and BNB Chain.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://degenkit.app/#org"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"DegenKit","item":"https://degenkit.app/"},{"@type":"ListItem","position":2,"name":"Free tools","item":"https://degenkit.app/tools/"},{"@type":"ListItem","position":3,"name":"Token approval checker","item":"https://degenkit.app/tools/token-approval-checker/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does a token approval checker do?","acceptedAnswer":{"@type":"Answer","text":"It lists the contracts your wallet has allowed to spend its ERC-20 tokens, shows how much each may still spend, and lets you revoke the ones you no longer need."}},{"@type":"Question","name":"Does checking approvals cost anything?","acceptedAnswer":{"@type":"Answer","text":"No. Checking only reads public data and needs no wallet connection. Revoking is a transaction, so it costs network gas."}},{"@type":"Question","name":"What does revoking do?","acceptedAnswer":{"@type":"Answer","text":"Revoking sets the allowance for that spender to zero. It does not move any tokens and does not undo past transfers."}},{"@type":"Question","name":"Which networks are supported?","acceptedAnswer":{"@type":"Answer","text":"Full wallet scans work on Ethereum and Robinhood Chain. On Base and BNB Chain you can check a specific token against common spenders or any spender address you enter."}},{"@type":"Question","name":"Can DegenKit move my tokens?","acceptedAnswer":{"@type":"Answer","text":"No. The checker never asks for your keys. A revoke only happens when you sign it in your own wallet."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="t-wrap">
+<div class="t-crumb"><a href="/tools/">Free tools</a> › Token approval checker</div>
+<h1 class="t-h1">Token approval checker</h1>
+<p class="t-lead">See which contracts can spend your ERC-20 tokens, how much they can still take, and revoke the ones you don’t use. Free, read-only until you choose to revoke.</p>
+
+<section class="t-card">
+  <div class="t-form">
+    <label>Network
+      <select id="apNet">
+        <option value="ethereum">Ethereum</option>
+        <option value="robinhood">Robinhood Chain</option>
+        <option value="base">Base</option>
+        <option value="bnb">BNB Chain</option>
+      </select>
+    </label>
+    <label class="grow">Wallet address
+      <input id="apAddr" type="text" placeholder="0x…" autocomplete="off" spellcheck="false">
+    </label>
+  </div>
+  <div class="t-actions">
+    <button class="t-btn" type="button" id="apScan">Check approvals</button>
+    <button class="t-btn ghost" type="button" id="apConnect">Use my wallet</button>
+  </div>
+  <div class="t-manual" id="apManual" hidden>
+    <p class="t-note" id="apManualNote"></p>
+    <div class="t-form">
+      <label class="grow">Token contract address<input id="apToken" type="text" placeholder="0x… token you hold" autocomplete="off" spellcheck="false"></label>
+      <label class="grow">Extra spender (optional)<input id="apSpender" type="text" placeholder="0x… router or contract" autocomplete="off" spellcheck="false"></label>
+    </div>
+  </div>
+  <p class="t-msg" id="apMsg" aria-live="polite"></p>
+</section>
+
+<section class="t-sec" id="apResults" hidden>
+  <h2 id="apTitle">Approvals</h2>
+  <div class="t-tablewrap"><table class="t-table t-ap"><thead><tr><th>Token</th><th>Spender</th><th>Allowance</th><th></th></tr></thead><tbody id="apRows"></tbody></table></div>
+  <p class="t-note">“Unlimited” means the spender can move any amount of that token from this wallet. Revoking sets the allowance to 0 and costs gas.</p>
+</section>
+
+<section class="t-sec">
+<h2>How it works</h2>
+<ol class="t-steps">
+<li><b>Find past approvals.</b> On Ethereum and Robinhood Chain the checker reads your wallet’s <code>Approval</code> events from a block explorer API.</li>
+<li><b>Read the current allowance.</b> For every token and spender pair it calls <code>allowance(owner, spender)</code> on the token contract, so used-up or revoked approvals drop out.</li>
+<li><b>Revoke if you want.</b> Connect the wallet that owns the tokens and sign <code>approve(spender, 0)</code>. Nothing happens without your signature.</li>
+</ol>
+</section>
+
+<section class="t-sec t-links">
+<h2>Related</h2>
+<a href="/blog/token-approval-checker-guide/">How to check and revoke token approvals →</a>
+<a href="/blog/erc20-token-approvals-explained/">Token approvals explained →</a>
+<a href="/blog/wallet-security-for-token-creators/">Wallet security for token creators →</a>
+</section>
+<section class="t-sec"><h2>Questions people ask</h2><details class="t-faq"><summary>What does a token approval checker do?</summary><p>It lists the contracts your wallet has allowed to spend its ERC-20 tokens, shows how much each may still spend, and lets you revoke the ones you no longer need.</p></details><details class="t-faq"><summary>Does checking approvals cost anything?</summary><p>No. Checking only reads public data and needs no wallet connection. Revoking is a transaction, so it costs network gas.</p></details><details class="t-faq"><summary>What does revoking do?</summary><p>Revoking sets the allowance for that spender to zero. It does not move any tokens and does not undo past transfers.</p></details><details class="t-faq"><summary>Which networks are supported?</summary><p>Full wallet scans work on Ethereum and Robinhood Chain. On Base and BNB Chain you can check a specific token against common spenders or any spender address you enter.</p></details><details class="t-faq"><summary>Can DegenKit move my tokens?</summary><p>No. The checker never asks for your keys. A revoke only happens when you sign it in your own wallet.</p></details></section>
+</main>
+<script type="module" src="/tools/approvals.js"></script>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base and Robinhood Chain.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>

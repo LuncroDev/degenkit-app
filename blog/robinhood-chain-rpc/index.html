@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Robinhood Chain RPC: Endpoints, Chain ID and How to Connect | DegenKit Blog</title>
+<meta name="description" content="The Robinhood Chain RPC URLs for mainnet and testnet, chain IDs 4663 and 46630, the providers that offer production endpoints, and how to test and add the network in under a minute.">
+<link rel="canonical" href="https://degenkit.app/blog/robinhood-chain-rpc/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-02">
+<meta property="article:modified_time" content="2026-11-02">
+<meta property="og:image:alt" content="A Robinhood Chain network card with the public RPC URL, chain ID 4663 and a live status light.">
+<meta property="article:tag" content="Robinhood Chain">
+<meta property="article:tag" content="Guide">
+<meta property="article:tag" content="Networks">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Robinhood Chain RPC: Endpoints, Chain ID and How to Connect | DegenKit Blog">
+<meta property="og:description" content="The Robinhood Chain RPC URLs for mainnet and testnet, chain IDs 4663 and 46630, the providers that offer production endpoints, and how to test and add the network in under a minute.">
+<meta property="og:url" content="https://degenkit.app/blog/robinhood-chain-rpc/">
+<meta property="og:image" content="https://degenkit.app/blog/img/robinhood-chain-rpc-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="Robinhood Chain RPC: Endpoints, Chain ID and How to Connect | DegenKit Blog">
+<meta name="twitter:description" content="The Robinhood Chain RPC URLs for mainnet and testnet, chain IDs 4663 and 46630, the providers that offer production endpoints, and how to test and add the network in under a minute.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/robinhood-chain-rpc-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Robinhood Chain RPC: Endpoints, Chain ID and How to Connect", "description": "The Robinhood Chain RPC URLs for mainnet and testnet, chain IDs 4663 and 46630, the providers that offer production endpoints, and how to test and add the network in under a minute.", "datePublished": "2026-11-02", "dateModified": "2026-11-02", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/robinhood-chain-rpc/"}, "url": "https://degenkit.app/blog/robinhood-chain-rpc/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/robinhood-chain-rpc-cover.webp", "keywords": "Robinhood Chain, Guide, Networks", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Robinhood Chain RPC: Endpoints, Chain ID and How to Connect", "item": "https://degenkit.app/blog/robinhood-chain-rpc/"}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">Robinhood Chain</span><span class="chip">Guide</span><span class="chip">Networks</span></div>
+      <h1>Robinhood Chain RPC: Endpoints, Chain ID and How to Connect</h1>
+      <p class="lede">The Robinhood Chain RPC URLs for mainnet and testnet, chain IDs 4663 and 46630, the providers that offer production endpoints, and how to test and add the network in under a minute.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 2, 2026 · 4 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/robinhood-chain-rpc-cover.webp" alt="A Robinhood Chain network card with the public RPC URL, chain ID 4663 and a live status light." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>An <strong>RPC endpoint</strong> is the address your wallet or app talks to when it reads from or sends to a blockchain. To use Robinhood Chain, you need its RPC URL, its chain ID and its gas token. This page has all of them, from <a href="https://docs.robinhood.com/chain/connecting" target="_blank" rel="noopener noreferrer">Robinhood&#x27;s own connecting guide</a>.</p>
+<p>If you just want to copy the values or add the network with one click, use our <a href="/tools/robinhood-chain-rpc/">Robinhood Chain RPC tool</a>. It also checks the public RPC live from your browser.</p>
+<h2 id="robinhood-chain-mainnet">Robinhood Chain mainnet</h2>
+<ul><li><strong>RPC URL:</strong> <code>https://rpc.mainnet.chain.robinhood.com</code></li><li><strong>Chain ID:</strong> 4663 (hex <code>0x1237</code>)</li><li><strong>Currency:</strong> ETH</li><li><strong>Block explorer:</strong> <code>https://robinhoodchain.blockscout.com</code></li></ul>
+<h2 id="robinhood-chain-testnet">Robinhood Chain testnet</h2>
+<ul><li><strong>RPC URL:</strong> <code>https://rpc.testnet.chain.robinhood.com</code></li><li><strong>Chain ID:</strong> 46630</li><li><strong>Currency:</strong> ETH</li><li><strong>Block explorer:</strong> <code>https://explorer.testnet.chain.robinhood.com</code></li></ul>
+<figure><img src="/blog/img/robinhood-chain-rpc-1.webp" alt="Robinhood Chain mainnet and testnet network values side by side: RPC URL, chain ID, currency and explorer." loading="lazy" decoding="async"><figcaption>Values from Robinhood&#x27;s connecting guide, November 2026.</figcaption></figure>
+<h2 id="public-rpc-vs-a-provider">Public RPC vs. a provider</h2>
+<p>Robinhood&#x27;s public endpoints are free, but Robinhood describes them as <strong>rate-limited and not recommended for production use</strong>. They&#x27;re fine for a wallet, a quick test or a small script.</p>
+<p>For an app, bot, indexer or anything that sends many requests, use a provider. Robinhood&#x27;s guide lists:</p>
+<ul><li><strong>Alchemy</strong> — HTTP and WebSocket, <code>https://robinhood-mainnet.g.alchemy.com/v2/{API_KEY}</code></li><li><strong>Chainstack</strong> — <code>https://robinhood-mainnet.core.chainstack.com/{ENDPOINT}</code></li><li><strong>QuickNode</strong> — <code>https://{ENDPOINT}.robinhood-mainnet.quiknode.pro/{TOKEN}</code></li><li><strong>Blockdaemon, dRPC, Validation Cloud, GlobalStake and Pinax</strong></li></ul>
+<p>Historical reads and indexing need an <strong>archive</strong> endpoint, which providers offer. Or you can <a href="/blog/run-a-robinhood-chain-node/">run your own Robinhood Chain node</a>.</p>
+<aside class="callout note"><strong>What about WebSocket?</strong><p>The public <code>wss://feed…</code> addresses in Robinhood&#x27;s docs are <strong>sequencer feeds</strong> for nodes, not a general WebSocket RPC. For WebSocket subscriptions, use a provider such as Alchemy.</p></aside>
+<figure><video src="/blog/img/robinhood-chain-rpc-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="A wallet adds Robinhood Chain from the RPC values, the RPC answers with chain ID 4663, and a provider endpoint replaces the public one for production use."></video></figure>
+<h2 id="test-the-rpc-in-one-command">Test the RPC in one command</h2>
+<p>Ask the endpoint for its chain ID. A healthy mainnet RPC answers <code>0x1237</code>, which is 4663.</p>
+<pre><code>curl -s https://rpc.mainnet.chain.robinhood.com \
+  -H &#x27;content-type: application/json&#x27; \
+  -d &#x27;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;method&quot;:&quot;eth_chainId&quot;,&quot;params&quot;:[]}&#x27;</code></pre>
+<p>Swap the method for <code>eth_blockNumber</code> to see the latest block.</p>
+<h2 id="add-robinhood-chain-to-your-wallet">Add Robinhood Chain to your wallet</h2>
+<ol><li>Open our <a href="/tools/robinhood-chain-rpc/">RPC tool</a> and choose <strong>Add Robinhood Chain to wallet</strong>, or open DegenKit&#x27;s <a href="/launch/robinhood/">Robinhood Chain launcher</a>, which asks your wallet to add it when you connect.</li><li>Check the request shows chain ID <strong>4663</strong> and the RPC URL above.</li><li>Approve. The network appears in your wallet&#x27;s list.</li></ol>
+<p>You&#x27;ll need <strong>ETH on Robinhood Chain</strong> for gas. ETH on Ethereum must be bridged first; deposits take about 10 minutes and withdrawals back take about 7 days. See <a href="/blog/ethereum-vs-robinhood-chain/">Ethereum or Robinhood Chain</a>.</p>
+<figure><img src="/blog/img/robinhood-chain-rpc-2.webp" alt="Common RPC problems on Robinhood Chain and how to fix them." loading="lazy" decoding="async"><figcaption>Most errors are a wrong chain ID, rate limits on the public RPC, or ETH still on Ethereum.</figcaption></figure>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul><li><strong>&quot;Chain ID mismatch.&quot;</strong> The RPC and chain ID don&#x27;t match. Mainnet is 4663, testnet is 46630.</li><li><strong>Requests failing under load.</strong> You&#x27;re hitting the public RPC&#x27;s rate limit. Switch to a provider.</li><li><strong>&quot;Insufficient funds for gas.&quot;</strong> Your ETH is on Ethereum, not Robinhood Chain. Bridge it.</li><li><strong>Old data missing.</strong> Use an archive endpoint from a provider.</li></ul>
+<h2 id="questions-people-ask">Questions people ask</h2>
+<h3 id="is-the-robinhood-chain-rpc-free">Is the Robinhood Chain RPC free?</h3>
+<p>The public one is, with rate limits. Providers have free and paid tiers.</p>
+<h3 id="is-robinhood-chain-evm-compatible">Is Robinhood Chain EVM-compatible?</h3>
+<p>Yes. It&#x27;s an Arbitrum chain, so MetaMask, ethers, viem and other EVM tools work with the values above.</p>
+<h2 id="wrap-up">Wrap up</h2>
+<p>Mainnet RPC <code>https://rpc.mainnet.chain.robinhood.com</code>, chain ID 4663, gas in ETH. Use the public RPC for wallets and tests, a provider for production. <a href="/tools/robinhood-chain-rpc/">Copy the values or add the network</a>, then <a href="https://degenkit.app/launch/robinhood/">launch a token on Robinhood Chain</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=Robinhood%20Chain%20RPC%3A%20Endpoints%2C%20Chain%20ID%20and%20How%20to%20Connect%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Frobinhood-chain-rpc%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/robinhood-chain-rpc/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/robinhood-chain-token-guide/">
+  <div class="cover"><img src="/blog/img/robinhood-chain-token-guide-cover.webp" alt="A wallet prompt adds Robinhood Chain, chain ID 4663, next to a new token card." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Guide</span><span class="chip">Robinhood Chain</span><span class="chip">Networks</span><span>October 26, 2026</span></div>
+    <h2>Robinhood Chain Explained: Add the Network and Launch a Token</h2>
+    <p>What Robinhood Chain is, how to add it to your wallet, how to get ETH onto it, and how to create a fixed-supply ERC-20 token there with DegenKit.</p>
+  </div>
+</a><a class="card" href="/blog/run-a-robinhood-chain-node/">
+  <div class="cover"><img src="/blog/img/run-a-robinhood-chain-node-cover.webp" alt="A server rack running a Nitro container, connected to Ethereum L1 and the Robinhood Chain sequencer feed." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Robinhood Chain</span><span class="chip">Guide</span><span class="chip">Developers</span><span>November 2, 2026</span></div>
+    <h2>How to Run a Robinhood Chain Node (Arbitrum Nitro)</h2>
+    <p>Robinhood Chain runs on Arbitrum Nitro. Here is what a full node needs — hardware, an Ethereum RPC and beacon endpoint, chain files, a snapshot — and how to start and check it.</p>
+  </div>
+</a><a class="card" href="/blog/token-launch-costs-by-network/">
+  <div class="cover"><img src="/blog/img/token-launch-costs-by-network-cover.webp" alt="Five network cards side by side, each showing the token used for fees and the parts of a launch&#x27;s cost." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Guide</span><span class="chip">Networks</span><span class="chip">Fees</span><span>November 1, 2026</span></div>
+    <h2>What a Token Launch Costs on Each Network</h2>
+    <p>Solana, Ethereum, BNB Chain, Base and Robinhood Chain each charge for a launch in different ways. Compare what you pay in, how the network fee works and the extra costs to plan for.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base and Robinhood Chain.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>

@@ -22,5 +22,5 @@ Run `rotate_admin_passcode.sql` once in the Supabase SQL editor (after replacing
 ## Rebuilding generated pages
 
 ```
-python3 seo/apply_seo.py && python3 seo/add_guides.py && python3 blog-src/build.py && python3 docs-src/build.py
+python3 seo/apply_seo.py && python3 seo/add_guides.py && python3 blog-src/build.py && python3 docs-src/build.py && python3 tools-src/build.py
 ```

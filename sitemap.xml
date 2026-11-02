@@ -16,7 +16,11 @@
   <url><loc>https://degenkit.app/blog/degenkit-supported-wallets/</loc><lastmod>2026-11-02</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/first-token-launch-with-degenkit/</loc><lastmod>2026-11-02</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/how-degenkit-scanner-scores-tokens/</loc><lastmod>2026-11-02</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/blog/multisend-app-solana/</loc><lastmod>2026-11-02</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/revoke-authorities-and-update-metadata/</loc><lastmod>2026-11-02</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/blog/robinhood-chain-rpc/</loc><lastmod>2026-11-02</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/blog/run-a-robinhood-chain-node/</loc><lastmod>2026-11-02</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/blog/token-approval-checker-guide/</loc><lastmod>2026-11-02</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/choosing-decimals-name-and-symbol/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/lock-liquidity-on-solana-burn-and-earn/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/rehearse-solana-launch-on-devnet/</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
@@ -80,4 +84,7 @@
   <url><loc>https://degenkit.app/docs/troubleshooting/</loc><lastmod>2026-11-02</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/docs/faq/</loc><lastmod>2026-11-02</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/docs/official-links/</loc><lastmod>2026-11-02</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/tools/</loc><lastmod>2026-11-02</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/tools/token-approval-checker/</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://degenkit.app/tools/robinhood-chain-rpc/</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
 </urlset>

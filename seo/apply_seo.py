@@ -179,6 +179,10 @@ Sitemap: {SITE}/sitemap.xml
 - [Base]({SITE}/launch/base/): ERC-20 and tax tokens
 - [Robinhood Chain]({SITE}/launch/robinhood/): fixed-supply and tax tokens
 
+## Free tools
+- [Token approval checker]({SITE}/tools/token-approval-checker/): find and revoke ERC-20 approvals on Ethereum, Robinhood Chain, Base and BNB Chain
+- [Robinhood Chain RPC]({SITE}/tools/robinhood-chain-rpc/): RPC URLs, chain ID 4663, live status, add to wallet
+
 ## Learn
 - [Blog]({SITE}/blog/): guides on token launches, authorities, taxes, airdrops and risk checks
 - [Docs]({SITE}/docs/)
