@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>How DegenKit Scanner Scores a Solana Token | DegenKit Blog</title>
+<meta name="description" content="DegenKit&#x27;s Scanner gives any Solana token a 0–100 risk score. Here is exactly what it checks, how many points each finding costs and what the score can&#x27;t tell you.">
+<link rel="canonical" href="https://degenkit.app/blog/how-degenkit-scanner-scores-tokens/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-02">
+<meta property="article:modified_time" content="2026-11-02">
+<meta property="og:image:alt" content="A Scanner result with a score ring at 75, labeled medium risk, above a list of the six checks.">
+<meta property="article:tag" content="DegenKit">
+<meta property="article:tag" content="Safety">
+<meta property="article:tag" content="Solana">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How DegenKit Scanner Scores a Solana Token | DegenKit Blog">
+<meta property="og:description" content="DegenKit&#x27;s Scanner gives any Solana token a 0–100 risk score. Here is exactly what it checks, how many points each finding costs and what the score can&#x27;t tell you.">
+<meta property="og:url" content="https://degenkit.app/blog/how-degenkit-scanner-scores-tokens/">
+<meta property="og:image" content="https://degenkit.app/blog/img/how-degenkit-scanner-scores-tokens-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="How DegenKit Scanner Scores a Solana Token | DegenKit Blog">
+<meta name="twitter:description" content="DegenKit&#x27;s Scanner gives any Solana token a 0–100 risk score. Here is exactly what it checks, how many points each finding costs and what the score can&#x27;t tell you.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/how-degenkit-scanner-scores-tokens-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How DegenKit Scanner Scores a Solana Token", "description": "DegenKit's Scanner gives any Solana token a 0\u2013100 risk score. Here is exactly what it checks, how many points each finding costs and what the score can't tell you.", "datePublished": "2026-11-02", "dateModified": "2026-11-02", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/how-degenkit-scanner-scores-tokens/"}, "url": "https://degenkit.app/blog/how-degenkit-scanner-scores-tokens/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/how-degenkit-scanner-scores-tokens-cover.webp", "keywords": "DegenKit, Safety, Solana", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "How DegenKit Scanner Scores a Solana Token", "item": "https://degenkit.app/blog/how-degenkit-scanner-scores-tokens/"}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">DegenKit</span><span class="chip">Safety</span><span class="chip">Solana</span></div>
+      <h1>How DegenKit Scanner Scores a Solana Token</h1>
+      <p class="lede">DegenKit&#x27;s Scanner gives any Solana token a 0–100 risk score. Here is exactly what it checks, how many points each finding costs and what the score can&#x27;t tell you.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 2, 2026 · 4 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/how-degenkit-scanner-scores-tokens-cover.webp" alt="A Scanner result with a score ring at 75, labeled medium risk, above a list of the six checks." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>DegenKit&#x27;s <strong>Scanner</strong> takes a Solana mint address and returns a score from 0 to 100, where higher means fewer red flags. It is a quick first look, not a verdict. This guide explains every point.</p>
+<h2 id="what-scanner-reads">What Scanner reads</h2>
+<p>When you paste a mint, Scanner reads public data:</p>
+<ul><li><strong>The mint account</strong> — whether the mint and freeze authority are still set.</li><li><strong>The metadata account</strong> — whether the name, symbol and image can still be changed.</li><li><strong>The largest holders</strong> — from Solana&#x27;s <a href="https://solana.com/docs/rpc/http/gettokenlargestaccounts" target="_blank" rel="noopener noreferrer"><code>getTokenLargestAccounts</code></a>, which returns the largest token accounts.</li><li><strong>Trading pairs</strong> — a best-effort check with DEX Screener for whether a tradable pair exists and roughly how much liquidity it has.</li></ul>
+<h2 id="how-the-score-is-calculated">How the score is calculated</h2>
+<p>Every token starts at <strong>100</strong>. Each finding subtracts points:</p>
+<ul><li><strong>Mint authority still active:</strong> −35. Someone can create more tokens.</li><li><strong>Freeze authority still active:</strong> −25. Someone can freeze holders&#x27; token accounts.</li><li><strong>Metadata can still be changed:</strong> −15. The name, symbol or image could change after you buy.</li><li><strong>Top holder above 50% of supply:</strong> −15. Above 20%: −8.</li><li><strong>Top 10 holders above 80%:</strong> −10. Above 50%: −5.</li><li><strong>No tradable pair found:</strong> −10.</li></ul>
+<p>The score never goes below 0.</p>
+<figure><img src="/blog/img/how-degenkit-scanner-scores-tokens-1.webp" alt="The six checks Scanner runs and how many points each finding subtracts from 100." loading="lazy" decoding="async"><figcaption>Authorities weigh the most. A token with both still active loses 60 points before anything else.</figcaption></figure>
+<h2 id="how-to-read-the-label">How to read the label</h2>
+<ul><li><strong>80–100: Low risk.</strong></li><li><strong>50–79: Medium risk.</strong></li><li><strong>0–49: High risk — may be a rug pull.</strong></li></ul>
+<p>A worked example: a token with mint and freeze revoked and locked metadata, where the largest holder has 30% and the top ten hold 60%, scores 100 − 8 − 5 = <strong>87</strong>, low risk. The same token with freeze authority still active scores <strong>62</strong>, medium.</p>
+<figure><video src="/blog/img/how-degenkit-scanner-scores-tokens-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="A mint is pasted, the authorities, metadata, holders and pair are checked one by one, and the score ring settles on its label."></video></figure>
+<h2 id="what-the-score-can-t-see">What the score can&#x27;t see</h2>
+<p>Scanner&#x27;s own note says it plainly: the score is a heuristic based on on-chain authorities and holder distribution. It does <strong>not</strong> verify:</p>
+<ul><li>whether liquidity is <strong>locked or burned</strong>;</li><li><strong>team allocations</strong> or vesting;</li><li>anyone&#x27;s <strong>intentions</strong> off-chain.</li></ul>
+<p>It also counts every large token account, including <strong>liquidity pools</strong>. A big pool can push the top-holder figures up without anything being wrong. Our <a href="/blog/how-to-read-a-holder-bubblemap/">bubblemap guide</a> explains how to tell a pool from a person.</p>
+<aside class="callout warning"><strong>A good score is a start, not a guarantee</strong><p>A token can score 100 and still have unlocked liquidity or a team that sells. Use the score to decide where to look next.</p></aside>
+<figure><img src="/blog/img/how-degenkit-scanner-scores-tokens-2.webp" alt="What Scanner checks and what it leaves for you to check yourself." loading="lazy" decoding="async"><figcaption>Scanner covers the on-chain basics. Liquidity locks, allocations and the team are your homework.</figcaption></figure>
+<h2 id="for-creators-score-well-by-default">For creators: score well by default</h2>
+<p>Tokens created on DegenKit start with mint and freeze authority revoked and metadata locked, unless you turned those settings off. That removes the 75 points of deductions buyers worry about most. The rest depends on how you distribute the supply and whether you open a pool.</p>
+<h2 id="questions-people-ask">Questions people ask</h2>
+<h3 id="why-did-the-liquidity-line-say-unknown">Why did the liquidity line say &quot;unknown&quot;?</h3>
+<p>The pair check relies on DEX Screener. If it can&#x27;t be reached, Scanner says so and doesn&#x27;t subtract points.</p>
+<h3 id="does-scanner-work-on-devnet">Does Scanner work on Devnet?</h3>
+<p>Yes. It reads whichever network the launcher is set to.</p>
+<h2 id="wrap-up">Wrap up</h2>
+<p>Scanner starts at 100 and subtracts for live authorities, editable metadata, concentrated holders and a missing pair. Read the label, then check what it can&#x27;t see. <a href="https://degenkit.app/launch/solana/">Scan a token on DegenKit</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=How%20DegenKit%20Scanner%20Scores%20a%20Solana%20Token%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Fhow-degenkit-scanner-scores-tokens%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/how-degenkit-scanner-scores-tokens/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/airdrop-multisender-csv-guide/">
+  <div class="cover"><img src="/blog/img/airdrop-multisender-csv-guide-cover.webp" alt="A CSV file with address and amount columns flowing into batches of eight transfers." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">DegenKit</span><span class="chip">Solana</span><span class="chip">Guide</span><span>November 2, 2026</span></div>
+    <h2>Airdrop and Multisender: How to Prepare Your Recipient List</h2>
+    <p>DegenKit&#x27;s Airdrop and Multisender send tokens to many Solana wallets in batches of eight. Learn the list formats, CSV import, what each batch costs and how to avoid failed sends.</p>
+  </div>
+</a><a class="card" href="/blog/revoke-authorities-and-update-metadata/">
+  <div class="cover"><img src="/blog/img/revoke-authorities-and-update-metadata-cover.webp" alt="A token management card showing mint and freeze authority status pills next to an editable metadata form." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">DegenKit</span><span class="chip">Solana</span><span class="chip">Guide</span><span>November 2, 2026</span></div>
+    <h2>Authorities and Update Metadata: Managing an Existing Solana Token</h2>
+    <p>DegenKit&#x27;s Authorities and Update Metadata tools work on Solana tokens you already control. Learn when you need them, what each does, and which changes are permanent.</p>
+  </div>
+</a><a class="card" href="/blog/is-degenkit-safe/">
+  <div class="cover"><img src="/blog/img/is-degenkit-safe-cover.webp" alt="A wallet signing screen with DegenKit&#x27;s request shown in plain language, beside a list of what DegenKit can and cannot do." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">DegenKit</span><span class="chip">Safety</span><span class="chip">Guide</span><span>October 31, 2026</span></div>
+    <h2>Is DegenKit Safe? What You Sign, What We Can and Can’t Do</h2>
+    <p>DegenKit is non-custodial. Learn exactly what you sign, what the tokens it creates can and can&#x27;t do, what data is logged, and which risks remain yours to manage.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base and Robinhood Chain.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>
