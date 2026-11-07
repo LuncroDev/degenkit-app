@@ -20,8 +20,8 @@ twq('config','rfyik');
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>How $1 Billion in Liquidations Turned a Dip Into a Crash</title>
-<meta name="description" content="More than $1.2 billion of leveraged crypto positions were force-closed in a single day during the November 2026 crash. What a liquidation is, how the cascade works and why it matters even if you never trade with leverage.">
+<title>Crypto Liquidations Explained: Dip to Crash</title>
+<meta name="description" content="Crypto liquidations are forced closures of borrowed trades. How they work, why they cascade, and how $1.26 billion was wiped out in a day in November 2026.">
 <link rel="canonical" href="https://degenkit.app/blog/crypto-liquidations-explained/">
 <link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
@@ -32,19 +32,19 @@ twq('config','rfyik');
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-11-07">
 <meta property="article:modified_time" content="2026-11-07">
-<meta property="og:image:alt" content="A glowing red coin with a lightning bolt on a dark lit grid, next to the headline about $1 billion in liquidations.">
-<meta property="article:tag" content="Market News">
-<meta property="article:tag" content="Guide">
+<meta property="og:image:alt" content="A glowing blue coin with a lightning bolt on a dark lit grid beside a headline about liquidations.">
+<meta property="article:tag" content="Explainer">
+<meta property="article:tag" content="News">
 <meta property="og:site_name" content="DegenKit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How $1 Billion in Liquidations Turned a Dip Into a Crash">
-<meta property="og:description" content="More than $1.2 billion of leveraged crypto positions were force-closed in a single day during the November 2026 crash. What a liquidation is, how the cascade works and why it matters even if you never trade with leverage.">
+<meta property="og:title" content="Crypto Liquidations Explained: Dip to Crash">
+<meta property="og:description" content="Crypto liquidations are forced closures of borrowed trades. How they work, why they cascade, and how $1.26 billion was wiped out in a day in November 2026.">
 <meta property="og:url" content="https://degenkit.app/blog/crypto-liquidations-explained/">
 <meta property="og:image" content="https://degenkit.app/blog/img/crypto-liquidations-explained-cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@DegenKitApp">
-<meta name="twitter:title" content="How $1 Billion in Liquidations Turned a Dip Into a Crash">
-<meta name="twitter:description" content="More than $1.2 billion of leveraged crypto positions were force-closed in a single day during the November 2026 crash. What a liquidation is, how the cascade works and why it matters even if you never trade with leverage.">
+<meta name="twitter:title" content="Crypto Liquidations Explained: Dip to Crash">
+<meta name="twitter:description" content="Crypto liquidations are forced closures of borrowed trades. How they work, why they cascade, and how $1.26 billion was wiped out in a day in November 2026.">
 <meta name="twitter:image" content="https://degenkit.app/blog/img/crypto-liquidations-explained-cover.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -52,7 +52,7 @@ twq('config','rfyik');
 <link rel="stylesheet" href="/assets/theme-icons.css">
 <link rel="stylesheet" href="/assets/blog.css">
 <script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How $1 Billion in Liquidations Turned a Dip Into a Crash", "description": "More than $1.2 billion of leveraged crypto positions were force-closed in a single day during the November 2026 crash. What a liquidation is, how the cascade works and why it matters even if you never trade with leverage.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/crypto-liquidations-explained/"}, "url": "https://degenkit.app/blog/crypto-liquidations-explained/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/crypto-liquidations-explained-cover.webp", "keywords": "Market News, Guide", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "How $1 Billion in Liquidations Turned a Dip Into a Crash", "item": "https://degenkit.app/blog/crypto-liquidations-explained/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Crypto Liquidations Explained: How a Dip Becomes a Crash", "description": "Crypto liquidations are forced closures of borrowed trades. How they work, why they cascade, and how $1.26 billion was wiped out in a day in November 2026.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/crypto-liquidations-explained/"}, "url": "https://degenkit.app/blog/crypto-liquidations-explained/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/crypto-liquidations-explained-cover.webp", "keywords": "Explainer, News", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Crypto Liquidations Explained: How a Dip Becomes a Crash", "item": "https://degenkit.app/blog/crypto-liquidations-explained/"}]}</script>
 </head>
 <body>
 <header>
@@ -75,38 +75,54 @@ twq('config','rfyik');
   <article class="post">
     <div class="p-head">
       <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
-      <div class="chips"><span class="chip">Market News</span><span class="chip">Guide</span></div>
-      <h1>How $1 Billion in Liquidations Turned a Dip Into a Crash</h1>
-      <p class="lede">More than $1.2 billion of leveraged crypto positions were force-closed in a single day during the November 2026 crash. What a liquidation is, how the cascade works and why it matters even if you never trade with leverage.</p>
-      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 7, 2026 · 4 min read</i></span></div>
+      <div class="chips"><span class="chip">Explainer</span><span class="chip">News</span></div>
+      <h1>Crypto Liquidations Explained: How a Dip Becomes a Crash</h1>
+      <p class="lede">Crypto liquidations are forced closures of borrowed trades. How they work, why they cascade, and how $1.26 billion was wiped out in a day in November 2026.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 7, 2026 · 6 min read</i></span></div>
     </div>
-    <div class="cover hero"><img src="/blog/img/crypto-liquidations-explained-cover.webp" alt="A glowing red coin with a lightning bolt on a dark lit grid, next to the headline about $1 billion in liquidations." loading="lazy" decoding="async"></div>
+    <div class="cover hero"><img src="/blog/img/crypto-liquidations-explained-cover.webp" alt="A glowing blue coin with a lightning bolt on a dark lit grid beside a headline about liquidations." loading="lazy" decoding="async"></div>
     <div class="prose">
-<p>On November 5, 2026, about <strong>$1.26 billion</strong> of crypto trading positions were closed by force in 24 hours, according to CoinGlass data cited by <a href="https://crypto.news/bitcoin-price-today-rebounds-76000-etf-outflows/" target="_blank" rel="noopener noreferrer">crypto.news</a>. About <strong>$1.12 billion</strong> of that was traders betting on prices going up.</p>
-<p>Those forced closures are called <strong>liquidations</strong>, and they are why a normal dip so often becomes a crash. Here&#x27;s how they work.</p>
-<h2 id="what-a-liquidation-is">What a liquidation is</h2>
-<p>Many exchanges let traders borrow to make bigger bets. This is <strong>leverage</strong>. With 10x leverage, $1,000 controls a $10,000 position.</p>
-<p>The borrowed money has to be protected. If the price moves against the trader far enough to wipe out their own $1,000, the exchange <strong>closes the position automatically</strong>. That&#x27;s a liquidation. The trader loses their stake, and the exchange sells (or buys) to close the position.</p>
-<p>The more leverage, the smaller the move needed:</p>
-<ul><li><strong>2x</strong> leverage: about a 50% move against you</li><li><strong>10x</strong>: about 10%</li><li><strong>50x</strong>: about 2%</li></ul>
-<p>In practice it happens a little sooner, because of fees and maintenance margin.</p>
-<figure><img src="/blog/img/crypto-liquidations-explained-1.webp" alt="How a liquidation cascade works: the price drops, leveraged longs are force-sold, that selling pushes the price lower, and the next group of longs is liquidated." loading="lazy" decoding="async"><figcaption>Each round of forced selling triggers the next.</figcaption></figure>
-<h2 id="how-a-cascade-works">How a cascade works</h2>
-<ol><li>Something pushes the price down, such as a hack, a Fed decision or a tech-stock sell-off.</li><li>The most leveraged longs hit their liquidation price and are <strong>sold automatically</strong>.</li><li>That forced selling pushes the price down further.</li><li>The next group of longs hits its liquidation price, and the cycle repeats.</li></ol>
-<p>No one decides to sell in steps 2 to 4. It&#x27;s mechanical, which is why prices can fall very fast.</p>
-<h2 id="what-happened-this-time">What happened this time</h2>
-<ul><li><strong>October 29:</strong> about $628 million was liquidated within an hour after the Binance hack (<a href="https://cryptoticker.io/en/why-is-crypto-down-today-november-3-2026/" target="_blank" rel="noopener noreferrer">CryptoTicker</a>).</li><li><strong>November 5:</strong> about $1.26 billion in 24 hours as tech stocks fell.</li><li><strong>November 6:</strong> more than $210 million on ETH alone, with ETH open interest down to about $11.4 billion from about $16 billion in late September (<a href="https://crypto.news/why-is-ethereum-price-down-today-eth-etf-liquidations" target="_blank" rel="noopener noreferrer">crypto.news</a>).</li></ul>
-<figure><img src="/blog/img/crypto-liquidations-explained-2.webp" alt="The November 2026 liquidations: $628 million in an hour on October 29, $1.26 billion in 24 hours on November 5, and $210 million in ETH on November 6." loading="lazy" decoding="async"><figcaption>CoinGlass and CryptoQuant data via crypto.news and CryptoTicker.</figcaption></figure>
+<p>Crypto liquidations are trades made with borrowed money that an exchange closes automatically when the price moves too far against them. Because each forced sale pushes the price further, liquidations can turn a normal dip into a crash, as on November 5, 2026, when about $1.26 billion was liquidated in 24 hours.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li>A liquidation happens when losses on a leveraged trade use up the trader&#x27;s own deposit.</li><li>With <strong>10x</strong> leverage, a move of roughly <strong>10%</strong> against you is enough. With <strong>50x</strong>, about <strong>2%</strong>.</li><li>About <strong>$1.26 billion</strong> was liquidated in 24 hours on November 5, 2026, about <strong>$1.12 billion</strong> of it from longs.</li><li>Liquidations affect everyone&#x27;s prices, even people who never use leverage.</li></ul></aside>
+<h2 id="what-does-liquidation-mean-in-crypto">What does liquidation mean in crypto?</h2>
+<p>Many exchanges let traders borrow to make bigger bets. This is called <strong>leverage</strong>. With 10x leverage, $1,000 of your own money controls a $10,000 position.</p>
+<p>The borrowed part must stay protected. If the price moves against you far enough to use up your $1,000, the exchange <strong>closes the position automatically</strong>. That is a liquidation. You lose your deposit, and the exchange sells (for a bet on a rise, called a <strong>long</strong>) or buys (for a bet on a fall, called a <strong>short</strong>) to close the position.</p>
+<p>Exchanges usually act a little before your deposit reaches zero. They keep a minimum balance called the <strong>maintenance margin</strong>, and fees reduce your cushion too.</p>
+<h2 id="how-much-of-a-price-move-liquidates-a-position">How much of a price move liquidates a position?</h2>
+<p>The higher the leverage, the smaller the move that wipes out your deposit. As a rough guide, before fees and maintenance margin:</p>
+<div class="tbl"><table><thead><tr><th>Leverage</th><th>Move against you that liquidates</th></tr></thead><tbody><tr><td>2x</td><td>about 50%</td></tr><tr><td>5x</td><td>about 20%</td></tr><tr><td>10x</td><td>about 10%</td></tr><tr><td>25x</td><td>about 4%</td></tr><tr><td>50x</td><td>about 2%</td></tr></tbody></table></div>
+<p>Bitcoin fell 5.3% and Ether 7.2% on November 5, 2026. A long on Ether with more than about 14x leverage could have been liquidated by that move alone.</p>
+<figure><img src="/blog/img/crypto-liquidations-explained-1.webp" alt="How a liquidation cascade works, and how much of a move liquidates 2x, 10x and 50x leverage." loading="lazy" decoding="async"><figcaption>Real thresholds are a little closer because of fees and maintenance margin.</figcaption></figure>
+<h2 id="how-does-a-liquidation-cascade-work">How does a liquidation cascade work?</h2>
+<ol><li><strong>Something pushes the price down.</strong> A hack, a Fed decision or a stock sell-off.</li><li><strong>The most leveraged longs are liquidated.</strong> The exchange sells their positions automatically.</li><li><strong>That selling pushes the price lower.</strong> There may not be enough buyers to absorb it.</li><li><strong>The next group of longs hits its liquidation price,</strong> and the cycle repeats.</li></ol>
+<p>Nobody chooses to sell in steps 2 to 4. It is mechanical, which is why prices can drop very fast and then bounce once the leverage is gone. The same thing happens upward with shorts, called a <strong>short squeeze</strong>.</p>
+<h2 id="what-happened-in-the-november-2026-crash">What happened in the November 2026 crash?</h2>
+<p>Three cascades hit within nine days:</p>
+<ul><li><strong>October 29:</strong> about <strong>$628 million</strong> was liquidated within an hour after the Binance hack, as Bitcoin fell below $79,000 (<a href="https://cryptoticker.io/en/why-is-crypto-down-today-november-3-2026/" target="_blank" rel="noopener noreferrer">CryptoTicker</a>).</li><li><strong>November 5:</strong> about <strong>$1.26 billion</strong> in 24 hours as the Nasdaq fell 5.5%, about $1.12 billion of it longs (<a href="https://crypto.news/bitcoin-price-today-rebounds-76000-etf-outflows/" target="_blank" rel="noopener noreferrer">crypto.news</a>).</li><li><strong>November 6:</strong> more than <strong>$210 million</strong> on ETH alone, $179 million of it longs. ETH open interest fell to about $11.4 billion, from about $16 billion in late September (<a href="https://crypto.news/why-is-ethereum-price-down-today-eth-etf-liquidations" target="_blank" rel="noopener noreferrer">crypto.news</a>).</li></ul>
+<p>Open interest is the total size of open futures bets. When it falls, there is less leverage left to force out. For the full timeline, see <a href="/blog/crypto-crash-november-2026/">why crypto is crashing</a>.</p>
+<figure><img src="/blog/img/crypto-liquidations-explained-2.webp" alt="Liquidations during the November 2026 crash: $628 million in an hour on October 29, $1.26 billion in 24 hours on November 5 and $210 million on ETH on November 6." loading="lazy" decoding="async"><figcaption>CoinGlass data via crypto.news and CryptoTicker.</figcaption></figure>
 <figure><video src="/blog/img/crypto-liquidations-explained-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="The liquidation cascade in 20 seconds: leverage, a price drop, forced selling and a lower price, round after round."></video></figure>
-<h2 id="why-it-matters-even-if-you-never-use-leverage">Why it matters even if you never use leverage</h2>
-<ul><li><strong>Your token&#x27;s chart feels it.</strong> When Bitcoin and SOL fall fast, buyers of small tokens pull back too.</li><li><strong>Wicks hit stop orders.</strong> Fast cascades create sharp, short drops that can trigger sell orders before the price bounces.</li><li><strong>The end of a cascade can be a turning point.</strong> Once most leverage is gone, there&#x27;s less forced selling left. Falling open interest is one sign of that.</li></ul>
-<h2 id="wrap-up">Wrap up</h2>
-<p>Liquidations are forced sales of leveraged positions. In a cascade, each wave of selling triggers the next, which is how the November crash went from a dip to more than $1 billion lost in a day. Read <a href="/blog/crypto-crash-november-2026/">why crypto crashed</a> for the full timeline. If you&#x27;re building rather than trading, <a href="https://degenkit.app/">DegenKit</a> involves no leverage: you create, you own, you sign.</p>
+<h2 id="why-do-liquidations-matter-if-you-never-use-leverage">Why do liquidations matter if you never use leverage?</h2>
+<ul><li><strong>Your token&#x27;s price moves with the market.</strong> When Bitcoin and SOL fall fast, buyers of small tokens step back too.</li><li><strong>Wicks trigger orders.</strong> Cascades create short, sharp drops that can fill stop orders or move pool prices before a bounce.</li><li><strong>Pool prices follow.</strong> If your token is paired with SOL or ETH, a fast drop in that coin lowers your token&#x27;s dollar value. See <a href="/blog/sol-or-usdc-liquidity-pair/">SOL or USDC for your liquidity pair</a>.</li></ul>
+<p>Creating a token or adding liquidity on DegenKit involves no leverage. Nothing you do there can be liquidated. Price impact in your own pool is a different thing, explained in <a href="/blog/slippage-vs-price-impact/">slippage vs price impact</a>.</p>
+<h2 id="what-are-the-risks-of-trading-with-leverage">What are the risks of trading with leverage?</h2>
+<ul><li><strong>You can lose your whole deposit</strong> in one fast move, even if the price recovers minutes later.</li><li><strong>Funding fees</strong> on perpetual futures can cost you while you wait.</li><li><strong>Exchange risk.</strong> During incidents, exchanges can pause withdrawals, as Binance did after the hack.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="what-does-liquidated-mean-in-crypto">What does liquidated mean in crypto?</h3>
+<p>It means an exchange closed your leveraged trade automatically because your losses used up your deposit. You lose the deposit you put in.</p>
+<h3 id="how-do-people-get-liquidated-in-crypto">How do people get liquidated in crypto?</h3>
+<p>By using leverage. The higher the leverage, the smaller the price move that wipes out the deposit. At 10x, a move of about 10% is enough.</p>
+<h3 id="what-is-liquidation-in-crypto-lending">What is liquidation in crypto lending?</h3>
+<p>On lending platforms, if your collateral falls in value below a set level, part of it is sold to repay the loan. The idea is the same: protect the lender when prices fall.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://crypto.news/bitcoin-price-today-rebounds-76000-etf-outflows/" target="_blank" rel="noopener noreferrer">crypto.news: Bitcoin price today and liquidations</a></li><li><a href="https://crypto.news/why-is-ethereum-price-down-today-eth-etf-liquidations" target="_blank" rel="noopener noreferrer">crypto.news: Why is Ethereum price down today</a></li><li><a href="https://cryptoticker.io/en/why-is-crypto-down-today-november-3-2026/" target="_blank" rel="noopener noreferrer">CryptoTicker: Why is crypto down today, November 3, 2026</a></li><li><a href="https://www.coinglass.com/LiquidationData" target="_blank" rel="noopener noreferrer">CoinGlass: Liquidation data</a></li></ul>
+<p>If you want to build rather than trade, the <a href="/docs/token-creator/">DegenKit token creator docs</a> explain how a token is made from your own wallet.</p>
     </div>
     <div class="share">
       <b>Share this post</b>
       <div class="share-btns">
-        <a class="s-x" href="https://x.com/intent/post?text=How%20%241%20Billion%20in%20Liquidations%20Turned%20a%20Dip%20Into%20a%20Crash%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Fcrypto-liquidations-explained%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <a class="s-x" href="https://x.com/intent/post?text=Crypto%20Liquidations%20Explained%3A%20How%20a%20Dip%20Becomes%20a%20Crash%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Fcrypto-liquidations-explained%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
         <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/crypto-liquidations-explained/">Copy link</button>
       </div>
     </div>
@@ -115,26 +131,26 @@ twq('config','rfyik');
       <a class="btn-launch" href="/launch/">Launch App</a>
     </aside>
   </article>
-  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/launching-a-token-in-a-bear-market/">
-  <div class="cover"><img src="/blog/img/launching-a-token-in-a-bear-market-cover.webp" alt="A glowing orange coin with a rocket on a dark lit grid, next to the headline asking whether to launch during a crash." loading="lazy" decoding="async"></div>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/bitcoin-after-the-crash-november-2026/">
+  <div class="cover"><img src="/blog/img/bitcoin-after-the-crash-november-2026-cover.webp" alt="A glowing orange Bitcoin coin on a dark lit grid beside a headline about Bitcoin holding $76K." loading="lazy" decoding="async"></div>
   <div class="c-body">
-    <div class="c-meta"><span class="chip">Market News</span><span class="chip">Launch</span><span class="chip">Guide</span><span>November 7, 2026</span></div>
-    <h2>Should You Launch a Token During a Crash? A Practical Playbook</h2>
-    <p>The market is in extreme fear. That makes launching cheaper and quieter, but also harder. Here&#x27;s what changes in a crash, what to do differently and a checklist for launching when sentiment is low.</p>
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Explainer</span><span>November 7, 2026</span></div>
+    <h2>Why Is Bitcoin Down? ETF Outflows and Levels to Watch</h2>
+    <p>Why is Bitcoin down? Spot ETFs lost over $840 million in two sessions as tech stocks fell. The flows by fund and the price levels analysts watch.</p>
+  </div>
+</a><a class="card" href="/blog/crypto-crash-november-2026/">
+  <div class="cover"><img src="/blog/img/crypto-crash-november-2026-cover.webp" alt="A glowing red coin with a falling arrow on a dark lit grid beside a headline about the crash." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Explainer</span><span>November 7, 2026</span></div>
+    <h2>Why Is Crypto Crashing? The November 2026 Sell-Off Explained</h2>
+    <p>Why is crypto crashing? A hawkish Fed, the record Binance hack and an AI stock sell-off hit within ten days, and leverage made each drop bigger.</p>
   </div>
 </a><a class="card" href="/blog/binance-hack-explained/">
-  <div class="cover"><img src="/blog/img/binance-hack-explained-cover.webp" alt="A glowing amber coin with a cracked shield on a dark lit grid, next to the headline about the Binance hack." loading="lazy" decoding="async"></div>
+  <div class="cover"><img src="/blog/img/binance-hack-explained-cover.webp" alt="A glowing amber coin with a cracked shield on a dark lit grid beside a headline about the Binance hack." loading="lazy" decoding="async"></div>
   <div class="c-body">
-    <div class="c-meta"><span class="chip">Market News</span><span class="chip">Security</span><span>November 7, 2026</span></div>
-    <h2>The $6.3B Binance Hack Explained: What Happened and What It Means for Your Wallet</h2>
-    <p>On October 29, 2026, attackers drained Binance hot wallets on 11 chains in about three hours. How the theft worked, where the money went, what Binance did and the wallet lessons for everyone else.</p>
-  </div>
-</a><a class="card" href="/blog/bitcoin-after-the-crash-november-2026/">
-  <div class="cover"><img src="/blog/img/bitcoin-after-the-crash-november-2026-cover.webp" alt="A glowing orange Bitcoin coin on a dark lit grid, next to the headline about Bitcoin holding $76K." loading="lazy" decoding="async"></div>
-  <div class="c-body">
-    <div class="c-meta"><span class="chip">Market News</span><span class="chip">Bitcoin</span><span>November 7, 2026</span></div>
-    <h2>Bitcoin Holds $76K After the Crash: ETF Outflows and the Levels to Watch</h2>
-    <p>Bitcoin slid from above $80,000 to about $76,000 in two days as spot ETFs lost more than $840 million. The flows, the support levels and the signals that would end the downtrend.</p>
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Security</span><span>November 7, 2026</span></div>
+    <h2>Binance Hack 2026: What Happened and How It Worked</h2>
+    <p>The Binance hack of October 29, 2026 drained hot wallets on 11 chains in about three hours. How it worked, where the funds went and what to check in your wallet.</p>
   </div>
 </a></div></section>
 </main>
