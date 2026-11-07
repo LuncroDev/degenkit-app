@@ -54,13 +54,13 @@ html[data-theme="light"] .sidebar-item .ic{background:rgba(0,0,0,0.05);}
 .main-inner{max-width:1200px !important;}
 .hero{padding:clamp(18px,2.4vw,32px) clamp(16px,3vw,40px) clamp(14px,2vw,22px) !important; max-width:1200px !important;}
 .hero .eyebrow{margin-bottom:12px !important;}
-h1.headline{font-size:clamp(32px,4.4vw,56px) !important; margin-bottom:12px !important;}
+:is(h1,h2).headline{font-size:clamp(32px,4.4vw,56px) !important; margin-bottom:12px !important;}
 .hero p.sub{font-size:16.5px !important; max-width:620px !important;}
 .workshop{max-width:1200px !important; padding-bottom:40px !important; gap:22px !important;}
 .tool-header{padding-top:clamp(18px,2.4vw,30px) !important;}
 .tool-panel{margin-top:22px !important; margin-bottom:40px !important;}
-h1.headline .accent{background:linear-gradient(90deg,#FFC785,#FF7A1A 55%,#F0486A) !important; -webkit-background-clip:text !important; background-clip:text !important; color:transparent !important;}
-html[data-theme="light"] h1.headline .accent{background:linear-gradient(90deg,#C2410C,#EA580C 55%,#DB2777) !important; -webkit-background-clip:text !important; background-clip:text !important;}
+:is(h1,h2).headline .accent{background:linear-gradient(90deg,#FFC785,#FF7A1A 55%,#F0486A) !important; -webkit-background-clip:text !important; background-clip:text !important; color:transparent !important;}
+html[data-theme="light"] :is(h1,h2).headline .accent{background:linear-gradient(90deg,#C2410C,#EA580C 55%,#DB2777) !important; -webkit-background-clip:text !important; background-clip:text !important;}
 
 /* ---------- cards ---------- */
 .panel,.tool-panel .panel,.summary-card{
@@ -227,7 +227,7 @@ html[data-theme="light"] .mkt-card{background:var(--panel); box-shadow:0 8px 24p
 .tool-view:not(#view-create):not(#view-market):not(#view-tax) .tool-panel,
 .tool-view:not(#view-create):not(#view-market):not(#view-tax) .tool-header{max-width:1200px !important; width:100%; box-sizing:border-box; padding-left:var(--gut); padding-right:var(--gut);}
 .tool-view:not(#view-create):not(#view-market):not(#view-tax) .tool-header{text-align:left; padding-top:clamp(10px,1.6vw,20px); margin-bottom:6px;}
-.tool-view:not(#view-create):not(#view-market):not(#view-tax) .tool-header h1{font-size:clamp(30px,3.4vw,44px) !important; line-height:1.08; margin:0 0 8px; background:linear-gradient(90deg,var(--ink),var(--ink)); -webkit-background-clip:text; background-clip:text;}
+.tool-view:not(#view-create):not(#view-market):not(#view-tax) .tool-header :is(h1,h2){font-size:clamp(30px,3.4vw,44px) !important; line-height:1.08; margin:0 0 8px; background:linear-gradient(90deg,var(--ink),var(--ink)); -webkit-background-clip:text; background-clip:text;}
 .tool-view:not(#view-create):not(#view-market):not(#view-tax) .tool-header p{font-size:16.5px; max-width:640px; margin:0;}
 .tool-view:not(#view-create):not(#view-market):not(#view-tax) .tool-panel{margin:22px auto 60px;}
 .tool-view .tool-panel > .panel{width:100%; box-sizing:border-box;}

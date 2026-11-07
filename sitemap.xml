@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://degenkit.app/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://degenkit.app/launch/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://degenkit.app/launch/solana/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://degenkit.app/launch/ethereum/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://degenkit.app/launch/bnb/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://degenkit.app/launch/base/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://degenkit.app/launch/robinhood/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://degenkit.app/support/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://degenkit.app/security/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://degenkit.app/terms/</loc><lastmod>2026-11-02</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://degenkit.app/privacy/</loc><lastmod>2026-11-02</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://degenkit.app/</loc><lastmod>2026-11-07</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://degenkit.app/launch/</loc><lastmod>2026-11-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://degenkit.app/launch/solana/</loc><lastmod>2026-11-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://degenkit.app/launch/ethereum/</loc><lastmod>2026-11-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://degenkit.app/launch/bnb/</loc><lastmod>2026-11-07</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://degenkit.app/launch/base/</loc><lastmod>2026-11-07</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://degenkit.app/launch/robinhood/</loc><lastmod>2026-11-07</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://degenkit.app/support/</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://degenkit.app/security/</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/terms/</loc><lastmod>2026-11-07</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://degenkit.app/privacy/</loc><lastmod>2026-11-07</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://degenkit.app/blog/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://degenkit.app/blog/binance-hack-explained/</loc><lastmod>2026-11-07</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/bitcoin-after-the-crash-november-2026/</loc><lastmod>2026-11-07</lastmod><priority>0.6</priority></url>
@@ -18,7 +18,9 @@
   <url><loc>https://degenkit.app/blog/crypto-liquidations-explained/</loc><lastmod>2026-11-07</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/ethereum-price-outlook-november-2026/</loc><lastmod>2026-11-07</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/launching-a-token-in-a-bear-market/</loc><lastmod>2026-11-07</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/blog/pons-vs-create-your-own-token-robinhood-chain/</loc><lastmod>2026-11-07</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/solana-200-day-line-november-2026/</loc><lastmod>2026-11-07</lastmod><priority>0.6</priority></url>
+  <url><loc>https://degenkit.app/blog/what-is-pons-launchpad-robinhood-chain/</loc><lastmod>2026-11-07</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/bridge-eth-to-robinhood-chain/</loc><lastmod>2026-11-04</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/create-tax-token-on-robinhood-chain/</loc><lastmod>2026-11-04</lastmod><priority>0.6</priority></url>
   <url><loc>https://degenkit.app/blog/launch-a-token-on-robinhood-chain/</loc><lastmod>2026-11-04</lastmod><priority>0.6</priority></url>

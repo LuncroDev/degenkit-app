@@ -1,6 +1,7 @@
 ---
 title: 'Solana, Ethereum, BNB Chain, Base or Robinhood Chain: Where Should You Launch a Token?'
 slug: which-blockchain-to-launch-token
+seo_title: 'Which Blockchain to Launch a Token On? 5 Chains Compared'
 date: '2026-10-25'
 excerpt: Compare the five networks DegenKit supports — token standards, gas tokens, wallets, explorers and available tools — before you choose where to launch.
 cover: /blog/img/which-blockchain-to-launch-token-cover.webp

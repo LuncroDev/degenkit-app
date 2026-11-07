@@ -154,7 +154,7 @@ def load_posts():
         words = len(re.findall(r"\w+", body))
         posts.append(dict(
             title=meta["title"], slug=slug, date=date, excerpt=meta["excerpt"],
-            cover=meta.get("cover", ""), cover_alt=meta.get("cover_alt", meta["title"]),
+            seo_title=meta.get("seo_title", ""), cover=meta.get("cover", ""), cover_alt=meta.get("cover_alt", meta["title"]),
             tags=[t.strip() for t in meta.get("tags", "").split(",") if t.strip()],
             body=html_body, minutes=max(1, math.ceil(words / 200)),
         ))
@@ -224,6 +224,17 @@ document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListene
 </script>"""
 
 PRE_THEME = "<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>"
+
+def seo_title(title, suffix=" | DegenKit Blog", limit=70):
+    """Keep <title> within ~70 chars: drop the suffix first, then cut at the first ': ' / ' — ', then at a word boundary."""
+    if len(title) + len(suffix) <= limit: return title + suffix
+    if len(title) <= limit: return title
+    for sep in (": ", " — ", " - "):
+        if sep in title:
+            head = title.split(sep)[0].strip()
+            if 25 <= len(head) <= limit: return head
+    cut = title[:limit].rsplit(" ", 1)[0].rstrip(",:;-")
+    return cut
 
 def page(title, desc, canonical, body, og_image=None, og_type="website", jsonld="", extra_meta=""):
     img = og_image or SITE + "/assets/mascot-hero.png"
@@ -387,7 +398,7 @@ def build_post(p, posts):
   {related}
 </main>"""
     d = OUT / p["slug"]; d.mkdir(parents=True, exist_ok=True)
-    (d / "index.html").write_text(page(f"{p['title']} | DegenKit Blog", p["excerpt"], url, body, og_img, "article", jsonld, extra), encoding="utf-8")
+    (d / "index.html").write_text(page(p.get('seo_title') or seo_title(p['title']), p["excerpt"], url, body, og_img, "article", jsonld, extra), encoding="utf-8")
 
 def build_rss(posts):
     items = "".join(f"<item><title>{esc(p['title'])}</title><link>{SITE}/blog/{p['slug']}/</link><guid>{SITE}/blog/{p['slug']}/</guid>"

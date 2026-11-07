@@ -10,14 +10,14 @@ IMG = SITE + "/assets/mascot-hero.png"
 ROBOTS_META = '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">'
 
 PAGES = {
- "index.html": dict(url="/", title="DegenKit — No-Code Token Launcher (Solana, Ethereum, BNB, Base)",
-   desc="Launch tokens with no code on Solana, Ethereum, BNB Chain, Base and Robinhood Chain. Non-custodial, one signature, flat fee, tax tokens included."),
- "launch/index.html": dict(url="/launch/", title="Create a Crypto Token Without Code — Choose Your Network | DegenKit",
+ "index.html": dict(url="/", title="Token Generator: Create a Crypto Token, No Code | DegenKit",
+   desc="Free-to-try token generator and token creator for Solana, Ethereum, BNB Chain, Base and Robinhood Chain. No code, non-custodial, one signature, tax tokens included."),
+ "launch/index.html": dict(url="/launch/", title="Token Creator: Make a Crypto Token Without Code | DegenKit",
    desc="Pick a network and create your token in minutes: Solana, Ethereum, BNB Chain, Base or Robinhood Chain. Non-custodial, no coding, one signature."),
- "launch/solana/index.html": dict(url="/launch/solana/", title="Create a Solana Token Without Code — SPL Token Creator | DegenKit",
+ "launch/solana/index.html": dict(url="/launch/solana/", title="Solana Token Creator: Make an SPL Token, No Code | DegenKit",
    desc="Create an SPL token on Solana in one signature. Set name, symbol, supply and image; mint and freeze authority revoked and metadata locked. Includes Swap, Airdrop, Multisender and Scanner.",
    chain="Solana"),
- "launch/ethereum/index.html": dict(url="/launch/ethereum/", title="Create an Ethereum Token (ERC-20) Without Code | DegenKit",
+ "launch/ethereum/index.html": dict(url="/launch/ethereum/", title="Ethereum Token Creator: Create an ERC-20, No Code | DegenKit",
    desc="Create a fixed-supply ERC-20 or a custom buy/sell tax token on Ethereum with no code. Connect your wallet, fill one form, sign once.",
    chain="Ethereum"),
  "launch/bnb/index.html": dict(url="/launch/bnb/", title="Create a BNB Chain Token (BEP-20) & Tax Token | DegenKit",
@@ -26,8 +26,8 @@ PAGES = {
  "launch/base/index.html": dict(url="/launch/base/", title="Create a Base Token (ERC-20) Without Code | DegenKit",
    desc="Launch an ERC-20 or tax token on Base, Coinbase's low-fee Layer 2, with no code. Fill one form and sign once from your own wallet.",
    chain="Base"),
- "launch/robinhood/index.html": dict(url="/launch/robinhood/", title="Create a Robinhood Chain Token Without Code | DegenKit",
-   desc="Launch a fixed-supply or tax token on Robinhood Chain with no code. Same simple one-form, one-signature flow, non-custodial.",
+ "launch/robinhood/index.html": dict(url="/launch/robinhood/", title="Robinhood Chain Token Creator (Pons Alternative) | DegenKit",
+   desc="Create your own token on Robinhood Chain with no code: fixed supply or tax token, non-custodial, one signature. An independent alternative to launchpads like Pons.",
    chain="Robinhood Chain"),
  "security/index.html": dict(url="/security/", title="Security & Transparency | DegenKit",
    desc="What DegenKit can and can't do, what you sign, the public fee address and how to verify the open-source code. Non-custodial, not audited."),
@@ -90,22 +90,12 @@ def jsonld_for(name, p, h):
         out.append({"@context": "https://schema.org", **ORG})
         out.append({"@context": "https://schema.org", "@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/",
                     "name": "DegenKit", "inLanguage": "en", "publisher": {"@id": SITE + "/#org"}})
-        out.append({"@context": "https://schema.org", "@type": "WebApplication", "name": "DegenKit", "url": SITE + "/",
-                    "applicationCategory": "FinanceApplication", "operatingSystem": "Any (web browser)",
-                    "browserRequirements": "Requires JavaScript and a Web3 wallet",
-                    "description": p["desc"], "publisher": {"@id": SITE + "/#org"},
-                    "featureList": ["No-code token creation", "Solana, Ethereum, BNB Chain, Base and Robinhood Chain",
-                                    "Non-custodial: you sign every transaction", "Buy/sell tax tokens on EVM chains",
-                                    "Token authorities, metadata, burn, airdrop, multisender, scanner and swap tools on Solana"]})
         qa = []
         for m in re.finditer(r'<details class="faq-item[^"]*"[^>]*>\s*<summary>(.*?)</summary>\s*<div class="a">(.*?)</div>', h, re.S):
             q = strip_tags(re.sub(r'<span class="plus">.*?</span>', "", m.group(1), flags=re.S)); a = strip_tags(m.group(2))
             if q and a: qa.append({"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}})
         if qa: out.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": qa})
     elif name.startswith("launch/") and p.get("chain"):
-        out.append({"@context": "https://schema.org", "@type": "WebApplication", "name": f"DegenKit — {p['chain']} token creator",
-                    "url": SITE + p["url"], "applicationCategory": "FinanceApplication", "operatingSystem": "Any (web browser)",
-                    "description": p["desc"], "isPartOf": {"@id": SITE + "/#website"}, "publisher": {"@id": SITE + "/#org"}})
         out.append(crumbs([("DegenKit", "/"), ("Launch", "/launch/"), (p["chain"], p["url"])]))
     elif name == "launch/index.html":
         out.append(crumbs([("DegenKit", "/"), ("Launch", "/launch/")]))

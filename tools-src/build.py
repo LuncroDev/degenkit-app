@@ -116,9 +116,9 @@ def rh_page():
 {faq_html(RH_QA)}
 </main>
 <script src="/tools/rh-rpc.js" defer></script>"""
-    write("/tools/robinhood-chain-rpc/", "Robinhood Chain RPC: Endpoints, Chain ID 4663 & Live Status | DegenKit",
+    write("/tools/robinhood-chain-rpc/", "Robinhood Chain RPC URL, Chain ID 4663 & Status | DegenKit",
           "Robinhood Chain RPC URLs for mainnet and testnet, chain ID 4663, explorer and providers. Live status check and one-click add to MetaMask.",
-          body, ld(app_ld("Robinhood Chain RPC checker", "/tools/robinhood-chain-rpc/", "Robinhood Chain network details, live RPC status and add-to-wallet buttons."), crumbs("Robinhood Chain RPC", "/tools/robinhood-chain-rpc/"), faq_ld(RH_QA)))
+          body, ld(crumbs("Robinhood Chain RPC", "/tools/robinhood-chain-rpc/"), faq_ld(RH_QA)))
 
 # ---------------------------------------------------------------- Token approval checker
 AP_QA = [
@@ -189,7 +189,7 @@ def ap_page():
 <script type="module" src="/tools/approvals.js"></script>"""
     write("/tools/token-approval-checker/", "Token Approval Checker: Find & Revoke ERC-20 Approvals | DegenKit",
           "Free token approval checker for Ethereum, Robinhood Chain, Base and BNB Chain. See which contracts can spend your tokens and revoke unlimited approvals.",
-          body, ld(app_ld("Token approval checker", "/tools/token-approval-checker/", "Find and revoke ERC-20 token approvals on Ethereum, Robinhood Chain, Base and BNB Chain."), crumbs("Token approval checker", "/tools/token-approval-checker/"), faq_ld(AP_QA)))
+          body, ld(crumbs("Token approval checker", "/tools/token-approval-checker/"), faq_ld(AP_QA)))
 
 def index_page():
     cards = [("/tools/token-approval-checker/", "🛡️", "Token approval checker", "Find and revoke ERC-20 approvals on Ethereum, Robinhood Chain, Base and BNB Chain."),
@@ -202,7 +202,7 @@ def index_page():
 <p class="t-lead">Small, free, non-custodial tools from DegenKit. No sign-up, and nothing is signed unless you choose to.</p>
 <div class="t-grid">{c}</div>
 </main>"""
-    write("/tools/", "Free Crypto Tools: Approval Checker, Robinhood Chain RPC & More | DegenKit",
+    write("/tools/", "Free Crypto Tools: Approval Checker & RPC | DegenKit",
           "Free non-custodial tools: token approval checker, Robinhood Chain RPC details and status, Solana multisender and token scanner.", body,
           ld({"@context": "https://schema.org", "@type": "CollectionPage", "name": "DegenKit free tools", "url": SITE + "/tools/"}))
 

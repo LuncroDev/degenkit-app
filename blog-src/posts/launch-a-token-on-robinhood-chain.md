@@ -96,3 +96,5 @@ The bridge takes about 10 minutes. Each transaction after that confirms quickly.
 ## Wrap up
 
 Bridge ETH, create the token, check it on Blockscout, add a Uniswap pool, mark it if it's a tax token, then share the address. [Start your Robinhood Chain launch](https://degenkit.app/launch/robinhood/).
+
+**Related:** [What is Pons?](/blog/what-is-pons-launchpad-robinhood-chain/) and [Pons vs creating your own token](/blog/pons-vs-create-your-own-token-robinhood-chain/).
