@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Robinhood Chain Liquidity Lock: How to Lock and Check | DegenKit Blog</title>
+<meta name="description" content="A liquidity lock on Robinhood Chain stops a pool&#x27;s LP from being withdrawn. How locks work on Uniswap v2, v3 and v4, how to lock your own and how to check any token.">
+<link rel="canonical" href="https://degenkit.app/blog/robinhood-chain-liquidity-lock/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-08">
+<meta property="article:modified_time" content="2026-11-08">
+<meta property="og:image:alt" content="A glowing teal coin with a padlock symbol on a dark lit grid beside a headline about liquidity locks.">
+<meta property="article:tag" content="Robinhood Chain">
+<meta property="article:tag" content="Security">
+<meta property="article:tag" content="Guide">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Robinhood Chain Liquidity Lock: How to Lock and Check | DegenKit Blog">
+<meta property="og:description" content="A liquidity lock on Robinhood Chain stops a pool&#x27;s LP from being withdrawn. How locks work on Uniswap v2, v3 and v4, how to lock your own and how to check any token.">
+<meta property="og:url" content="https://degenkit.app/blog/robinhood-chain-liquidity-lock/">
+<meta property="og:image" content="https://degenkit.app/blog/img/robinhood-chain-liquidity-lock-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="Robinhood Chain Liquidity Lock: How to Lock and Check | DegenKit Blog">
+<meta name="twitter:description" content="A liquidity lock on Robinhood Chain stops a pool&#x27;s LP from being withdrawn. How locks work on Uniswap v2, v3 and v4, how to lock your own and how to check any token.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/robinhood-chain-liquidity-lock-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Robinhood Chain Liquidity Lock: How to Lock and Check", "description": "A liquidity lock on Robinhood Chain stops a pool's LP from being withdrawn. How locks work on Uniswap v2, v3 and v4, how to lock your own and how to check any token.", "datePublished": "2026-11-08", "dateModified": "2026-11-08", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/robinhood-chain-liquidity-lock/"}, "url": "https://degenkit.app/blog/robinhood-chain-liquidity-lock/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/robinhood-chain-liquidity-lock-cover.webp", "keywords": "Robinhood Chain, Security, Guide", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Robinhood Chain Liquidity Lock: How to Lock and Check", "item": "https://degenkit.app/blog/robinhood-chain-liquidity-lock/"}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">Robinhood Chain</span><span class="chip">Security</span><span class="chip">Guide</span></div>
+      <h1>Robinhood Chain Liquidity Lock: How to Lock and Check</h1>
+      <p class="lede">A liquidity lock on Robinhood Chain stops a pool&#x27;s LP from being withdrawn. How locks work on Uniswap v2, v3 and v4, how to lock your own and how to check any token.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 8, 2026 · 6 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/robinhood-chain-liquidity-lock-cover.webp" alt="A glowing teal coin with a padlock symbol on a dark lit grid beside a headline about liquidity locks." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>A liquidity lock on Robinhood Chain means the LP tokens or LP position for a token&#x27;s Uniswap pool are held by a time-lock contract, or burned, so nobody can withdraw the pool&#x27;s funds before a set date. You can check any token&#x27;s lock on Blockscout by finding who holds its LP.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li><strong>Uniswap v2</strong> liquidity is an ERC-20 <strong>LP token</strong>. <strong>Uniswap v3 and v4</strong> liquidity is a <strong>position NFT</strong>.</li><li>A lock is only as strong as its holder: a <strong>locker contract</strong> with an end date, a <strong>burn address</strong>, or a <strong>wallet</strong> (not locked).</li><li>Pons V1 locked each launch&#x27;s position NFT after pool creation, according to BingX Learn.</li><li>DegenKit creates the token. You add liquidity on Uniswap and choose how to lock it.</li></ul></aside>
+<aside class="callout note"><strong>Not affiliated</strong><p>DegenKit is not affiliated with Pons, TrustSwap or Team Finance. They are named here for reference.</p></aside>
+<h2 id="what-is-locked-liquidity">What is locked liquidity?</h2>
+<p>When you add liquidity to a Uniswap pool, you receive a receipt for your share. Whoever holds that receipt can withdraw the token and ETH from the pool at any time. If the creator withdraws it all after people have bought, buyers are left holding a token they cannot sell. That is the classic <strong>rug pull</strong>.</p>
+<p>Locking the receipt removes that option. There are two common ways:</p>
+<ul><li><strong>Time-lock:</strong> the receipt is sent to a locker contract that releases it only after a set date.</li><li><strong>Burn:</strong> the receipt is sent to an address nobody controls, such as <code>0x000…dEaD</code>. The liquidity can never be withdrawn.</li></ul>
+<p>Buyers read a lock as a trust signal. Our guide to <a href="/blog/how-to-spot-rug-pull-risk/">spotting rug pull risk</a> covers the other signals.</p>
+<h2 id="how-do-locks-differ-on-uniswap-v2-v3-and-v4">How do locks differ on Uniswap v2, v3 and v4?</h2>
+<div class="tbl"><table><thead><tr><th></th><th>Uniswap v2</th><th>Uniswap v3</th><th>Uniswap v4</th></tr></thead><tbody><tr><td>Receipt</td><td>ERC-20 LP token</td><td>Position NFT</td><td>Position NFT</td></tr><tr><td>How it is locked</td><td>LP token sent to locker or burn address</td><td>NFT sent to a locker contract</td><td>NFT sent to a locker contract</td></tr><tr><td>Where to check</td><td>Holders of the pair contract</td><td>Owner of the position NFT</td><td>Owner of the position NFT</td></tr><tr><td>Fee-on-transfer (tax) tokens</td><td>Supported</td><td>Not supported by Uniswap&#x27;s routers</td><td>Not documented in our sources</td></tr></tbody></table></div>
+<p>Uniswap&#x27;s own documentation says fee-on-transfer tokens &quot;will not function&quot; with its v3 router contracts (<a href="https://developers.uniswap.org/docs/protocols/v3/concepts/unsupported-tokens" target="_blank" rel="noopener noreferrer">Uniswap</a>). That is why a tax token belongs in a v2 pool.</p>
+<figure><img src="/blog/img/robinhood-chain-liquidity-lock-1.webp" alt="Liquidity locks on Robinhood Chain: v2 LP tokens versus v3 and v4 position NFTs, and the three possible holders: locker, burn address or wallet." loading="lazy" decoding="async"><figcaption>Only a locker with an end date or a burn address counts as locked.</figcaption></figure>
+<h2 id="how-do-you-lock-liquidity-for-your-own-token">How do you lock liquidity for your own token?</h2>
+<ol><li><strong>Create the token</strong> with the <a href="/launch/robinhood/">Robinhood Chain token generator</a>. Result: the full supply is in your wallet.</li><li><strong>Add liquidity on Uniswap</strong> with your token and ETH. Result: you receive an LP token (v2) or a position NFT (v3 or v4).</li><li><strong>Choose a lock method.</strong> A locker service sends the receipt to its contract with an end date you choose. To burn instead, send the receipt to a burn address. Result: the receipt leaves your wallet.</li><li><strong>Publish the proof.</strong> Share the locker link or the burn transaction on Blockscout with your contract address.</li></ol>
+<p>As far as we know, TrustSwap says its MintPlus token creator locks LP tokens in a Team Finance vault on Robinhood Chain (<a href="https://trustswap.com/robinhood/pons" target="_blank" rel="noopener noreferrer">TrustSwap</a>). Check that any locker you use is live on Robinhood Chain, chain ID 4663, before sending anything.</p>
+<p>Burning is permanent. You lose the right to withdraw your share of the pool and its trading fees.</p>
+<h2 id="how-do-you-check-if-a-token-s-liquidity-is-locked">How do you check if a token&#x27;s liquidity is locked?</h2>
+<ol><li>Open the token on the <a href="https://robinhoodchain.blockscout.com" target="_blank" rel="noopener noreferrer">Robinhood Chain explorer</a> and find its Uniswap pool in the transactions or on DEX Screener.</li><li><strong>For v2:</strong> open the pair contract and look at its <strong>holders</strong>. If most LP sits in a locker contract or a burn address, it is locked or burned. If it sits in a normal wallet, it is not locked.</li><li><strong>For v3 or v4:</strong> find the position NFT and check its <strong>owner</strong>. A locker contract or burn address means locked.</li><li><strong>For a locker:</strong> open the lock and check the <strong>unlock date</strong> and the amount.</li></ol>
+<figure><video src="/blog/img/robinhood-chain-liquidity-lock-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Checking a lock on Blockscout in 20 seconds: open the pool, check who holds the LP, read the unlock date."></video></figure>
+<h2 id="what-can-a-lock-not-tell-you">What can a lock not tell you?</h2>
+<ul><li><strong>It does not cover the supply.</strong> A team can still sell its own tokens into the pool.</li><li><strong>It expires.</strong> A lock ending next week protects buyers for a week.</li><li><strong>Partial locks.</strong> Only part of the LP may be locked.</li><li><strong>Token contract risks.</strong> A tax token&#x27;s owner may still be able to change rates. Check the contract too, as in <a href="/blog/check-pons-launchpad-token-rug-risk/">how to check a launchpad token for rug risk</a>.</li></ul>
+<figure><img src="/blog/img/robinhood-chain-liquidity-lock-2.webp" alt="Five checks for a liquidity lock: who holds the LP, the unlock date, the share locked, team wallets and contract owner controls." loading="lazy" decoding="async"><figcaption>A lock is one signal, not proof that a token is safe.</figcaption></figure>
+<h2 id="what-are-the-risks">What are the risks?</h2>
+<ul><li><strong>Locker risk.</strong> A lock depends on the locker contract working as described.</li><li><strong>Burned is final.</strong> You cannot recover burned liquidity or its fees.</li><li><strong>Fake proof.</strong> Screenshots can be faked. Only trust what you can see on Blockscout.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="how-do-i-check-if-liquidity-is-locked">How do I check if liquidity is locked?</h3>
+<p>Find the token&#x27;s pool on Blockscout and check who holds the LP tokens (v2) or position NFT (v3, v4). A locker contract or burn address means locked. A normal wallet means not locked.</p>
+<h3 id="how-can-i-check-how-long-liquidity-is-locked">How can I check how long liquidity is locked?</h3>
+<p>Open the lock on the locker&#x27;s page or contract and read the unlock date. A burn has no end date because it is permanent.</p>
+<h3 id="does-pons-lock-liquidity">Does Pons lock liquidity?</h3>
+<p>BingX Learn says Pons V1 locked each position NFT after pool creation and describes V2 as graduating to a locked Uniswap v4 pool. Check each coin&#x27;s pool on Blockscout to confirm.</p>
+<h3 id="how-do-i-lock-liquidity">How do I lock liquidity?</h3>
+<p>Add liquidity on Uniswap, then send the LP token or position NFT to a locker contract with an end date, or to a burn address.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://developers.uniswap.org/docs/protocols/v3/concepts/unsupported-tokens" target="_blank" rel="noopener noreferrer">Uniswap: Token integration issues (v3)</a></li><li><a href="https://bingx.com/en/learn/article/what-is-pons-crypto-and-how-does-pons-robinhood-launchpad-work" target="_blank" rel="noopener noreferrer">BingX Learn: How the Pons launchpad works</a></li><li><a href="https://trustswap.com/robinhood/pons" target="_blank" rel="noopener noreferrer">TrustSwap: PONS launchpad on Robinhood Chain</a></li><li><a href="https://robinhoodchain.blockscout.com" target="_blank" rel="noopener noreferrer">Robinhood Chain Blockscout explorer</a></li></ul>
+<p>To start with a token you fully control, use the <a href="/launch/robinhood/">DegenKit token generator for Robinhood Chain</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=Robinhood%20Chain%20Liquidity%20Lock%3A%20How%20to%20Lock%20and%20Check%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Frobinhood-chain-liquidity-lock%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/robinhood-chain-liquidity-lock/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/check-pons-launchpad-token-rug-risk/">
+  <div class="cover"><img src="/blog/img/check-pons-launchpad-token-rug-risk-cover.webp" alt="A glowing red coin with a shield symbol on a dark lit grid beside a headline about checking for rug risk." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Robinhood Chain</span><span class="chip">Security</span><span class="chip">Launchpads</span><span>November 8, 2026</span></div>
+    <h2>Pons Launchpad Tokens: How to Check for Rug Risk</h2>
+    <p>Before buying a Pons launchpad token on Robinhood Chain, run seven checks on Blockscout. What each one means, what it can&#x27;t tell you and what the data shows.</p>
+  </div>
+</a><a class="card" href="/blog/how-to-make-a-memecoin-robinhood-chain/">
+  <div class="cover"><img src="/blog/img/how-to-make-a-memecoin-robinhood-chain-cover.webp" alt="A glowing amber coin with a smiling face symbol on a dark lit grid beside a headline about making a memecoin." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Robinhood Chain</span><span class="chip">Guide</span><span>November 8, 2026</span></div>
+    <h2>How to Make a Memecoin on Robinhood Chain, Step by Step</h2>
+    <p>How to make a memecoin on Robinhood Chain with a token generator. Pick the idea, create the token, add liquidity on Uniswap and share it, with costs and risks.</p>
+  </div>
+</a><a class="card" href="/blog/robinhood-chain-uniswap-v2-v3-v4/">
+  <div class="cover"><img src="/blog/img/robinhood-chain-uniswap-v2-v3-v4-cover.webp" alt="A glowing pink coin with swap arrows on a dark lit grid beside a headline about Uniswap versions." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Robinhood Chain</span><span class="chip">Explainer</span><span class="chip">Guide</span><span>November 8, 2026</span></div>
+    <h2>Robinhood Chain Uniswap: v2, v3 or v4 for a New Token?</h2>
+    <p>Robinhood Chain Uniswap runs v2, v3 and v4. Which version suits a new token, how each handles liquidity and taxes, and which one to pick for your launch.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base and Robinhood Chain.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <a class="tp-badge" href="https://www.trustpilot.com/evaluate/degenkit.app" target="_blank" rel="noopener" aria-label="Review DegenKit on Trustpilot" style="display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;padding:9px 14px;border:1px solid #00b67a;border-radius:8px;color:inherit;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#00b67a"/><path d="M12 4.2l2.3 5.1 5.5.5-4.2 3.7 1.3 5.4L12 16l-4.9 2.9 1.3-5.4L4.2 9.8l5.5-.5z" fill="#fff"/></svg><span>Review us on Trustpilot</span></a>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>
