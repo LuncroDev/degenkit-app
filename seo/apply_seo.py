@@ -11,7 +11,7 @@ ROBOTS_META = '<meta name="robots" content="index,follow,max-image-preview:large
 
 PAGES = {
  "index.html": dict(url="/", title="Token Generator: Create a Crypto Token, No Code | DegenKit",
-   desc="Free-to-try token generator and token creator for Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium. No code, non-custodial, one signature, tax tokens included."),
+   desc="No-code token generator and token creator for Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium. Non-custodial, one signature, tax tokens included."),
  "launch/index.html": dict(url="/launch/", title="Token Creator: Make a Crypto Token Without Code | DegenKit",
    desc="Pick a network and create your token in minutes: Solana, Ethereum, BNB Chain, Base, Robinhood Chain or Elysium. Non-custodial, no coding, one signature."),
  "launch/solana/index.html": dict(url="/launch/solana/", title="Solana Token Creator: Make an SPL Token, No Code | DegenKit",
@@ -93,6 +93,14 @@ def jsonld_for(name, p, h):
         out.append({"@context": "https://schema.org", **ORG})
         out.append({"@context": "https://schema.org", "@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/",
                     "name": "DegenKit", "inLanguage": "en", "publisher": {"@id": SITE + "/#org"}})
+        out.append({"@context": "https://schema.org", "@type": "WebApplication", "@id": SITE + "/#app", "name": "DegenKit",
+                    "url": SITE + "/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web",
+                    "browserRequirements": "Requires a crypto wallet browser extension or app",
+                    "description": "No-code token generator and token creator for Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium.",
+                    "featureList": ["Solana token creator (SPL)", "Ethereum token creator (ERC-20)", "BNB Chain token creator (BEP-20)",
+                                    "Base token creator", "Robinhood Chain token creator", "Elysium token creator", "Tax token creator",
+                                    "Airdrop and Multisender", "Token Scanner"],
+                    "publisher": {"@id": SITE + "/#org"}})
         qa = []
         for m in re.finditer(r'<details class="faq-item[^"]*"[^>]*>\s*<summary>(.*?)</summary>\s*<div class="a">(.*?)</div>', h, re.S):
             q = strip_tags(re.sub(r'<span class="plus">.*?</span>', "", m.group(1), flags=re.S)); a = strip_tags(m.group(2))

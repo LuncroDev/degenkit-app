@@ -307,6 +307,7 @@ html[data-chain="robinhood"][data-theme="light"] :is(h1,h2).headline .accent{bac
 html[data-chain="elysium"]{--o1:#3FB9C9;--o2:#6FE3F0;--o3:#1E96A8;--o-shadow:#0E5A66;--o-rgb:63,185,201;--o-hi-rgb:111,227,240;--pink:#4F8DFF;--pink-rgb:79,141,255;--o-on:#04161A;--g1:#B8F5FA;--g2:#3FB9C9;--g3:#4F8DFF;--btn-top:#6FE3F0;--brass:#3FB9C9;--brass-bright:#6FE3F0;--brass-rgb:63,185,201;--o-text:#8EEAF5;--cdark1:#0b1d22;--cdark2:#0f2a31;--cdark3:#0d2328;}
 html[data-chain="elysium"][data-theme="light"]{--o-text:#0E7C8C;--brass-bright:#0E7C8C;--brass-rgb:63,185,201;--lt:#0E7C8C;--lt-rgb:14,124,140;--mint:#0E7C8C;}
 html[data-chain="elysium"][data-theme="light"] :is(h1,h2).headline .accent{background:linear-gradient(90deg,#0E7C8C,#3FB9C9,#2F6FE0) !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important;}
+html[data-chain][data-theme="light"] #coinLetter,html[data-chain][data-theme="light"] #taxCoinLetter{color:var(--lt) !important;}
 
 /* dk-guide */
 .dk-guide{max-width:860px;margin:48px auto 40px;padding:0 clamp(20px,3vw,40px);color:var(--ink);line-height:1.65;position:relative;z-index:1}

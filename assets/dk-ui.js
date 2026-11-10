@@ -409,3 +409,15 @@
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
 })();
+
+/* dk-prefill: carry name/symbol/supply from the homepage live preview */
+(function(){
+  function run(){
+    try{
+      var q=new URLSearchParams(location.search), map={name:["f_name","eth_name","tax_name"],symbol:["f_symbol","eth_symbol","tax_symbol"],supply:["f_supply","eth_supply","tax_supply"]};
+      Object.keys(map).forEach(function(k){var v=q.get(k); if(!v) return; if(k==="supply"&&!/^[0-9]{1,18}$/.test(v)) return; v=v.slice(0,k==="symbol"?10:32);
+        map[k].forEach(function(id){var el=document.getElementById(id); if(!el) return; el.value=v; el.dispatchEvent(new Event("input",{bubbles:true})); el.dispatchEvent(new Event("change",{bubbles:true}));});});
+    }catch(e){}
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",function(){setTimeout(run,300);}); else setTimeout(run,300);
+})();
