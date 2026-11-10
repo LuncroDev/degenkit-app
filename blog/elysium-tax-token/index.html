@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Elysium Tax Token: Create a Buy and Sell Tax Token | DegenKit Blog</title>
+<meta name="description" content="How to create an Elysium tax token with DegenKit&#x27;s token creator. Set buy and sell tax, pick the tax wallet, add a Uniswap v2 pool and mark it so the tax switches on.">
+<link rel="canonical" href="https://degenkit.app/blog/elysium-tax-token/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-10">
+<meta property="article:modified_time" content="2026-11-10">
+<meta property="og:image:alt" content="A glowing violet coin with a percent symbol on a dark lit grid beside a headline about the Elysium tax token.">
+<meta property="article:tag" content="News">
+<meta property="article:tag" content="Guide">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Elysium Tax Token: Create a Buy and Sell Tax Token | DegenKit Blog">
+<meta property="og:description" content="How to create an Elysium tax token with DegenKit&#x27;s token creator. Set buy and sell tax, pick the tax wallet, add a Uniswap v2 pool and mark it so the tax switches on.">
+<meta property="og:url" content="https://degenkit.app/blog/elysium-tax-token/">
+<meta property="og:image" content="https://degenkit.app/blog/img/elysium-tax-token-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="Elysium Tax Token: Create a Buy and Sell Tax Token | DegenKit Blog">
+<meta name="twitter:description" content="How to create an Elysium tax token with DegenKit&#x27;s token creator. Set buy and sell tax, pick the tax wallet, add a Uniswap v2 pool and mark it so the tax switches on.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/elysium-tax-token-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Elysium Tax Token: Create a Buy and Sell Tax Token", "description": "How to create an Elysium tax token with DegenKit's token creator. Set buy and sell tax, pick the tax wallet, add a Uniswap v2 pool and mark it so the tax switches on.", "datePublished": "2026-11-10", "dateModified": "2026-11-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/elysium-tax-token/"}, "url": "https://degenkit.app/blog/elysium-tax-token/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/elysium-tax-token-cover.webp", "keywords": "News, Guide", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Elysium Tax Token: Create a Buy and Sell Tax Token", "item": "https://degenkit.app/blog/elysium-tax-token/"}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">News</span><span class="chip">Guide</span></div>
+      <h1>Elysium Tax Token: Create a Buy and Sell Tax Token</h1>
+      <p class="lede">How to create an Elysium tax token with DegenKit&#x27;s token creator. Set buy and sell tax, pick the tax wallet, add a Uniswap v2 pool and mark it so the tax switches on.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 10, 2026 · 5 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/elysium-tax-token-cover.webp" alt="A glowing violet coin with a percent symbol on a dark lit grid beside a headline about the Elysium tax token." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>To create an Elysium tax token, use the <strong>Tax Token</strong> tool in DegenKit&#x27;s Elysium token creator: set a buy and sell rate, choose the wallet that receives the tax, and sign once in HYPE. The tax only starts after you add a Uniswap v2 pool and mark it in <strong>My Tokens</strong>.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li><strong>Rates:</strong> any buy and sell tax from <strong>0% to 100%</strong>, in steps of 0.1%. Paid in your token to the tax wallet.</li><li><strong>Warnings</strong> above 10%, at 25% and at 50%.</li><li><strong>No</strong> mint function, blacklist, pause or trading switch.</li><li><strong>Use a Uniswap v2 pool.</strong> Uniswap&#x27;s v3 routers do not support fee-on-transfer tokens.</li><li><strong>Fee:</strong> 1 HYPE creation fee plus gas (as of November 2026).</li></ul></aside>
+<aside class="callout note"><strong>Not affiliated</strong><p>DegenKit is not affiliated with Kinetiq, Hyperliquid or Uniswap.</p></aside>
+<h2 id="how-does-a-tax-token-work">How does a tax token work?</h2>
+<p>A tax token takes a share of each <strong>buy</strong> and <strong>sell</strong> against a pool and sends it to a <strong>tax wallet</strong>, paid in your token. Wallet-to-wallet transfers are not taxed. The owner can change rates and the tax wallet until they <strong>renounce</strong> ownership.</p>
+<p>This is different from Solana&#x27;s Token-2022 transfer fee, which charges every transfer. See <a href="/blog/how-token-buy-sell-tax-works/">how buy and sell taxes work</a> for the mechanics.</p>
+<h2 id="how-do-you-create-one-on-elysium">How do you create one on Elysium?</h2>
+<ol><li>Open the <a href="/launch/elysium/">Elysium launcher</a>, click <strong>Connect wallet</strong> and approve the switch to chain ID 99901.</li><li>Choose <strong>Tax Token</strong> in the sidebar.</li><li>Fill in <strong>Token name</strong>, <strong>Symbol</strong> and <strong>Total supply</strong>. These are permanent.</li><li>Set <strong>Buy tax</strong> and <strong>Sell tax</strong>. Set one to 0% to switch that side off. Result: warnings appear if a rate passes 10%, 25% or 50%.</li><li>Enter a <strong>Tax wallet</strong>, or leave it empty to use your own wallet.</li><li>Check the summary and the <strong>1 HYPE</strong> fee, then sign. Result: the <strong>Contract address</strong> appears.</li></ol>
+<figure><img src="/blog/img/elysium-tax-token-1.webp" alt="The Elysium Tax Token form: name, symbol, supply, buy and sell tax, tax wallet, and which settings can change later." loading="lazy" decoding="async"><figcaption>Rates and the tax wallet can change until you renounce.</figcaption></figure>
+<h2 id="why-does-the-tax-need-a-v2-pool-and-a-mark">Why does the tax need a v2 pool and a mark?</h2>
+<p>Right after creation, <strong>no trade is taxed</strong>. The contract only taxes trades against pools you have marked.</p>
+<ol><li><strong>Add liquidity on Uniswap v2</strong> with your token and HYPE. Uniswap is live on Elysium. Uniswap&#x27;s documentation says fee-on-transfer tokens &quot;will not function&quot; with its v3 routers (<a href="https://developers.uniswap.org/docs/protocols/v3/concepts/unsupported-tokens" target="_blank" rel="noopener noreferrer">Uniswap docs</a>), so v2 is the safe choice.</li><li><strong>Copy the pair address</strong> from the liquidity transaction on the Elysium explorer.</li><li>Open <strong>My Tokens → Manage tax</strong>, paste it and choose <strong>Mark as pool</strong>.</li></ol>
+<p>From the next trade, buys and sells against that pool are taxed. See <a href="/blog/robinhood-chain-uniswap-v2-v3-v4/">Uniswap v2, v3 or v4</a>. The comparison is written for Robinhood Chain and applies the same way on Elysium.</p>
+<figure><video src="/blog/img/elysium-tax-token-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="An Elysium tax token in 20 seconds: set the rates, sign once in HYPE, add a v2 pool, mark it and the tax switches on."></video></figure>
+<h2 id="what-can-the-owner-change-later">What can the owner change later?</h2>
+<p>From <strong>My Tokens</strong>, the owner wallet can:</p>
+<ul><li>change the <strong>buy and sell rates</strong>,</li><li>change the <strong>tax wallet</strong>,</li><li><strong>mark or unmark</strong> pools,</li><li><strong>transfer</strong> or <strong>renounce</strong> ownership.</li></ul>
+<p>Renouncing freezes all of these forever. On a days-old chain, buyers often trust a token more once the rates are final. Our guide to <a href="/blog/manage-tax-token-renounce-ownership/">managing a tax token</a> explains each control.</p>
+<figure><img src="/blog/img/elysium-tax-token-2.webp" alt="The order for an Elysium tax token: create, add a Uniswap v2 pool, copy the pair, mark it in My Tokens, then decide on renouncing." loading="lazy" decoding="async"><figcaption>Until the pool is marked, trades carry no tax.</figcaption></figure>
+<h2 id="what-rate-should-you-choose">What rate should you choose?</h2>
+<p>Most projects stay at a few percent. Above 10%, buyers tend to avoid a token. At 25% and above, scanners may flag it. At 50% and above, it is practically untradable. Ask one question first: <strong>what will the tax pay for?</strong> If you cannot answer clearly, a plain token from the <a href="/blog/elysium-token-creator/">Elysium token creator</a> is the better launch.</p>
+<h2 id="what-are-the-risks">What are the risks?</h2>
+<ul><li><strong>Owner power.</strong> While you own the token, you can raise its tax, and buyers know it.</li><li><strong>Wrong pool type.</strong> A tax token in a v3 pool may fail to trade.</li><li><strong>Unmarked pool.</strong> Without marking, no tax is collected.</li><li><strong>New chain.</strong> Elysium is days old, and exits to HyperEVM take about 5.5 days.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="is-the-tax-paid-in-hype">Is the tax paid in HYPE?</h3>
+<p>No. It is paid in your token, to the tax wallet.</p>
+<h3 id="can-i-create-a-tax-token-with-0-tax">Can I create a tax token with 0% tax?</h3>
+<p>Yes. You can start at 0% and raise the rates later, as long as you still own the token.</p>
+<h3 id="can-i-add-a-tax-to-a-plain-token-later">Can I add a tax to a plain token later?</h3>
+<p>No. A token made with Token Creator has no owner and no tax logic. Choose Tax Token at creation.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://developers.uniswap.org/docs/protocols/v3/concepts/unsupported-tokens" target="_blank" rel="noopener noreferrer">Uniswap: Token integration issues (v3)</a></li><li><a href="https://www.manilatimes.net/2026/11/09/tmt-newswire/globenewswire/kinetiq-launches-elysium-public-mainnet-a-high-performance-layer-2-built-for-hyperliquid/2465340" target="_blank" rel="noopener noreferrer">Kinetiq launch release (GlobeNewswire via The Manila Times)</a></li><li><a href="https://coinranking.com/news/elysium-layer-2-mainnet-launches-november-9-trading-apps" target="_blank" rel="noopener noreferrer">Coinranking: Elysium mainnet goes live with trading apps</a></li></ul>
+<p>To set up a tax token, open <strong>Tax Token</strong> in the <a href="/launch/elysium/">DegenKit Elysium token creator</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=Elysium%20Tax%20Token%3A%20Create%20a%20Buy%20and%20Sell%20Tax%20Token%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Felysium-tax-token%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/elysium-tax-token/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/bridge-hype-to-elysium/">
+  <div class="cover"><img src="/blog/img/bridge-hype-to-elysium-cover.webp" alt="A glowing mint coin with a bridge symbol on a dark lit grid beside a headline about the Elysium bridge." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Guide</span><span>November 10, 2026</span></div>
+    <h2>Elysium Bridge: How to Bridge HYPE to Elysium and Back</h2>
+    <p>The Elysium bridge moves HYPE 1:1 from HyperEVM to pay gas on Elysium. How to use the official bridge, how long withdrawals take and how to avoid fake bridges.</p>
+  </div>
+</a><a class="card" href="/blog/elysium-chain-id-rpc-metamask/">
+  <div class="cover"><img src="/blog/img/elysium-chain-id-rpc-metamask-cover.webp" alt="A glowing mint coin with a plug symbol on a dark lit grid beside a headline about the Elysium chain ID." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Guide</span><span class="chip">Tools</span><span>November 10, 2026</span></div>
+    <h2>Elysium Chain ID and RPC: Add Elysium to MetaMask</h2>
+    <p>Elysium chain ID is 99901 and gas is HYPE. The network values to add Elysium to MetaMask, where to get a trusted RPC and how to avoid look-alike Elysium networks.</p>
+  </div>
+</a><a class="card" href="/blog/elysium-token-creator/">
+  <div class="cover"><img src="/blog/img/elysium-token-creator-cover.webp" alt="A glowing gold coin with a cube symbol on a dark lit grid beside a headline about the Elysium token creator." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Guide</span><span class="chip">Tools</span><span>November 10, 2026</span></div>
+    <h2>Elysium Token Creator: Create an ERC-20 Without Code</h2>
+    <p>An Elysium token creator turns a short form into an ERC-20 on Kinetiq&#x27;s new chain. How DegenKit&#x27;s Elysium token creator works, the 1 HYPE fee and what to check.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base and Robinhood Chain.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <a class="tp-badge" href="https://www.trustpilot.com/evaluate/degenkit.app" target="_blank" rel="noopener" aria-label="Review DegenKit on Trustpilot" style="display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;padding:9px 14px;border:1px solid #00b67a;border-radius:8px;color:inherit;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#00b67a"/><path d="M12 4.2l2.3 5.1 5.5.5-4.2 3.7 1.3 5.4L12 16l-4.9 2.9 1.3-5.4L4.2 9.8l5.5-.5z" fill="#fff"/></svg><span>Review us on Trustpilot</span></a>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>
