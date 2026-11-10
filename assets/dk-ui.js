@@ -7,6 +7,7 @@
 
   /* ---------------- promo cards ---------------- */
   var PROMOS = [
+    { key: "elysium", name: "Elysium", tag: "Live", line: "Kinetiq's fast Hyperliquid Layer 2. Fixed-supply and tax tokens.", logo: "elysium-logo.svg", p1: "#0F6F7E", p2: "#06222A" },
     { key: "solana", name: "Solana", tag: "Live", line: "SPL tokens in one signature — mint & freeze revoked.", logo: "solana-logo.png", p1: "#3B1D6B", p2: "#0E8F73" },
     { key: "ethereum", name: "Ethereum", tag: "Live", line: "Fixed-supply ERC-20s and custom-tax tokens.", logo: "ethereum-logo.png", p1: "#2C3A7A", p2: "#171A33" },
     { key: "bnb", name: "BNB Chain", tag: "New", line: "Low-fee tokens and tax tokens on BNB Smart Chain.", logo: "bnb-logo.png", p1: "#7A5B00", p2: "#1E1700" },

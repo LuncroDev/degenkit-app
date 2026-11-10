@@ -877,8 +877,12 @@ twq('config','rfyik');
           <img src="../../assets/robinhood-logo.png" alt="" id="chainSelectIcon">
           <span id="chainSelectLabel">Robinhood Chain</span>
           <span class="chain-caret">▾</span>
+          <span class="new-ping" title="Elysium is live"></span>
         </button>
         <div class="chain-select-menu" id="chainSelectMenu">
+          <a href="/launch/elysium/" class="chain-option elysium-opt">
+            <img src="../../assets/elysium-logo.svg" alt=""> <span>Elysium</span> <span class="chain-tag elysium">LIVE</span>
+          </a>
           <a href="/launch/solana/" class="chain-option">
             <img src="../../assets/solana-logo.png" alt=""> <span>Solana</span> <span class="chain-tag live">Live</span>
           </a>
@@ -895,6 +899,7 @@ twq('config','rfyik');
             <img src="../../assets/base-logo.png" alt=""> <span>Base</span> <span class="chain-tag new">New</span>
           </a>
         </div>
+        <a class="elysium-live" href="/launch/elysium/"><img src="../../assets/elysium-logo.svg" alt=""><span><b>Elysium</b> is live</span><span class="arrow">→</span></a>
       </div>
       <button class="mobile-tools-toggle" id="mobileToolsToggle">
         <span id="mobileToolsLabel">Token Creator</span>
@@ -1110,7 +1115,7 @@ twq('config','rfyik');
 <ol><li><strong>Connect your wallet</strong><br>Open the Robinhood Chain launcher and connect MetaMask or any EIP-1193 wallet. DegenKit is non-custodial: it never sees your keys, and every action is a transaction you sign yourself.</li><li><strong>Switch to Robinhood Chain</strong><br>If your wallet is on another network, the page asks it to switch to Robinhood Chain. You need a little ETH to pay network gas.</li><li><strong>Choose a token type</strong><br>Pick a plain fixed-supply ERC-20 or a Tax Token with your own buy and sell tax. Both have no mint function, so the supply you set is final.</li><li><strong>Fill in name, symbol and supply</strong><br>Name and symbol become the permanent on-chain identity. Decimals are fixed at 18, the ERC-20 standard.</li><li><strong>Review the fee and sign once</strong><br>The summary shows the service fee (if any) and you confirm one transaction. When it lands, the full supply is in your wallet and the contract is verifiable on the Robinhood Chain explorer.</li><li><strong>Add liquidity</strong><br>Create a pool on a DEX of your choice. For a Tax Token, open Manage and mark the pool address so the tax starts applying.</li></ol>
 <h3>Robinhood Chain token creator FAQ</h3>
 <details><summary>How do I create a token on Robinhood Chain?</summary><p>Open the Robinhood Chain launcher, connect your wallet so it switches to the network, enter name, symbol and supply, and sign one transaction.</p></details><details><summary>Is the token supply fixed?</summary><p>Yes. The contract has no mint function, so the supply you choose is final for everyone, including DegenKit.</p></details><details><summary>Can I add a tax?</summary><p>Yes, the Tax Token view lets you set buy and sell tax rates and a receiver wallet.</p></details>
-<p class="dk-guide-more">Launching elsewhere? <a href="/launch/ethereum/">Ethereum</a><a href="/launch/bnb/">BNB Chain</a><a href="/launch/base/">Base</a><a href="/launch/solana/">Solana</a></p>
+<p class="dk-guide-more">Launching elsewhere? <a href="/launch/ethereum/">Ethereum</a><a href="/launch/bnb/">BNB Chain</a><a href="/launch/base/">Base</a><a href="/launch/solana/">Solana</a><a href="/launch/elysium/">Elysium</a></p>
 </section>
 <!-- dk-guide:end -->
 

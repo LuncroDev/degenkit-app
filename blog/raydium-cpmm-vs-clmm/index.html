@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Raydium CPMM vs CLMM: Which Pool for a New Token? | DegenKit Blog</title>
+<meta name="description" content="Raydium CPMM pools spread liquidity across all prices, while CLMM pools use a range you set. How they compare, where AMM v4 fits and which suits a new token.">
+<link rel="canonical" href="https://degenkit.app/blog/raydium-cpmm-vs-clmm/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-09">
+<meta property="article:modified_time" content="2026-11-09">
+<meta property="og:image:alt" content="A glowing teal coin with two curves on a dark lit grid beside a headline comparing Raydium CPMM and CLMM.">
+<meta property="article:tag" content="Solana">
+<meta property="article:tag" content="Explainer">
+<meta property="article:tag" content="Guide">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Raydium CPMM vs CLMM: Which Pool for a New Token? | DegenKit Blog">
+<meta property="og:description" content="Raydium CPMM pools spread liquidity across all prices, while CLMM pools use a range you set. How they compare, where AMM v4 fits and which suits a new token.">
+<meta property="og:url" content="https://degenkit.app/blog/raydium-cpmm-vs-clmm/">
+<meta property="og:image" content="https://degenkit.app/blog/img/raydium-cpmm-vs-clmm-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="Raydium CPMM vs CLMM: Which Pool for a New Token? | DegenKit Blog">
+<meta name="twitter:description" content="Raydium CPMM pools spread liquidity across all prices, while CLMM pools use a range you set. How they compare, where AMM v4 fits and which suits a new token.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/raydium-cpmm-vs-clmm-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raydium CPMM vs CLMM: Which Pool for a New Token?", "description": "Raydium CPMM pools spread liquidity across all prices, while CLMM pools use a range you set. How they compare, where AMM v4 fits and which suits a new token.", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/raydium-cpmm-vs-clmm/"}, "url": "https://degenkit.app/blog/raydium-cpmm-vs-clmm/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/raydium-cpmm-vs-clmm-cover.webp", "keywords": "Solana, Explainer, Guide", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Raydium CPMM vs CLMM: Which Pool for a New Token?", "item": "https://degenkit.app/blog/raydium-cpmm-vs-clmm/"}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">Solana</span><span class="chip">Explainer</span><span class="chip">Guide</span></div>
+      <h1>Raydium CPMM vs CLMM: Which Pool for a New Token?</h1>
+      <p class="lede">Raydium CPMM pools spread liquidity across all prices, while CLMM pools use a range you set. How they compare, where AMM v4 fits and which suits a new token.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 9, 2026 · 5 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/raydium-cpmm-vs-clmm-cover.webp" alt="A glowing teal coin with two curves on a dark lit grid beside a headline comparing Raydium CPMM and CLMM." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>Raydium CPMM is a standard pool that spreads your liquidity across every price, while CLMM concentrates it in a price range you choose. For most new tokens and memecoins, Raydium&#x27;s own documentation recommends CPMM, and DegenKit&#x27;s Create Liquidity tool creates a CPMM pool.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li><strong>CPMM:</strong> constant product (x × y = k), LP tokens, no range to manage, supports Token-2022.</li><li><strong>CLMM:</strong> concentrated liquidity, a position NFT, earns only while price is in your range.</li><li><strong>AMM v4:</strong> legacy, linked to an OpenBook market, &quot;no longer the default for new pools&quot; (Raydium).</li><li>Raydium&#x27;s guide suggests <strong>CPMM 1%</strong> for long-tail and memecoin pairs.</li></ul></aside>
+<aside class="callout note"><strong>Not affiliated</strong><p>DegenKit is not affiliated with Raydium. Pool details come from Raydium&#x27;s public documentation.</p></aside>
+<h2 id="what-is-a-raydium-cpmm-pool">What is a Raydium CPMM pool?</h2>
+<p>CPMM stands for <strong>constant product market maker</strong>. The pool holds two tokens, and their balances multiplied together stay constant during swaps. Liquidity is spread across all prices, so the pool always has some of both tokens and keeps earning fees whatever the price.</p>
+<p>Raydium describes CPMM as its &quot;current standard&quot;: it supports Token-2022, multiple fee configurations and creator fees (<a href="https://docs.raydium.io/raydium/for-liquidity-providers/pool-types" target="_blank" rel="noopener noreferrer">Raydium docs</a>). LPs receive fungible <strong>LP tokens</strong>, which can be locked, burned or staked in farms.</p>
+<h2 id="what-is-a-raydium-clmm-pool">What is a Raydium CLMM pool?</h2>
+<p>CLMM stands for <strong>concentrated liquidity market maker</strong>, the same idea as Uniswap v3. You choose a minimum and maximum price, and your funds only work inside that range. Inside it, you earn more fees per dollar. Outside it, you earn nothing.</p>
+<p>Raydium notes that below your minimum price the position becomes 100% of the base token, and above the maximum it becomes 100% of the quote token. Positions are <strong>NFTs</strong>, and fees must be claimed manually. Impermanent loss is larger inside a narrow range.</p>
+<h2 id="how-do-cpmm-clmm-and-amm-v4-compare">How do CPMM, CLMM and AMM v4 compare?</h2>
+<div class="tbl"><table><thead><tr><th></th><th>CPMM</th><th>CLMM</th><th>AMM v4</th></tr></thead><tbody><tr><td>Liquidity</td><td>All prices</td><td>Your chosen range</td><td>All prices</td></tr><tr><td>LP receipt</td><td>LP tokens</td><td>Position NFT</td><td>LP tokens</td></tr><tr><td>Fee tiers</td><td>0.01%, 0.25%, 1%</td><td>e.g. 0.01%, 0.05%, 0.25%</td><td>Fixed</td></tr><tr><td>Token-2022</td><td>Yes</td><td>Yes</td><td>Not stated</td></tr><tr><td>Management</td><td>None</td><td>Move the range as price moves</td><td>None</td></tr><tr><td>Raydium&#x27;s advice</td><td>Memecoins; passive LPs</td><td>Stable or managed pairs</td><td>Existing orderbook pairs</td></tr></tbody></table></div>
+<p>Fee tiers and advice are from <a href="https://docs.raydium.io/user-flows/choosing-a-pool-type" target="_blank" rel="noopener noreferrer">Raydium&#x27;s pool-type guide</a>.</p>
+<figure><img src="/blog/img/raydium-cpmm-vs-clmm-1.webp" alt="Raydium CPMM, CLMM and AMM v4 compared: liquidity range, LP receipt, fee tiers, Token-2022 and best use." loading="lazy" decoding="async"><figcaption>From Raydium&#x27;s documentation, November 2026.</figcaption></figure>
+<h2 id="which-pool-should-a-new-token-use">Which pool should a new token use?</h2>
+<p><strong>Choose CPMM if</strong> you are launching a new token or memecoin, want a pool that needs no management, or plan to lock or burn LP tokens. Raydium recommends CPMM 1% for long-tail pairs and CPMM 0.25% for passive LPs.</p>
+<p><strong>Choose CLMM if</strong> the pair is stable or closely correlated, and you will actively move your range.</p>
+<p><strong>Choose AMM v4 only if</strong> you are maintaining an existing pair that needs OpenBook integration.</p>
+<p>DegenKit&#x27;s <strong>Create Liquidity</strong> tool creates a <strong>CPMM</strong> pool using Raydium&#x27;s default fee configuration, with SOL or USDC as the pair. See <a href="/blog/add-liquidity-solana-token/">how to add liquidity to a Solana token</a>.</p>
+<figure><video src="/blog/img/raydium-cpmm-vs-clmm-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Choosing a Raydium pool in 20 seconds: CPMM for new tokens, CLMM for managed ranges, AMM v4 for legacy pairs."></video></figure>
+<h2 id="how-do-locks-work-for-each-type">How do locks work for each type?</h2>
+<ul><li><strong>CPMM:</strong> LP tokens can be burned or locked. Raydium&#x27;s Burn &amp; Earn locks LP while you keep claiming fees. See <a href="/blog/lock-liquidity-on-solana-burn-and-earn/">locking liquidity on Solana</a>.</li><li><strong>CLMM:</strong> the position NFT can be locked through Raydium&#x27;s lock program.</li><li><strong>AMM v4:</strong> LP tokens can be burned.</li></ul>
+<p>A locked or burned LP shows buyers the liquidity cannot be pulled.</p>
+<figure><img src="/blog/img/raydium-cpmm-vs-clmm-2.webp" alt="A decision path: new token or memecoin leads to CPMM; stable or managed pair leads to CLMM; existing orderbook pair leads to AMM v4." loading="lazy" decoding="async"><figcaption>Most new tokens belong in CPMM.</figcaption></figure>
+<h2 id="what-are-the-risks">What are the risks?</h2>
+<ul><li><strong>CLMM out of range:</strong> no fees, and your position sits entirely in one token.</li><li><strong>Impermanent loss</strong> in any pool when prices move.</li><li><strong>Wrong fee tier</strong> can deter traders or under-pay LPs.</li><li><strong>Removing liquidity</strong> makes a token hard to trade. See <a href="/blog/how-to-remove-liquidity/">removing liquidity from a Raydium pool</a>.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="what-is-raydium-cpmm">What is Raydium CPMM?</h3>
+<p>Raydium&#x27;s standard constant-product pool. It spreads liquidity across all prices, issues LP tokens and supports Token-2022.</p>
+<h3 id="what-is-raydium-clmm">What is Raydium CLMM?</h3>
+<p>Raydium&#x27;s concentrated-liquidity pool. You set a price range, receive a position NFT and earn fees only while the price is inside it.</p>
+<h3 id="is-raydium-amm-v4-still-used">Is Raydium AMM v4 still used?</h3>
+<p>Yes, but Raydium describes it as legacy and no longer the default for new pools.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://docs.raydium.io/user-flows/choosing-a-pool-type" target="_blank" rel="noopener noreferrer">Raydium docs: Choosing a pool type</a></li><li><a href="https://docs.raydium.io/raydium/for-liquidity-providers/pool-types" target="_blank" rel="noopener noreferrer">Raydium docs: Pool types</a></li></ul>
+<p>To create a CPMM pool for your token, use <a href="/launch/solana/">Create Liquidity in the DegenKit Solana launcher</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=Raydium%20CPMM%20vs%20CLMM%3A%20Which%20Pool%20for%20a%20New%20Token%3F%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Fraydium-cpmm-vs-clmm%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/raydium-cpmm-vs-clmm/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/add-liquidity-solana-token/">
+  <div class="cover"><img src="/blog/img/add-liquidity-solana-token-cover.webp" alt="A glowing blue coin with a plus and drop symbol on a dark lit grid beside a headline about adding liquidity." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Guide</span><span class="chip">Tools</span><span>November 9, 2026</span></div>
+    <h2>How to Add Liquidity to a Solana Token on Raydium</h2>
+    <p>How to add liquidity to a Solana token on Raydium with DegenKit. Pick SOL or USDC, set the starting price, create the pool in one signature and check it.</p>
+  </div>
+</a><a class="card" href="/blog/burn-solana-tokens/">
+  <div class="cover"><img src="/blog/img/burn-solana-tokens-cover.webp" alt="A glowing orange coin with a flame symbol on a dark lit grid beside a headline about burning Solana tokens." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Guide</span><span class="chip">Tools</span><span>November 9, 2026</span></div>
+    <h2>How to Burn Solana Tokens and Reduce Supply</h2>
+    <p>How to burn Solana tokens from your wallet in one transaction, what burning changes on-chain, what it costs on DegenKit and how to check that the supply went down.</p>
+  </div>
+</a><a class="card" href="/blog/create-solana-token-free/">
+  <div class="cover"><img src="/blog/img/create-solana-token-free-cover.webp" alt="A glowing gold coin with a price tag symbol on a dark lit grid beside a headline about free Solana tokens." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Guide</span><span>November 9, 2026</span></div>
+    <h2>Can You Create a Solana Token for Free? Real Costs</h2>
+    <p>Can you create a Solana token for free? Only on Devnet. On Mainnet you pay network fees and rent at minimum. The real costs of each way to create a token on Solana.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base and Robinhood Chain.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <a class="tp-badge" href="https://www.trustpilot.com/evaluate/degenkit.app" target="_blank" rel="noopener" aria-label="Review DegenKit on Trustpilot" style="display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;padding:9px 14px;border:1px solid #00b67a;border-radius:8px;color:inherit;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#00b67a"/><path d="M12 4.2l2.3 5.1 5.5.5-4.2 3.7 1.3 5.4L12 16l-4.9 2.9 1.3-5.4L4.2 9.8l5.5-.5z" fill="#fff"/></svg><span>Review us on Trustpilot</span></a>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>

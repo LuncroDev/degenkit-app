@@ -29,7 +29,7 @@ The transaction may still have gone through. **Check the mint address or signatu
 
 ## ❌ My transaction failed
 
-- **Not enough balance.** You need SOL (or ETH/BNB) for the service fee, network fee and rent.
+- **Not enough balance.** You need SOL (or ETH, BNB or HYPE) for the service fee, network fee and rent.
 - **Blockhash expired.** The network was busy. Try again.
 - **Wallet rejected or closed.** Nothing was charged. Try again.
 

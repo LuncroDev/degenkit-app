@@ -30,7 +30,7 @@ Fees can be updated. The amount on the page when you sign is the amount that app
 
 ## ⬡ EVM service fees
 
-On Ethereum, BNB Chain, Base and Robinhood Chain, each creator (Token Creator and Tax Token) has a service fee stored in its **factory contract**. DegenKit reads it from the contract and shows it on the form before you sign.
+On Ethereum, BNB Chain, Base, Robinhood Chain and Elysium, each creator (Token Creator and Tax Token) has a service fee stored in its **factory contract**. DegenKit reads it from the contract and shows it on the form before you sign.
 
 ## ⛓️ Network fees
 

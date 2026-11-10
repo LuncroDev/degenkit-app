@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>How to Add Liquidity to a Solana Token on Raydium | DegenKit Blog</title>
+<meta name="description" content="How to add liquidity to a Solana token on Raydium with DegenKit. Pick SOL or USDC, set the starting price, create the pool in one signature and check it.">
+<link rel="canonical" href="https://degenkit.app/blog/add-liquidity-solana-token/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-09">
+<meta property="article:modified_time" content="2026-11-09">
+<meta property="og:image:alt" content="A glowing blue coin with a plus and drop symbol on a dark lit grid beside a headline about adding liquidity.">
+<meta property="article:tag" content="Solana">
+<meta property="article:tag" content="Guide">
+<meta property="article:tag" content="Tools">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Add Liquidity to a Solana Token on Raydium | DegenKit Blog">
+<meta property="og:description" content="How to add liquidity to a Solana token on Raydium with DegenKit. Pick SOL or USDC, set the starting price, create the pool in one signature and check it.">
+<meta property="og:url" content="https://degenkit.app/blog/add-liquidity-solana-token/">
+<meta property="og:image" content="https://degenkit.app/blog/img/add-liquidity-solana-token-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="How to Add Liquidity to a Solana Token on Raydium | DegenKit Blog">
+<meta name="twitter:description" content="How to add liquidity to a Solana token on Raydium with DegenKit. Pick SOL or USDC, set the starting price, create the pool in one signature and check it.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/add-liquidity-solana-token-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Add Liquidity to a Solana Token on Raydium", "description": "How to add liquidity to a Solana token on Raydium with DegenKit. Pick SOL or USDC, set the starting price, create the pool in one signature and check it.", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/add-liquidity-solana-token/"}, "url": "https://degenkit.app/blog/add-liquidity-solana-token/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/add-liquidity-solana-token-cover.webp", "keywords": "Solana, Guide, Tools", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Add Liquidity to a Solana Token on Raydium", "item": "https://degenkit.app/blog/add-liquidity-solana-token/"}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">Solana</span><span class="chip">Guide</span><span class="chip">Tools</span></div>
+      <h1>How to Add Liquidity to a Solana Token on Raydium</h1>
+      <p class="lede">How to add liquidity to a Solana token on Raydium with DegenKit. Pick SOL or USDC, set the starting price, create the pool in one signature and check it.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 9, 2026 · 5 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/add-liquidity-solana-token-cover.webp" alt="A glowing blue coin with a plus and drop symbol on a dark lit grid beside a headline about adding liquidity." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>To add liquidity to a Solana token, create a Raydium pool with your token and SOL or USDC: the amounts you deposit set the starting price, and once the pool is live the token can be traded on Raydium and Jupiter. DegenKit&#x27;s <strong>Create Liquidity</strong> tool does this in one signature for a 0.05 SOL service fee plus Raydium&#x27;s pool fee.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li><strong>Pool type:</strong> Raydium <strong>CPMM</strong> (standard pool), paired with <strong>SOL</strong> or <strong>USDC</strong>.</li><li><strong>Fees:</strong> 0.05 SOL DegenKit fee plus Raydium&#x27;s pool fee, shown as about <strong>0.15 SOL</strong> (November 2026).</li><li><strong>Keep free:</strong> about <strong>0.22 SOL</strong> beyond your deposit, for fees.</li><li><strong>Starting price</strong> = quote amount ÷ token amount. The form shows it before you sign.</li></ul></aside>
+<aside class="callout note"><strong>Not affiliated</strong><p>DegenKit is not affiliated with Raydium. The tool uses Raydium&#x27;s public pool programs.</p></aside>
+<h2 id="what-do-you-need-before-you-start">What do you need before you start?</h2>
+<ul><li><strong>Your token</strong>, created and in your wallet. See the <a href="/blog/create-solana-token-without-coding/">Solana token creator guide</a>.</li><li><strong>Freeze authority revoked.</strong> Most pools and buyers expect it.</li><li><strong>SOL or USDC</strong> for your side of the pool, plus about 0.22 SOL for fees.</li><li><strong>A plan for the price.</strong> Decide the starting price and market cap before you open the form.</li></ul>
+<h2 id="how-do-you-add-liquidity-with-degenkit">How do you add liquidity with DegenKit?</h2>
+<ol><li>Open the <a href="/launch/solana/">Solana launcher</a>, click <strong>Connect wallet</strong> and choose <strong>Create Liquidity</strong>.</li><li>Pick <strong>Your token</strong> from the list, or paste the mint address. Result: your token balance appears.</li><li>Choose <strong>Pair with</strong>: <strong>SOL</strong> or <strong>USDC</strong>.</li><li>Enter <strong>Tokens to add</strong> (or use 25%, 50%, 75%, Max) and the SOL or USDC <strong>to add</strong>. Result: the <strong>Starting price</strong> and <strong>Starting market cap</strong> update.</li><li>Check the <strong>Raydium pool fee</strong> and <strong>DegenKit service fee</strong>, then click <strong>Create pool</strong> and approve in your wallet.</li><li>When <strong>✓ POOL LIVE</strong> appears, copy the <strong>pool</strong> ID and open <strong>Trade on Raydium →</strong> or <strong>View chart on DexScreener →</strong>.</li></ol>
+<figure><img src="/blog/img/add-liquidity-solana-token-1.webp" alt="The Create Liquidity form: your token, pair with SOL or USDC, amounts, starting price, starting market cap and fees." loading="lazy" decoding="async"><figcaption>The form shows the starting price before you sign.</figcaption></figure>
+<h2 id="how-do-you-set-the-starting-price">How do you set the starting price?</h2>
+<p>The starting price is the ratio of your deposit:</p>
+<p><strong>Starting price = SOL (or USDC) amount ÷ token amount</strong></p>
+<p>Example: 800,000,000 tokens with 40 SOL gives 0.00000005 SOL per token. If the total supply is 1,000,000,000, the starting market cap is 50 SOL.</p>
+<p>Count the zeros twice. A wrong ratio cannot be fixed without removing liquidity. Our guide on <a href="/blog/sol-or-usdc-liquidity-pair/">SOL or USDC for your pair</a> explains how each pair affects the dollar price.</p>
+<figure><video src="/blog/img/add-liquidity-solana-token-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Adding liquidity in 20 seconds: choose the token and pair, enter amounts, see the starting price and create the pool."></video></figure>
+<h2 id="what-should-you-do-after-the-pool-is-live">What should you do after the pool is live?</h2>
+<ul><li><strong>Check the pool</strong> on Raydium and DEX Screener: the pair, price and liquidity.</li><li><strong>Decide on the LP tokens.</strong> Locking or burning them shows buyers the liquidity stays. See <a href="/blog/lock-liquidity-on-solana-burn-and-earn/">locking liquidity on Solana</a>.</li><li><strong>Share the mint address</strong> and pool link.</li><li><strong>Run the scanner.</strong> DegenKit&#x27;s <a href="/docs/scanner/">scanner</a> shows how buyers will see your token.</li></ul>
+<figure><img src="/blog/img/add-liquidity-solana-token-2.webp" alt="After the pool is live: check the pool, lock or burn LP, share the mint and pool links, and run the scanner." loading="lazy" decoding="async"><figcaption>Each step builds buyer trust.</figcaption></figure>
+<h2 id="what-are-the-common-errors">What are the common errors?</h2>
+<ul><li><strong>&quot;Not enough SOL&quot;:</strong> keep about 0.22 SOL free beyond your SOL deposit.</li><li><strong>Using USDC without SOL:</strong> fees are still paid in SOL.</li><li><strong>Token not listed:</strong> paste the mint address. Only tokens in the connected wallet can be added.</li><li><strong>Freeze authority still active:</strong> revoke it first in <strong>Authorities</strong>.</li></ul>
+<h2 id="what-are-the-risks">What are the risks?</h2>
+<ul><li><strong>Price risk.</strong> If your token falls, the value of your pool share falls.</li><li><strong>Impermanent loss</strong> when the price moves. See <a href="/blog/what-is-a-raydium-liquidity-pool/">what a Raydium liquidity pool is</a>.</li><li><strong>Thin pools</strong> swing a lot on small trades.</li><li><strong>Unlocked LP</strong> can be withdrawn, which buyers see as a risk.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="how-do-i-add-liquidity-to-a-solana-token">How do I add liquidity to a Solana token?</h3>
+<p>Create a Raydium pool with your token and SOL or USDC. The deposit ratio sets the starting price, and the token becomes tradable once the pool is live.</p>
+<h3 id="how-much-does-it-cost-to-create-a-raydium-pool">How much does it cost to create a Raydium pool?</h3>
+<p>On DegenKit, a 0.05 SOL service fee plus Raydium&#x27;s pool fee, shown as about 0.15 SOL, as of November 2026. Your deposit is separate.</p>
+<h3 id="can-i-remove-liquidity-later">Can I remove liquidity later?</h3>
+<p>Yes, unless you lock or burn the LP tokens. See <a href="/blog/how-to-remove-liquidity/">removing liquidity from a Raydium pool</a>.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://docs.raydium.io/user-flows/choosing-a-pool-type" target="_blank" rel="noopener noreferrer">Raydium docs: Choosing a pool type</a></li><li><a href="https://docs.raydium.io/raydium/for-liquidity-providers/pool-types" target="_blank" rel="noopener noreferrer">Raydium docs: Pool types</a></li></ul>
+<p>To open your pool, use <a href="/launch/solana/">Create Liquidity in the DegenKit Solana launcher</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=How%20to%20Add%20Liquidity%20to%20a%20Solana%20Token%20on%20Raydium%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Fadd-liquidity-solana-token%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/add-liquidity-solana-token/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/burn-solana-tokens/">
+  <div class="cover"><img src="/blog/img/burn-solana-tokens-cover.webp" alt="A glowing orange coin with a flame symbol on a dark lit grid beside a headline about burning Solana tokens." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Guide</span><span class="chip">Tools</span><span>November 9, 2026</span></div>
+    <h2>How to Burn Solana Tokens and Reduce Supply</h2>
+    <p>How to burn Solana tokens from your wallet in one transaction, what burning changes on-chain, what it costs on DegenKit and how to check that the supply went down.</p>
+  </div>
+</a><a class="card" href="/blog/create-solana-token-without-coding/">
+  <div class="cover"><img src="/blog/img/create-solana-token-without-coding-cover.webp" alt="A token-creation diagram connects token details to wallet review and an explorer check." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Guide</span><span class="chip">Tools</span><span>November 9, 2026</span></div>
+    <h2>Solana Token Creator: Create an SPL Token Without Code</h2>
+    <p>A Solana token creator turns a short form into a real SPL token. How DegenKit&#x27;s Solana token creator works, what it costs, which settings are permanent and what to check.</p>
+  </div>
+</a><a class="card" href="/blog/create-solana-token-free/">
+  <div class="cover"><img src="/blog/img/create-solana-token-free-cover.webp" alt="A glowing gold coin with a price tag symbol on a dark lit grid beside a headline about free Solana tokens." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Guide</span><span>November 9, 2026</span></div>
+    <h2>Can You Create a Solana Token for Free? Real Costs</h2>
+    <p>Can you create a Solana token for free? Only on Devnet. On Mainnet you pay network fees and rent at minimum. The real costs of each way to create a token on Solana.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base and Robinhood Chain.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <a class="tp-badge" href="https://www.trustpilot.com/evaluate/degenkit.app" target="_blank" rel="noopener" aria-label="Review DegenKit on Trustpilot" style="display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;padding:9px 14px;border:1px solid #00b67a;border-radius:8px;color:inherit;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#00b67a"/><path d="M12 4.2l2.3 5.1 5.5.5-4.2 3.7 1.3 5.4L12 16l-4.9 2.9 1.3-5.4L4.2 9.8l5.5-.5z" fill="#fff"/></svg><span>Review us on Trustpilot</span></a>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>

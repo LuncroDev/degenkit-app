@@ -1,85 +1,115 @@
 ---
-title: How to Create a Solana Token Without Coding
+title: 'Solana Token Creator: Create an SPL Token Without Code'
 slug: create-solana-token-without-coding
-date: '2026-10-17'
-excerpt: Prepare your token details, understand decimals and authorities, and follow a clear Solana token-creation workflow with DegenKit.
+date: '2026-11-09'
+excerpt: A Solana token creator turns a short form into a real SPL token. How DegenKit's Solana token creator works, what it costs, which settings are permanent and what to check.
 cover: /blog/img/create-solana-token-without-coding-cover.webp
 cover_alt: A token-creation diagram connects token details to wallet review and an explorer check.
 tags:
-- Guide
 - Solana
-- Token Creation
+- Guide
+- Tools
 ---
 
-Creating a Solana token starts with a few fields, but those fields become easier to review when you know what each one controls. A name identifies the project to people. A mint address identifies the token on-chain. Supply and decimals describe its units.
+A Solana token creator is a tool that makes an SPL token from a form: you enter a name, symbol, decimals, supply and image, sign one transaction, and the mint, metadata and full supply are created in your wallet. DegenKit's Solana token creator does this for a 0.28 SOL service fee plus network costs, with no code.
 
-This guide walks through preparation, the DegenKit creation flow and the checks to make after confirmation. The animation explains the sequence; it is not a recording of a live wallet transaction.
+:::note Key facts
+- **Output:** a standard SPL token (classic Token Program) with on-chain metadata.
+- **Cost:** **0.28 SOL** service fee, plus a small network fee and refundable rent deposits (as of November 2026).
+- **Defaults:** 6 decimals, 1,000,000,000 supply, mint and freeze authority revoked, metadata locked.
+- **Time:** about two minutes with a funded Solana wallet.
+- **Custody:** non-custodial. You sign in your own wallet and receive the full supply.
+:::
 
-## Prepare your token details first
+## What does a Solana token creator do?
 
-Before opening a wallet prompt, collect the information you intend to publish:
+On Solana, every token is a **mint account** that stores the supply, decimals and authorities, as the [Solana mint documentation](https://solana.com/docs/tokens/basics/create-mint) describes. A token creator builds that account for you, adds the metadata (name, symbol, image) and sends the supply to your wallet.
 
-- **Name:** the readable project or token name.
-- **Symbol:** the short label shown beside balances.
-- **Supply:** the number of whole tokens you intend to create.
-- **Decimals:** the precision used when displaying fractional amounts.
-- **Description and image:** the metadata people will use to recognize the token.
+DegenKit's creator does all of this in **one transaction**: the mint, the metadata, the token account and the distribution. If any part fails, nothing is created and the service fee is not charged.
 
-Check spelling, image quality and links together. DegenKit's current Solana creator says metadata is locked at creation. Treat the final form review as the point to catch mistakes in the name, symbol or image.
+It does not create a trading market. A new token has no price until someone adds liquidity. See [how to add liquidity to a Solana token](/blog/add-liquidity-solana-token/).
 
-## Understand supply and decimals with one example
+## What do you need before you start?
 
-Imagine a token with a supply of **1,000,000,000** whole tokens and **6 decimals**. One displayed token corresponds to 1,000,000 base units. The initial supply is therefore represented by `1,000,000,000 × 10^6 = 1,000,000,000,000,000` base units.
+- **A Solana wallet** such as Phantom, Solflare or Backpack. See [which wallets work with DegenKit](/blog/degenkit-supported-wallets/).
+- **SOL** for the 0.28 SOL fee, the network fee and rent. Keep extra for later steps such as liquidity.
+- **Your details:** name, symbol, decimals, supply, a short description and a PNG, JPG, WebP or GIF image.
 
-The [Solana mint documentation](https://solana.com/docs/tokens/basics/create-mint) describes supply and decimals as fields of the mint account. Decimals define precision; they do not assign a market value to the token.
+Decimals set how finely a token can be split. With **6 decimals**, one token equals 1,000,000 base units. Supply and decimals do not set any price.
 
-The numbers here are illustrative. Choose values that fit the units your project needs, and check that the creator accepts your combination of supply and precision.
+## How do you create the token?
+
+1. Open the [Solana token creator](/launch/solana/) and click **Connect wallet**. Result: your address appears and the button changes from **Connect wallet first**.
+2. Choose **Mainnet** for a real token, or **Devnet** to practise with free test SOL.
+3. In **Token Creator**, fill in **Token name**, **Symbol**, **Decimals** and **Total supply**. Add a **Description** and use **Add a logo** for the image.
+4. Leave **Revoke mint authority** and **Revoke freeze authority** on unless you have a specific reason. Result: no one can mint more or freeze holders.
+5. Check the summary and the **0.28 SOL** service fee, then press the button when it reads **Ready to mint — PRESS TO MINT**. Approve in your wallet.
+6. When **✓ MINTED** appears, copy the **Contract address** and click **View on Explorer →**.
 
 ![One displayed token is mapped to one million base units when decimals equals six.](/blog/img/create-solana-token-without-coding-1.webp "Illustrative arithmetic: 1 token at 6 decimals equals 1,000,000 base units.")
 
-## Know what the authority settings mean
+## Which settings are permanent?
 
-Solana tokens can have a **mint authority**, which controls additional minting, and a **freeze authority**, which controls freezing token accounts. These are different permissions. Metadata update permissions are another separate concept.
+- **Metadata** (name, symbol, image) is always created locked on DegenKit, so it cannot be edited later. Read [Solana token metadata](/blog/solana-token-metadata-explained/) for why that matters.
+- **Revoked mint authority** means the supply can never increase. Holders can still burn tokens.
+- **Revoked freeze authority** means nobody can freeze holder accounts. Most pools and buyers expect this.
+- **Decimals** never change.
 
-According to [Solana's authority documentation](https://solana.com/docs/tokens/basics/set-authority), setting a supported authority to `None` permanently removes that role. DegenKit's current creator presents mint and freeze revocation alongside its locked-metadata policy.
-
-After creation, inspect the actual mint rather than relying only on a success message. Removing mint authority prevents additional minting for that mint; it does not prevent holders from burning tokens and reducing the outstanding supply.
-
-:::tip Review permissions as carefully as the name
-Make sure the authority behavior matches your project before signing. Permanent settings deserve a deliberate review.
-:::
+Setting an authority to none is permanent, according to [Solana's authority documentation](https://solana.com/docs/tokens/basics/set-authority). Compare the two in [mint vs freeze authority](/blog/mint-authority-vs-freeze-authority/).
 
 ![A motion explainer moves through token details, authority locks, wallet review and explorer verification.](/blog/img/create-solana-token-without-coding-demo.mp4)
 
-## Create the token in DegenKit
+## What should you check after creation?
 
-Open the [Solana token creator](https://degenkit.app/launch/solana/) from the official domain. The current interface includes a Mainnet/Devnet selector, token details, an image field and a summary panel.
+Open the token on the explorer and confirm:
 
-1. Select the intended network. Devnet is for testing; a Devnet token is not a Mainnet token.
-2. Connect the wallet you intend to use for creation and receipt of the tokens.
-3. Enter the name, symbol, decimals, supply and metadata.
-4. Check the authority settings and locked-metadata notice.
-5. Read the current service-fee display and leave enough SOL for the network's transaction requirements.
-6. Review the transaction in your wallet, then approve only when the details match your intention.
+- the **network** (Mainnet or Devnet),
+- the **mint address** you will share,
+- **decimals** and **supply**,
+- your wallet holding **100%**,
+- **mint and freeze authority** shown as revoked.
 
-DegenKit describes its Solana creation flow as one transaction that creates the mint, metadata and token distribution. Fees and wallet screens can change, so use the values presented during your own review rather than an old screenshot.
-
-## Verify the result before sharing it
-
-After the transaction confirms, copy the **mint address** and transaction signature. Follow the explorer link and compare the result with your original notes.
-
-Check the network, mint address, decimals, supply, receiving balance and authority state. Review how the metadata appears, allowing for an application's indexing or display behavior.
-
-The mint address matters more than a familiar name or ticker: unrelated tokens can use similar labels. Share the full address through your project's official channels so readers can check that they are looking at the same token.
+Share the mint address, not just the name. Other tokens can use the same name and symbol.
 
 ![A verification card separates token identity, units, permissions and transaction confirmation.](/blog/img/create-solana-token-without-coding-2.webp "Keep the mint address and transaction signature with your launch records.")
 
-## What comes after token creation?
+## What are the common errors?
 
-Creating a mint establishes the token. A trading market requires its own preparation, including liquidity and a compatible venue. Do not describe a successful mint as proof that a public market exists.
+- **Not enough SOL:** keep the fee plus a buffer for rent and the network fee.
+- **Wrong network:** a Devnet token is not a Mainnet token and has no value.
+- **Image not showing:** wallets and explorers can take time to index new metadata.
+- **Typo in name or symbol:** metadata is locked, so create a new token and share only the correct mint.
 
-Prepare a short launch record containing the network, mint address, initial supply, authority state and official links. If you plan distributions or a market launch, document those next steps separately so people can distinguish completed actions from future plans.
+## What are the risks?
 
-## Wrap up
+- **Permanent settings.** Locked metadata and revoked authorities cannot be undone.
+- **Liquidity is money at risk.** SOL or USDC you add to a pool can lose value.
+- **Phishing.** Only sign on the DegenKit domain, and read what your wallet shows.
 
-A clear creation flow is preparation, review, confirmation and verification. Take time with each step, especially the settings that become permanent. Ready to prepare your own token? [Open the DegenKit Solana creator](https://degenkit.app/launch/solana/).
+You can lose money in crypto. This is not financial advice.
+
+## FAQ
+
+### How do I create a Solana token?
+
+Connect a Solana wallet to a token creator, enter the name, symbol, decimals, supply and image, and sign one transaction. The mint and full supply are created in your wallet.
+
+### How much does it cost to create a Solana token?
+
+On DegenKit, 0.28 SOL service fee plus a small network fee and rent deposits, as of November 2026. See [Solana fees and rent explained](/blog/solana-fees-and-rent-explained/).
+
+### Can I create a Solana token for free?
+
+Only on Devnet, with test SOL that has no value. On Mainnet you always pay at least network fees and rent. See [can you create a Solana token for free](/blog/create-solana-token-free/).
+
+### Can I change my token after creating it?
+
+Not the metadata or decimals on DegenKit, and not the supply once mint authority is revoked.
+
+## Sources
+
+- [Solana docs: Create a token mint](https://solana.com/docs/tokens/basics/create-mint)
+- [Solana docs: Set authority](https://solana.com/docs/tokens/basics/set-authority)
+- [Solana docs: Fee structure](https://solana.com/docs/core/fees/fee-structure)
+
+When your details are ready, open the [DegenKit Solana token creator](/launch/solana/).

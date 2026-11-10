@@ -9,7 +9,7 @@ desc: Short answers to common questions about DegenKit.
 
 ## What is DegenKit?
 
-A no-code, non-custodial token launcher for Solana, Ethereum, BNB Chain, Base and Robinhood Chain.
+A no-code, non-custodial token launcher for Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium.
 
 ## Do I need to know how to code?
 

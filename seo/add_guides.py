@@ -48,6 +48,13 @@ CHAINS = {
    faq=[("How do I create a Solana token without coding?","Connect your wallet, fill in name, symbol, decimals, supply and image, and sign one transaction. Mint and freeze authority are revoked and metadata is locked automatically."),
         ("How much does it cost to create a Solana token on DegenKit?","A 0.28 SOL service fee plus the standard Solana network fee, both in the single transaction you sign."),
         ("Can I add liquidity on Raydium from DegenKit?","Yes. Create Liquidity opens a Raydium CPMM pool and Remove Liquidity withdraws it, all signed from your own wallet.")]),
+ "elysium": dict(name="Elysium", native="HYPE", std="ERC-20", explorer="the Elysium explorer", wallet="MetaMask or any EIP-1193 wallet",
+   intro="Elysium is Kinetiq's Layer 2 for the Hyperliquid ecosystem, built on Arbitrum Orbit and settling to HyperEVM, with HYPE as the gas token. DegenKit lets you create a fixed-supply ERC-20 or a tax token on Elysium with no code, with the same one-form, one-signature flow as every other network.",
+   when="Choose Elysium if you want to be early on a very fast, new EVM chain in the Hyperliquid ecosystem. Because the network is new, check its official channels for current network details before you transact.",
+   faq=[("How do I create a token on Elysium without coding?","Open the Elysium launcher, connect your wallet so it switches to the network, enter name, symbol and supply, and sign one transaction. The full supply lands in your wallet."),
+        ("Do I need HYPE on Elysium?","Yes. Elysium uses HYPE for gas and for the service fee shown before you sign, so you need HYPE on Elysium, moved from HyperEVM through the official bridge."),
+        ("Can I create a tax token on Elysium?","Yes. The Tax Token view lets you set buy and sell taxes and a receiver wallet. Tax applies only to pool trades you mark."),
+        ("What is the Elysium chain ID?","As far as we know, Elysium mainnet uses chain ID 99901. Confirm it against the official Kinetiq channels before adding the network.")]),
 }
 
 def build(slug, c):

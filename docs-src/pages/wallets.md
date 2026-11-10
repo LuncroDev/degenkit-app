@@ -25,7 +25,7 @@ Click **Connect wallet**, choose a wallet marked **Detected**, and approve the c
 
 ## ⬡ EVM wallets
 
-On Ethereum, BNB Chain, Base and Robinhood Chain, connect MetaMask or any browser wallet that supports EVM. If your wallet is on a different network, the page asks it to switch.
+On Ethereum, BNB Chain, Base, Robinhood Chain and Elysium, connect MetaMask or any browser wallet that supports EVM. If your wallet is on a different network, the page asks it to switch.
 
 ## 🔧 If your wallet isn't detected
 

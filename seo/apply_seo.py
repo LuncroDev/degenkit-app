@@ -11,9 +11,9 @@ ROBOTS_META = '<meta name="robots" content="index,follow,max-image-preview:large
 
 PAGES = {
  "index.html": dict(url="/", title="Token Generator: Create a Crypto Token, No Code | DegenKit",
-   desc="Free-to-try token generator and token creator for Solana, Ethereum, BNB Chain, Base and Robinhood Chain. No code, non-custodial, one signature, tax tokens included."),
+   desc="Free-to-try token generator and token creator for Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium. No code, non-custodial, one signature, tax tokens included."),
  "launch/index.html": dict(url="/launch/", title="Token Creator: Make a Crypto Token Without Code | DegenKit",
-   desc="Pick a network and create your token in minutes: Solana, Ethereum, BNB Chain, Base or Robinhood Chain. Non-custodial, no coding, one signature."),
+   desc="Pick a network and create your token in minutes: Solana, Ethereum, BNB Chain, Base, Robinhood Chain or Elysium. Non-custodial, no coding, one signature."),
  "launch/solana/index.html": dict(url="/launch/solana/", title="Solana Token Creator: Make an SPL Token, No Code | DegenKit",
    desc="Create an SPL token on Solana in one signature. Set name, symbol, supply and image; mint and freeze authority revoked and metadata locked. Includes Swap, Airdrop, Multisender and Scanner.",
    chain="Solana"),
@@ -26,6 +26,9 @@ PAGES = {
  "launch/base/index.html": dict(url="/launch/base/", title="Create a Base Token (ERC-20) Without Code | DegenKit",
    desc="Launch an ERC-20 or tax token on Base, Coinbase's low-fee Layer 2, with no code. Fill one form and sign once from your own wallet.",
    chain="Base"),
+ "launch/elysium/index.html": dict(url="/launch/elysium/", title="Elysium Token Creator: ERC-20 & Tax Token, No Code | DegenKit",
+   desc="Create a fixed-supply or tax token on Elysium, Kinetiq's Layer 2 for the Hyperliquid ecosystem, with no code. Non-custodial, one signature.",
+   chain="Elysium"),
  "launch/robinhood/index.html": dict(url="/launch/robinhood/", title="Robinhood Chain Token Creator (Pons Alternative) | DegenKit",
    desc="Create your own token on Robinhood Chain with no code: fixed supply or tax token, non-custodial, one signature. An independent alternative to launchpads like Pons.",
    chain="Robinhood Chain"),
@@ -159,7 +162,7 @@ Sitemap: {SITE}/sitemap.xml
 """, encoding="utf-8")
     (ROOT / "llms.txt").write_text(f"""# DegenKit
 
-> DegenKit ({SITE}) is a no-code, non-custodial token launcher. Create a token on Solana, Ethereum, BNB Chain, Base or Robinhood Chain by filling one form and signing one transaction from your own wallet. DegenKit never holds keys or funds.
+> DegenKit ({SITE}) is a no-code, non-custodial token launcher. Create a token on Solana, Ethereum, BNB Chain, Base, Robinhood Chain or Elysium by filling one form and signing one transaction from your own wallet. DegenKit never holds keys or funds.
 
 ## Launch a token
 - [Choose a network]({SITE}/launch/): network selector
@@ -167,10 +170,11 @@ Sitemap: {SITE}/sitemap.xml
 - [Ethereum]({SITE}/launch/ethereum/): fixed-supply ERC-20 and tax tokens
 - [BNB Chain]({SITE}/launch/bnb/): BEP-20 and tax tokens
 - [Base]({SITE}/launch/base/): ERC-20 and tax tokens
+- [Elysium]({SITE}/launch/elysium/): ERC-20 and tax tokens on Kinetiq's Hyperliquid Layer 2
 - [Robinhood Chain]({SITE}/launch/robinhood/): fixed-supply and tax tokens
 
 ## Free tools
-- [Token approval checker]({SITE}/tools/token-approval-checker/): find and revoke ERC-20 approvals on Ethereum, Robinhood Chain, Base and BNB Chain
+- [Token approval checker]({SITE}/tools/token-approval-checker/): find and revoke ERC-20 approvals on Ethereum, Robinhood Chain, Base, BNB Chain and Elysium
 - [Robinhood Chain RPC]({SITE}/tools/robinhood-chain-rpc/): RPC URLs, chain ID 4663, live status, add to wallet
 
 ## Learn
@@ -187,7 +191,7 @@ Sitemap: {SITE}/sitemap.xml
                   {"src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png"}]}, indent=2), encoding="utf-8")
     # sitemap: static section only; blog entries are (re)added by blog-src/build.py
     pri = {"/": ("weekly", "1.0"), "/launch/": ("weekly", "0.9"), "/launch/solana/": ("weekly", "0.9"),
-           "/launch/ethereum/": ("weekly", "0.9"), "/launch/bnb/": ("weekly", "0.8"), "/launch/base/": ("weekly", "0.8"),
+           "/launch/ethereum/": ("weekly", "0.9"), "/launch/bnb/": ("weekly", "0.8"), "/launch/base/": ("weekly", "0.8"), "/launch/elysium/": ("weekly", "0.8"),
            "/launch/robinhood/": ("weekly", "0.8"), "/support/": ("monthly", "0.5"), "/security/": ("monthly", "0.6"), "/terms/": ("yearly", "0.3"),
            "/privacy/": ("yearly", "0.3")}
     rows = "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod><changefreq>{c}</changefreq><priority>{pr}</priority></url>\n" for u, (c, pr) in pri.items())

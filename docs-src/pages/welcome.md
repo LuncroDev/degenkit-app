@@ -4,7 +4,7 @@ section: start
 order: 1
 emoji: "👋"
 title: Welcome to DegenKit Docs
-desc: Everything you need to launch and manage tokens on Solana, Ethereum, BNB Chain, Base and Robinhood Chain with DegenKit.
+desc: Everything you need to launch and manage tokens on Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium with DegenKit.
 ---
 
 DegenKit is a **no-code, non-custodial token launcher**. You fill in a form, your own wallet signs, and your token exists on-chain. No Solidity, no Rust, no deploy scripts. 🎉
@@ -16,7 +16,7 @@ This documentation explains every tool, step by step, in plain language.
 | Network | What's available |
 |---|---|
 | ◎ **Solana** | Token Creator, My Tokens, Authorities, Update Metadata, Burn, Airdrop, Multisender, Scanner, Vanity Address, Swap, Create & Remove Liquidity |
-| ⬡ **Ethereum, BNB Chain, Base, Robinhood Chain** | Token Creator (fixed supply), Tax Token (custom buy/sell tax), My Tokens |
+| ⬡ **Ethereum, BNB Chain, Base, Robinhood Chain, Elysium** | Token Creator (fixed supply), Tax Token (custom buy/sell tax), My Tokens |
 
 ## 🧭 Where to start
 

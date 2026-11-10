@@ -20,8 +20,8 @@ twq('config','rfyik');
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>How to Create a Solana Token Without Coding | DegenKit Blog</title>
-<meta name="description" content="Prepare your token details, understand decimals and authorities, and follow a clear Solana token-creation workflow with DegenKit.">
+<title>Solana Token Creator: Create an SPL Token Without Code | DegenKit Blog</title>
+<meta name="description" content="A Solana token creator turns a short form into a real SPL token. How DegenKit&#x27;s Solana token creator works, what it costs, which settings are permanent and what to check.">
 <link rel="canonical" href="https://degenkit.app/blog/create-solana-token-without-coding/">
 <link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
@@ -30,22 +30,22 @@ twq('config','rfyik');
 <meta name="theme-color" content="#0B0B0E">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2026-10-17">
-<meta property="article:modified_time" content="2026-10-17">
+<meta property="article:published_time" content="2026-11-09">
+<meta property="article:modified_time" content="2026-11-09">
 <meta property="og:image:alt" content="A token-creation diagram connects token details to wallet review and an explorer check.">
-<meta property="article:tag" content="Guide">
 <meta property="article:tag" content="Solana">
-<meta property="article:tag" content="Token Creation">
+<meta property="article:tag" content="Guide">
+<meta property="article:tag" content="Tools">
 <meta property="og:site_name" content="DegenKit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to Create a Solana Token Without Coding | DegenKit Blog">
-<meta property="og:description" content="Prepare your token details, understand decimals and authorities, and follow a clear Solana token-creation workflow with DegenKit.">
+<meta property="og:title" content="Solana Token Creator: Create an SPL Token Without Code | DegenKit Blog">
+<meta property="og:description" content="A Solana token creator turns a short form into a real SPL token. How DegenKit&#x27;s Solana token creator works, what it costs, which settings are permanent and what to check.">
 <meta property="og:url" content="https://degenkit.app/blog/create-solana-token-without-coding/">
 <meta property="og:image" content="https://degenkit.app/blog/img/create-solana-token-without-coding-cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@DegenKitApp">
-<meta name="twitter:title" content="How to Create a Solana Token Without Coding | DegenKit Blog">
-<meta name="twitter:description" content="Prepare your token details, understand decimals and authorities, and follow a clear Solana token-creation workflow with DegenKit.">
+<meta name="twitter:title" content="Solana Token Creator: Create an SPL Token Without Code | DegenKit Blog">
+<meta name="twitter:description" content="A Solana token creator turns a short form into a real SPL token. How DegenKit&#x27;s Solana token creator works, what it costs, which settings are permanent and what to check.">
 <meta name="twitter:image" content="https://degenkit.app/blog/img/create-solana-token-without-coding-cover.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -53,7 +53,7 @@ twq('config','rfyik');
 <link rel="stylesheet" href="/assets/theme-icons.css">
 <link rel="stylesheet" href="/assets/blog.css">
 <script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Create a Solana Token Without Coding", "description": "Prepare your token details, understand decimals and authorities, and follow a clear Solana token-creation workflow with DegenKit.", "datePublished": "2026-10-17", "dateModified": "2026-10-17", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/create-solana-token-without-coding/"}, "url": "https://degenkit.app/blog/create-solana-token-without-coding/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/create-solana-token-without-coding-cover.webp", "keywords": "Guide, Solana, Token Creation", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Create a Solana Token Without Coding", "item": "https://degenkit.app/blog/create-solana-token-without-coding/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Solana Token Creator: Create an SPL Token Without Code", "description": "A Solana token creator turns a short form into a real SPL token. How DegenKit's Solana token creator works, what it costs, which settings are permanent and what to check.", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/create-solana-token-without-coding/"}, "url": "https://degenkit.app/blog/create-solana-token-without-coding/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/create-solana-token-without-coding-cover.webp", "keywords": "Solana, Guide, Tools", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Solana Token Creator: Create an SPL Token Without Code", "item": "https://degenkit.app/blog/create-solana-token-without-coding/"}]}</script>
 </head>
 <body>
 <header>
@@ -76,49 +76,56 @@ twq('config','rfyik');
   <article class="post">
     <div class="p-head">
       <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
-      <div class="chips"><span class="chip">Guide</span><span class="chip">Solana</span><span class="chip">Token Creation</span></div>
-      <h1>How to Create a Solana Token Without Coding</h1>
-      <p class="lede">Prepare your token details, understand decimals and authorities, and follow a clear Solana token-creation workflow with DegenKit.</p>
-      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>October 17, 2026 · 5 min read</i></span></div>
+      <div class="chips"><span class="chip">Solana</span><span class="chip">Guide</span><span class="chip">Tools</span></div>
+      <h1>Solana Token Creator: Create an SPL Token Without Code</h1>
+      <p class="lede">A Solana token creator turns a short form into a real SPL token. How DegenKit&#x27;s Solana token creator works, what it costs, which settings are permanent and what to check.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 9, 2026 · 6 min read</i></span></div>
     </div>
     <div class="cover hero"><img src="/blog/img/create-solana-token-without-coding-cover.webp" alt="A token-creation diagram connects token details to wallet review and an explorer check." loading="lazy" decoding="async"></div>
     <div class="prose">
-<p>Creating a Solana token starts with a few fields, but those fields become easier to review when you know what each one controls. A name identifies the project to people. A mint address identifies the token on-chain. Supply and decimals describe its units.</p>
-<p>This guide walks through preparation, the DegenKit creation flow and the checks to make after confirmation. The animation explains the sequence; it is not a recording of a live wallet transaction.</p>
-<h2 id="prepare-your-token-details-first">Prepare your token details first</h2>
-<p>Before opening a wallet prompt, collect the information you intend to publish:</p>
-<ul><li><strong>Name:</strong> the readable project or token name.</li><li><strong>Symbol:</strong> the short label shown beside balances.</li><li><strong>Supply:</strong> the number of whole tokens you intend to create.</li><li><strong>Decimals:</strong> the precision used when displaying fractional amounts.</li><li><strong>Description and image:</strong> the metadata people will use to recognize the token.</li></ul>
-<p>Check spelling, image quality and links together. DegenKit&#x27;s current Solana creator says metadata is locked at creation. Treat the final form review as the point to catch mistakes in the name, symbol or image.</p>
-<h2 id="understand-supply-and-decimals-with-one-example">Understand supply and decimals with one example</h2>
-<p>Imagine a token with a supply of <strong>1,000,000,000</strong> whole tokens and <strong>6 decimals</strong>. One displayed token corresponds to 1,000,000 base units. The initial supply is therefore represented by <code>1,000,000,000 × 10^6 = 1,000,000,000,000,000</code> base units.</p>
-<p>The <a href="https://solana.com/docs/tokens/basics/create-mint" target="_blank" rel="noopener noreferrer">Solana mint documentation</a> describes supply and decimals as fields of the mint account. Decimals define precision; they do not assign a market value to the token.</p>
-<p>The numbers here are illustrative. Choose values that fit the units your project needs, and check that the creator accepts your combination of supply and precision.</p>
+<p>A Solana token creator is a tool that makes an SPL token from a form: you enter a name, symbol, decimals, supply and image, sign one transaction, and the mint, metadata and full supply are created in your wallet. DegenKit&#x27;s Solana token creator does this for a 0.28 SOL service fee plus network costs, with no code.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li><strong>Output:</strong> a standard SPL token (classic Token Program) with on-chain metadata.</li><li><strong>Cost:</strong> <strong>0.28 SOL</strong> service fee, plus a small network fee and refundable rent deposits (as of November 2026).</li><li><strong>Defaults:</strong> 6 decimals, 1,000,000,000 supply, mint and freeze authority revoked, metadata locked.</li><li><strong>Time:</strong> about two minutes with a funded Solana wallet.</li><li><strong>Custody:</strong> non-custodial. You sign in your own wallet and receive the full supply.</li></ul></aside>
+<h2 id="what-does-a-solana-token-creator-do">What does a Solana token creator do?</h2>
+<p>On Solana, every token is a <strong>mint account</strong> that stores the supply, decimals and authorities, as the <a href="https://solana.com/docs/tokens/basics/create-mint" target="_blank" rel="noopener noreferrer">Solana mint documentation</a> describes. A token creator builds that account for you, adds the metadata (name, symbol, image) and sends the supply to your wallet.</p>
+<p>DegenKit&#x27;s creator does all of this in <strong>one transaction</strong>: the mint, the metadata, the token account and the distribution. If any part fails, nothing is created and the service fee is not charged.</p>
+<p>It does not create a trading market. A new token has no price until someone adds liquidity. See <a href="/blog/add-liquidity-solana-token/">how to add liquidity to a Solana token</a>.</p>
+<h2 id="what-do-you-need-before-you-start">What do you need before you start?</h2>
+<ul><li><strong>A Solana wallet</strong> such as Phantom, Solflare or Backpack. See <a href="/blog/degenkit-supported-wallets/">which wallets work with DegenKit</a>.</li><li><strong>SOL</strong> for the 0.28 SOL fee, the network fee and rent. Keep extra for later steps such as liquidity.</li><li><strong>Your details:</strong> name, symbol, decimals, supply, a short description and a PNG, JPG, WebP or GIF image.</li></ul>
+<p>Decimals set how finely a token can be split. With <strong>6 decimals</strong>, one token equals 1,000,000 base units. Supply and decimals do not set any price.</p>
+<h2 id="how-do-you-create-the-token">How do you create the token?</h2>
+<ol><li>Open the <a href="/launch/solana/">Solana token creator</a> and click <strong>Connect wallet</strong>. Result: your address appears and the button changes from <strong>Connect wallet first</strong>.</li><li>Choose <strong>Mainnet</strong> for a real token, or <strong>Devnet</strong> to practise with free test SOL.</li><li>In <strong>Token Creator</strong>, fill in <strong>Token name</strong>, <strong>Symbol</strong>, <strong>Decimals</strong> and <strong>Total supply</strong>. Add a <strong>Description</strong> and use <strong>Add a logo</strong> for the image.</li><li>Leave <strong>Revoke mint authority</strong> and <strong>Revoke freeze authority</strong> on unless you have a specific reason. Result: no one can mint more or freeze holders.</li><li>Check the summary and the <strong>0.28 SOL</strong> service fee, then press the button when it reads <strong>Ready to mint — PRESS TO MINT</strong>. Approve in your wallet.</li><li>When <strong>✓ MINTED</strong> appears, copy the <strong>Contract address</strong> and click <strong>View on Explorer →</strong>.</li></ol>
 <figure><img src="/blog/img/create-solana-token-without-coding-1.webp" alt="One displayed token is mapped to one million base units when decimals equals six." loading="lazy" decoding="async"><figcaption>Illustrative arithmetic: 1 token at 6 decimals equals 1,000,000 base units.</figcaption></figure>
-<h2 id="know-what-the-authority-settings-mean">Know what the authority settings mean</h2>
-<p>Solana tokens can have a <strong>mint authority</strong>, which controls additional minting, and a <strong>freeze authority</strong>, which controls freezing token accounts. These are different permissions. Metadata update permissions are another separate concept.</p>
-<p>According to <a href="https://solana.com/docs/tokens/basics/set-authority" target="_blank" rel="noopener noreferrer">Solana&#x27;s authority documentation</a>, setting a supported authority to <code>None</code> permanently removes that role. DegenKit&#x27;s current creator presents mint and freeze revocation alongside its locked-metadata policy.</p>
-<p>After creation, inspect the actual mint rather than relying only on a success message. Removing mint authority prevents additional minting for that mint; it does not prevent holders from burning tokens and reducing the outstanding supply.</p>
-<aside class="callout tip"><strong>Review permissions as carefully as the name</strong><p>Make sure the authority behavior matches your project before signing. Permanent settings deserve a deliberate review.</p></aside>
+<h2 id="which-settings-are-permanent">Which settings are permanent?</h2>
+<ul><li><strong>Metadata</strong> (name, symbol, image) is always created locked on DegenKit, so it cannot be edited later. Read <a href="/blog/solana-token-metadata-explained/">Solana token metadata</a> for why that matters.</li><li><strong>Revoked mint authority</strong> means the supply can never increase. Holders can still burn tokens.</li><li><strong>Revoked freeze authority</strong> means nobody can freeze holder accounts. Most pools and buyers expect this.</li><li><strong>Decimals</strong> never change.</li></ul>
+<p>Setting an authority to none is permanent, according to <a href="https://solana.com/docs/tokens/basics/set-authority" target="_blank" rel="noopener noreferrer">Solana&#x27;s authority documentation</a>. Compare the two in <a href="/blog/mint-authority-vs-freeze-authority/">mint vs freeze authority</a>.</p>
 <figure><video src="/blog/img/create-solana-token-without-coding-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="A motion explainer moves through token details, authority locks, wallet review and explorer verification."></video></figure>
-<h2 id="create-the-token-in-degenkit">Create the token in DegenKit</h2>
-<p>Open the <a href="https://degenkit.app/launch/solana/">Solana token creator</a> from the official domain. The current interface includes a Mainnet/Devnet selector, token details, an image field and a summary panel.</p>
-<ol><li>Select the intended network. Devnet is for testing; a Devnet token is not a Mainnet token.</li><li>Connect the wallet you intend to use for creation and receipt of the tokens.</li><li>Enter the name, symbol, decimals, supply and metadata.</li><li>Check the authority settings and locked-metadata notice.</li><li>Read the current service-fee display and leave enough SOL for the network&#x27;s transaction requirements.</li><li>Review the transaction in your wallet, then approve only when the details match your intention.</li></ol>
-<p>DegenKit describes its Solana creation flow as one transaction that creates the mint, metadata and token distribution. Fees and wallet screens can change, so use the values presented during your own review rather than an old screenshot.</p>
-<h2 id="verify-the-result-before-sharing-it">Verify the result before sharing it</h2>
-<p>After the transaction confirms, copy the <strong>mint address</strong> and transaction signature. Follow the explorer link and compare the result with your original notes.</p>
-<p>Check the network, mint address, decimals, supply, receiving balance and authority state. Review how the metadata appears, allowing for an application&#x27;s indexing or display behavior.</p>
-<p>The mint address matters more than a familiar name or ticker: unrelated tokens can use similar labels. Share the full address through your project&#x27;s official channels so readers can check that they are looking at the same token.</p>
+<h2 id="what-should-you-check-after-creation">What should you check after creation?</h2>
+<p>Open the token on the explorer and confirm:</p>
+<ul><li>the <strong>network</strong> (Mainnet or Devnet),</li><li>the <strong>mint address</strong> you will share,</li><li><strong>decimals</strong> and <strong>supply</strong>,</li><li>your wallet holding <strong>100%</strong>,</li><li><strong>mint and freeze authority</strong> shown as revoked.</li></ul>
+<p>Share the mint address, not just the name. Other tokens can use the same name and symbol.</p>
 <figure><img src="/blog/img/create-solana-token-without-coding-2.webp" alt="A verification card separates token identity, units, permissions and transaction confirmation." loading="lazy" decoding="async"><figcaption>Keep the mint address and transaction signature with your launch records.</figcaption></figure>
-<h2 id="what-comes-after-token-creation">What comes after token creation?</h2>
-<p>Creating a mint establishes the token. A trading market requires its own preparation, including liquidity and a compatible venue. Do not describe a successful mint as proof that a public market exists.</p>
-<p>Prepare a short launch record containing the network, mint address, initial supply, authority state and official links. If you plan distributions or a market launch, document those next steps separately so people can distinguish completed actions from future plans.</p>
-<h2 id="wrap-up">Wrap up</h2>
-<p>A clear creation flow is preparation, review, confirmation and verification. Take time with each step, especially the settings that become permanent. Ready to prepare your own token? <a href="https://degenkit.app/launch/solana/">Open the DegenKit Solana creator</a>.</p>
+<h2 id="what-are-the-common-errors">What are the common errors?</h2>
+<ul><li><strong>Not enough SOL:</strong> keep the fee plus a buffer for rent and the network fee.</li><li><strong>Wrong network:</strong> a Devnet token is not a Mainnet token and has no value.</li><li><strong>Image not showing:</strong> wallets and explorers can take time to index new metadata.</li><li><strong>Typo in name or symbol:</strong> metadata is locked, so create a new token and share only the correct mint.</li></ul>
+<h2 id="what-are-the-risks">What are the risks?</h2>
+<ul><li><strong>Permanent settings.</strong> Locked metadata and revoked authorities cannot be undone.</li><li><strong>Liquidity is money at risk.</strong> SOL or USDC you add to a pool can lose value.</li><li><strong>Phishing.</strong> Only sign on the DegenKit domain, and read what your wallet shows.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="how-do-i-create-a-solana-token">How do I create a Solana token?</h3>
+<p>Connect a Solana wallet to a token creator, enter the name, symbol, decimals, supply and image, and sign one transaction. The mint and full supply are created in your wallet.</p>
+<h3 id="how-much-does-it-cost-to-create-a-solana-token">How much does it cost to create a Solana token?</h3>
+<p>On DegenKit, 0.28 SOL service fee plus a small network fee and rent deposits, as of November 2026. See <a href="/blog/solana-fees-and-rent-explained/">Solana fees and rent explained</a>.</p>
+<h3 id="can-i-create-a-solana-token-for-free">Can I create a Solana token for free?</h3>
+<p>Only on Devnet, with test SOL that has no value. On Mainnet you always pay at least network fees and rent. See <a href="/blog/create-solana-token-free/">can you create a Solana token for free</a>.</p>
+<h3 id="can-i-change-my-token-after-creating-it">Can I change my token after creating it?</h3>
+<p>Not the metadata or decimals on DegenKit, and not the supply once mint authority is revoked.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://solana.com/docs/tokens/basics/create-mint" target="_blank" rel="noopener noreferrer">Solana docs: Create a token mint</a></li><li><a href="https://solana.com/docs/tokens/basics/set-authority" target="_blank" rel="noopener noreferrer">Solana docs: Set authority</a></li><li><a href="https://solana.com/docs/core/fees/fee-structure" target="_blank" rel="noopener noreferrer">Solana docs: Fee structure</a></li></ul>
+<p>When your details are ready, open the <a href="/launch/solana/">DegenKit Solana token creator</a>.</p>
     </div>
     <div class="share">
       <b>Share this post</b>
       <div class="share-btns">
-        <a class="s-x" href="https://x.com/intent/post?text=How%20to%20Create%20a%20Solana%20Token%20Without%20Coding%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Fcreate-solana-token-without-coding%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <a class="s-x" href="https://x.com/intent/post?text=Solana%20Token%20Creator%3A%20Create%20an%20SPL%20Token%20Without%20Code%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Fcreate-solana-token-without-coding%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
         <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/create-solana-token-without-coding/">Copy link</button>
       </div>
     </div>
@@ -127,26 +134,26 @@ twq('config','rfyik');
       <a class="btn-launch" href="/launch/">Launch App</a>
     </aside>
   </article>
-  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/launching-a-token-in-a-bear-market/">
-  <div class="cover"><img src="/blog/img/launching-a-token-in-a-bear-market-cover.webp" alt="A glowing silver coin with a rocket on a dark lit grid beside a headline about launching during a crash." loading="lazy" decoding="async"></div>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/add-liquidity-solana-token/">
+  <div class="cover"><img src="/blog/img/add-liquidity-solana-token-cover.webp" alt="A glowing blue coin with a plus and drop symbol on a dark lit grid beside a headline about adding liquidity." loading="lazy" decoding="async"></div>
   <div class="c-body">
-    <div class="c-meta"><span class="chip">Guide</span><span class="chip">News</span><span class="chip">Solana</span><span>November 7, 2026</span></div>
-    <h2>Crypto Bear Market: Should You Launch a Token Now?</h2>
-    <p>Launching in a crypto bear market is cheaper and quieter, but buyers are more careful. What changes, what to adjust and a checklist before you go live.</p>
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Guide</span><span class="chip">Tools</span><span>November 9, 2026</span></div>
+    <h2>How to Add Liquidity to a Solana Token on Raydium</h2>
+    <p>How to add liquidity to a Solana token on Raydium with DegenKit. Pick SOL or USDC, set the starting price, create the pool in one signature and check it.</p>
   </div>
-</a><a class="card" href="/blog/airdrop-multisender-csv-guide/">
-  <div class="cover"><img src="/blog/img/airdrop-multisender-csv-guide-cover.webp" alt="A CSV file with address and amount columns flowing into batches of eight transfers." loading="lazy" decoding="async"></div>
+</a><a class="card" href="/blog/burn-solana-tokens/">
+  <div class="cover"><img src="/blog/img/burn-solana-tokens-cover.webp" alt="A glowing orange coin with a flame symbol on a dark lit grid beside a headline about burning Solana tokens." loading="lazy" decoding="async"></div>
   <div class="c-body">
-    <div class="c-meta"><span class="chip">DegenKit</span><span class="chip">Solana</span><span class="chip">Guide</span><span>November 2, 2026</span></div>
-    <h2>Airdrop and Multisender: How to Prepare Your Recipient List</h2>
-    <p>DegenKit&#x27;s Airdrop and Multisender send tokens to many Solana wallets in batches of eight. Learn the list formats, CSV import, what each batch costs and how to avoid failed sends.</p>
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Guide</span><span class="chip">Tools</span><span>November 9, 2026</span></div>
+    <h2>How to Burn Solana Tokens and Reduce Supply</h2>
+    <p>How to burn Solana tokens from your wallet in one transaction, what burning changes on-chain, what it costs on DegenKit and how to check that the supply went down.</p>
   </div>
-</a><a class="card" href="/blog/multisend-app-solana/">
-  <div class="cover"><img src="/blog/img/multisend-app-solana-cover.webp" alt="One wallet fanning out token transfers to many recipient wallets, grouped into batches." loading="lazy" decoding="async"></div>
+</a><a class="card" href="/blog/create-solana-token-free/">
+  <div class="cover"><img src="/blog/img/create-solana-token-free-cover.webp" alt="A glowing gold coin with a price tag symbol on a dark lit grid beside a headline about free Solana tokens." loading="lazy" decoding="async"></div>
   <div class="c-body">
-    <div class="c-meta"><span class="chip">Solana</span><span class="chip">DegenKit</span><span class="chip">Guide</span><span>November 2, 2026</span></div>
-    <h2>Multisend App for Solana: Send Tokens to Many Wallets at Once</h2>
-    <p>A multisend app sends a token to many wallets in a few signatures instead of one transfer at a time. See how DegenKit&#x27;s Solana Multisender works, what it costs, and how to pick a multisend tool safely.</p>
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Guide</span><span>November 9, 2026</span></div>
+    <h2>Can You Create a Solana Token for Free? Real Costs</h2>
+    <p>Can you create a Solana token for free? Only on Devnet. On Mainnet you pay network fees and rent at minimum. The real costs of each way to create a token on Solana.</p>
   </div>
 </a></div></section>
 </main>
