@@ -33,4 +33,4 @@ Use the network selector at the top of the launcher, or open the network page di
 
 ## 🩵 About Elysium
 
-Elysium is Kinetiq's Layer 2 for the Hyperliquid ecosystem. It settles to HyperEVM and uses **HYPE** as its gas token, so you need HYPE on Elysium before you can create a token. HYPE reaches Elysium from HyperEVM through the official bridge; use only the bridge link published by Elysium's official channels. As far as we know the mainnet chain ID is **99901**, but always confirm network details from official sources before you add the network. Read the [Elysium explainer](/blog/what-is-elysium-kinetiq-hyperliquid-l2/) for more.
+Elysium is Kinetiq's Layer 2 for the Hyperliquid ecosystem. It settles to HyperEVM and uses **HYPE** as its gas token, so you need HYPE on Elysium before you can create a token. HYPE reaches Elysium from HyperEVM through the official bridge; use only the bridge link published by Elysium's official channels. As far as we know the mainnet chain ID is **99901**, but always confirm network details from official sources before you add the network. Read the [Elysium explainer](/blog/what-is-elysium-chain/) for more.
