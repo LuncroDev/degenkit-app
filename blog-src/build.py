@@ -409,7 +409,7 @@ def build_post(p, posts):
   {related}
 </main>"""
     d = OUT / p["slug"]; d.mkdir(parents=True, exist_ok=True)
-    (d / "index.html").write_text(page(p.get('seo_title') or seo_title(p['title']), p["excerpt"], url, body, og_img, "article", jsonld, extra), encoding="utf-8")
+    (d / "index.html").write_text(page(seo_title(p.get('seo_title') or p['title']), p["excerpt"], url, body, og_img, "article", jsonld, extra), encoding="utf-8")
 
 def build_rss(posts):
     items = "".join(f"<item><title>{esc(p['title'])}</title><link>{SITE}/blog/{p['slug']}/</link><guid>{SITE}/blog/{p['slug']}/</guid>"

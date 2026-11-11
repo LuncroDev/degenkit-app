@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Meteora DLMM Explained: Bins, Dynamic Fees and Risks</title>
+<meta name="description" content="Meteora DLMM explained for token creators. How price bins and dynamic fees work, what single-sided liquidity means and how it compares with a Raydium CPMM…">
+<link rel="canonical" href="https://degenkit.app/blog/what-is-meteora-dlmm/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-11">
+<meta property="article:modified_time" content="2026-11-11">
+<meta property="og:image:alt" content="A cream poster with a headline about Meteora DLMM beside blue halftone shapes and a bar chart symbol made of price bins.">
+<meta property="article:tag" content="Solana">
+<meta property="article:tag" content="Explainer">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Meteora DLMM Explained: Bins, Dynamic Fees and Risks">
+<meta property="og:description" content="Meteora DLMM explained for token creators. How price bins and dynamic fees work, what single-sided liquidity means and how it compares with a Raydium CPMM pool.">
+<meta property="og:url" content="https://degenkit.app/blog/what-is-meteora-dlmm/">
+<meta property="og:image" content="https://degenkit.app/blog/img/what-is-meteora-dlmm-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="Meteora DLMM Explained: Bins, Dynamic Fees and Risks">
+<meta name="twitter:description" content="Meteora DLMM explained for token creators. How price bins and dynamic fees work, what single-sided liquidity means and how it compares with a Raydium CPMM pool.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/what-is-meteora-dlmm-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Meteora DLMM Explained: Bins, Dynamic Fees and Risks", "description": "Meteora DLMM explained for token creators. How price bins and dynamic fees work, what single-sided liquidity means and how it compares with a Raydium CPMM pool.", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/what-is-meteora-dlmm/"}, "url": "https://degenkit.app/blog/what-is-meteora-dlmm/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/what-is-meteora-dlmm-cover.webp", "keywords": "Solana, Explainer", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Meteora DLMM Explained: Bins, Dynamic Fees and Risks", "item": "https://degenkit.app/blog/what-is-meteora-dlmm/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does DLMM stand for?", "acceptedAnswer": {"@type": "Answer", "text": "Dynamic Liquidity Market Maker. It is Meteora's pool type with price bins and volatility-based fees."}}, {"@type": "Question", "name": "Does a DLMM pool have slippage?", "acceptedAnswer": {"@type": "Answer", "text": "Not inside a single bin. A larger trade that crosses several bins does move the price."}}, {"@type": "Question", "name": "Can I add liquidity with only my token?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. DLMM allows single-sided deposits, unlike a standard constant-product pool."}}, {"@type": "Question", "name": "Can DegenKit create a Meteora pool?", "acceptedAnswer": {"@type": "Answer", "text": "No. DegenKit creates Raydium CPMM pools. Meteora pools are created on Meteora's own app."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">Solana</span><span class="chip">Explainer</span></div>
+      <h1>Meteora DLMM Explained: Bins, Dynamic Fees and Risks</h1>
+      <p class="lede">Meteora DLMM explained for token creators. How price bins and dynamic fees work, what single-sided liquidity means and how it compares with a Raydium CPMM pool.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 11, 2026 · 5 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/what-is-meteora-dlmm-cover.webp" alt="A cream poster with a headline about Meteora DLMM beside blue halftone shapes and a bar chart symbol made of price bins." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>Meteora DLMM (Dynamic Liquidity Market Maker) is a Solana pool type that splits liquidity into price bins and charges a fee that rises when the market is volatile. Liquidity providers choose which bins to fill, so their capital works only near the price they pick. It suits active providers. A simple Raydium CPMM pool suits most new token launches.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li><strong>Bins:</strong> liquidity sits in discrete price bins. Swaps inside one bin have no slippage (Meteora docs).</li><li><strong>Fee = base fee + variable fee.</strong> The variable part grows with volatility.</li><li><strong>Protocol share:</strong> 5% of the fee on standard DLMM pools, 20% on launch pools (Meteora docs).</li><li><strong>Single-sided:</strong> you can deposit only your token, without SOL or USDC.</li></ul></aside>
+<aside class="callout note"><strong>Not affiliated</strong><p>DegenKit is not affiliated with Meteora or Raydium. DegenKit opens Raydium CPMM pools. It does not create Meteora pools.</p></aside>
+<h2 id="how-does-a-dlmm-pool-work">How does a DLMM pool work?</h2>
+<p>A normal constant-product pool spreads liquidity across every possible price, from near zero to infinity. Most of that liquidity is never used. DLMM instead cuts the price range into <strong>bins</strong>. Each bin holds tokens at one price. The market for the pair is all bins added together.</p>
+<p>When someone buys, the pool sells from the active bin until it is empty, then moves to the next bin up. Meteora&#x27;s documentation says swaps that happen inside a single bin &quot;would not suffer from slippage&quot;. The step between bins is fixed per pool and is called the <strong>bin step</strong>.</p>
+<figure><img src="/blog/img/what-is-meteora-dlmm-1.webp" alt="How a Meteora DLMM pool works: liquidity in price bins around the active price, with the fee rising as the price crosses bins." loading="lazy" decoding="async"><figcaption>Bins near the price do the trading. Bins far away wait.</figcaption></figure>
+<h2 id="how-do-dynamic-fees-work">How do dynamic fees work?</h2>
+<p>Meteora sets the total swap fee as a <strong>base fee plus a variable fee</strong>:</p>
+<ul><li><strong>Base fee:</strong> a base factor multiplied by the bin step. It is fixed for the pool.</li><li><strong>Variable fee:</strong> calculated from a volatility accumulator. Meteora measures volatility by how many bins the price crosses over time. More bin changes mean a higher fee.</li></ul>
+<p>The idea is that providers earn more in exactly the moments when price swings could hurt them. CoinGecko reported that dynamic fees can rise as high as 10% in extreme volatility. Meteora keeps a protocol share of the fee, which its docs list as 5% for standard DLMM pools and 20% for DLMM launch pools.</p>
+<h2 id="what-are-the-liquidity-shapes">What are the liquidity shapes?</h2>
+<p>When you add liquidity, you choose how it spreads across bins:</p>
+<ul><li><strong>Spot:</strong> an even spread. Meteora calls it versatile and suited to any market.</li><li><strong>Curve:</strong> concentrated near the current price, for calm, range-bound pairs.</li><li><strong>Bid-Ask:</strong> the inverse of Curve, with more liquidity at the edges. It is often used single-sided to buy or sell gradually.</li></ul>
+<h2 id="what-happens-when-the-price-leaves-your-range">What happens when the price leaves your range?</h2>
+<p>DLMM is a form of concentrated liquidity. If the price moves past all your bins, your position ends up entirely in one token and stops earning fees until the price comes back or you move the range. That is the main difference from a full-range pool, which always earns some fee. Meteora&#x27;s docs tell providers to &quot;closely monitor their positions and adjust accordingly&quot;.</p>
+<figure><img src="/blog/img/what-is-meteora-dlmm-2.webp" alt="Meteora DLMM compared with a Raydium CPMM pool: price range, slippage, fees, management effort and who each fits." loading="lazy" decoding="async"><figcaption>DLMM rewards active management. CPMM is set and forget.</figcaption></figure>
+<h2 id="is-dlmm-right-for-a-new-token-launch">Is DLMM right for a new token launch?</h2>
+<p>DLMM&#x27;s single-sided deposits let a team seed liquidity with only its own token, and Meteora offers launch pools and an anti-bot Alpha Vault. Those features suit teams that plan to manage the pool actively.</p>
+<p>For a first meme coin, a <strong>Raydium CPMM pool</strong> is simpler:</p>
+<ul><li>you deposit your token and SOL once,</li><li>the liquidity covers every price, so it never goes out of range,</li><li>it is easy for buyers to understand and to check.</li></ul>
+<p>Our guides to <a href="/blog/what-is-a-raydium-liquidity-pool/">what a Raydium liquidity pool is</a> and <a href="/blog/raydium-cpmm-vs-clmm/">Raydium CPMM vs CLMM</a> explain the trade-off on Raydium&#x27;s side. On DegenKit, <strong>Create Liquidity</strong> opens a CPMM pool in one transaction. See <a href="/blog/add-liquidity-solana-token/">how to add liquidity to a Solana token</a>.</p>
+<figure><video src="/blog/img/what-is-meteora-dlmm-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Meteora DLMM in 20 seconds: bins, the active price, a volatile move that raises the fee and an out-of-range position."></video></figure>
+<h2 id="what-are-the-risks">What are the risks?</h2>
+<ul><li><strong>Out of range:</strong> your position can stop earning and sit fully in the weaker token.</li><li><strong>Impermanent loss:</strong> like any pool, you can end with less value than if you had held.</li><li><strong>Complexity:</strong> bin step, shape and range are easy to set badly.</li><li><strong>Launch pools:</strong> single-sided pools can be used to sell supply into buyers. Check who owns the liquidity before you buy.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="what-does-dlmm-stand-for">What does DLMM stand for?</h3>
+<p>Dynamic Liquidity Market Maker. It is Meteora&#x27;s pool type with price bins and volatility-based fees.</p>
+<h3 id="does-a-dlmm-pool-have-slippage">Does a DLMM pool have slippage?</h3>
+<p>Not inside a single bin. A larger trade that crosses several bins does move the price.</p>
+<h3 id="can-i-add-liquidity-with-only-my-token">Can I add liquidity with only my token?</h3>
+<p>Yes. DLMM allows single-sided deposits, unlike a standard constant-product pool.</p>
+<h3 id="can-degenkit-create-a-meteora-pool">Can DegenKit create a Meteora pool?</h3>
+<p>No. DegenKit creates Raydium CPMM pools. Meteora pools are created on Meteora&#x27;s own app.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://docs.meteora.ag/dlmm/dlmm-overview/what-is-dlmm" target="_blank" rel="noopener noreferrer">Meteora docs: What is DLMM</a></li><li><a href="https://docs.meteora.ag/overview/products/dlmm/dlmm-fee-calculation" target="_blank" rel="noopener noreferrer">Meteora docs: DLMM fee calculation</a></li><li><a href="https://www.coingecko.com/learn/what-is-meteora-dex-solana-crypto" target="_blank" rel="noopener noreferrer">CoinGecko: What is Meteora</a></li></ul>
+<p>For a simple full-range pool, use <strong>Create Liquidity</strong> on the <a href="/launch/solana/">DegenKit Solana launcher</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=Meteora%20DLMM%20Explained%3A%20Bins%2C%20Dynamic%20Fees%20and%20Risks%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Fwhat-is-meteora-dlmm%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/what-is-meteora-dlmm/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/raydium-cpmm-vs-clmm/">
+  <div class="cover"><img src="/blog/img/raydium-cpmm-vs-clmm-cover.webp" alt="A glowing teal coin with two curves on a dark lit grid beside a headline comparing Raydium CPMM and CLMM." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Explainer</span><span class="chip">Guide</span><span>November 9, 2026</span></div>
+    <h2>Raydium CPMM vs CLMM: Which Pool for a New Token?</h2>
+    <p>Raydium CPMM pools spread liquidity across all prices, while CLMM pools use a range you set. How they compare, where AMM v4 fits and which suits a new token.</p>
+  </div>
+</a><a class="card" href="/blog/solana-token-2022-transfer-fee/">
+  <div class="cover"><img src="/blog/img/solana-token-2022-transfer-fee-cover.webp" alt="A glowing violet coin with a percent symbol on a dark lit grid beside a headline about Token-2022 transfer fees." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Explainer</span><span>November 9, 2026</span></div>
+    <h2>Solana Token-2022 Transfer Fee Extension Explained</h2>
+    <p>The Solana Token-2022 transfer fee extension takes a set fee on every transfer of a token. How it works, who collects the fees, how Raydium handles it and the trade-offs.</p>
+  </div>
+</a><a class="card" href="/blog/what-is-a-raydium-liquidity-pool/">
+  <div class="cover"><img src="/blog/img/what-is-a-raydium-liquidity-pool-cover.webp" alt="A glowing purple coin with two linked drops on a dark lit grid beside a headline about Raydium pools." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Explainer</span><span>November 9, 2026</span></div>
+    <h2>What Is a Raydium Liquidity Pool? A Plain Explanation</h2>
+    <p>What is a Raydium liquidity pool? A pair of tokens that traders swap against on Solana. How it sets prices, how a new coin starts with one, and what it costs.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <a class="tp-badge" href="https://www.trustpilot.com/evaluate/degenkit.app" target="_blank" rel="noopener" aria-label="Review DegenKit on Trustpilot" style="display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;padding:9px 14px;border:1px solid #00b67a;border-radius:8px;color:inherit;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#00b67a"/><path d="M12 4.2l2.3 5.1 5.5.5-4.2 3.7 1.3 5.4L12 16l-4.9 2.9 1.3-5.4L4.2 9.8l5.5-.5z" fill="#fff"/></svg><span>Review us on Trustpilot</span></a>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>
