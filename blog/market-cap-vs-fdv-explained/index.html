@@ -20,8 +20,8 @@ twq('config','rfyik');
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Price, Market Cap and FDV: What the Numbers on a Token Page Mean</title>
-<meta name="description" content="Price, market cap and fully diluted valuation are calculated from the same few inputs, yet they answer different questions. Learn how each is worked out and what none of them tells you.">
+<title>Price, Market Cap and FDV</title>
+<meta name="description" content="Price, market cap and fully diluted valuation are calculated from the same few inputs, yet they answer different questions. Learn how each is worked out and…">
 <link rel="canonical" href="https://degenkit.app/blog/market-cap-vs-fdv-explained/">
 <link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
@@ -38,13 +38,13 @@ twq('config','rfyik');
 <meta property="article:tag" content="Liquidity">
 <meta property="og:site_name" content="DegenKit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Price, Market Cap and FDV: What the Numbers on a Token Page Mean">
+<meta property="og:title" content="Price, Market Cap and FDV">
 <meta property="og:description" content="Price, market cap and fully diluted valuation are calculated from the same few inputs, yet they answer different questions. Learn how each is worked out and what none of them tells you.">
 <meta property="og:url" content="https://degenkit.app/blog/market-cap-vs-fdv-explained/">
 <meta property="og:image" content="https://degenkit.app/blog/img/market-cap-vs-fdv-explained-cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@DegenKitApp">
-<meta name="twitter:title" content="Price, Market Cap and FDV: What the Numbers on a Token Page Mean">
+<meta name="twitter:title" content="Price, Market Cap and FDV">
 <meta name="twitter:description" content="Price, market cap and fully diluted valuation are calculated from the same few inputs, yet they answer different questions. Learn how each is worked out and what none of them tells you.">
 <meta name="twitter:image" content="https://degenkit.app/blog/img/market-cap-vs-fdv-explained-cover.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +53,7 @@ twq('config','rfyik');
 <link rel="stylesheet" href="/assets/theme-icons.css">
 <link rel="stylesheet" href="/assets/blog.css">
 <script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Price, Market Cap and FDV: What the Numbers on a Token Page Mean", "description": "Price, market cap and fully diluted valuation are calculated from the same few inputs, yet they answer different questions. Learn how each is worked out and what none of them tells you.", "datePublished": "2026-10-30", "dateModified": "2026-10-30", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/market-cap-vs-fdv-explained/"}, "url": "https://degenkit.app/blog/market-cap-vs-fdv-explained/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/market-cap-vs-fdv-explained-cover.webp", "keywords": "Guide, Tokenomics, Liquidity", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Price, Market Cap and FDV: What the Numbers on a Token Page Mean", "item": "https://degenkit.app/blog/market-cap-vs-fdv-explained/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Price, Market Cap and FDV: What the Numbers on a Token Page Mean", "description": "Price, market cap and fully diluted valuation are calculated from the same few inputs, yet they answer different questions. Learn how each is worked out and what none of them tells you.", "datePublished": "2026-10-30", "dateModified": "2026-10-30", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/market-cap-vs-fdv-explained/"}, "url": "https://degenkit.app/blog/market-cap-vs-fdv-explained/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/market-cap-vs-fdv-explained-cover.webp", "keywords": "Guide, Tokenomics, Liquidity", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Price, Market Cap and FDV: What the Numbers on a Token Page Mean", "item": "https://degenkit.app/blog/market-cap-vs-fdv-explained/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a low market cap a good sign?", "acceptedAnswer": {"@type": "Answer", "text": "Not on its own. A low market cap with very thin liquidity can move sharply in either direction. Look at liquidity, holder spread and supply plans together."}}, {"@type": "Question", "name": "Can market cap change without any trades?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the token is paired with SOL. The token's price in SOL stays put, but its dollar value follows SOL. Our guide on choosing SOL or USDC for your pool explains this."}}]}</script>
 </head>
 <body>
 <header>

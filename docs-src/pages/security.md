@@ -4,7 +4,7 @@ section: ref
 order: 2
 emoji: "🔒"
 title: Security
-desc: What DegenKit can and can't do, what you sign, and how to stay safe.
+desc: What DegenKit can and can't do with your wallet, exactly what you sign for each tool, and practical steps to keep your tokens safe.
 ---
 
 DegenKit is **non-custodial**. Every action is a transaction you review and sign in your own wallet.

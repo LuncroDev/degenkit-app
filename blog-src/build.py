@@ -152,11 +152,17 @@ def load_posts():
         date = datetime.date.fromisoformat(meta["date"])
         html_body, toc = render(body)
         words = len(re.findall(r"\w+", body))
+        faq = []
+        for m in re.finditer(r"^### ([^\n]+\?)[ \t]*\n+(.+?)(?=\n#{2,3} |\n:::|\Z)", body, re.S | re.M):
+            a = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", m.group(2).strip().split("\n\n")[0])
+            a = re.sub(r"[*_`]", "", a).replace("\n", " ").strip()
+            if 20 <= len(a) <= 600: faq.append((m.group(1).strip(), a))
+        updated = datetime.date.fromisoformat(meta["updated"]) if meta.get("updated") else date
         posts.append(dict(
             title=meta["title"], slug=slug, date=date, excerpt=meta["excerpt"],
             seo_title=meta.get("seo_title", ""), cover=meta.get("cover", ""), cover_alt=meta.get("cover_alt", meta["title"]),
             tags=[t.strip() for t in meta.get("tags", "").split(",") if t.strip()],
-            body=html_body, minutes=max(1, math.ceil(words / 200)),
+            body=html_body, minutes=max(1, math.ceil(words / 200)), faq=faq, updated=updated,
         ))
     posts.sort(key=lambda p: p["date"], reverse=True)
     return posts
@@ -226,8 +232,8 @@ document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListene
 
 PRE_THEME = "<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>"
 
-def seo_title(title, suffix=" | DegenKit Blog", limit=70):
-    """Keep <title> within ~70 chars: drop the suffix first, then cut at the first ': ' / ' — ', then at a word boundary."""
+def seo_title(title, suffix=" | DegenKit", limit=60):
+    """Keep <title> within ~60 chars: drop the suffix first, then cut at the first ': ' / ' — ', then at a word boundary."""
     if len(title) + len(suffix) <= limit: return title + suffix
     if len(title) <= limit: return title
     for sep in (": ", " — ", " - "):
@@ -247,7 +253,7 @@ def page(title, desc, canonical, body, og_image=None, og_type="website", jsonld=
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>{esc(title)}</title>
-<meta name="description" content="{esc(desc)}">
+<meta name="description" content="{esc(desc if len(desc) <= 158 else desc[:158].rsplit(" ", 1)[0].rstrip(",;:.-") + "…")}">
 <link rel="canonical" href="{esc(canonical)}">
 <link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
@@ -356,7 +362,7 @@ def build_post(p, posts):
     og_img = abs_url(p["cover"]) if p["cover"] else None
     jsonld = '<script type="application/ld+json">%s</script>' % __import__("json").dumps({
         "@context": "https://schema.org", "@type": "BlogPosting", "headline": p["title"], "description": p["excerpt"],
-        "datePublished": p["date"].isoformat(), "dateModified": p["date"].isoformat(),
+        "datePublished": p["date"].isoformat(), "dateModified": p["updated"].isoformat(),
         "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "url": url, "inLanguage": "en",
         "image": og_img or SITE + "/assets/mascot-hero.png",
         "keywords": ", ".join(p["tags"]),
@@ -369,7 +375,11 @@ def build_post(p, posts):
             {"@type": "ListItem", "position": 1, "name": "DegenKit", "item": SITE + "/"},
             {"@type": "ListItem", "position": 2, "name": "Blog", "item": SITE + "/blog/"},
             {"@type": "ListItem", "position": 3, "name": p["title"], "item": url}]}).replace("</", "<\\/")
-    extra = '<meta property="article:published_time" content="%s">\n<meta property="article:modified_time" content="%s">\n<meta property="og:image:alt" content="%s">' % (p["date"].isoformat(), p["date"].isoformat(), esc(p["cover_alt"] or p["title"]))
+    if len(p["faq"]) >= 2:
+        jsonld += '<script type="application/ld+json">%s</script>' % __import__("json").dumps({
+            "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+                {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in p["faq"]]}, ensure_ascii=False).replace("</", "<\\/")
+    extra = '<meta property="article:published_time" content="%s">\n<meta property="article:modified_time" content="%s">\n<meta property="og:image:alt" content="%s">' % (p["date"].isoformat(), p["updated"].isoformat(), esc(p["cover_alt"] or p["title"]))
     for t in p["tags"][:5]: extra += '\n<meta property="article:tag" content="%s">' % esc(t)
     body = f"""<main class="bwrap">
   <article class="post">

@@ -4,7 +4,7 @@ section: evm
 order: 2
 emoji: "%"
 title: Tax Token
-desc: Create an ERC-20 with your own buy and sell tax, and manage it later.
+desc: Create an ERC-20 tax token with your own buy and sell rates on Ethereum, BNB Chain, Base, Robinhood Chain or Elysium, and manage it later.
 ---
 
 A **Tax Token** takes a percentage of each trade and sends it, in the token itself, to a wallet you choose.

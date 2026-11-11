@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """DegenKit SEO pass — idempotent. Run from the site root:  python3 seo/apply_seo.py
 Adds/refreshes: meta description, canonical, Open Graph, Twitter, theme-color, manifest, icons,
-JSON-LD (Organization, WebSite, WebApplication, FAQPage, BreadcrumbList), robots.txt, llms.txt, sitemap.xml."""
+JSON-LD (Organization, WebSite, Service, FAQPage, BreadcrumbList), robots.txt, llms.txt, sitemap.xml."""
 import re, json, html, pathlib, datetime
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://degenkit.app"
@@ -26,7 +26,7 @@ PAGES = {
  "launch/base/index.html": dict(url="/launch/base/", title="Create a Base Token (ERC-20) Without Code | DegenKit",
    desc="Launch an ERC-20 or tax token on Base, Coinbase's low-fee Layer 2, with no code. Fill one form and sign once from your own wallet.",
    chain="Base"),
- "launch/elysium/index.html": dict(url="/launch/elysium/", title="Elysium Token Creator: ERC-20 & Tax Token, No Code | DegenKit",
+ "launch/elysium/index.html": dict(url="/launch/elysium/", title="Elysium Token Creator: ERC-20 & Tax Tokens | DegenKit",
    desc="Create a fixed-supply or tax token on Elysium, Kinetiq's Layer 2 for the Hyperliquid ecosystem, with no code. Non-custodial, one signature.",
    chain="Elysium"),
  "launch/robinhood/index.html": dict(url="/launch/robinhood/", title="Robinhood Chain Token Creator (Pons Alternative) | DegenKit",
@@ -66,7 +66,7 @@ def seo_block(p):
     return "\n".join([
         f'<!-- seo:start -->',
         f'<title>{esc(p["title"])}</title>',
-        f'<meta name="description" content="{esc(p["desc"])}">',
+        f'<meta name="description" content="{esc(clamp(p["desc"]))}">',
         f'<link rel="canonical" href="{u}">',
         ROBOTS_META,
         f'<meta name="theme-color" content="#0B0B0E">',
@@ -87,20 +87,24 @@ def seo_block(p):
         f'<link rel="manifest" href="/manifest.webmanifest">',
         f'<!-- seo:end -->'])
 
+def clamp(d, n=158):
+    if len(d) <= n: return d
+    return d[:n].rsplit(" ", 1)[0].rstrip(",;:.-") + "…"
+
 def jsonld_for(name, p, h):
     out = []
     if name == "index.html":
         out.append({"@context": "https://schema.org", **ORG})
         out.append({"@context": "https://schema.org", "@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/",
                     "name": "DegenKit", "inLanguage": "en", "publisher": {"@id": SITE + "/#org"}})
-        out.append({"@context": "https://schema.org", "@type": "WebApplication", "@id": SITE + "/#app", "name": "DegenKit",
-                    "url": SITE + "/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web",
-                    "browserRequirements": "Requires a crypto wallet browser extension or app",
-                    "description": "No-code token generator and token creator for Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium.",
-                    "featureList": ["Solana token creator (SPL)", "Ethereum token creator (ERC-20)", "BNB Chain token creator (BEP-20)",
-                                    "Base token creator", "Robinhood Chain token creator", "Elysium token creator", "Tax token creator",
-                                    "Airdrop and Multisender", "Token Scanner"],
-                    "publisher": {"@id": SITE + "/#org"}})
+        nets = [("Solana token creator", "/launch/solana/"), ("Ethereum token creator", "/launch/ethereum/"), ("BNB Chain token creator", "/launch/bnb/"),
+                ("Base token creator", "/launch/base/"), ("Robinhood Chain token creator", "/launch/robinhood/"), ("Elysium token creator", "/launch/elysium/")]
+        out.append({"@context": "https://schema.org", "@type": "Service", "@id": SITE + "/#service", "name": "DegenKit token creator",
+                    "serviceType": "No-code crypto token creation software", "url": SITE + "/", "provider": {"@id": SITE + "/#org"},
+                    "areaServed": "Worldwide",
+                    "description": "No-code token generator and token creator for Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium. Non-custodial: users sign every transaction in their own wallet.",
+                    "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Token creators by network",
+                                        "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": n, "url": SITE + u}} for n, u in nets]}})
         qa = []
         for m in re.finditer(r'<details class="faq-item[^"]*"[^>]*>\s*<summary>(.*?)</summary>\s*<div class="a">(.*?)</div>', h, re.S):
             q = strip_tags(re.sub(r'<span class="plus">.*?</span>', "", m.group(1), flags=re.S)); a = strip_tags(m.group(2))

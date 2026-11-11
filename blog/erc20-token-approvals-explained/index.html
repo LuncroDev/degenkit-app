@@ -20,7 +20,7 @@ twq('config','rfyik');
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Token Approvals Explained: What You Allow and How to Revoke It</title>
+<title>Token Approvals Explained</title>
 <meta name="description" content="Before a DEX can move your ERC-20 tokens, you approve it. Learn what an approval is, why unlimited approvals carry risk, and how to check and revoke them.">
 <link rel="canonical" href="https://degenkit.app/blog/erc20-token-approvals-explained/">
 <link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
@@ -38,13 +38,13 @@ twq('config','rfyik');
 <meta property="article:tag" content="Ethereum">
 <meta property="og:site_name" content="DegenKit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Token Approvals Explained: What You Allow and How to Revoke It">
+<meta property="og:title" content="Token Approvals Explained">
 <meta property="og:description" content="Before a DEX can move your ERC-20 tokens, you approve it. Learn what an approval is, why unlimited approvals carry risk, and how to check and revoke them.">
 <meta property="og:url" content="https://degenkit.app/blog/erc20-token-approvals-explained/">
 <meta property="og:image" content="https://degenkit.app/blog/img/erc20-token-approvals-explained-cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@DegenKitApp">
-<meta name="twitter:title" content="Token Approvals Explained: What You Allow and How to Revoke It">
+<meta name="twitter:title" content="Token Approvals Explained">
 <meta name="twitter:description" content="Before a DEX can move your ERC-20 tokens, you approve it. Learn what an approval is, why unlimited approvals carry risk, and how to check and revoke them.">
 <meta name="twitter:image" content="https://degenkit.app/blog/img/erc20-token-approvals-explained-cover.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +53,7 @@ twq('config','rfyik');
 <link rel="stylesheet" href="/assets/theme-icons.css">
 <link rel="stylesheet" href="/assets/blog.css">
 <script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Token Approvals Explained: What You Allow and How to Revoke It", "description": "Before a DEX can move your ERC-20 tokens, you approve it. Learn what an approval is, why unlimited approvals carry risk, and how to check and revoke them.", "datePublished": "2026-10-30", "dateModified": "2026-10-30", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/erc20-token-approvals-explained/"}, "url": "https://degenkit.app/blog/erc20-token-approvals-explained/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/erc20-token-approvals-explained-cover.webp", "keywords": "Guide, Safety, Ethereum", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Token Approvals Explained: What You Allow and How to Revoke It", "item": "https://degenkit.app/blog/erc20-token-approvals-explained/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Token Approvals Explained: What You Allow and How to Revoke It", "description": "Before a DEX can move your ERC-20 tokens, you approve it. Learn what an approval is, why unlimited approvals carry risk, and how to check and revoke them.", "datePublished": "2026-10-30", "dateModified": "2026-10-30", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/erc20-token-approvals-explained/"}, "url": "https://degenkit.app/blog/erc20-token-approvals-explained/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/erc20-token-approvals-explained-cover.webp", "keywords": "Guide, Safety, Ethereum", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Token Approvals Explained: What You Allow and How to Revoke It", "item": "https://degenkit.app/blog/erc20-token-approvals-explained/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does revoking cancel a past trade?", "acceptedAnswer": {"@type": "Answer", "text": "No. It only stops future transfers by that spender."}}, {"@type": "Question", "name": "Why does my wallet sometimes ask me to sign instead of approve?", "acceptedAnswer": {"@type": "Answer", "text": "Some apps use signed permits. Uniswap v4, for example, asks for a Permit2 signature with no network cost alongside a normal approval. Read what you are signing as carefully as an approval."}}]}</script>
 </head>
 <body>
 <header>

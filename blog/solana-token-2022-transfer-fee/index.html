@@ -20,8 +20,8 @@ twq('config','rfyik');
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Solana Token-2022 Transfer Fee Extension Explained | DegenKit Blog</title>
-<meta name="description" content="The Solana Token-2022 transfer fee extension takes a set fee on every transfer of a token. How it works, who collects the fees, how Raydium handles it and the trade-offs.">
+<title>Solana Token-2022 Transfer Fee Extension Explained</title>
+<meta name="description" content="The Solana Token-2022 transfer fee extension takes a set fee on every transfer of a token. How it works, who collects the fees, how Raydium handles it and…">
 <link rel="canonical" href="https://degenkit.app/blog/solana-token-2022-transfer-fee/">
 <link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
@@ -37,13 +37,13 @@ twq('config','rfyik');
 <meta property="article:tag" content="Explainer">
 <meta property="og:site_name" content="DegenKit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Solana Token-2022 Transfer Fee Extension Explained | DegenKit Blog">
+<meta property="og:title" content="Solana Token-2022 Transfer Fee Extension Explained">
 <meta property="og:description" content="The Solana Token-2022 transfer fee extension takes a set fee on every transfer of a token. How it works, who collects the fees, how Raydium handles it and the trade-offs.">
 <meta property="og:url" content="https://degenkit.app/blog/solana-token-2022-transfer-fee/">
 <meta property="og:image" content="https://degenkit.app/blog/img/solana-token-2022-transfer-fee-cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@DegenKitApp">
-<meta name="twitter:title" content="Solana Token-2022 Transfer Fee Extension Explained | DegenKit Blog">
+<meta name="twitter:title" content="Solana Token-2022 Transfer Fee Extension Explained">
 <meta name="twitter:description" content="The Solana Token-2022 transfer fee extension takes a set fee on every transfer of a token. How it works, who collects the fees, how Raydium handles it and the trade-offs.">
 <meta name="twitter:image" content="https://degenkit.app/blog/img/solana-token-2022-transfer-fee-cover.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +52,7 @@ twq('config','rfyik');
 <link rel="stylesheet" href="/assets/theme-icons.css">
 <link rel="stylesheet" href="/assets/blog.css">
 <script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Solana Token-2022 Transfer Fee Extension Explained", "description": "The Solana Token-2022 transfer fee extension takes a set fee on every transfer of a token. How it works, who collects the fees, how Raydium handles it and the trade-offs.", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/solana-token-2022-transfer-fee/"}, "url": "https://degenkit.app/blog/solana-token-2022-transfer-fee/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/solana-token-2022-transfer-fee-cover.webp", "keywords": "Solana, Explainer", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Solana Token-2022 Transfer Fee Extension Explained", "item": "https://degenkit.app/blog/solana-token-2022-transfer-fee/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Solana Token-2022 Transfer Fee Extension Explained", "description": "The Solana Token-2022 transfer fee extension takes a set fee on every transfer of a token. How it works, who collects the fees, how Raydium handles it and the trade-offs.", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/solana-token-2022-transfer-fee/"}, "url": "https://degenkit.app/blog/solana-token-2022-transfer-fee/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/solana-token-2022-transfer-fee-cover.webp", "keywords": "Solana, Explainer", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Solana Token-2022 Transfer Fee Extension Explained", "item": "https://degenkit.app/blog/solana-token-2022-transfer-fee/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Token-2022 transfer fee extension?", "acceptedAnswer": {"@type": "Answer", "text": "A Solana token extension that charges a fee on every transfer, set at creation, with a rate in basis points and a maximum per transfer."}}, {"@type": "Question", "name": "Who receives Token-2022 transfer fees?", "acceptedAnswer": {"@type": "Answer", "text": "The fee is withheld on recipients' accounts. The withdraw authority can move it to its chosen fee-receiver account."}}, {"@type": "Question", "name": "Can I add a transfer fee to an existing token?", "acceptedAnswer": {"@type": "Answer", "text": "No. The extension must be set when the mint is created."}}]}</script>
 </head>
 <body>
 <header>

@@ -20,7 +20,7 @@ twq('config','rfyik');
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Mint Authority vs. Freeze Authority: What Revoking Actually Does</title>
+<title>Mint Authority vs. Freeze Authority</title>
 <meta name="description" content="Two Solana permissions, two very different powers. Learn what mint and freeze authority control, what revoking changes and how to check both.">
 <link rel="canonical" href="https://degenkit.app/blog/mint-authority-vs-freeze-authority/">
 <link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
@@ -38,13 +38,13 @@ twq('config','rfyik');
 <meta property="article:tag" content="Permissions">
 <meta property="og:site_name" content="DegenKit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mint Authority vs. Freeze Authority: What Revoking Actually Does">
+<meta property="og:title" content="Mint Authority vs. Freeze Authority">
 <meta property="og:description" content="Two Solana permissions, two very different powers. Learn what mint and freeze authority control, what revoking changes and how to check both.">
 <meta property="og:url" content="https://degenkit.app/blog/mint-authority-vs-freeze-authority/">
 <meta property="og:image" content="https://degenkit.app/blog/img/mint-authority-vs-freeze-authority-cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@DegenKitApp">
-<meta name="twitter:title" content="Mint Authority vs. Freeze Authority: What Revoking Actually Does">
+<meta name="twitter:title" content="Mint Authority vs. Freeze Authority">
 <meta name="twitter:description" content="Two Solana permissions, two very different powers. Learn what mint and freeze authority control, what revoking changes and how to check both.">
 <meta name="twitter:image" content="https://degenkit.app/blog/img/mint-authority-vs-freeze-authority-cover.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +53,7 @@ twq('config','rfyik');
 <link rel="stylesheet" href="/assets/theme-icons.css">
 <link rel="stylesheet" href="/assets/blog.css">
 <script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Mint Authority vs. Freeze Authority: What Revoking Actually Does", "description": "Two Solana permissions, two very different powers. Learn what mint and freeze authority control, what revoking changes and how to check both.", "datePublished": "2026-10-25", "dateModified": "2026-10-25", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/mint-authority-vs-freeze-authority/"}, "url": "https://degenkit.app/blog/mint-authority-vs-freeze-authority/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/mint-authority-vs-freeze-authority-cover.webp", "keywords": "Guide, Solana, Permissions", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Mint Authority vs. Freeze Authority: What Revoking Actually Does", "item": "https://degenkit.app/blog/mint-authority-vs-freeze-authority/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Mint Authority vs. Freeze Authority: What Revoking Actually Does", "description": "Two Solana permissions, two very different powers. Learn what mint and freeze authority control, what revoking changes and how to check both.", "datePublished": "2026-10-25", "dateModified": "2026-10-25", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/mint-authority-vs-freeze-authority/"}, "url": "https://degenkit.app/blog/mint-authority-vs-freeze-authority/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/mint-authority-vs-freeze-authority-cover.webp", "keywords": "Guide, Solana, Permissions", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Mint Authority vs. Freeze Authority: What Revoking Actually Does", "item": "https://degenkit.app/blog/mint-authority-vs-freeze-authority/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can a token have mint authority revoked but freeze authority active?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The roles are independent. Always check both fields."}}, {"@type": "Question", "name": "Does revoking cost anything?", "acceptedAnswer": {"@type": "Answer", "text": "Revoking is a normal transaction, so it needs a network fee. A tool may add its own service fee, which is shown before you sign."}}]}</script>
 </head>
 <body>
 <header>

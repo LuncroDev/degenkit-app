@@ -4,7 +4,7 @@ section: ref
 order: 5
 emoji: "🔗"
 title: Official links
-desc: The only official DegenKit links. Anything else is not us.
+desc: The only official DegenKit links: website, X account, GitHub and support email. Anything else claiming to be DegenKit is not us.
 ---
 
 Bookmark these and ignore lookalikes.

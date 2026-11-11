@@ -2,7 +2,8 @@
 title: 'Robinhood Chain Token FAQ: 14 Questions Before You Launch'
 slug: robinhood-chain-token-faq
 date: '2026-11-04'
-excerpt: Short answers to the questions people ask most before creating a token on Robinhood Chain with DegenKit, from wallets, gas and supply to taxes, liquidity, My Tokens and what is coming next.
+updated: '2026-11-11'
+excerpt: Short answers to the questions people ask before creating a token on Robinhood Chain, covering wallets, gas, supply, taxes, liquidity and My Tokens.
 cover: /blog/img/robinhood-chain-token-faq-cover.webp
 cover_alt: A Robinhood Chain FAQ card with questions about gas, supply, taxes and liquidity, each with a short answer.
 tags:
@@ -86,6 +87,20 @@ Yes, from **Manage tax**. It freezes the rates, tax wallet and pools forever. A 
 Use our free [token approval checker](/tools/token-approval-checker/), which scans Robinhood Chain wallets. Blockscout shows holders and transfers.
 
 ![What you can do on DegenKit's Robinhood Chain launcher today and what is still coming soon.](/blog/img/robinhood-chain-token-faq-2.webp "From the Robinhood Chain launcher sidebar, November 2026.")
+
+## Launchpads and alternatives
+
+### Is DegenKit the same as Pons?
+
+No. Pons is a launchpad that creates a token and its trading pool together, under its own rules. DegenKit is a token generator: it deploys the token to your wallet and you add liquidity yourself. Read [Pons launchpad vs a token generator](/blog/pons-launchpad-vs-token-generator/) for the full comparison.
+
+### Is DegenKit affiliated with Robinhood?
+
+No. DegenKit is an independent tool that works on Robinhood Chain. It is not owned, issued or endorsed by Robinhood Markets.
+
+### What should I check before I announce my token?
+
+Confirm the contract on the explorer, add liquidity, test a small buy and a small sell, and write down the contract address you will share. The [token launch checklist](/blog/token-launch-checklist/) lists every step.
 
 ## Wrap up
 

@@ -2,6 +2,7 @@
 title: 'How to Create an ERC-20 Token on Ethereum Without Coding'
 slug: create-erc20-token-on-ethereum
 date: '2026-10-30'
+updated: '2026-11-11'
 excerpt: A step-by-step guide to creating an ERC-20 token on Ethereum mainnet — wallet, ETH for gas, plain or tax token, and how to check the result on Etherscan.
 cover: /blog/img/create-erc20-token-on-ethereum-cover.webp
 cover_alt: An Ethereum token creator form next to a finished ERC-20 token card showing a fixed supply.
@@ -69,11 +70,32 @@ The token can't be traded until it has a liquidity pool. On Ethereum that usuall
 
 When you announce the token, always publish the full contract address and say it is on Ethereum. A token with the same name on another network is a different contract.
 
+## Common mistakes to avoid
+
+- **Launching at peak gas.** Ethereum fees swing through the day. Check the estimate in your wallet and wait if it is unusually high. See [Ethereum gas fees explained](/blog/ethereum-gas-fees-explained/).
+- **Typos in the name or symbol.** They are permanent once the contract is deployed, so read them twice before you sign.
+- **Forgetting liquidity.** A new ERC-20 cannot be traded until a pool exists. Plan how much ETH you will pair with it, then follow [add liquidity on Uniswap](/blog/add-liquidity-uniswap-erc20/).
+- **Sharing the wrong address.** Copy the contract address from the explorer, never from a chat message.
+
+ERC-20 is the standard interface that wallets and exchanges expect from a token on Ethereum ([ethereum.org](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/)). Because DegenKit tokens follow it, they show up in any wallet that supports the standard.
+
+:::note Risk
+Creating a token does not give it value. Most new tokens never find buyers, and you can lose the ETH you put into gas and liquidity. Start small.
+:::
+
 ## Questions people ask
 
 ### Can I mint more tokens later?
 
 No. DegenKit's Ethereum tokens have no mint function, so the supply is final for everyone, including DegenKit.
+
+### How much does it cost to create an ERC-20 token on Ethereum?
+
+You pay the DegenKit service fee shown on the form plus Ethereum gas for one deployment transaction. Gas varies with network demand, so the total changes from hour to hour.
+
+### Do I need to know Solidity?
+
+No. The token generator deploys a standard ERC-20 contract for you. You only fill in the name, symbol and supply.
 
 ### Should I test first?
 

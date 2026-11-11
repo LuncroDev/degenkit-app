@@ -4,7 +4,7 @@ section: start
 order: 4
 emoji: "🌐"
 title: Supported networks
-desc: The six networks DegenKit supports, and how to choose between them.
+desc: The six networks DegenKit supports (Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium) and how to choose between them.
 ---
 
 DegenKit supports six networks with the same simple flow.

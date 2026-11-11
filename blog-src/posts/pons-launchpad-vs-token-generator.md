@@ -2,6 +2,7 @@
 title: 'Pons Launchpad on Robinhood Chain vs a Token Generator'
 slug: pons-launchpad-vs-token-generator
 date: '2026-11-08'
+updated: '2026-11-11'
 excerpt: Pons launchpad on Robinhood Chain sells new coins on a bonding curve. A token generator gives you the full supply. How the two models differ and which fits you.
 cover: /blog/img/pons-launchpad-vs-token-generator-cover.webp
 cover_alt: A glowing violet coin with two arrows on a dark lit grid beside a headline comparing Pons and a token generator.
@@ -88,6 +89,10 @@ Fast, cheap creation means many coins and heavy competition. Most coins never re
 You can lose money in crypto. This is not financial advice.
 
 ## FAQ
+
+### Is Pons Launcher the same as Pons launchpad?
+
+Yes. Pons Launcher, PonsLauncher and Pons launchpad are names people use for the same launchpad on Robinhood Chain.
 
 ### What is $PONS?
 

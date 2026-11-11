@@ -4,7 +4,7 @@ section: solana
 order: 12
 emoji: "◎"
 title: Remove Liquidity
-desc: Withdraw part or all of your Raydium liquidity position.
+desc: Withdraw part or all of your Raydium liquidity position on Solana: what you receive back, the fees involved and common mistakes.
 ---
 
 **Remove Liquidity** gives you back your share of a pool.

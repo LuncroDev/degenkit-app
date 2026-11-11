@@ -4,7 +4,7 @@ section: solana
 order: 10
 emoji: "⇄"
 title: Swap
-desc: Swap tokens at the best available route, powered by Jupiter.
+desc: Swap Solana tokens at the best available route, powered by Jupiter: how the quote works, slippage settings and what you sign.
 ---
 
 **Swap** finds the best route across Solana DEXs using the **Jupiter** aggregator.

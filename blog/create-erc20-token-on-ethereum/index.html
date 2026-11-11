@@ -31,7 +31,7 @@ twq('config','rfyik');
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-10-30">
-<meta property="article:modified_time" content="2026-10-30">
+<meta property="article:modified_time" content="2026-11-11">
 <meta property="og:image:alt" content="An Ethereum token creator form next to a finished ERC-20 token card showing a fixed supply.">
 <meta property="article:tag" content="Guide">
 <meta property="article:tag" content="Ethereum">
@@ -53,7 +53,7 @@ twq('config','rfyik');
 <link rel="stylesheet" href="/assets/theme-icons.css">
 <link rel="stylesheet" href="/assets/blog.css">
 <script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Create an ERC-20 Token on Ethereum Without Coding", "description": "A step-by-step guide to creating an ERC-20 token on Ethereum mainnet \u2014 wallet, ETH for gas, plain or tax token, and how to check the result on Etherscan.", "datePublished": "2026-10-30", "dateModified": "2026-10-30", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/create-erc20-token-on-ethereum/"}, "url": "https://degenkit.app/blog/create-erc20-token-on-ethereum/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/create-erc20-token-on-ethereum-cover.webp", "keywords": "Guide, Ethereum, Token Launch", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Create an ERC-20 Token on Ethereum Without Coding", "item": "https://degenkit.app/blog/create-erc20-token-on-ethereum/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Create an ERC-20 Token on Ethereum Without Coding", "description": "A step-by-step guide to creating an ERC-20 token on Ethereum mainnet \u2014 wallet, ETH for gas, plain or tax token, and how to check the result on Etherscan.", "datePublished": "2026-10-30", "dateModified": "2026-11-11", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/create-erc20-token-on-ethereum/"}, "url": "https://degenkit.app/blog/create-erc20-token-on-ethereum/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/create-erc20-token-on-ethereum-cover.webp", "keywords": "Guide, Ethereum, Token Launch", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Create an ERC-20 Token on Ethereum Without Coding", "item": "https://degenkit.app/blog/create-erc20-token-on-ethereum/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I mint more tokens later?", "acceptedAnswer": {"@type": "Answer", "text": "No. DegenKit's Ethereum tokens have no mint function, so the supply is final for everyone, including DegenKit."}}, {"@type": "Question", "name": "How much does it cost to create an ERC-20 token on Ethereum?", "acceptedAnswer": {"@type": "Answer", "text": "You pay the DegenKit service fee shown on the form plus Ethereum gas for one deployment transaction. Gas varies with network demand, so the total changes from hour to hour."}}, {"@type": "Question", "name": "Do I need to know Solidity?", "acceptedAnswer": {"@type": "Answer", "text": "No. The token generator deploys a standard ERC-20 contract for you. You only fill in the name, symbol and supply."}}, {"@type": "Question", "name": "Should I test first?", "acceptedAnswer": {"@type": "Answer", "text": "If you are unsure, rehearse the flow on a cheaper network first, then repeat it on Ethereum with the exact values you want."}}]}</script>
 </head>
 <body>
 <header>
@@ -79,7 +79,7 @@ twq('config','rfyik');
       <div class="chips"><span class="chip">Guide</span><span class="chip">Ethereum</span><span class="chip">Token Launch</span></div>
       <h1>How to Create an ERC-20 Token on Ethereum Without Coding</h1>
       <p class="lede">A step-by-step guide to creating an ERC-20 token on Ethereum mainnet — wallet, ETH for gas, plain or tax token, and how to check the result on Etherscan.</p>
-      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>October 30, 2026 · 4 min read</i></span></div>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>October 30, 2026 · 6 min read</i></span></div>
     </div>
     <div class="cover hero"><img src="/blog/img/create-erc20-token-on-ethereum-cover.webp" alt="An Ethereum token creator form next to a finished ERC-20 token card showing a fixed supply." loading="lazy" decoding="async"></div>
     <div class="prose">
@@ -108,9 +108,17 @@ twq('config','rfyik');
 <h2 id="after-the-token-exists">After the token exists</h2>
 <p>The token can&#x27;t be traded until it has a liquidity pool. On Ethereum that usually means a DEX such as Uniswap. Our guide to <a href="/blog/add-liquidity-uniswap-erc20/">adding liquidity on Uniswap</a> covers that step, including what tax tokens need.</p>
 <p>When you announce the token, always publish the full contract address and say it is on Ethereum. A token with the same name on another network is a different contract.</p>
+<h2 id="common-mistakes-to-avoid">Common mistakes to avoid</h2>
+<ul><li><strong>Launching at peak gas.</strong> Ethereum fees swing through the day. Check the estimate in your wallet and wait if it is unusually high. See <a href="/blog/ethereum-gas-fees-explained/">Ethereum gas fees explained</a>.</li><li><strong>Typos in the name or symbol.</strong> They are permanent once the contract is deployed, so read them twice before you sign.</li><li><strong>Forgetting liquidity.</strong> A new ERC-20 cannot be traded until a pool exists. Plan how much ETH you will pair with it, then follow <a href="/blog/add-liquidity-uniswap-erc20/">add liquidity on Uniswap</a>.</li><li><strong>Sharing the wrong address.</strong> Copy the contract address from the explorer, never from a chat message.</li></ul>
+<p>ERC-20 is the standard interface that wallets and exchanges expect from a token on Ethereum (<a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/" target="_blank" rel="noopener noreferrer">ethereum.org</a>). Because DegenKit tokens follow it, they show up in any wallet that supports the standard.</p>
+<aside class="callout note"><strong>Risk</strong><p>Creating a token does not give it value. Most new tokens never find buyers, and you can lose the ETH you put into gas and liquidity. Start small.</p></aside>
 <h2 id="questions-people-ask">Questions people ask</h2>
 <h3 id="can-i-mint-more-tokens-later">Can I mint more tokens later?</h3>
 <p>No. DegenKit&#x27;s Ethereum tokens have no mint function, so the supply is final for everyone, including DegenKit.</p>
+<h3 id="how-much-does-it-cost-to-create-an-erc-20-token-on-ethereum">How much does it cost to create an ERC-20 token on Ethereum?</h3>
+<p>You pay the DegenKit service fee shown on the form plus Ethereum gas for one deployment transaction. Gas varies with network demand, so the total changes from hour to hour.</p>
+<h3 id="do-i-need-to-know-solidity">Do I need to know Solidity?</h3>
+<p>No. The token generator deploys a standard ERC-20 contract for you. You only fill in the name, symbol and supply.</p>
 <h3 id="should-i-test-first">Should I test first?</h3>
 <p>If you are unsure, rehearse the flow on a cheaper network first, then repeat it on Ethereum with the exact values you want.</p>
 <h2 id="wrap-up">Wrap up</h2>

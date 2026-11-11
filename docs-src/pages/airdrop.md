@@ -4,7 +4,7 @@ section: solana
 order: 6
 emoji: "✈"
 title: Airdrop
-desc: Send the same amount of a token to many wallets at once.
+desc: Airdrop a Solana token to many wallets at once: paste a list, send the same amount to every address in batches, and track each transfer.
 ---
 
 **Airdrop** sends one fixed amount to every address on your list.

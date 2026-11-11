@@ -4,7 +4,7 @@ section: solana
 order: 7
 emoji: "⇉"
 title: Multisender
-desc: Send different, custom amounts of a token to many wallets in one go.
+desc: Send different, custom amounts of a Solana token to many wallets in one go: upload a CSV, review the totals and send in batches.
 ---
 
 **Multisender** lets you set a different amount for each recipient.

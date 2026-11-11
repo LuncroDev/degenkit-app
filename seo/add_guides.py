@@ -57,11 +57,14 @@ CHAINS = {
         ("What is the Elysium chain ID?","As far as we know, Elysium mainnet uses chain ID 99901. Confirm it against the official Kinetiq channels before adding the network.")]),
 }
 
+REL = {'solana': [('create-solana-token-without-coding', 'Solana token creator guide'), ('create-solana-token-free', 'Can you create a Solana token for free?'), ('mint-authority-vs-freeze-authority', 'Mint authority vs freeze authority'), ('solana-token-metadata-explained', 'Solana token metadata explained'), ('add-liquidity-solana-token', 'Add liquidity to a Solana token'), ('solana-fees-and-rent-explained', 'Solana fees and rent explained')], 'ethereum': [('create-erc20-token-on-ethereum', 'Create an ERC-20 token on Ethereum'), ('ethereum-gas-fees-explained', 'Ethereum gas fees explained'), ('add-liquidity-uniswap-erc20', 'Add liquidity on Uniswap'), ('how-token-buy-sell-tax-works', 'How buy and sell taxes work'), ('read-token-page-etherscan-blockscout', 'Read a token page on Etherscan'), ('erc20-token-approvals-explained', 'ERC-20 approvals explained')], 'bnb': [('how-to-launch-a-token-on-bnb-chain', 'How to launch a token on BNB Chain'), ('how-token-buy-sell-tax-works', 'How buy and sell taxes work'), ('manage-tax-token-renounce-ownership', 'Manage a tax token and renounce ownership'), ('token-launch-costs-by-network', 'Token launch costs by network'), ('how-to-spot-a-honeypot-token', 'How to spot a honeypot token')], 'base': [('how-to-launch-a-token-on-base', 'How to launch a token on Base'), ('add-liquidity-uniswap-erc20', 'Add liquidity on Uniswap'), ('how-token-buy-sell-tax-works', 'How buy and sell taxes work'), ('token-launch-costs-by-network', 'Token launch costs by network'), ('which-blockchain-to-launch-token', 'Which blockchain should you launch on?')], 'robinhood': [('token-generator-robinhood-chain', 'Token generator for Robinhood Chain'), ('launch-a-token-on-robinhood-chain', 'Launch a token on Robinhood Chain'), ('create-tax-token-on-robinhood-chain', 'Create a tax token on Robinhood Chain'), ('pons-launchpad-vs-token-generator', 'Pons launchpad vs a token generator'), ('bridge-eth-to-robinhood-chain', 'Bridge ETH to Robinhood Chain'), ('robinhood-chain-token-faq', 'Robinhood Chain token FAQ'), ('robinhood-tokenized-stocks-vs-your-own-token', 'Tokenized stocks vs your own token')], 'elysium': [('elysium-token-creator', 'Elysium token creator guide'), ('what-is-elysium-chain', 'What is Elysium?'), ('launch-a-token-on-elysium', 'Launch a token on Elysium'), ('bridge-hype-to-elysium', 'Bridge HYPE to Elysium'), ('elysium-tax-token', 'Elysium tax tokens'), ('elysium-chain-id-rpc-metamask', 'Elysium chain ID, RPC and MetaMask')]}
+
 def build(slug, c):
     steps = c.get("steps") or EVM_STEPS(c["name"], c["native"], c["wallet"], c["explorer"])
     faq = c["faq"]
     ol = "".join(f"<li><strong>{E(t)}</strong><br>{E(d)}</li>" for t, d in steps)
     qa = "".join(f"<details><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in faq)
+    rel = "".join(f'<li><a href="/blog/{s_}/">{E(t_)}</a></li>' for s_, t_ in REL.get(slug, []))
     others = "".join(f'<a href="/launch/{s}/">{E(v["name"])}</a>' for s, v in CHAINS.items() if s != slug)
     sec = f'''<!-- dk-guide:start -->
 <section class="dk-guide" aria-labelledby="dkg-h">
@@ -71,6 +74,8 @@ def build(slug, c):
 <ol>{ol}</ol>
 <h3>{E(c["name"])} token creator FAQ</h3>
 {qa}
+<h3>{E(c["name"])} guides</h3>
+<ul class="dk-guide-rel">{rel}</ul>
 <p class="dk-guide-more">Launching elsewhere? {others}</p>
 </section>
 <!-- dk-guide:end -->'''
@@ -101,6 +106,9 @@ css = """
 .dk-guide details{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:12px 16px;margin:0 0 10px}
 .dk-guide summary{cursor:pointer;font-weight:600;color:var(--ink)}
 .dk-guide details p{margin:10px 0 0}
+.dk-guide-rel{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.dk-guide-rel a{display:inline-block;padding:7px 14px;border:1px solid var(--line);border-radius:100px;font-size:13.5px;color:var(--ink)}
+.dk-guide-rel a:hover{border-color:var(--brass)}
 .dk-guide-more a{margin-left:10px;color:var(--ink);text-decoration:underline}
 """
 f = ROOT / "assets/dk-ui.css"; t = f.read_text(encoding="utf-8")

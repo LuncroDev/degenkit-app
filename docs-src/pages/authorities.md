@@ -4,7 +4,7 @@ section: solana
 order: 3
 emoji: "⚷"
 title: Authorities
-desc: Permanently revoke mint or freeze authority on tokens you control.
+desc: Revoke mint or freeze authority on a Solana token you control. What each authority does, why revoking builds trust, and how to do it.
 ---
 
 Authorities are special permissions on a token:

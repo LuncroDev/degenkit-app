@@ -20,8 +20,8 @@ twq('config','rfyik');
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Authorities and Update Metadata: Managing an Existing Solana Token</title>
-<meta name="description" content="DegenKit&#x27;s Authorities and Update Metadata tools work on Solana tokens you already control. Learn when you need them, what each does, and which changes are permanent.">
+<title>Authorities and Update Metadata</title>
+<meta name="description" content="DegenKit&#x27;s Authorities and Update Metadata tools work on Solana tokens you already control. Learn when you need them, what each does, and which changes are…">
 <link rel="canonical" href="https://degenkit.app/blog/revoke-authorities-and-update-metadata/">
 <link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
@@ -38,13 +38,13 @@ twq('config','rfyik');
 <meta property="article:tag" content="Guide">
 <meta property="og:site_name" content="DegenKit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Authorities and Update Metadata: Managing an Existing Solana Token">
+<meta property="og:title" content="Authorities and Update Metadata">
 <meta property="og:description" content="DegenKit&#x27;s Authorities and Update Metadata tools work on Solana tokens you already control. Learn when you need them, what each does, and which changes are permanent.">
 <meta property="og:url" content="https://degenkit.app/blog/revoke-authorities-and-update-metadata/">
 <meta property="og:image" content="https://degenkit.app/blog/img/revoke-authorities-and-update-metadata-cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@DegenKitApp">
-<meta name="twitter:title" content="Authorities and Update Metadata: Managing an Existing Solana Token">
+<meta name="twitter:title" content="Authorities and Update Metadata">
 <meta name="twitter:description" content="DegenKit&#x27;s Authorities and Update Metadata tools work on Solana tokens you already control. Learn when you need them, what each does, and which changes are permanent.">
 <meta name="twitter:image" content="https://degenkit.app/blog/img/revoke-authorities-and-update-metadata-cover.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +53,7 @@ twq('config','rfyik');
 <link rel="stylesheet" href="/assets/theme-icons.css">
 <link rel="stylesheet" href="/assets/blog.css">
 <script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Authorities and Update Metadata: Managing an Existing Solana Token", "description": "DegenKit's Authorities and Update Metadata tools work on Solana tokens you already control. Learn when you need them, what each does, and which changes are permanent.", "datePublished": "2026-11-02", "dateModified": "2026-11-02", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/revoke-authorities-and-update-metadata/"}, "url": "https://degenkit.app/blog/revoke-authorities-and-update-metadata/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/revoke-authorities-and-update-metadata-cover.webp", "keywords": "DegenKit, Solana, Guide", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Authorities and Update Metadata: Managing an Existing Solana Token", "item": "https://degenkit.app/blog/revoke-authorities-and-update-metadata/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Authorities and Update Metadata: Managing an Existing Solana Token", "description": "DegenKit's Authorities and Update Metadata tools work on Solana tokens you already control. Learn when you need them, what each does, and which changes are permanent.", "datePublished": "2026-11-02", "dateModified": "2026-11-02", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/revoke-authorities-and-update-metadata/"}, "url": "https://degenkit.app/blog/revoke-authorities-and-update-metadata/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/revoke-authorities-and-update-metadata-cover.webp", "keywords": "DegenKit, Solana, Guide", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Authorities and Update Metadata: Managing an Existing Solana Token", "item": "https://degenkit.app/blog/revoke-authorities-and-update-metadata/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I revoke authority on someone else's token?", "acceptedAnswer": {"@type": "Answer", "text": "No. Only the wallet that holds the authority can revoke it."}}, {"@type": "Question", "name": "Can I edit a DegenKit token's name later?", "acceptedAnswer": {"@type": "Answer", "text": "No. DegenKit creates metadata locked, so the name, symbol and image are final. Double-check them before you sign."}}]}</script>
 </head>
 <body>
 <header>

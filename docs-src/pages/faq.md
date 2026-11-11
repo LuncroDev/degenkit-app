@@ -4,7 +4,7 @@ section: ref
 order: 4
 emoji: "❓"
 title: FAQ
-desc: Short answers to common questions about DegenKit.
+desc: Answers to common DegenKit questions: supported networks and wallets, fees, token safety, tax tokens, liquidity and where to get support.
 ---
 
 ## What is DegenKit?

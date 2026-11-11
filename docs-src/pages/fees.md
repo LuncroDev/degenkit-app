@@ -4,7 +4,7 @@ section: ref
 order: 1
 emoji: "💸"
 title: Fees
-desc: Every DegenKit service fee per tool, plus the network costs you also pay.
+desc: Every DegenKit service fee per tool and network, plus the gas and network costs you also pay when you create or manage a token.
 ---
 
 Every action has two parts: DegenKit's **service fee** and the **network fee** that the blockchain charges. The service fee is always shown before you sign.

@@ -4,7 +4,7 @@ section: solana
 order: 11
 emoji: "◉"
 title: Create Liquidity
-desc: Create a Raydium pool for your token so people can trade it.
+desc: Create a Raydium liquidity pool for your Solana token so people can trade it: choosing the pair, the starting price and the pool fee.
 ---
 
 **Create Liquidity** opens a **Raydium CPMM** pool for your token paired with SOL or USDC.

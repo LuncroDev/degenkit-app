@@ -30,9 +30,8 @@ def faq_html(qa):
         '<details class="t-faq"><summary>%s</summary><p>%s</p></details>' % (esc(q), esc(a)) for q, a in qa) + "</section>"
 
 def app_ld(name, url, desc):
-    return {"@context": "https://schema.org", "@type": "WebApplication", "name": name, "url": SITE + url,
-            "applicationCategory": "DeveloperApplication", "operatingSystem": "Any (web browser)", "description": desc,
-            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": SITE + "/#org"}}
+    return {"@context": "https://schema.org", "@type": "WebPage", "name": name, "url": SITE + url, "description": desc,
+            "isAccessibleForFree": True, "publisher": {"@id": SITE + "/#org"}}
 
 def write(rel, title, desc, body, jsonld):
     html = B.page(title, desc, SITE + rel, body, jsonld=jsonld, extra_meta=CSS)
@@ -187,24 +186,34 @@ def ap_page():
 {faq_html(AP_QA)}
 </main>
 <script type="module" src="/tools/approvals.js"></script>"""
-    write("/tools/token-approval-checker/", "Token Approval Checker: Find & Revoke ERC-20 Approvals | DegenKit",
+    write("/tools/token-approval-checker/", "Token Approval Checker: Revoke ERC-20 Approvals | DegenKit",
           "Free token approval checker for Ethereum, Robinhood Chain, Base and BNB Chain. See which contracts can spend your tokens and revoke unlimited approvals.",
           body, ld(crumbs("Token approval checker", "/tools/token-approval-checker/"), faq_ld(AP_QA)))
 
 def index_page():
     cards = [("/tools/token-approval-checker/", "🛡️", "Token approval checker", "Find and revoke ERC-20 approvals on Ethereum, Robinhood Chain, Base and BNB Chain."),
              ("/tools/robinhood-chain-rpc/", "📡", "Robinhood Chain RPC", "Endpoints, chain ID 4663, live status and add-to-wallet buttons."),
-             ("/launch/solana/", "⇉", "Solana Multisender", "Send different amounts of a token to many wallets, in batches of eight."),
-             ("/launch/solana/", "◈", "Solana token scanner", "Check authorities, metadata and holder concentration for any mint.")]
+             ("/docs/multisender/", "⇉", "Solana Multisender", "Send different amounts of a token to many wallets, in batches of eight."),
+             ("/docs/scanner/", "◈", "Solana token scanner", "Check authorities, metadata and holder concentration for any mint."),
+             ("/launch/", "◆", "Token creator", "Create a token on Solana, Ethereum, BNB Chain, Base, Robinhood Chain or Elysium."),
+             ("/docs/tax-token/", "%", "Tax token creator", "Deploy an ERC-20 with your own buy and sell tax on any supported EVM chain.")]
     c = "".join('<a class="t-tile" href="%s"><span class="t-ic">%s</span><b>%s</b><span>%s</span></a>' % (u, i, esc(t), esc(d)) for u, i, t, d in cards)
+    qa = [("Are these crypto tools really free?", "The approval checker and the Robinhood Chain RPC page are free to use. Reading data costs nothing. If you choose to revoke an approval, you pay only the network gas for that transaction, straight from your own wallet."),
+          ("Do I need to connect a wallet?", "Not to look things up. You can paste any address into the approval checker. A wallet is only needed when you decide to sign something, such as revoking an approval or adding a network."),
+          ("Are the tools non-custodial?", "Yes. DegenKit never holds your keys or funds. Every action is a transaction you review and sign in your own wallet."),
+          ("Which networks do the tools cover?", "The approval checker works on Ethereum, Robinhood Chain, Base and BNB Chain. The Solana tools (Multisender, Airdrop and Scanner) live inside the Solana launcher.")]
     body = f"""<main class="t-wrap">
 <h1 class="t-h1">Free crypto tools</h1>
 <p class="t-lead">Small, free, non-custodial tools from DegenKit. No sign-up, and nothing is signed unless you choose to.</p>
 <div class="t-grid">{c}</div>
+<h2>What you can do with these tools</h2>
+<p>Launching a token is only the first step. After that you need to keep your wallet safe, connect to the right network and get tokens into holders' hands. These tools cover those jobs. The <a href="/tools/token-approval-checker/">token approval checker</a> lists every ERC-20 allowance your wallet has granted and lets you revoke the ones you no longer trust. The <a href="/tools/robinhood-chain-rpc/">Robinhood Chain RPC</a> page gives you the chain ID, endpoints and explorer in one place, with a button that adds the network to your wallet.</p>
+<p>When you are ready to create a token, the <a href="/launch/">token creator</a> works on six networks from one short form. New to this? Start with the <a href="/blog/token-launch-checklist/">token launch checklist</a>, learn <a href="/blog/erc20-token-approvals-explained/">how ERC-20 approvals work</a>, or read <a href="/blog/wallet-security-for-token-creators/">wallet security for token creators</a>.</p>
+{faq_html(qa)}
 </main>"""
     write("/tools/", "Free Crypto Tools: Approval Checker & RPC | DegenKit",
           "Free non-custodial tools: token approval checker, Robinhood Chain RPC details and status, Solana multisender and token scanner.", body,
-          ld({"@context": "https://schema.org", "@type": "CollectionPage", "name": "DegenKit free tools", "url": SITE + "/tools/"}))
+          ld({"@context": "https://schema.org", "@type": "CollectionPage", "name": "DegenKit free tools", "url": SITE + "/tools/"}, faq_ld(qa)))
 
 def update_sitemap():
     sm = ROOT / "sitemap.xml"
