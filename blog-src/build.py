@@ -192,6 +192,7 @@ HEADER = """<header>
       <a class="navlink" href="/#features">Features</a>
       <a class="navlink" href="/#roadmap">Roadmap</a>
       <a class="navlink" href="/tools/">Tools</a>
+      <a class="navlink" href="/club/">Club</a>
       <a class="navlink" href="/docs/">Docs</a>
       <a class="navlink" href="/blog/">Blog</a>
       <a class="navlink" href="/#faq">FAQ</a>
