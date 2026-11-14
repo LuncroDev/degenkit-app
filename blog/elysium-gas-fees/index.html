@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Elysium Gas Fees: What a Transaction Costs in HYPE</title>
+<meta name="description" content="How Elysium gas fees work. Gas is paid in HYPE, the base fee floor was 0.1 gwei on testnet, and a token launch costs far more in its pool than in gas.">
+<link rel="canonical" href="https://degenkit.app/blog/elysium-gas-fees/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-12">
+<meta property="article:modified_time" content="2026-11-12">
+<meta property="og:image:alt" content="A cream poster with a headline about Elysium gas fees beside teal halftone shapes and a lightning bolt symbol.">
+<meta property="article:tag" content="News">
+<meta property="article:tag" content="Explainer">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Elysium Gas Fees: What a Transaction Costs in HYPE">
+<meta property="og:description" content="How Elysium gas fees work. Gas is paid in HYPE, the base fee floor was 0.1 gwei on testnet, and a token launch costs far more in its pool than in gas.">
+<meta property="og:url" content="https://degenkit.app/blog/elysium-gas-fees/">
+<meta property="og:image" content="https://degenkit.app/blog/img/elysium-gas-fees-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="Elysium Gas Fees: What a Transaction Costs in HYPE">
+<meta name="twitter:description" content="How Elysium gas fees work. Gas is paid in HYPE, the base fee floor was 0.1 gwei on testnet, and a token launch costs far more in its pool than in gas.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/elysium-gas-fees-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Elysium Gas Fees: What a Transaction Costs in HYPE", "description": "How Elysium gas fees work. Gas is paid in HYPE, the base fee floor was 0.1 gwei on testnet, and a token launch costs far more in its pool than in gas.", "datePublished": "2026-11-12", "dateModified": "2026-11-12", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/elysium-gas-fees/"}, "url": "https://degenkit.app/blog/elysium-gas-fees/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/elysium-gas-fees-cover.webp", "keywords": "News, Explainer", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Elysium Gas Fees: What a Transaction Costs in HYPE", "item": "https://degenkit.app/blog/elysium-gas-fees/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What token pays gas on Elysium?", "acceptedAnswer": {"@type": "Answer", "text": "HYPE. It is the native gas token, bridged 1:1 from HyperEVM."}}, {"@type": "Question", "name": "Why did my transfer use more than 21,000 gas?", "acceptedAnswer": {"@type": "Answer", "text": "Elysium adds the cost of posting your transaction to HyperEVM, so a plain transfer uses about 21,140 gas."}}, {"@type": "Question", "name": "How much HYPE do I need to launch a token on Elysium?", "acceptedAnswer": {"@type": "Answer", "text": "1 HYPE for DegenKit's creation fee, a small amount for gas, and the HYPE you want in your pool."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/tools/">Tools</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">News</span><span class="chip">Explainer</span></div>
+      <h1>Elysium Gas Fees: What a Transaction Costs in HYPE</h1>
+      <p class="lede">How Elysium gas fees work. Gas is paid in HYPE, the base fee floor was 0.1 gwei on testnet, and a token launch costs far more in its pool than in gas.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 12, 2026 · 5 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/elysium-gas-fees-cover.webp" alt="A cream poster with a headline about Elysium gas fees beside teal halftone shapes and a lightning bolt symbol." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>Gas fees on Elysium are paid in HYPE and are very small. Elysium uses an Ethereum-style base fee plus an optional priority fee, and a testnet measurement put the base fee floor at 0.1 gwei. At that rate, a plain HYPE transfer costs about 0.0000021 HYPE. For a token launch, the creation fee and your pool liquidity cost far more than gas.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li><strong>Gas token:</strong> HYPE, bridged 1:1 from HyperEVM, with no wrapper (Kinetiq release).</li><li><strong>Base fee floor:</strong> <strong>0.1 gwei</strong>, measured on testnet in October 2026 (Dwellir). Mainnet parameters can differ.</li><li><strong>Plain transfer:</strong> about <strong>21,140 gas</strong>, including the cost of posting data to HyperEVM (Alchemy).</li><li><strong>Ordering:</strong> a single sequencer sorts each block by priority fee, with no privileged lanes (QuickNode).</li></ul></aside>
+<aside class="callout note"><strong>Not affiliated</strong><p>DegenKit is not affiliated with Kinetiq, Hyperliquid, Alchemy, QuickNode or Dwellir. Figures are early measurements on a chain that launched on November 9, 2026.</p></aside>
+<h2 id="how-are-gas-fees-calculated-on-elysium">How are gas fees calculated on Elysium?</h2>
+<p>Elysium is an Arbitrum Orbit chain, so a fee works like on Ethereum and Arbitrum:</p>
+<p><strong>fee = gas used × (base fee + priority fee)</strong></p>
+<ul><li><strong>Gas used</strong> depends on what the transaction does. Alchemy notes that Elysium&#x27;s Nitro stack adds the cost of posting the transaction to HyperEVM, shown as <code>gasUsedForL1</code> in the receipt. That is why a plain transfer uses about 21,140 gas, not Ethereum&#x27;s 21,000.</li><li><strong>Base fee</strong> rises with congestion and falls to a floor. Dwellir measured a floor of 0.1 gwei on testnet, and QuickNode&#x27;s sample <code>eth_baseFee</code> response is the same 0.1 gwei.</li><li><strong>Priority fee</strong> is optional. Dwellir saw it at 0 on testnet because blocks were not full.</li></ul>
+<figure><img src="/blog/img/elysium-gas-fees-1.webp" alt="How an Elysium gas fee is calculated: gas used times the base fee plus the priority fee, paid in HYPE." loading="lazy" decoding="async"><figcaption>One gwei is a billionth of a HYPE.</figcaption></figure>
+<h2 id="what-does-a-transaction-cost">What does a transaction cost?</h2>
+<p>At the measured 0.1 gwei floor:</p>
+<div class="tbl"><table><thead><tr><th>Transaction</th><th>Approx. gas</th><th>Approx. fee in HYPE</th></tr></thead><tbody><tr><td>HYPE transfer</td><td>21,140</td><td>0.0000021</td></tr><tr><td>Token approval</td><td>~50,000</td><td>0.000005</td></tr><tr><td>Uniswap swap</td><td>~150,000</td><td>0.000015</td></tr></tbody></table></div>
+<p>Only the transfer figure is measured (Alchemy). The approval and swap gas figures are typical Ethereum values, so treat those rows as rough guides. Your wallet shows the real estimate before you sign.</p>
+<p>Why so low? Elysium uses <strong>AnyTrust</strong> data availability. A committee stores the full data, and only a small certificate is posted to HyperEVM. That avoids paying HyperEVM gas for every byte, at the cost of trusting the committee.</p>
+<h2 id="what-does-a-token-launch-cost-on-elysium">What does a token launch cost on Elysium?</h2>
+<p>For a launch, gas is the smallest line:</p>
+<ul><li><strong>Creation fee:</strong> <strong>1 HYPE</strong> on <a href="/launch/elysium/">DegenKit&#x27;s Elysium token creator</a>.</li><li><strong>Gas</strong> for creating the token, approving it and adding liquidity: a tiny fraction of a HYPE at current base fees.</li><li><strong>Pool liquidity:</strong> the HYPE you pair with your token on Uniswap. This is usually by far the largest amount.</li></ul>
+<p>Keep a little extra HYPE on Elysium for later transactions. Bridging back to HyperEVM takes about 5.5 days. See <a href="/blog/bridge-hype-to-elysium/">how to bridge HYPE to Elysium</a>.</p>
+<figure><video src="/blog/img/elysium-gas-fees-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Elysium gas fees in 20 seconds: gas in HYPE, a 0.1 gwei floor, a transfer for about 0.0000021 HYPE and a launch budget."></video></figure>
+<h2 id="how-do-elysium-fees-compare-with-hyperevm">How do Elysium fees compare with HyperEVM?</h2>
+<p>Both use HYPE for gas and an Ethereum-style fee model. The difference is capacity. HyperEVM&#x27;s fast blocks hold 3 million gas and its large blocks 30 million. Kinetiq targets 300 million gas per second on Elysium, with 100 ms blocks. More room per second means less competition for space, which keeps the base fee near its floor. See <a href="/blog/elysium-vs-hyperevm/">Elysium vs HyperEVM</a>.</p>
+<figure><img src="/blog/img/elysium-gas-fees-2.webp" alt="A launch budget on Elysium: 1 HYPE creation fee, a tiny amount for gas, the pool liquidity and a HYPE buffer for exits." loading="lazy" decoding="async"><figcaption>Gas is the smallest line in a launch budget.</figcaption></figure>
+<h2 id="do-you-need-a-priority-fee">Do you need a priority fee?</h2>
+<p>Usually not. The sequencer sorts transactions within a block by priority fee, so a tip only matters when many transactions compete for the same moment, such as the first block after a popular launch. Kinetiq has said a dedicated trading lane and Timeboost are planned, which could change how ordering works.</p>
+<h2 id="what-are-the-risks">What are the risks?</h2>
+<ul><li><strong>Early figures.</strong> The 0.1 gwei floor was measured on testnet. Check your wallet&#x27;s estimate on mainnet.</li><li><strong>Congestion spikes.</strong> The base fee rises when demand surges.</li><li><strong>Single sequencer.</strong> One operator orders transactions at launch.</li><li><strong>Stuck HYPE.</strong> Exits to HyperEVM take about 5.5 days, so do not bridge only your exact gas.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="what-token-pays-gas-on-elysium">What token pays gas on Elysium?</h3>
+<p>HYPE. It is the native gas token, bridged 1:1 from HyperEVM.</p>
+<h3 id="why-did-my-transfer-use-more-than-21-000-gas">Why did my transfer use more than 21,000 gas?</h3>
+<p>Elysium adds the cost of posting your transaction to HyperEVM, so a plain transfer uses about 21,140 gas.</p>
+<h3 id="how-much-hype-do-i-need-to-launch-a-token-on-elysium">How much HYPE do I need to launch a token on Elysium?</h3>
+<p>1 HYPE for DegenKit&#x27;s creation fee, a small amount for gas, and the HYPE you want in your pool.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://www.alchemy.com/docs/reference/elysium-api-faq" target="_blank" rel="noopener noreferrer">Alchemy: Elysium API FAQ</a></li><li><a href="https://www.dwellir.com/blog/what-is-elysium" target="_blank" rel="noopener noreferrer">Dwellir: What is Elysium</a></li><li><a href="https://www.quicknode.com/guides/hyperliquid/what-is-elysium" target="_blank" rel="noopener noreferrer">QuickNode: What is Elysium</a></li><li><a href="https://www.quicknode.com/docs/elysium/eth_baseFee" target="_blank" rel="noopener noreferrer">QuickNode: eth_baseFee on Elysium</a></li><li><a href="https://www.manilatimes.net/2026/11/09/tmt-newswire/globenewswire/kinetiq-launches-elysium-public-mainnet-a-high-performance-layer-2-built-for-hyperliquid/2465340" target="_blank" rel="noopener noreferrer">Kinetiq launch release (GlobeNewswire via The Manila Times)</a></li></ul>
+<p>Budget your launch and create the token with the <a href="/launch/elysium/">DegenKit Elysium token creator</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=Elysium%20Gas%20Fees%3A%20What%20a%20Transaction%20Costs%20in%20HYPE%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Felysium-gas-fees%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/elysium-gas-fees/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/elysium-vs-solana/">
+  <div class="cover"><img src="/blog/img/elysium-vs-solana-cover.webp" alt="A cream poster with a headline comparing Elysium and Solana beside orange halftone shapes and two overlapping circles." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Solana</span><span class="chip">Explainer</span><span>November 14, 2026</span></div>
+    <h2>Elysium vs Solana: Where to Launch a Meme Coin</h2>
+    <p>Elysium vs Solana for a meme coin launch. Costs, token standards, tax options, liquidity, audience and exit times compared, and how to choose between them.</p>
+  </div>
+</a><a class="card" href="/blog/what-is-fomo-app/">
+  <div class="cover"><img src="/blog/img/what-is-fomo-app-cover.webp" alt="A cream poster with a headline asking what the fomo app is beside pink halftone shapes and a flame symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Explainer</span><span>November 14, 2026</span></div>
+    <h2>What Is the fomo App? Elysium&#x27;&#x27;s Trading Partner Explained</h2>
+    <p>What is the fomo app? A self-custodial social trading app, Elysium&#x27;s exclusive trading partner since launch day. How it works, what it costs and the risks to know.</p>
+  </div>
+</a><a class="card" href="/blog/hip-1-token-vs-elysium-erc20/">
+  <div class="cover"><img src="/blog/img/hip-1-token-vs-elysium-erc20-cover.webp" alt="A cream poster with a headline comparing HIP-1 tokens and Elysium ERC-20 tokens beside yellow halftone shapes and two overlapping circles." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Explainer</span><span>November 12, 2026</span></div>
+    <h2>HIP-1 Token vs Elysium ERC-20: Two Ways to Launch</h2>
+    <p>HIP-1 token or an ERC-20 on Elysium? A ticker auction on Hyperliquid&#x27;s order book versus a 1 HYPE contract with a Uniswap pool. Cost, trading and control compared.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <a class="tp-badge" href="https://www.trustpilot.com/evaluate/degenkit.app" target="_blank" rel="noopener" aria-label="Review DegenKit on Trustpilot" style="display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;padding:9px 14px;border:1px solid #00b67a;border-radius:8px;color:inherit;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#00b67a"/><path d="M12 4.2l2.3 5.1 5.5.5-4.2 3.7 1.3 5.4L12 16l-4.9 2.9 1.3-5.4L4.2 9.8l5.5-.5z" fill="#fff"/></svg><span>Review us on Trustpilot</span></a>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>

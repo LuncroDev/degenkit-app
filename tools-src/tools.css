@@ -56,3 +56,40 @@ html[data-theme="light"] .t-h1{background:linear-gradient(90deg,#C2410C,#E8505B)
 .t-tile b{font-family:'Space Grotesk',sans-serif; font-size:18px; color:var(--ink);}
 .t-ic{font-size:24px;}
 @media (max-width:640px){.t-stats{grid-template-columns:1fr;}}
+
+/* ---- calculators & generators ---- */
+.t-two{display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start;}
+@media (max-width:800px){.t-two{grid-template-columns:1fr;}}
+.t-fields{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+@media (max-width:480px){.t-fields{grid-template-columns:1fr;}}
+.t-fields label{display:flex; flex-direction:column; gap:6px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-family:'JetBrains Mono',monospace;}
+.t-fields label.full{grid-column:1 / -1;}
+.t-fields input,.t-fields select{height:46px; padding:0 14px; border-radius:10px; border:1px solid var(--line); background:var(--panel-2); color:var(--ink); font-family:'JetBrains Mono',monospace; font-size:15px; width:100%; box-sizing:border-box;}
+.t-fields input:focus,.t-fields select:focus,.t-alloc input:focus{outline:none; border-color:var(--orange); box-shadow:0 0 0 3px rgba(255,122,26,.18);}
+.t-out{display:grid; gap:10px;}
+.t-out div{display:flex; justify-content:space-between; gap:14px; align-items:baseline; padding:12px 14px; border-radius:12px; background:var(--panel-2); border:1px solid var(--line);}
+.t-out span{font-size:13px; color:var(--muted);}
+.t-out b{font-family:'JetBrains Mono',monospace; font-size:16px; color:var(--ink); text-align:right; word-break:break-all;}
+.t-out div.big{background:linear-gradient(135deg,rgba(255,122,26,.16),rgba(232,80,91,.08)); border-color:rgba(255,122,26,.4);}
+.t-out div.big b{font-size:20px;}
+.t-warn{color:#FF8FA8 !important;}
+.t-alloc{display:grid; gap:8px; margin-bottom:12px;}
+.t-alloc .r{display:grid; grid-template-columns:16px 1fr 92px 34px; gap:8px; align-items:center;}
+.t-alloc .sw{width:14px; height:14px; border-radius:4px;}
+.t-alloc input{height:42px; padding:0 12px; border-radius:10px; border:1px solid var(--line); background:var(--panel-2); color:var(--ink); font-size:14px; width:100%; box-sizing:border-box;}
+.t-alloc button{height:34px; border-radius:8px; border:1px solid var(--line); background:transparent; color:var(--muted); cursor:pointer;}
+.t-donut{display:block; width:min(260px,70%); margin:0 auto 16px;}
+.t-legend{display:grid; gap:6px; font-size:14px; color:var(--soft);}
+.t-legend div{display:flex; justify-content:space-between; gap:12px;}
+.t-legend i{display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:8px;}
+.t-legend b{font-family:'JetBrains Mono',monospace; color:var(--ink); font-weight:500;}
+.t-names{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:12px; margin-top:16px;}
+.t-name{padding:16px; border-radius:14px; background:var(--panel-2); border:1px solid var(--line); display:flex; flex-direction:column; gap:6px;}
+.t-name b{font-family:'Space Grotesk',sans-serif; font-size:18px; color:var(--ink);}
+.t-name span{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--orange-bright);}
+.t-name a{margin-top:6px; font-size:13px; font-weight:700; color:var(--ink); text-decoration:none; border:1px solid var(--line); border-radius:100px; padding:7px 12px; text-align:center;}
+.t-name a:hover{border-color:var(--orange);}
+.t-cta{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; padding:20px 22px; border-radius:18px; border:1px solid rgba(255,122,26,.4); background:linear-gradient(135deg,rgba(255,122,26,.14),rgba(232,80,91,.06)); margin:34px 0;}
+.t-cta b{font-family:'Space Grotesk',sans-serif; font-size:19px; color:var(--ink);}
+.t-cta span{display:block; color:var(--soft); font-size:14px; margin-top:4px;}
+.t-cta a{display:inline-flex; align-items:center; height:46px; padding:0 22px; border-radius:12px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#1F0B00; background:var(--btn-grad); box-shadow:0 3px 0 var(--o-shadow); text-decoration:none;}

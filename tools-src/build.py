@@ -2,7 +2,7 @@
 """DegenKit free tools builder. Writes static tool pages into /tools using the blog page shell.
 Pages: /tools/, /tools/robinhood-chain-rpc/, /tools/token-approval-checker/.
 Usage: python3 tools-src/build.py   (also updates sitemap.xml)"""
-import importlib.util, pathlib, re, json, datetime
+import importlib.util, pathlib, re, json, datetime, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 spec = importlib.util.spec_from_file_location("blogbuild", ROOT / "blog-src" / "build.py")
 B = importlib.util.module_from_spec(spec); spec.loader.exec_module(B)
@@ -193,6 +193,14 @@ def ap_page():
 def index_page():
     cards = [("/tools/token-approval-checker/", "🛡️", "Token approval checker", "Find and revoke ERC-20 approvals on Ethereum, Robinhood Chain, Base and BNB Chain."),
              ("/tools/robinhood-chain-rpc/", "📡", "Robinhood Chain RPC", "Endpoints, chain ID 4663, live status and add-to-wallet buttons."),
+             ("/tools/dex-volume-by-chain/", "📊", "DEX volume by chain", "See where tokens actually trade before you pick a network."),
+             ("/tools/liquidity-calculator/", "💧", "Liquidity calculator", "Launch price, starting market cap and price impact for a new pool."),
+             ("/tools/eth-gas-calculator/", "⛽", "ETH gas calculator", "Live gas on Ethereum, Base, BNB Chain and more, plus token deploy cost."),
+             ("/tools/token-tax-calculator/", "%", "Token tax calculator", "What a buy and sell tax really costs, and the break-even price."),
+             ("/tools/tokenomics-calculator/", "◔", "Tokenomics calculator", "Plan your token allocation with a live chart."),
+             ("/tools/meme-coin-name-generator/", "✨", "Meme coin name generator", "Twelve names and tickers at a click, ready to create."),
+             ("/tools/eth-unit-converter/", "⇄", "Wei, gwei and ETH converter", "Convert ETH units, token decimals and lamports exactly."),
+             ("/tools/elysium-rpc/", "📡", "Elysium RPC", "Chain ID 99901, RPC, explorer and add-to-wallet button."),
              ("/docs/multisender/", "⇉", "Solana Multisender", "Send different amounts of a token to many wallets, in batches of eight."),
              ("/docs/scanner/", "◈", "Solana token scanner", "Check authorities, metadata and holder concentration for any mint."),
              ("/launch/", "◆", "Token creator", "Create a token on Solana, Ethereum, BNB Chain, Base, Robinhood Chain or Elysium."),
@@ -211,17 +219,17 @@ def index_page():
 <p>When you are ready to create a token, the <a href="/launch/">token creator</a> works on six networks from one short form. New to this? Start with the <a href="/blog/token-launch-checklist/">token launch checklist</a>, learn <a href="/blog/erc20-token-approvals-explained/">how ERC-20 approvals work</a>, or read <a href="/blog/wallet-security-for-token-creators/">wallet security for token creators</a>.</p>
 {faq_html(qa)}
 </main>"""
-    write("/tools/", "Free Crypto Tools: Approval Checker & RPC | DegenKit",
+    write("/tools/", "Free Crypto Tools for Token Creators | DegenKit",
           "Free non-custodial tools: token approval checker, Robinhood Chain RPC details and status, Solana multisender and token scanner.", body,
           ld({"@context": "https://schema.org", "@type": "CollectionPage", "name": "DegenKit free tools", "url": SITE + "/tools/"}, faq_ld(qa)))
 
-def update_sitemap():
+def update_sitemap(extra=()):
     sm = ROOT / "sitemap.xml"
     if not sm.exists(): return
     s = sm.read_text(encoding="utf-8")
     s = re.sub(r"[ \t]*<url><loc>[^<]*/tools/[^<]*</loc>.*?</url>\n?", "", s)
     today = datetime.date.today().isoformat()
-    urls = ["/tools/", "/tools/token-approval-checker/", "/tools/robinhood-chain-rpc/"]
+    urls = ["/tools/", "/tools/token-approval-checker/", "/tools/robinhood-chain-rpc/"] + list(extra)
     s = s.replace("</urlset>", "".join(f'  <url><loc>{SITE}{u}</loc><lastmod>{today}</lastmod><priority>{"0.6" if u == "/tools/" else "0.8"}</priority></url>\n' for u in urls) + "</urlset>")
     sm.write_text(s, encoding="utf-8")
 
@@ -229,7 +237,10 @@ def main():
     OUT.mkdir(exist_ok=True)
     for f in ("tools.css", "rh-rpc.js", "approvals.js"):
         (OUT / f).write_text((SRC / f).read_text(encoding="utf-8"), encoding="utf-8")
-    index_page(); rh_page(); ap_page(); update_sitemap()
-    print("built 3 tool pages")
+    sys.path.insert(0, str(SRC)); import more
+    (OUT / "calc.js").write_text((SRC / "calc.js").read_text(encoding="utf-8"), encoding="utf-8")
+    extra = more.build_all(sys.modules[__name__])
+    index_page(); rh_page(); ap_page(); update_sitemap(extra)
+    print("built %d tool pages" % (3 + len(extra)))
 
 if __name__ == "__main__": main()

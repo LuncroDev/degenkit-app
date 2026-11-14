@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Token Tax Calculator: Buy &amp; Sell Tax, Break-Even | DegenKit</title>
+<meta name="description" content="Free token tax calculator. Enter a token&#x27;s buy and sell tax to see what you receive, the round-trip cost and the price rise needed to break even.">
+<link rel="canonical" href="https://degenkit.app/tools/token-tax-calculator/">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<link rel="stylesheet" href="/tools/tools.css">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Token Tax Calculator: Buy &amp; Sell Tax, Break-Even | DegenKit">
+<meta property="og:description" content="Free token tax calculator. Enter a token&#x27;s buy and sell tax to see what you receive, the round-trip cost and the price rise needed to break even.">
+<meta property="og:url" content="https://degenkit.app/tools/token-tax-calculator/">
+<meta property="og:image" content="https://degenkit.app/assets/mascot-hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="Token Tax Calculator: Buy &amp; Sell Tax, Break-Even | DegenKit">
+<meta name="twitter:description" content="Free token tax calculator. Enter a token&#x27;s buy and sell tax to see what you receive, the round-trip cost and the price rise needed to break even.">
+<meta name="twitter:image" content="https://degenkit.app/assets/mascot-hero.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"DegenKit","item":"https://degenkit.app/"},{"@type":"ListItem","position":2,"name":"Free tools","item":"https://degenkit.app/tools/"},{"@type":"ListItem","position":3,"name":"Token tax calculator","item":"https://degenkit.app/tools/token-tax-calculator/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Token tax calculator","url":"https://degenkit.app/tools/token-tax-calculator/","description":"Free token tax calculator. Enter a token's buy and sell tax to see what you receive, the round-trip cost and the price rise needed to break even.","isAccessibleForFree":true,"publisher":{"@id":"https://degenkit.app/#org"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate buy and sell tax on a token?","acceptedAnswer":{"@type":"Answer","text":"Multiply the amount by one minus the tax rate. A 1,000 USD buy with a 5% buy tax leaves 950 USD of tokens. Selling 950 USD with a 5% sell tax returns 902.50 USD."}},{"@type":"Question","name":"What is a reasonable token tax?","acceptedAnswer":{"@type":"Answer","text":"It varies by project. Many buyers avoid tokens with a combined tax far above 10%, and very high sell taxes are a common warning sign of a honeypot."}},{"@type":"Question","name":"Do the buy and sell tax add together?","acceptedAnswer":{"@type":"Answer","text":"Not exactly. They compound. A 5% buy tax and a 5% sell tax cost 9.75% in total on a round trip."}},{"@type":"Question","name":"Can a tax be changed after launch?","acceptedAnswer":{"@type":"Answer","text":"It depends on the contract. With a DegenKit tax token the owner can change rates within the contract's limits, or renounce ownership to lock them."}},{"@type":"Question","name":"Does this include gas and slippage?","acceptedAnswer":{"@type":"Answer","text":"No. It only models the token's own buy and sell tax."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/tools/">Tools</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="t-wrap">
+<div class="t-crumb"><a href="/tools/">Free tools</a> › Token tax calculator</div>
+<h1 class="t-h1">Token tax calculator</h1>
+<p class="t-lead">See what a buy and sell tax really costs. Enter the tax rates of any ERC-20 tax token and get the amount received, the round-trip cost and the price rise needed to break even.</p>
+<section class="t-card t-two">
+<div class="t-fields">
+  <label>Buy tax %<input id="txBuy" type="number" min="0" max="100" step="0.5" value="5"></label>
+  <label>Sell tax %<input id="txSell" type="number" min="0" max="100" step="0.5" value="5"></label>
+  <label>Amount you buy (USD)<input id="txIn" type="number" min="0" step="10" value="1000"></label>
+  <label>Price change before selling %<input id="txMove" type="number" step="1" value="0"></label>
+</div>
+<div class="t-out">
+  <div class="big"><span>You receive after selling</span><b id="txOut">–</b></div>
+  <div><span>Profit or loss</span><b id="txPnl">–</b></div>
+  <div><span>Token value right after the buy</span><b id="txAfterBuy">–</b></div>
+  <div><span>Round-trip tax cost</span><b id="txRound">–</b></div>
+  <div><span>Price rise needed to break even</span><b id="txBreak">–</b></div>
+  <div><span>Total tax paid</span><b id="txTaxPaid">–</b></div>
+</div>
+</section>
+<div class="t-cta"><div><b>Launching a tax token?</b><span>Set your own buy and sell rates on Ethereum, Base, BNB Chain, Robinhood Chain or Elysium.</span></div><a href="/docs/tax-token/">How tax tokens work →</a></div>
+<section class="t-sec"><h2>How token taxes add up</h2>
+<p>A tax token takes a percentage of every buy and every sell and sends it to a wallet chosen by the creator. The two taxes compound: with a 5% buy tax and a 5% sell tax, a holder loses 9.75% on a round trip, not 10%, because the sell tax applies to what is left after the buy tax.</p>
+<p>That is why the break-even number matters. At 5% and 5%, the price has to rise about 10.8% before a buyer gets their money back, before gas and pool fees. High taxes make a token hard to trade, and buyers check for them. Read <a href="/blog/how-token-buy-sell-tax-works/">how buy and sell taxes work</a> and <a href="/blog/how-to-spot-a-honeypot-token/">how to spot a honeypot</a>.</p>
+<p>This calculator ignores slippage, pool fees and gas. Use the <a href="/tools/liquidity-calculator/">liquidity calculator</a> for price impact and the <a href="/tools/eth-gas-calculator/">gas calculator</a> for network costs.</p></section>
+<section class="t-sec"><h2>Questions people ask</h2><details class="t-faq"><summary>How do I calculate buy and sell tax on a token?</summary><p>Multiply the amount by one minus the tax rate. A 1,000 USD buy with a 5% buy tax leaves 950 USD of tokens. Selling 950 USD with a 5% sell tax returns 902.50 USD.</p></details><details class="t-faq"><summary>What is a reasonable token tax?</summary><p>It varies by project. Many buyers avoid tokens with a combined tax far above 10%, and very high sell taxes are a common warning sign of a honeypot.</p></details><details class="t-faq"><summary>Do the buy and sell tax add together?</summary><p>Not exactly. They compound. A 5% buy tax and a 5% sell tax cost 9.75% in total on a round trip.</p></details><details class="t-faq"><summary>Can a tax be changed after launch?</summary><p>It depends on the contract. With a DegenKit tax token the owner can change rates within the contract&#x27;s limits, or renounce ownership to lock them.</p></details><details class="t-faq"><summary>Does this include gas and slippage?</summary><p>No. It only models the token&#x27;s own buy and sell tax.</p></details></section>
+</main>
+<script src="/tools/calc.js" defer></script>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <a class="tp-badge" href="https://www.trustpilot.com/evaluate/degenkit.app" target="_blank" rel="noopener" aria-label="Review DegenKit on Trustpilot" style="display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;padding:9px 14px;border:1px solid #00b67a;border-radius:8px;color:inherit;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#00b67a"/><path d="M12 4.2l2.3 5.1 5.5.5-4.2 3.7 1.3 5.4L12 16l-4.9 2.9 1.3-5.4L4.2 9.8l5.5-.5z" fill="#fff"/></svg><span>Review us on Trustpilot</span></a>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>

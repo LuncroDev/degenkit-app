@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Revoke Mint Authority on Solana: A Step-by-Step Guide</title>
+<meta name="description" content="How to revoke mint authority on Solana, and freeze authority too, for a token you control. What changes on-chain, what it costs and how buyers can check it.">
+<link rel="canonical" href="https://degenkit.app/blog/revoke-mint-authority-solana/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-12">
+<meta property="article:modified_time" content="2026-11-12">
+<meta property="og:image:alt" content="A cream poster with a headline about revoking mint authority on Solana beside orange halftone shapes and a padlock symbol.">
+<meta property="article:tag" content="Solana">
+<meta property="article:tag" content="Security">
+<meta property="article:tag" content="Guide">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Revoke Mint Authority on Solana: A Step-by-Step Guide">
+<meta property="og:description" content="How to revoke mint authority on Solana, and freeze authority too, for a token you control. What changes on-chain, what it costs and how buyers can check it.">
+<meta property="og:url" content="https://degenkit.app/blog/revoke-mint-authority-solana/">
+<meta property="og:image" content="https://degenkit.app/blog/img/revoke-mint-authority-solana-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="Revoke Mint Authority on Solana: A Step-by-Step Guide">
+<meta name="twitter:description" content="How to revoke mint authority on Solana, and freeze authority too, for a token you control. What changes on-chain, what it costs and how buyers can check it.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/revoke-mint-authority-solana-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Revoke Mint Authority on Solana: A Step-by-Step Guide", "description": "How to revoke mint authority on Solana, and freeze authority too, for a token you control. What changes on-chain, what it costs and how buyers can check it.", "datePublished": "2026-11-12", "dateModified": "2026-11-12", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/revoke-mint-authority-solana/"}, "url": "https://degenkit.app/blog/revoke-mint-authority-solana/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/revoke-mint-authority-solana-cover.webp", "keywords": "Solana, Security, Guide", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Revoke Mint Authority on Solana: A Step-by-Step Guide", "item": "https://degenkit.app/blog/revoke-mint-authority-solana/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I undo revoking mint authority?", "acceptedAnswer": {"@type": "Answer", "text": "No. Once it is set to none, no wallet can mint again."}}, {"@type": "Question", "name": "How much does it cost to revoke mint authority on Solana?", "acceptedAnswer": {"@type": "Answer", "text": "On DegenKit, 0.05 SOL in service fees for each authority, plus a small network fee."}}, {"@type": "Question", "name": "Does revoking mint authority affect existing holders?", "acceptedAnswer": {"@type": "Answer", "text": "No. Balances stay the same. It only stops new tokens being created."}}, {"@type": "Question", "name": "Should I revoke freeze authority too?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, for almost every token. An active freeze authority is a common honeypot warning."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/tools/">Tools</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">Solana</span><span class="chip">Security</span><span class="chip">Guide</span></div>
+      <h1>Revoke Mint Authority on Solana: A Step-by-Step Guide</h1>
+      <p class="lede">How to revoke mint authority on Solana, and freeze authority too, for a token you control. What changes on-chain, what it costs and how buyers can check it.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 12, 2026 · 5 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/revoke-mint-authority-solana-cover.webp" alt="A cream poster with a headline about revoking mint authority on Solana beside orange halftone shapes and a padlock symbol." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>To revoke mint authority on Solana, load your token&#x27;s mint address in an authorities tool, click Revoke mint and sign with the wallet that holds the authority. The mint authority is set to none, so nobody can ever create more tokens. Revoke freeze authority the same way. Both are permanent, and both are the first things buyers and scanners check.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li><strong>Mint authority</strong> can create new tokens. <strong>Freeze authority</strong> can freeze holders&#x27; token accounts.</li><li><strong>Revoking sets the authority to none.</strong> Solana&#x27;s docs say this &quot;permanently removes&quot; the role.</li><li><strong>On DegenKit:</strong> <strong>Revoke mint</strong> and <strong>Revoke freeze</strong> cost <strong>0.05 SOL</strong> each in service fees, plus network fees.</li><li><strong>New tokens on DegenKit</strong> can revoke both at creation with two toggles.</li></ul></aside>
+<aside class="callout note"><strong>Not affiliated</strong><p>DegenKit is not affiliated with Solana Labs, RugCheck or any scanner named here.</p></aside>
+<h2 id="why-revoke-mint-authority">Why revoke mint authority?</h2>
+<p>While mint authority is active, its holder can mint any amount of new tokens and sell them into the pool. Every existing holder is diluted. Buyers know this, so scanners such as RugCheck and DegenKit&#x27;s own <strong>Scanner</strong> flag an active mint authority as a risk.</p>
+<p><strong>Freeze authority</strong> is the second check. Its holder can freeze a buyer&#x27;s token account so it cannot transfer or sell. It is a common honeypot pattern. Our explainer on <a href="/blog/mint-authority-vs-freeze-authority/">mint authority vs freeze authority</a> goes deeper into both.</p>
+<figure><img src="/blog/img/revoke-mint-authority-solana-1.webp" alt="What mint and freeze authority can do while active, and what changes when each is revoked." loading="lazy" decoding="async"><figcaption>Revoked means set to none, forever.</figcaption></figure>
+<h2 id="when-should-you-keep-mint-authority">When should you keep mint authority?</h2>
+<p>Almost never for a meme coin. Some projects keep it for a planned emission schedule, such as staking rewards. Then they should say so publicly and ideally hand it to a multisig. If you have no written reason to mint later, revoke it.</p>
+<h2 id="how-do-you-revoke-it-on-degenkit">How do you revoke it on DegenKit?</h2>
+<ol><li>Open the <a href="/launch/solana/">Solana launcher</a> and connect the wallet that holds the authority.</li><li>Choose <strong>Authorities</strong> in the sidebar.</li><li>Paste the <strong>Token mint address</strong> and click <strong>Load</strong>. The token name and current <strong>Mint authority</strong> and <strong>Freeze authority</strong> appear.</li><li>Click <strong>Revoke mint</strong> and sign. Then click <strong>Revoke freeze</strong> and sign.</li><li>Load the mint again. Both should now show as revoked.</li></ol>
+<p>This works for any SPL token whose authority your wallet holds, including tokens created elsewhere. If you are creating a new token, turn on <strong>Revoke mint authority</strong> and <strong>Revoke freeze authority</strong> in the create form instead. It saves a step.</p>
+<figure><video src="/blog/img/revoke-mint-authority-solana-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Revoking mint authority in 20 seconds: load the mint, revoke mint, revoke freeze, and both show as revoked."></video></figure>
+<h2 id="how-can-buyers-check-it">How can buyers check it?</h2>
+<ul><li><strong>Explorer:</strong> open the mint on Solscan or Solana Explorer. Mint authority and freeze authority should be empty or show none.</li><li><strong>Scanner:</strong> paste the mint into DegenKit&#x27;s Scanner. It shows both authorities, metadata status and holder concentration.</li><li><strong>Share proof:</strong> post the revoke transaction link with your mint address.</li></ul>
+<figure><img src="/blog/img/revoke-mint-authority-solana-2.webp" alt="A pre-launch authority checklist: mint revoked, freeze revoked, metadata locked, LP plan and the proof link shared." loading="lazy" decoding="async"><figcaption>Revoke before you post the address.</figcaption></figure>
+<h2 id="what-else-should-you-check">What else should you check?</h2>
+<p>Revoking authorities does not make a token safe on its own:</p>
+<ul><li><strong>Liquidity</strong> can still be withdrawn unless it is locked or burned. See <a href="/blog/lock-liquidity-on-solana-burn-and-earn/">locking liquidity on Solana</a>.</li><li><strong>Holder concentration</strong> matters. One wallet with half the supply can still sell. See <a href="/blog/how-to-read-a-holder-bubblemap/">how to read a holder bubblemap</a>.</li><li><strong>Token-2022 extensions</strong> such as a transfer fee have their own authorities. See <a href="/blog/solana-token-2022-transfer-fee/">Solana Token-2022 transfer fee</a>.</li></ul>
+<h2 id="what-are-the-risks">What are the risks?</h2>
+<ul><li><strong>No undo.</strong> If you later need new supply, you would have to launch a new token.</li><li><strong>Wrong wallet.</strong> Only the current authority can revoke it.</li><li><strong>False comfort.</strong> Revoked authorities do not stop rug pulls through liquidity or large holders.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="can-i-undo-revoking-mint-authority">Can I undo revoking mint authority?</h3>
+<p>No. Once it is set to none, no wallet can mint again.</p>
+<h3 id="how-much-does-it-cost-to-revoke-mint-authority-on-solana">How much does it cost to revoke mint authority on Solana?</h3>
+<p>On DegenKit, 0.05 SOL in service fees for each authority, plus a small network fee.</p>
+<h3 id="does-revoking-mint-authority-affect-existing-holders">Does revoking mint authority affect existing holders?</h3>
+<p>No. Balances stay the same. It only stops new tokens being created.</p>
+<h3 id="should-i-revoke-freeze-authority-too">Should I revoke freeze authority too?</h3>
+<p>Yes, for almost every token. An active freeze authority is a common honeypot warning.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://solana.com/docs/tokens/basics/set-authority" target="_blank" rel="noopener noreferrer">Solana docs: Set authority</a></li><li><a href="https://www.dextools.io/tutorials/what-is-mint-authority-in-crypto-guide-2026" target="_blank" rel="noopener noreferrer">DEXTools: What is mint authority on Solana</a></li></ul>
+<p>Revoke both authorities with the <strong>Authorities</strong> tool on the <a href="/launch/solana/">DegenKit Solana launcher</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=Revoke%20Mint%20Authority%20on%20Solana%3A%20A%20Step-by-Step%20Guide%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Frevoke-mint-authority-solana%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/revoke-mint-authority-solana/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/elysium-explorer/">
+  <div class="cover"><img src="/blog/img/elysium-explorer-cover.webp" alt="A cream poster with a headline about the Elysium explorer beside yellow halftone shapes and a bar chart symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Guide</span><span class="chip">Security</span><span>November 14, 2026</span></div>
+    <h2>Elysium Explorer: How to Read a Token on Blockscout</h2>
+    <p>How to use the Elysium explorer. Find a token by contract address, read its holders, transfers and contract tabs, and spot the warning signs on a new chain.</p>
+  </div>
+</a><a class="card" href="/blog/how-to-swap-tokens-on-solana/">
+  <div class="cover"><img src="/blog/img/how-to-swap-tokens-on-solana-cover.webp" alt="A cream poster with a headline about swapping tokens on Solana beside blue halftone shapes and a swap arrows symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Guide</span><span class="chip">Tools</span><span>November 14, 2026</span></div>
+    <h2>How to Swap Tokens on Solana: Routes, Slippage and Fees</h2>
+    <p>How to swap tokens on Solana with a Jupiter-routed swap. Pick the pair, set slippage, read price impact and avoid the mistakes that make a swap fail or overpay.</p>
+  </div>
+</a><a class="card" href="/blog/solana-token-scanner/">
+  <div class="cover"><img src="/blog/img/solana-token-scanner-cover.webp" alt="A cream poster with a headline about Solana token scanners beside green halftone shapes and a shield symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Security</span><span class="chip">Tools</span><span>November 14, 2026</span></div>
+    <h2>Solana Token Scanner: How to Check a Token Before You Buy</h2>
+    <p>How to use a Solana token scanner before you buy. What mint and freeze authority, metadata, top holders and the bubblemap tell you, and what no scanner can check.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <a class="tp-badge" href="https://www.trustpilot.com/evaluate/degenkit.app" target="_blank" rel="noopener" aria-label="Review DegenKit on Trustpilot" style="display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;padding:9px 14px;border:1px solid #00b67a;border-radius:8px;color:inherit;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#00b67a"/><path d="M12 4.2l2.3 5.1 5.5.5-4.2 3.7 1.3 5.4L12 16l-4.9 2.9 1.3-5.4L4.2 9.8l5.5-.5z" fill="#fff"/></svg><span>Review us on Trustpilot</span></a>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>

@@ -32,3 +32,7 @@ Revoking is **irreversible**. After you revoke mint authority, supply can never 
 :::warning Check before you revoke
 If your project needs to mint more later (for example for vesting), don't revoke mint authority yet. Revoking can't be undone.
 :::
+
+## Further reading
+
+For a full walkthrough with examples, read [Revoke mint authority on Solana, step by step](/blog/revoke-mint-authority-solana/).

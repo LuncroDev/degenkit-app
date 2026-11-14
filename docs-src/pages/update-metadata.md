@@ -27,3 +27,7 @@ Only when the token's metadata is **mutable**. Tokens created with DegenKit have
 :::note
 Wallets and explorers cache token info, so it can take a little while for the new name or image to show everywhere.
 :::
+
+## Further reading
+
+For a full walkthrough with examples, read [Update Solana token metadata: name, symbol and logo](/blog/update-solana-token-metadata/).

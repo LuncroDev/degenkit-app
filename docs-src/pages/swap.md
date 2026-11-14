@@ -25,3 +25,7 @@ desc: Swap Solana tokens at the best available route, powered by Jupiter: how th
 - Quotes come from Jupiter, a third-party service DegenKit doesn't control.
 - Prices can move between quote and execution. High slippage means you accept a worse price.
 - Learn the difference in [Slippage vs price impact](/blog/slippage-vs-price-impact/).
+
+## Further reading
+
+For a full walkthrough with examples, read [How to swap tokens on Solana](/blog/how-to-swap-tokens-on-solana/).

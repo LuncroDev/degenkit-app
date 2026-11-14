@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Solana Transaction Failed? Common Errors and Fixes</title>
+<meta name="description" content="Solana transaction failed? What slippage exceeded, blockhash not found, insufficient funds for rent and other common errors mean, and the one-step fix for…">
+<link rel="canonical" href="https://degenkit.app/blog/solana-transaction-failed/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-14">
+<meta property="article:modified_time" content="2026-11-14">
+<meta property="og:image:alt" content="A cream poster with a headline about failed Solana transactions beside orange halftone shapes and a down arrow symbol.">
+<meta property="article:tag" content="Solana">
+<meta property="article:tag" content="Guide">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Solana Transaction Failed? Common Errors and Fixes">
+<meta property="og:description" content="Solana transaction failed? What slippage exceeded, blockhash not found, insufficient funds for rent and other common errors mean, and the one-step fix for each.">
+<meta property="og:url" content="https://degenkit.app/blog/solana-transaction-failed/">
+<meta property="og:image" content="https://degenkit.app/blog/img/solana-transaction-failed-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="Solana Transaction Failed? Common Errors and Fixes">
+<meta name="twitter:description" content="Solana transaction failed? What slippage exceeded, blockhash not found, insufficient funds for rent and other common errors mean, and the one-step fix for each.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/solana-transaction-failed-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Solana Transaction Failed? Common Errors and Fixes", "description": "Solana transaction failed? What slippage exceeded, blockhash not found, insufficient funds for rent and other common errors mean, and the one-step fix for each.", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/solana-transaction-failed/"}, "url": "https://degenkit.app/blog/solana-transaction-failed/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/solana-transaction-failed-cover.webp", "keywords": "Solana, Guide", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Solana Transaction Failed? Common Errors and Fixes", "item": "https://degenkit.app/blog/solana-transaction-failed/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I pay a fee if my Solana transaction fails?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if it failed on-chain. Solana's docs say the fee is still charged. A failed simulation before signing costs nothing."}}, {"@type": "Question", "name": "What does 0x1771 mean on Solana?", "acceptedAnswer": {"@type": "Answer", "text": "On many DEX programs it means slippage tolerance was exceeded."}}, {"@type": "Question", "name": "Why does Solana say insufficient funds when I have SOL?", "acceptedAnswer": {"@type": "Answer", "text": "You may have enough for the fee but not for the rent to open a new token account."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/tools/">Tools</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">Solana</span><span class="chip">Guide</span></div>
+      <h1>Solana Transaction Failed? Common Errors and Fixes</h1>
+      <p class="lede">Solana transaction failed? What slippage exceeded, blockhash not found, insufficient funds for rent and other common errors mean, and the one-step fix for each.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 14, 2026 · 5 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/solana-transaction-failed-cover.webp" alt="A cream poster with a headline about failed Solana transactions beside orange halftone shapes and a down arrow symbol." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>When a Solana transaction fails, open it on an explorer such as Solscan and read the error. Most failures have one of five causes: slippage exceeded, not enough SOL for fees or rent, an expired blockhash, a compute limit that was too low, or an account that does not exist yet. Each has a simple fix. The network fee is still charged when a transaction fails on-chain.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li><strong>Find the cause:</strong> paste the transaction ID into Solscan and read the <strong>Result</strong> line (Solscan).</li><li><strong>Slippage exceeded</strong> shows as <strong>Custom(6001) / 0x1771</strong> on many DEX programs (RPC Fast).</li><li><strong>Failed on-chain still costs</strong> the base fee of 5,000 lamports per signature. A failed simulation costs nothing.</li><li><strong>Keep a SOL buffer</strong> for fees and new token accounts.</li></ul></aside>
+<aside class="callout note"><strong>Not affiliated</strong><p>DegenKit is not affiliated with Solscan, RPC Fast or Jupiter.</p></aside>
+<h2 id="how-do-you-find-out-why-it-failed">How do you find out why it failed?</h2>
+<ol><li>Copy the transaction ID from your wallet or the app.</li><li>Paste it into Solscan or Solana Explorer.</li><li>Read the <strong>Result</strong> or error line, shown in red.</li></ol>
+<p>If your wallet showed an error <em>before</em> you signed, the transaction was only simulated and nothing was charged. The fix is the same.</p>
+<h2 id="what-do-the-common-errors-mean">What do the common errors mean?</h2>
+<div class="tbl"><table><thead><tr><th>Error</th><th>What it means</th><th>Fix</th></tr></thead><tbody><tr><td>Custom(6001) / 0x1771</td><td>Slippage tolerance exceeded</td><td>Retry, or raise slippage slightly</td></tr><tr><td>Custom(6000) / 0x1770</td><td>Minimum output not met</td><td>Same as above</td></tr><tr><td>InsufficientFundsForFee</td><td>Not enough SOL for the fee</td><td>Add SOL</td></tr><tr><td>InsufficientFundsForRent</td><td>Not enough SOL to open a new account</td><td>Add SOL</td></tr><tr><td>InsufficientFunds (token)</td><td>Not enough of the token</td><td>Lower the amount</td></tr><tr><td>BlockhashNotFound</td><td>The transaction expired before landing</td><td>Sign again</td></tr><tr><td>ComputationalBudgetExceeded</td><td>It needed more compute than its limit</td><td>Retry, or use an app that sizes compute</td></tr><tr><td>AccountNotFound</td><td>An account does not exist yet</td><td>Wait a moment, or check the address</td></tr></tbody></table></div>
+<p>Error names and meanings follow RPC Fast&#x27;s error reference.</p>
+<figure><img src="/blog/img/solana-transaction-failed-1.webp" alt="The five most common Solana transaction failures and their fixes: slippage, SOL for fees, SOL for rent, expired blockhash and compute." loading="lazy" decoding="async"><figcaption>Read the error line first.</figcaption></figure>
+<h2 id="why-does-slippage-cause-so-many-failures">Why does slippage cause so many failures?</h2>
+<p>On a swap, you set how far the price may move before you accept the result. If the price moves further before your transaction lands, the DEX program rejects it on purpose to protect you. This happens most on new tokens with thin pools and during busy launches. Raise slippage a little and retry, but never above the loss you would accept. See <a href="/blog/slippage-vs-price-impact/">slippage vs price impact</a>.</p>
+<h2 id="why-do-you-need-sol-for-rent">Why do you need SOL for rent?</h2>
+<p>Every token you hold lives in its own token account, and opening one needs a small, refundable SOL deposit called rent. If you receive a new token or create one with almost no SOL left, the transaction fails with <strong>InsufficientFundsForRent</strong>. Keep a buffer. Our guide to <a href="/blog/solana-fees-and-rent-explained/">Solana fees and rent</a> shows the amounts.</p>
+<figure><video src="/blog/img/solana-transaction-failed-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Fixing a failed Solana transaction in 20 seconds: read the error, add SOL or adjust slippage, sign again and it lands."></video></figure>
+<h2 id="what-about-dropped-or-expired-transactions">What about dropped or expired transactions?</h2>
+<p>Each transaction includes a recent blockhash and is only valid for a short window. During congestion, it may not land in time and expires as <strong>BlockhashNotFound</strong>. Solana&#x27;s fee docs explain that a <strong>priority fee</strong>, set as a compute unit price, helps a transaction get scheduled sooner. Most wallets and apps set it automatically. Signing again with a fresh blockhash is usually enough.</p>
+<h2 id="how-do-you-avoid-failures-when-launching-a-token">How do you avoid failures when launching a token?</h2>
+<ul><li>Keep at least a few tenths of a SOL above the fees you plan to pay.</li><li>Create the token and the pool on a quiet moment, not in the middle of a market spike.</li><li>If a launch transaction fails, <strong>check the explorer before retrying</strong>, so you do not create a second token by accident.</li></ul>
+<p>DegenKit creates the mint, metadata and supply in one transaction on the <a href="/launch/solana/">Solana launcher</a>, so a failure leaves nothing half-created.</p>
+<figure><img src="/blog/img/solana-transaction-failed-2.webp" alt="How to avoid failed transactions: a SOL buffer, sensible slippage, a quiet moment and an explorer check before retrying." loading="lazy" decoding="async"><figcaption>Check before you sign twice.</figcaption></figure>
+<h2 id="what-are-the-risks">What are the risks?</h2>
+<ul><li><strong>Raising slippage too far</strong> can fill your trade at a much worse price.</li><li><strong>Retrying blindly</strong> can repeat a payment that actually succeeded.</li><li><strong>Fake support.</strong> Nobody legitimate will ask for your seed phrase to &quot;fix&quot; a transaction.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="do-i-pay-a-fee-if-my-solana-transaction-fails">Do I pay a fee if my Solana transaction fails?</h3>
+<p>Yes, if it failed on-chain. Solana&#x27;s docs say the fee is still charged. A failed simulation before signing costs nothing.</p>
+<h3 id="what-does-0x1771-mean-on-solana">What does 0x1771 mean on Solana?</h3>
+<p>On many DEX programs it means slippage tolerance was exceeded.</p>
+<h3 id="why-does-solana-say-insufficient-funds-when-i-have-sol">Why does Solana say insufficient funds when I have SOL?</h3>
+<p>You may have enough for the fee but not for the rent to open a new token account.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://rpcfast.com/blog/solana-transaction-error-code" target="_blank" rel="noopener noreferrer">RPC Fast: Solana transaction error codes</a></li><li><a href="https://info.solscan.io/why-did-my-transaction-fail" target="_blank" rel="noopener noreferrer">Solscan: Why did my transaction fail?</a></li><li><a href="https://solana.com/docs/core/fees/fee-structure" target="_blank" rel="noopener noreferrer">Solana docs: Fee structure</a></li></ul>
+<p>Create a token in one transaction on the <a href="/launch/solana/">DegenKit Solana launcher</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=Solana%20Transaction%20Failed%3F%20Common%20Errors%20and%20Fixes%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Fsolana-transaction-failed%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/solana-transaction-failed/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/how-to-swap-tokens-on-solana/">
+  <div class="cover"><img src="/blog/img/how-to-swap-tokens-on-solana-cover.webp" alt="A cream poster with a headline about swapping tokens on Solana beside blue halftone shapes and a swap arrows symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Guide</span><span class="chip">Tools</span><span>November 14, 2026</span></div>
+    <h2>How to Swap Tokens on Solana: Routes, Slippage and Fees</h2>
+    <p>How to swap tokens on Solana with a Jupiter-routed swap. Pick the pair, set slippage, read price impact and avoid the mistakes that make a swap fail or overpay.</p>
+  </div>
+</a><a class="card" href="/blog/token-not-showing-in-phantom/">
+  <div class="cover"><img src="/blog/img/token-not-showing-in-phantom-cover.webp" alt="A cream poster with a headline about tokens not showing in Phantom beside violet halftone shapes and a cube symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Guide</span><span>November 14, 2026</span></div>
+    <h2>Token Not Showing in Phantom? Why and How to Fix It</h2>
+    <p>Token not showing in Phantom? Check the address and network, find it on an explorer, unhide it in Manage Tokens, and learn why Phantom filters some new tokens.</p>
+  </div>
+</a><a class="card" href="/blog/jupiter-token-verification/">
+  <div class="cover"><img src="/blog/img/jupiter-token-verification-cover.webp" alt="A cream poster with a headline about Jupiter token verification beside green halftone shapes and a shield symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Guide</span><span>November 12, 2026</span></div>
+    <h2>Jupiter Token Verification: How to Get Your Token Verified</h2>
+    <p>How Jupiter token verification works in 2026. The six criteria, free and express review, what the green badge means and what to fix before you apply.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <a class="tp-badge" href="https://www.trustpilot.com/evaluate/degenkit.app" target="_blank" rel="noopener" aria-label="Review DegenKit on Trustpilot" style="display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;padding:9px 14px;border:1px solid #00b67a;border-radius:8px;color:inherit;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#00b67a"/><path d="M12 4.2l2.3 5.1 5.5.5-4.2 3.7 1.3 5.4L12 16l-4.9 2.9 1.3-5.4L4.2 9.8l5.5-.5z" fill="#fff"/></svg><span>Review us on Trustpilot</span></a>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>

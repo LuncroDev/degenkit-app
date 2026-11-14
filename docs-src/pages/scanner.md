@@ -25,3 +25,7 @@ The score is a quick signal, not a verdict. It does **not** verify liquidity loc
 - **Few wallets hold most of the supply** means a handful of people can move the price.
 
 Read more in [How to spot rug pull risk](/blog/how-to-spot-rug-pull-risk/), [How to spot a honeypot token](/blog/how-to-spot-a-honeypot-token/) and [How to read a holder bubblemap](/blog/how-to-read-a-holder-bubblemap/).
+
+## Further reading
+
+For a full walkthrough with examples, read [Solana token scanner: what every check means](/blog/solana-token-scanner/).

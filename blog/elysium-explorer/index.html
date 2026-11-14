@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Elysium Explorer: How to Read a Token on Blockscout</title>
+<meta name="description" content="How to use the Elysium explorer. Find a token by contract address, read its holders, transfers and contract tabs, and spot the warning signs on a new chain.">
+<link rel="canonical" href="https://degenkit.app/blog/elysium-explorer/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-14">
+<meta property="article:modified_time" content="2026-11-14">
+<meta property="og:image:alt" content="A cream poster with a headline about the Elysium explorer beside yellow halftone shapes and a bar chart symbol.">
+<meta property="article:tag" content="News">
+<meta property="article:tag" content="Guide">
+<meta property="article:tag" content="Security">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Elysium Explorer: How to Read a Token on Blockscout">
+<meta property="og:description" content="How to use the Elysium explorer. Find a token by contract address, read its holders, transfers and contract tabs, and spot the warning signs on a new chain.">
+<meta property="og:url" content="https://degenkit.app/blog/elysium-explorer/">
+<meta property="og:image" content="https://degenkit.app/blog/img/elysium-explorer-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="Elysium Explorer: How to Read a Token on Blockscout">
+<meta name="twitter:description" content="How to use the Elysium explorer. Find a token by contract address, read its holders, transfers and contract tabs, and spot the warning signs on a new chain.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/elysium-explorer-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Elysium Explorer: How to Read a Token on Blockscout", "description": "How to use the Elysium explorer. Find a token by contract address, read its holders, transfers and contract tabs, and spot the warning signs on a new chain.", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/elysium-explorer/"}, "url": "https://degenkit.app/blog/elysium-explorer/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/elysium-explorer-cover.webp", "keywords": "News, Guide, Security", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Elysium Explorer: How to Read a Token on Blockscout", "item": "https://degenkit.app/blog/elysium-explorer/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Elysium block explorer?", "acceptedAnswer": {"@type": "Answer", "text": "A Blockscout explorer at elysium.kinetiq.xyz/explorer for Elysium, chain ID 99901."}}, {"@type": "Question", "name": "How do I check holders of an Elysium token?", "acceptedAnswer": {"@type": "Answer", "text": "Search the contract address and open the Holders tab."}}, {"@type": "Question", "name": "Why doesn't my token have a logo on the explorer?", "acceptedAnswer": {"@type": "Answer", "text": "Blockscout takes logos from CoinGecko, CoinMarketCap or owner submissions it reviews. New tokens usually start without one."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/tools/">Tools</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">News</span><span class="chip">Guide</span><span class="chip">Security</span></div>
+      <h1>Elysium Explorer: How to Read a Token on Blockscout</h1>
+      <p class="lede">How to use the Elysium explorer. Find a token by contract address, read its holders, transfers and contract tabs, and spot the warning signs on a new chain.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 14, 2026 · 4 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/elysium-explorer-cover.webp" alt="A cream poster with a headline about the Elysium explorer beside yellow halftone shapes and a bar chart symbol." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>The Elysium explorer is a Blockscout instance at elysium.kinetiq.xyz/explorer. Paste a token&#x27;s contract address into its search to see the token page: total supply, holders, transfers and the contract itself. On a chain this new, it is the most reliable place to check a token. It shows what is on-chain, not what a project says.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li><strong>Explorer:</strong> elysium.kinetiq.xyz/explorer, built on <strong>Blockscout</strong> (Chainstack).</li><li><strong>Network:</strong> Elysium, chain ID <strong>99901</strong>. Testnet is 99801.</li><li><strong>Search by contract address</strong>, not by name. Names can be copied.</li><li><strong>Token logos and links</strong> on Blockscout come from CoinGecko, CoinMarketCap or owner submissions reviewed by Blockscout (Blockscout docs).</li></ul></aside>
+<aside class="callout note"><strong>Not affiliated</strong><p>DegenKit is not affiliated with Kinetiq, Blockscout or Chainstack.</p></aside>
+<h2 id="how-do-you-find-a-token">How do you find a token?</h2>
+<ol><li>Get the <strong>contract address</strong> from the project&#x27;s official X account or site.</li><li>Open elysium.kinetiq.xyz/explorer.</li><li>Paste the address into the search and open the <strong>token</strong> result.</li><li>Check that the page says Elysium and the address matches exactly.</li></ol>
+<p>If you are the creator, your contract address appears right after creation on <a href="/launch/elysium/">DegenKit&#x27;s Elysium launcher</a>.</p>
+<h2 id="what-does-each-part-of-the-token-page-show">What does each part of the token page show?</h2>
+<div class="tbl"><table><thead><tr><th>Section</th><th>What to look at</th></tr></thead><tbody><tr><td>Overview</td><td>Name, symbol, total supply, decimals, holder count</td></tr><tr><td>Transfers</td><td>Every movement of the token, newest first</td></tr><tr><td>Holders</td><td>Each wallet&#x27;s balance and share of supply</td></tr><tr><td>Contract</td><td>Source code if verified, plus Read and Write functions</td></tr></tbody></table></div>
+<p>Our general guide to <a href="/blog/read-token-page-etherscan-blockscout/">reading a token page on Etherscan or Blockscout</a> explains each tab in detail. The steps are the same on Elysium.</p>
+<figure><img src="/blog/img/elysium-explorer-1.webp" alt="The Elysium explorer token page: overview, transfers, holders and contract tabs, and what to check in each." loading="lazy" decoding="async"><figcaption>Search by address, then read the four tabs.</figcaption></figure>
+<h2 id="what-should-you-check-on-the-holders-tab">What should you check on the Holders tab?</h2>
+<ul><li><strong>The Uniswap pair address</strong> is usually one of the top holders. That is the pool and is expected.</li><li><strong>A burn address</strong> such as 0x…dEaD holding tokens means those tokens are gone.</li><li><strong>One normal wallet with a large share</strong> can sell into the pool at any time.</li><li><strong>For the LP itself</strong>, open the pair contract and check who holds the LP tokens. See <a href="/blog/elysium-liquidity-lock/">Elysium liquidity lock</a>.</li></ul>
+<h2 id="what-should-you-check-on-the-contract-tab">What should you check on the Contract tab?</h2>
+<ul><li><strong>Is the source verified?</strong> A verified contract lets anyone read the code. An unverified one hides it.</li><li><strong>Read functions</strong> such as <code>owner</code> show whether an owner still exists. For a tax token, the buy and sell rates appear here too.</li><li><strong>Write functions</strong> are for the owner. Never connect your wallet to them unless you are the owner and know what you are doing.</li></ul>
+<p>A token made with DegenKit&#x27;s Token Creator has fixed supply, no owner and no mint function. A Tax Token has an owner until it is renounced. See <a href="/blog/elysium-tax-token/">the Elysium tax token guide</a>.</p>
+<figure><video src="/blog/img/elysium-explorer-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Reading an Elysium token in 20 seconds: search the address, check supply, holders, the pool and the contract."></video></figure>
+<h2 id="what-are-the-warning-signs">What are the warning signs?</h2>
+<ul><li><strong>An unverified contract</strong> on a token that is being promoted.</li><li><strong>A mint function</strong> or an active owner with no public explanation.</li><li><strong>Most of the supply in one or two normal wallets.</strong></li><li><strong>LP tokens in a normal wallet</strong> instead of a locker or burn address.</li><li><strong>A token page with the right name but a different address</strong> from the official one.</li></ul>
+<figure><img src="/blog/img/elysium-explorer-2.webp" alt="Warning signs on the Elysium explorer: unverified contract, active owner, concentrated holders, unlocked LP and a mismatched address." loading="lazy" decoding="async"><figcaption>Two or more signs together: stay away.</figcaption></figure>
+<h2 id="what-are-the-risks">What are the risks?</h2>
+<ul><li><strong>New chain.</strong> Explorer data and labels are still sparse.</li><li><strong>Fake explorers.</strong> Use the official address from Kinetiq or Chainstack&#x27;s documentation.</li><li><strong>Logos prove nothing.</strong> Anyone can copy a token&#x27;s name and image.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="what-is-the-elysium-block-explorer">What is the Elysium block explorer?</h3>
+<p>A Blockscout explorer at elysium.kinetiq.xyz/explorer for Elysium, chain ID 99901.</p>
+<h3 id="how-do-i-check-holders-of-an-elysium-token">How do I check holders of an Elysium token?</h3>
+<p>Search the contract address and open the Holders tab.</p>
+<h3 id="why-doesn-t-my-token-have-a-logo-on-the-explorer">Why doesn&#x27;t my token have a logo on the explorer?</h3>
+<p>Blockscout takes logos from CoinGecko, CoinMarketCap or owner submissions it reviews. New tokens usually start without one.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://docs.chainstack.com/docs/elysium-tooling" target="_blank" rel="noopener noreferrer">Chainstack: Elysium tooling</a></li><li><a href="https://docs.blockscout.com/using-blockscout/overviews/token-info" target="_blank" rel="noopener noreferrer">Blockscout docs: Token info</a></li><li><a href="https://www.manilatimes.net/2026/11/09/tmt-newswire/globenewswire/kinetiq-launches-elysium-public-mainnet-a-high-performance-layer-2-built-for-hyperliquid/2465340" target="_blank" rel="noopener noreferrer">Kinetiq launch release (GlobeNewswire via The Manila Times)</a></li></ul>
+<p>Create a token with fixed supply and no owner on the <a href="/launch/elysium/">DegenKit Elysium token creator</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=Elysium%20Explorer%3A%20How%20to%20Read%20a%20Token%20on%20Blockscout%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Felysium-explorer%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/elysium-explorer/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/elysium-liquidity-lock/">
+  <div class="cover"><img src="/blog/img/elysium-liquidity-lock-cover.webp" alt="A cream poster with a headline about Elysium liquidity locks beside violet halftone shapes and a padlock symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Security</span><span class="chip">Guide</span><span>November 12, 2026</span></div>
+    <h2>Elysium Liquidity Lock: How to Lock or Burn Your LP</h2>
+    <p>How to lock or burn liquidity for an Elysium token on Uniswap, why it matters on a new chain, and how buyers can check any token&#x27;s LP on the Elysium explorer.</p>
+  </div>
+</a><a class="card" href="/blog/how-to-buy-a-token-on-elysium/">
+  <div class="cover"><img src="/blog/img/how-to-buy-a-token-on-elysium-cover.webp" alt="A cream poster with a headline about buying a token on Elysium beside teal halftone shapes and a swap arrows symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Guide</span><span>November 14, 2026</span></div>
+    <h2>How to Buy a Token on Elysium: HYPE, Uniswap and fomo</h2>
+    <p>How to buy a token on Elysium. Get HYPE, bridge it in, swap on Uniswap with the contract address, or use the fomo app. Plus the checks to run before you buy.</p>
+  </div>
+</a><a class="card" href="/blog/revoke-mint-authority-solana/">
+  <div class="cover"><img src="/blog/img/revoke-mint-authority-solana-cover.webp" alt="A cream poster with a headline about revoking mint authority on Solana beside orange halftone shapes and a padlock symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Solana</span><span class="chip">Security</span><span class="chip">Guide</span><span>November 12, 2026</span></div>
+    <h2>Revoke Mint Authority on Solana: A Step-by-Step Guide</h2>
+    <p>How to revoke mint authority on Solana, and freeze authority too, for a token you control. What changes on-chain, what it costs and how buyers can check it.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <a class="tp-badge" href="https://www.trustpilot.com/evaluate/degenkit.app" target="_blank" rel="noopener" aria-label="Review DegenKit on Trustpilot" style="display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;padding:9px 14px;border:1px solid #00b67a;border-radius:8px;color:inherit;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#00b67a"/><path d="M12 4.2l2.3 5.1 5.5.5-4.2 3.7 1.3 5.4L12 16l-4.9 2.9 1.3-5.4L4.2 9.8l5.5-.5z" fill="#fff"/></svg><span>Review us on Trustpilot</span></a>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>

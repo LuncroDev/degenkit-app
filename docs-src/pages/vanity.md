@@ -20,3 +20,7 @@ If you lose it, it's gone. Copy and store the private key safely as soon as you'
 ## ⏱️ How long it takes
 
 Only base58 characters are valid (no `0`, `O`, `I` or `l`). Each extra character multiplies the search time by roughly 58. Four or more characters can take a long time on a phone or laptop.
+
+## Further reading
+
+For a full walkthrough with examples, read [Solana vanity address: how to make a custom address](/blog/solana-vanity-address/).
