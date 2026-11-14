@@ -128,3 +128,57 @@ html[data-theme="light"] .c-h1 em{background:linear-gradient(90deg,#C2410C,#E850
   .c-bar{align-items:stretch;} .c-tabs{width:100%;} .c-tab{flex:1;}
 }
 @media (prefers-reduced-motion:reduce){ .c-skel{animation:none;} .c-btn{transition:none;} }
+
+/* ---- live feed v2: dense rows, expandable analysis ---- */
+.c-row{display:block; padding:0; overflow:hidden;}
+.c-row.open{border-color:rgba(255,161,73,.55);}
+.c-main{display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1.25fr) repeat(7,minmax(54px,.5fr)) 104px 34px; gap:10px; align-items:center; padding:12px 14px; cursor:pointer;}
+.c-main:hover{background:rgba(255,255,255,.02);}
+.c-row .tok img, .c-row .tok .ph{width:34px; height:34px;}
+.c-row .m b, .c-row .m span.f-now b, .c-row .m span.f-peak b{font-size:14.5px; font-weight:600;}
+.c-row .m .f-mc{color:var(--ink); font-weight:500;}
+.c-row .res small{margin-top:4px; font-weight:600;}
+.c-chev{appearance:none; border:1px solid var(--line); background:none; color:var(--muted); width:32px; height:32px; border-radius:9px; display:grid; place-items:center; cursor:pointer; transition:transform .15s;}
+.c-chev:hover{color:var(--ink); border-color:var(--orange-bright);} .c-chev:focus-visible{outline:2px solid var(--orange-bright); outline-offset:2px;}
+.c-row.open .c-chev{transform:rotate(180deg); color:var(--orange-bright);}
+.f-now{display:inline-block; border-radius:6px; padding:1px 4px; margin:-1px -4px;}
+.fl-up{animation:c-up .9s ease-out;} .fl-down{animation:c-down .9s ease-out;}
+@keyframes c-up{0%{background:rgba(28,227,155,.35)} 100%{background:transparent}}
+@keyframes c-down{0%{background:rgba(255,143,168,.35)} 100%{background:transparent}}
+.c-detail{border-top:1px solid var(--line); padding:16px 14px 14px; background:rgba(0,0,0,.18);}
+.c-chartbox{border:1px solid var(--line); border-radius:12px; background:var(--panel); margin:0 0 14px;}
+.c-charthead{display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; padding:10px 14px 0; font-size:13px;}
+.c-charthead b{color:var(--ink); font-family:'Space Grotesk',sans-serif; font-size:14.5px;}
+.c-chart{padding:4px 6px 6px; min-height:120px;} .c-chart svg{display:block; width:100%; height:auto;}
+.c-chart .lb{font:500 11px 'JetBrains Mono',monospace; fill:var(--muted);} .c-chart .lb.hot{fill:var(--orange-bright);} .c-chart .lb.tip{fill:var(--ink); font-size:12px;}
+.c-chart .grid{stroke:var(--line); stroke-width:1; opacity:.6;} .c-chart .entry{stroke:var(--muted); stroke-width:1; stroke-dasharray:5 4;}
+.c-chart .call{stroke:var(--orange-bright); stroke-width:1.5;} .c-chart .ck{stroke:var(--line); stroke-width:1; stroke-dasharray:2 4;} .c-chart .cross{stroke:var(--ink); stroke-width:1; opacity:.5;}
+.c-dgrid{display:grid; grid-template-columns:1fr 1fr .9fr; gap:12px;}
+.c-dgrid section{border:1px solid var(--line); border-radius:12px; background:var(--panel); padding:12px 14px;}
+.c-dgrid h4{margin:0 0 8px; font:600 12px 'JetBrains Mono',monospace; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); display:flex; align-items:center; gap:8px;}
+.c-kv{margin:0; display:grid; gap:0;} .c-kv div{display:flex; justify-content:space-between; gap:12px; padding:6px 0; border-top:1px solid var(--line); font-size:13.5px;} .c-kv div:first-child{border-top:0;}
+.c-kv dt{color:var(--muted);} .c-kv dd{margin:0; color:var(--ink); text-align:right; font-variant-numeric:tabular-nums;} .c-kv dd b{font-weight:600;}
+.c-others{list-style:none; margin:0; padding:0; display:grid; gap:7px; font-size:13.5px;} .c-others a{color:var(--ink); font-weight:600; text-decoration:none;} .c-others a:hover{text-decoration:underline;}
+.c-why{margin:12px 0 0; font-size:13.5px; line-height:1.55; color:var(--soft);}
+.c-dlinks{display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:12px; padding-top:10px; border-top:1px dashed var(--line); font-size:12.5px;}
+.c-dlinks q{quotes:none; color:var(--muted); flex:1 1 280px; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.c-dlinks a, .c-dlinks button{color:var(--orange-bright); text-decoration:none; flex:none;} .c-dlinks a:hover, .c-dlinks button:hover{text-decoration:underline;}
+.c-livebar{display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; align-items:center; font-size:13px; color:var(--soft); margin:0 0 12px;}
+.c-livebar b{color:var(--mint);} .c-livebar > span{display:inline-flex; align-items:center; gap:8px;}
+.c-livedot{width:8px; height:8px; border-radius:50%; background:var(--mint); display:inline-block; animation:c-pulse 1.6s ease-in-out infinite;}
+@keyframes c-pulse{0%,100%{box-shadow:0 0 0 0 rgba(28,227,155,.5)} 50%{box-shadow:0 0 0 6px rgba(28,227,155,0)}}
+.c-sum{display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin:0 0 14px;} .c-sum .c-stat{padding:12px 14px;} .c-sum .c-stat b{font-size:22px;}
+.c-toolbar{display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 16px;}
+.c-obar{display:flex; gap:3px; height:30px; margin:0 0 16px; border-radius:9px; overflow:hidden; font:600 11px 'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.04em;}
+.c-obar span{display:grid; place-items:center; min-width:54px; color:#0B0B0E; white-space:nowrap; padding:0 6px;}
+.c-obar .moon{background:#1CE39B;} .c-obar .win{background:#7BE8C0;} .c-obar .flat{background:#8E8A99;} .c-obar .dump{background:#FF8FA8;} .c-obar .rug{background:#E8505B; color:#fff;}
+@media (max-width:1100px){
+  .c-main{grid-template-columns:repeat(7,1fr) 34px;} .c-main .tok{grid-column:1/5;} .c-main .src{grid-column:5/8; text-align:right;} .c-main .c-chev{grid-row:1; grid-column:8;}
+  .c-main .m{text-align:left;} .c-main .res{grid-column:1/-1; text-align:left; display:flex; align-items:center; gap:10px;} .c-main .res small{margin:0;}
+  .c-dgrid{grid-template-columns:1fr 1fr;} .c-dgrid section:last-child{grid-column:1/-1;} .c-sum{grid-template-columns:repeat(3,1fr);}
+}
+@media (max-width:560px){
+  .c-main{grid-template-columns:repeat(4,1fr); padding:12px;} .c-main .tok{grid-column:1/4;} .c-main .c-chev{grid-column:4; justify-self:end;} .c-main .src{grid-column:1/-1; grid-row:2; text-align:left;}
+  .c-dgrid{grid-template-columns:1fr;} .c-sum{grid-template-columns:repeat(2,1fr);} .c-detail{padding:12px;} .c-tiles{grid-template-columns:repeat(2,1fr);}
+}
+@media (prefers-reduced-motion:reduce){ .fl-up,.fl-down,.c-livedot{animation:none;} .c-chev{transition:none;} }

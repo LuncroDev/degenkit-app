@@ -170,7 +170,7 @@
     const w = e.target.closest("[data-wallet]"), d = e.target.closest("[data-do]"), cp = e.target.closest("[data-copy]"), ch = e.target.closest("[data-plat]");
     if (w) return act(() => connect(w.dataset.wallet));
     if (cp) { navigator.clipboard && navigator.clipboard.writeText(cp.dataset.copy).then(() => { const t = cp.textContent; cp.textContent = "Copied"; setTimeout(() => (cp.textContent = t), 1200); }); return; }
-    if (ch) { state.plat = ch.dataset.plat; return route(); }
+    if (ch) { state.plat = ch.dataset.plat; if (document.querySelector('#cSum')) { document.querySelectorAll('[data-plat]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.plat === state.plat))); return renderCalls(); } return route(); }
     if (!d) return;
     const k = d.dataset.do;
     if (k === "pick") { state.picking = true; renderJoin(); }
@@ -190,24 +190,186 @@
     } catch { /* the landing page works without live numbers */ }
   }
 
-  // ---------- member views ----------
+  // ---------- live market data (DexScreener, straight from the browser, every 10 s) ----------
+  const GT = { solana: "solana", ethereum: "eth", bsc: "bsc", base: "base", robinhood: "robinhood", elysium: "elysium", arbitrum: "arbitrum", polygon: "polygon_pos" };
+  const live = new Map(), model = { calls: [], open: null, chart: null, sort: "new", liveOnly: false, at: 0 };
+  const key = (t) => t.chain + ":" + t.address;
+  const money = (v) => v == null || !isFinite(v) ? "–" : v >= 1e9 ? "$" + (v / 1e9).toFixed(2) + "B" : v >= 1e6 ? "$" + (v / 1e6).toFixed(2) + "M" : v >= 1e3 ? "$" + (v / 1e3).toFixed(1) + "k" : "$" + Math.round(v);
+  const usd = (v) => v == null || !isFinite(v) ? "–" : v >= 1 ? "$" + (+v).toFixed(2) : "$" + (+v).toPrecision(3).replace(/e-(\d+)/, (_, n) => "e-" + n);
+  const chg = (v) => v == null ? '<span class="dim">–</span>' : `<span class="${v >= 0 ? "up" : "down"}">${v > 0 ? "+" : ""}${Math.abs(v) >= 100 ? Math.round(v) : (+v).toFixed(1)}%</span>`;
+  const base = (c) => +c.entry || +c.seen || 0;
+  const nowX = (c) => { const l = live.get(key(c.token)), b = base(c); return l && l.price && b ? l.price / b : c.x_now; };
+  const clock = (t) => new Date(t).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+
+  async function pollLive() {
+    const by = new Map();
+    for (const c of model.calls) { if (!by.has(c.token.chain)) by.set(c.token.chain, new Set()); by.get(c.token.chain).add(c.token.address); }
+    const jobs = [];
+    for (const [chain, set] of by) {
+      const a = [...set];
+      for (let i = 0; i < a.length; i += 30) jobs.push(fetch(`https://api.dexscreener.com/tokens/v1/${encodeURIComponent(chain)}/${a.slice(i, i + 30).join(",")}`).then((r) => r.ok ? r.json() : []).then((pairs) => {
+        const best = new Map();
+        for (const p of Array.isArray(pairs) ? pairs : []) { const k = chain + ":" + (chain === "solana" ? p.baseToken.address : p.baseToken.address.toLowerCase()); const cur = best.get(k); if (!cur || ((p.liquidity && p.liquidity.usd) || 0) > ((cur.liquidity && cur.liquidity.usd) || 0)) best.set(k, p); }
+        for (const [k, p] of best) { const prev = live.get(k); live.set(k, { price: +p.priceUsd || 0, prev: prev ? prev.price : null, mcap: p.marketCap || p.fdv, liq: p.liquidity && p.liquidity.usd, vol: p.volume && p.volume.h24, m5: p.priceChange && p.priceChange.m5, h1: p.priceChange && p.priceChange.h1, buys: p.txns && p.txns.h1 && p.txns.h1.buys, sells: p.txns && p.txns.h1 && p.txns.h1.sells, pair: p.pairAddress, dex: p.dexId, born: p.pairCreatedAt }); }
+      }).catch(() => {}));
+    }
+    await Promise.all(jobs);
+    model.at = Date.now(); paintLive();
+  }
+  function paintLive() {
+    document.querySelectorAll(".c-row[data-id]").forEach((row) => {
+      const c = model.calls.find((x) => x.id === +row.dataset.id); if (!c) return;
+      const l = live.get(key(c.token)), x = nowX(c), el = $(".f-now", row);
+      if (el) { const old = el.dataset.v; el.innerHTML = fx(x); el.dataset.v = x == null ? "" : (+x).toFixed(3); if (old && old !== el.dataset.v) { el.classList.remove("fl-up", "fl-down"); void el.offsetWidth; el.classList.add(+el.dataset.v >= +old ? "fl-up" : "fl-down"); } }
+      const pk = $(".f-peak", row); if (pk && c.status !== "final") pk.innerHTML = fx(c.x_peak == null ? null : Math.max(+c.x_peak, x || 0));
+      if (l) { const m = $(".f-mc", row), f = $(".f-m5", row); if (m) m.textContent = money(l.mcap); if (f) f.innerHTML = chg(l.m5); }
+    });
+    const sum = $("#cSum"); if (sum) sum.innerHTML = summary();
+    if (model.open && model.chart && model.chart.id === model.open) {
+      const c = model.calls.find((x) => x.id === model.open), l = c && live.get(key(c.token));
+      if (l && l.price && Date.now() / 1000 < model.chart.cap) { const t = Math.floor(Date.now() / 1000), p = model.chart.pts; if (p.length && t - p[p.length - 1][0] < 60 && p[p.length - 1][2]) p[p.length - 1] = [t, l.price, 1]; else p.push([t, l.price, 1]); drawChart(); }
+      const box = $("#cMarket"); if (box && c) box.innerHTML = marketCard(c);
+    }
+  }
+  function summary() {
+    const day = model.calls.filter((c) => Date.now() - new Date(c.posted_at).getTime() < 864e5), xs = day.map((c) => [c, nowX(c)]).filter((a) => a[1] != null);
+    const up = xs.filter((a) => a[1] >= 1).length, best = xs.slice().sort((a, b) => b[1] - a[1])[0], worst = xs.slice().sort((a, b) => a[1] - b[1])[0], med = xs.map((a) => a[1]).sort((a, b) => a - b)[Math.floor(xs.length / 2)];
+    const t = (l, v, s) => `<div class="c-stat"><b>${v}</b><span>${l}${s ? " · " + s : ""}</span></div>`;
+    return t("Calls, last 24 h", day.length) + t("Above entry now", xs.length ? Math.round(up / xs.length * 100) + "%" : "–", xs.length ? up + " of " + xs.length : "") + t("Median, now vs entry", med == null ? "–" : (+med).toFixed(2) + "×")
+      + t("Best right now", best ? (+best[1]).toFixed(2) + "×" : "–", best ? esc(best[0].token.symbol || "") : "") + t("Worst right now", worst ? (+worst[1]).toFixed(2) + "×" : "–", worst ? esc(worst[0].token.symbol || "") : "");
+  }
+
+  // ---------- call row and detail ----------
   function callRow(c) {
-    const t = c.token, s = c.source, img = /^https:\/\//.test(t.image || "") ? `<img src="${esc(t.image)}" alt="" loading="lazy" width="36" height="36">` : '<span class="ph"></span>';
-    const live = c.status !== "final";
-    const badge = c.status === "final" ? `<span class="c-badge ${esc(c.outcome)}">${esc(c.outcome)}</span>` : c.status === "tracking" ? '<span class="c-badge live">Tracking</span>' : c.status === "no_data" ? '<span class="c-badge">No data</span>' : '<span class="c-badge">Queued</span>';
-    const pts = c.points == null ? "" : `<small><span class="${c.points >= 0 ? "up" : "down"}">${c.points > 0 ? "+" : ""}${num(c.points, 1)} pts</span>${live ? " so far" : ""} · ${pct(c.hold)} of time above entry</small>`;
-    const post = safeUrl(c.post_url);
-    return `<article class="c-row">
-      <div class="tok">${img}<div style="min-width:0"><b>${esc(t.symbol || "Unknown token")}</b><span>${esc(CHAIN[t.chain] || t.chain)} · ${esc(short(t.address))}</span></div></div>
-      <div class="src"><a href="#/a/${+s.id}">${esc(s.platform === "x" ? "@" + s.handle : s.handle)}</a><span>${s.platform === "x" ? "X" : "Telegram"} · ${esc(ago(c.posted_at))}${c.repeats ? " · repeated " + (+c.repeats) + "×" : ""}</span></div>
-      <div class="m"><i>Now</i>${fx(c.x_now)}</div><div class="m"><i>Peak</i>${fx(c.x_peak)}</div><div class="m"><i>1 h</i>${fx(c.x_1h)}</div><div class="m"><i>6 h</i>${fx(c.x_6h)}</div><div class="m"><i>24 h</i>${fx(c.x_24h)}</div>
-      <div class="res">${badge}${pts}</div>
-      <div class="links"><q>${esc((c.excerpt || "").replace(/\s+/g, " "))}</q>${post ? `<a href="${esc(post)}" target="_blank" rel="noopener nofollow">Open post</a>` : ""}<a href="https://dexscreener.com/${encodeURIComponent(t.chain)}/${encodeURIComponent(t.address)}" target="_blank" rel="noopener nofollow">Open chart</a><button class="c-link" data-copy="${esc(t.address)}">Copy address</button></div>
+    const t = c.token, s = c.source, img = /^https:\/\//.test(t.image || "") ? `<img src="${esc(t.image)}" alt="" loading="lazy" width="34" height="34">` : '<span class="ph"></span>';
+    const liveNow = c.status !== "final", x = nowX(c), l = live.get(key(t));
+    const badge = c.status === "final" ? `<span class="c-badge ${esc(c.outcome)}">${esc(c.outcome)}</span>` : c.status === "tracking" ? '<span class="c-badge live">Tracking</span>' : c.status === "no_data" ? '<span class="c-badge">No data</span>' : '<span class="c-badge live">New</span>';
+    const pts = c.points == null ? "" : `<small class="${c.points >= 0 ? "up" : "down"}">${c.points > 0 ? "+" : ""}${num(c.points, 1)} pts${liveNow ? " so far" : ""}</small>`;
+    const open = model.open === c.id;
+    return `<article class="c-row${open ? " open" : ""}" data-id="${+c.id}">
+      <div class="c-main">
+        <div class="tok">${img}<div style="min-width:0"><b>${esc(t.symbol || "Unknown token")}</b><span>${esc(CHAIN[t.chain] || t.chain)} · ${esc(short(t.address))}</span></div></div>
+        <div class="src"><a href="#/a/${+s.id}">${esc(s.platform === "x" ? "@" + s.handle : s.handle)}</a><span>${s.score != null && s.scored >= 5 ? "score " + num(s.score, 0) + " · " : ""}${esc(ago(c.posted_at))}${c.others && c.others.length ? " · +" + c.others.length + " more" : ""}</span></div>
+        <div class="m"><i>Mkt cap</i><b class="f-mc">${l ? money(l.mcap) : money(c.mcap)}</b></div>
+        <div class="m"><i>5 min</i><b class="f-m5">${l ? chg(l.m5) : '<span class="dim">–</span>'}</b></div>
+        <div class="m"><i>Now</i><span class="f-now" data-v="${x == null ? "" : (+x).toFixed(3)}">${fx(x)}</span></div>
+        <div class="m"><i>Peak</i><span class="f-peak">${fx(c.x_peak == null ? null : liveNow ? Math.max(+c.x_peak, x || 0) : c.x_peak)}</span></div>
+        <div class="m"><i>1 h</i>${fx(c.x_1h)}</div><div class="m"><i>6 h</i>${fx(c.x_6h)}</div><div class="m"><i>24 h</i>${fx(c.x_24h)}</div>
+        <div class="res">${badge}${pts}</div>
+        <button class="c-chev" data-open="${+c.id}" aria-expanded="${open}" aria-label="${open ? "Hide" : "Show"} analysis for ${esc(t.symbol || "token")}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <div class="c-detail"${open ? "" : " hidden"}>${open ? detail(c) : ""}</div>
     </article>`;
   }
+  const kv = (rows) => `<dl class="c-kv">${rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>`;
+  function marketCard(c) {
+    const l = live.get(key(c.token)) || {}, b = base(c);
+    return kv([["Price now", usd(l.price)], ["Now vs entry", l.price && b ? fx(l.price / b) : fx(c.x_now)], ["Market cap", money(l.mcap)], ["Liquidity", money(l.liq)], ["Volume, 24 h", money(l.vol)], ["Change, 5 min / 1 h", chg(l.m5) + " / " + chg(l.h1)],
+      ["Buys / sells, 1 h", l.buys == null ? "–" : num(l.buys) + " / " + num(l.sells)], ["Pool", esc((l.dex || c.dex || "–") + (l.born ? " · opened " + ago(l.born) : ""))]]);
+  }
+  function detail(c) {
+    const t = c.token, post = safeUrl(c.post_url), t0 = new Date(c.posted_at).getTime();
+    const rel = (at) => { const d = Math.round((new Date(at).getTime() - t0) / 1000), a = Math.abs(d); return (a < 90 ? a + " s" : a < 5400 ? Math.round(a / 60) + " min" : (a / 3600).toFixed(1) + " h") + (d < 0 ? " earlier" : " later"); };
+    const others = (c.others || []).map((o) => `<li><a href="#/a/${+o.id}">${esc(o.platform === "x" ? "@" + o.handle : o.handle)}</a> <span class="${new Date(o.at).getTime() < t0 ? "up" : "dim"}">${esc(rel(o.at))}</span>${o.score != null ? ` <span class="dim">· score ${num(o.score, 0)}</span>` : ""}</li>`).join("");
+    const firstBy = (c.others || []).some((o) => new Date(o.at).getTime() < t0) ? "" : (c.others || []).length ? '<p class="c-fine up" style="margin:0 0 8px">First of the tracked accounts to post it.</p>' : "";
+    const why = c.points == null ? "Scoring starts 3 minutes after the call, once the first candles exist." :
+      `Blended return ${c.blend == null ? "–" : (+c.blend).toFixed(2) + "×"} (1 h counts 50%, 6 h 30%, 24 h 20%), price above entry ${pct(c.hold)} of the time${c.dumped_fast ? ", halved within the first hour" : ""}: <b class="${c.points >= 0 ? "up" : "down"}">${c.points > 0 ? "+" : ""}${num(c.points, 2)} points</b>${c.status !== "final" ? " so far; final at 24 h" : ""}.`;
+    return `<div class="c-chartbox"><div class="c-charthead"><b>Price since the call</b><span class="dim" id="cChartNote">Loading candles…</span></div><div id="cChart" class="c-chart"></div></div>
+      <div class="c-dgrid">
+        <section><h4>Since the call</h4>${kv([["Called at", esc(clock(c.posted_at)) + " · " + esc(day(c.posted_at))], [c.entry ? "Entry price" : "First price seen", usd(base(c))], ["Peak", fx(c.x_peak) + (c.secs_to_peak != null ? ` <span class="dim">after ${esc(dur(c.secs_to_peak))}</span>` : "")], ["Deepest drop", c.dd == null ? "–" : `<span class="${c.dd < -0.3 ? "down" : ""}">${Math.round(c.dd * 100)}%</span>`],
+          ["Time above entry", pct(c.hold)], ["At 1 h / 6 h / 24 h", fx(c.x_1h) + " / " + fx(c.x_6h) + " / " + fx(c.x_24h)], ["Halved in first hour", c.dumped_fast ? '<span class="down">Yes</span>' : c.points == null ? "–" : "No"], ["Result", c.outcome ? `<span class="c-badge ${esc(c.outcome)}">${esc(c.outcome)}</span>${c.status !== "final" ? ' <span class="dim">provisional</span>' : ""}` : "–"]])}</section>
+        <section><h4>Market now <span class="c-livedot" aria-hidden="true"></span></h4><div id="cMarket">${marketCard(c)}</div></section>
+        <section><h4>Who called it</h4>${firstBy}<ul class="c-others"><li><a href="#/a/${+c.source.id}">${esc(c.source.platform === "x" ? "@" + c.source.handle : c.source.handle)}</a> <span class="dim">this call${c.source.score != null ? " · score " + num(c.source.score, 0) : ""}${c.source.rank ? " · rank #" + (+c.source.rank) : ""}</span></li>${others}</ul>
+          ${others ? "" : '<p class="c-fine" style="margin:8px 0 0">No other tracked account has posted this contract.</p>'}${c.repeats ? `<p class="c-fine" style="margin:8px 0 0">Posted again ${+c.repeats}× by the same account.</p>` : ""}</section>
+      </div>
+      <p class="c-why">${why}</p>
+      <div class="c-dlinks"><q>${esc((c.excerpt || "").replace(/\s+/g, " "))}</q>${post ? `<a href="${esc(post)}" target="_blank" rel="noopener nofollow">Open post</a>` : ""}<a href="https://dexscreener.com/${encodeURIComponent(t.chain)}/${encodeURIComponent(t.address)}" target="_blank" rel="noopener nofollow">Open full chart</a><button class="c-link" data-copy="${esc(t.address)}">Copy address</button></div>`;
+  }
+  async function loadChart(c) {
+    const t0 = Math.floor(new Date(c.posted_at).getTime() / 1000), now = Math.floor(Date.now() / 1000), end = Math.min(now, t0 + 86400), span = end - t0;
+    const start = t0 - Math.max(600, Math.round(span * 0.08)), agg = end - start <= 15 * 3600 ? 1 : 5;
+    const l = live.get(key(c.token)) || {}, pair = c.pair || l.pair, note = $("#cChartNote");
+    model.chart = { id: c.id, pts: [], entry: base(c), t0, cap: t0 + 86400, loading: true };
+    try {
+      if (!pair || !GT[c.token.chain]) throw new Error("no pool");
+      const r = await fetch(`https://api.geckoterminal.com/api/v2/networks/${GT[c.token.chain]}/pools/${encodeURIComponent(pair)}/ohlcv/minute?aggregate=${agg}&limit=1000&before_timestamp=${end + 60}&currency=usd`);
+      if (!r.ok) throw new Error(r.status === 429 ? "rate" : "http");
+      const list = ((await r.json()).data.attributes.ohlcv_list || []).map((k) => [k[0], k[4]]).filter((k) => k[0] >= start && k[0] <= end && k[1] > 0).sort((a, b) => a[0] - b[0]);
+      if (model.open !== c.id) return;
+      model.chart.pts = list; model.chart.loading = false;
+      if (!model.chart.entry && list.length) model.chart.entry = (list.find((k) => k[0] >= t0) || list[0])[1];
+      if (note) note.textContent = `${agg}-minute closes · entry = price in the minute of the call`;
+      drawChart();
+    } catch (e) {
+      model.chart.loading = false;
+      if (note) note.textContent = "";
+      const el = $("#cChart"); if (el) el.innerHTML = `<div class="c-empty" style="padding:22px">${e.message === "rate" ? "<b>The chart source is busy</b>Too many chart requests in a minute. Wait a moment and open this call again." : "<b>No candles for this pool yet</b>Use “Open full chart” to see the pool on DexScreener."}</div>`;
+    }
+  }
+  function drawChart() {
+    const el = $("#cChart"), ch = model.chart; if (!el || !ch || ch.loading) return;
+    const pts = ch.pts, E = ch.entry;
+    if (pts.length < 2 || !E) { el.innerHTML = '<div class="c-empty" style="padding:22px"><b>Not enough trades yet</b>The path appears once the pool has a few minutes of trades after the call.</div>'; return; }
+    const W = 860, H = 280, L = 50, R = 14, T = 16, B = 26, ys = pts.map((p) => p[1] / E);
+    const x0 = Math.min(pts[0][0], ch.t0 - 60), x1 = Math.max(pts[pts.length - 1][0], ch.t0 + 120);
+    let y0 = Math.min(1, ...ys), y1 = Math.max(1, ...ys); const pad = (y1 - y0) * 0.1 || 0.05; y0 = Math.max(0, y0 - pad); y1 += pad;
+    const X = (t) => L + (t - x0) / (x1 - x0) * (W - L - R), Y = (v) => T + (1 - (v - y0) / (y1 - y0)) * (H - T - B);
+    const d = pts.map((p, i) => (i ? "L" : "M") + X(p[0]).toFixed(1) + " " + Y(ys[i]).toFixed(1)).join(" ");
+    const last = ys[ys.length - 1], col = last >= 1 ? "#1CE39B" : "#FF8FA8";
+    let pi = -1; pts.forEach((p, i) => { if (p[0] >= ch.t0 && (pi < 0 || ys[i] > ys[pi])) pi = i; });
+    const marks = [[0, "Call"], [3600, "1 h"], [21600, "6 h"], [86400, "24 h"]].filter((m) => ch.t0 + m[0] <= x1).map((m) => `<line x1="${X(ch.t0 + m[0]).toFixed(1)}" x2="${X(ch.t0 + m[0]).toFixed(1)}" y1="${T}" y2="${H - B}" class="${m[0] ? "ck" : "call"}"/><text x="${(X(ch.t0 + m[0]) + 4).toFixed(1)}" y="${T + 10}" class="lb${m[0] ? "" : " hot"}">${m[1]}</text>`).join("");
+    const yt = [...new Set([y0, 1, (1 + y1) / 2, y1].map((v) => +v.toFixed(2)))].map((v) => `<text x="${L - 6}" y="${(Y(v) + 4).toFixed(1)}" text-anchor="end" class="lb">${v.toFixed(2)}×</text><line x1="${L}" x2="${W - R}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}" class="${v === 1 ? "entry" : "grid"}"/>`).join("");
+    const xt = [0, 1, 2, 3, 4].map((i) => { const t = x0 + (x1 - x0) * i / 4; return `<text x="${X(t).toFixed(1)}" y="${H - 8}" text-anchor="${i === 0 ? "start" : i === 4 ? "end" : "middle"}" class="lb">${new Date(t * 1000).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}</text>`; }).join("");
+    el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Price path since the call, in multiples of the entry price. Now ${last.toFixed(2)} times entry.">
+      ${yt}${marks}<path d="${d} L${X(pts[pts.length - 1][0]).toFixed(1)} ${H - B} L${X(pts[0][0]).toFixed(1)} ${H - B} Z" fill="${col}" opacity=".07"/><path d="${d}" fill="none" stroke="${col}" stroke-width="2" stroke-linejoin="round"/>
+      ${pi >= 0 ? `<circle cx="${X(pts[pi][0]).toFixed(1)}" cy="${Y(ys[pi]).toFixed(1)}" r="4" fill="#FFA149"/><text x="${Math.min(W - R - 70, X(pts[pi][0]) + 8).toFixed(1)}" y="${Math.max(T + 22, Y(ys[pi]) - 8).toFixed(1)}" class="lb hot">peak ${ys[pi].toFixed(2)}×</text>` : ""}
+      <circle cx="${X(pts[pts.length - 1][0]).toFixed(1)}" cy="${Y(last).toFixed(1)}" r="4" fill="${col}"/>${xt}
+      <line id="cCross" y1="${T}" y2="${H - B}" class="cross" visibility="hidden"/><text id="cTip" y="${H - B - 6}" class="lb tip" visibility="hidden"></text><rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent" id="cHit"/></svg>`;
+    const hit = $("#cHit", el), cross = $("#cCross", el), tip = $("#cTip", el);
+    hit.addEventListener("pointermove", (ev) => {
+      const r = hit.getBoundingClientRect(), t = x0 + (ev.clientX - r.left) / r.width * (x1 - x0);
+      let bi = 0; for (let i = 1; i < pts.length; i++) if (Math.abs(pts[i][0] - t) < Math.abs(pts[bi][0] - t)) bi = i;
+      const cx = X(pts[bi][0]); cross.setAttribute("x1", cx); cross.setAttribute("x2", cx); cross.setAttribute("visibility", "visible");
+      tip.textContent = `${clock(pts[bi][0] * 1000)}  ${ys[bi].toFixed(2)}×  ${usd(pts[bi][1])}`; tip.setAttribute("x", Math.min(W - R - 190, Math.max(L + 4, cx + 8))); tip.setAttribute("visibility", "visible");
+    });
+    hit.addEventListener("pointerleave", () => { cross.setAttribute("visibility", "hidden"); tip.setAttribute("visibility", "hidden"); });
+  }
+  function toggle(id) {
+    model.open = model.open === id ? null : id; model.chart = null;
+    document.querySelectorAll(".c-row[data-id]").forEach((row) => {
+      const c = model.calls.find((x) => x.id === +row.dataset.id), on = c && c.id === model.open, d = $(".c-detail", row), b = $(".c-chev", row);
+      row.classList.toggle("open", !!on); d.hidden = !on; d.innerHTML = on ? detail(c) : ""; b.setAttribute("aria-expanded", String(!!on));
+      if (on) loadChart(c);
+    });
+  }
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-open]"), main = e.target.closest(".c-main"), so = e.target.closest("[data-sort]"), lo = e.target.closest("[data-liveonly]");
+    if (b) return toggle(+b.dataset.open);
+    if (so) { model.sort = so.dataset.sort; return renderCalls(); }
+    if (lo) { model.liveOnly = !model.liveOnly; return renderCalls(); }
+    if (main && !e.target.closest("a,button")) toggle(+main.parentElement.dataset.id);
+  });
+
   const skeleton = '<div class="c-calls"><div class="c-skel"></div><div class="c-skel"></div><div class="c-skel"></div></div>';
   const failed = (e) => `<div class="c-empty"><b>Could not load this view</b>${esc(friendly(e))}<br><button class="c-btn sm" style="margin-top:12px" onclick="location.reload()">Reload</button></div>`;
-  const chips = () => `<div class="c-filters" role="group" aria-label="Source">${[["all", "All sources"], ["x", "X"], ["telegram", "Telegram"]].map(([k, l]) => `<button class="c-chip" data-plat="${k}" aria-pressed="${state.plat === k}">${l}</button>`).join("")}</div>`;
+  const chip = (attr, on, label) => `<button class="c-chip" ${attr} aria-pressed="${on}">${label}</button>`;
+  const chips = () => `<div class="c-filters" role="group" aria-label="Source">${[["all", "All sources"], ["x", "X"], ["telegram", "Telegram"]].map(([k, l]) => chip(`data-plat="${k}"`, state.plat === k, l)).join("")}</div>`;
+  function renderCalls() {
+    const box = $("#cList"); if (!box) return;
+    let list = model.calls.filter((r) => (model.allPlat || state.plat === "all" || r.source.platform === state.plat) && (!model.liveOnly || r.status !== "final"));
+    if (model.sort !== "new") list = list.slice().sort((a, b) => { const x = nowX(a), y = nowX(b); return (x == null) - (y == null) || (model.sort === "best" ? y - x : x - y); });
+    const tools = $("#cTools"); if (tools) tools.innerHTML = [["new", "Newest"], ["best", "Best now"], ["worst", "Worst now"]].map(([k, l]) => chip(`data-sort="${k}"`, model.sort === k, l)).join("") + chip("data-liveonly", model.liveOnly, "Still tracking only");
+    box.innerHTML = list.length ? list.map(callRow).join("") : `<div class="c-empty"><b>No calls match these filters</b>Clear a filter, or wait: new calls show up within about a minute of being posted.</div>`;
+    if (model.open) { const c = model.calls.find((x) => x.id === model.open); if (c && $(`.c-row[data-id="${c.id}"]`)) { if (model.chart && model.chart.id === c.id && !model.chart.loading) drawChart(); else loadChart(c); } else model.open = null; }
+  }
+  function startLive(fetchRows) {
+    clearInterval(state.timer); clearInterval(state.t2); clearInterval(state.t3);
+    pollLive();
+    state.timer = setInterval(() => { if (!document.hidden) pollLive(); }, 10000);
+    state.t2 = setInterval(() => { if (!document.hidden) fetchRows().then((rows) => { const known = new Set(model.calls.map((c) => c.id)); model.calls = rows; renderCalls(); if (rows.some((r) => !known.has(r.id))) pollLive(); }).catch(() => {}); }, 20000);
+    state.t3 = setInterval(() => { const el = $("#cAgo"); if (el) el.textContent = model.at ? "prices updated " + Math.max(0, Math.round((Date.now() - model.at) / 1000)) + " s ago" : "connecting to prices…"; }, 1000);
+  }
+  const liveBar = `<div class="c-livebar"><span><span class="c-livedot" aria-hidden="true"></span><b>Live</b> · prices every 10 s · new calls every 20 s</span><span class="dim" id="cAgo" aria-live="off">connecting to prices…</span></div>`;
 
   async function viewBoard(v) {
     v.innerHTML = skeleton;
@@ -220,31 +382,50 @@
     const ranked = list.filter((r) => r.rank), rest = list.filter((r) => !r.rank);
     v.innerHTML = chips() + (list.length ? `<div class="c-tablewrap"><table class="c-table"><thead><tr><th>Rank</th><th>Account</th><th>Score</th><th>Scored calls</th><th>Win rate</th><th>Median peak</th><th>Avg at 24 h</th><th>Time above entry</th><th>Dumps + rugs</th><th>Last call</th></tr></thead><tbody>
       ${ranked.map(tr).join("")}${rest.length ? `<tr><td class="sep" colspan="10">Not ranked yet: fewer than 5 scored calls</td></tr>` + rest.map(tr).join("") : ""}</tbody></table></div>
-      <p class="c-fine">Score runs from 0 to 100 over the last 90 days; 50 is neutral. A win is a call whose blended 1 h, 6 h and 24 h return is at least 1.2× while the price stayed above entry at least 40% of the time. Data, not advice.</p>`
+      <p class="c-fine">Score runs from 0 to 100 over the last 90 days; 50 is neutral. A win is a call whose blended 1 h, 6 h and 24 h return is at least 1.2× while the price stayed above entry at least 40% of the time. Accounts that stay under 42 after 8 scored calls are dropped. Data, not advice.</p>`
       : `<div class="c-empty"><b>No accounts with calls yet</b>Accounts appear here as soon as their first call is measured.</div>`);
   }
-  async function viewCalls(v, silent) {
-    if (!silent) v.innerHTML = skeleton;
-    const { rows } = await api("calls", { limit: 80 });
-    const list = rows.filter((r) => state.plat === "all" || r.source.platform === state.plat);
-    v.innerHTML = chips() + (list.length ? `<div class="c-calls">${list.map(callRow).join("")}</div><p class="c-fine">Multiples compare the price with the entry price in the minute of the call. This list refreshes every minute.</p>`
-      : `<div class="c-empty"><b>No calls in this view yet</b>New calls show up here within about a minute of being posted.</div>`);
+  async function viewCalls(v) {
+    v.innerHTML = skeleton;
+    const get = () => api("calls", { limit: 120 }).then((r) => r.rows);
+    model.calls = await get(); model.open = null; model.allPlat = false;
+    v.innerHTML = liveBar + `<div class="c-sum" id="cSum">${summary()}</div><div class="c-toolbar">${chips()}<div class="c-filters" id="cTools" role="group" aria-label="Sort and filter"></div></div><div class="c-calls" id="cList"></div>
+      <p class="c-fine">Multiples compare the price with the entry price in the minute of the call. Select a call for its chart and full breakdown.</p>`;
+    renderCalls(); startLive(get);
+  }
+  function lineChart(vals) {
+    if (vals.length < 2) return "";
+    const W = 860, H = 120, lo = Math.min(0, ...vals), hi = Math.max(0, ...vals), X = (i) => 8 + i / (vals.length - 1) * (W - 16), Y = (v) => 10 + (1 - (v - lo) / ((hi - lo) || 1)) * (H - 20);
+    const last = vals[vals.length - 1], col = last >= 0 ? "#1CE39B" : "#FF8FA8";
+    return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Cumulative points over time, now ${last.toFixed(1)}"><line x1="8" x2="${W - 8}" y1="${Y(0).toFixed(1)}" y2="${Y(0).toFixed(1)}" class="entry"/><path d="${vals.map((v, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1)).join(" ")}" fill="none" stroke="${col}" stroke-width="2"/><circle cx="${X(vals.length - 1).toFixed(1)}" cy="${Y(last).toFixed(1)}" r="4" fill="${col}"/></svg>`;
   }
   async function viewAccount(v, id) {
     v.innerHTML = skeleton;
-    const { source: s } = await api("source", { id });
+    const get = () => api("source", { id }).then((r) => r.source);
+    const s = await get(), a = s.analysis || {}, o = a.outcomes || {};
+    model.calls = s.call_list || []; model.open = null;
     const tile = (l, val) => `<div class="c-stat"><b>${val}</b><span>${l}</span></div>`;
-    const origin = s.origin ? ` · pump.fun leaderboard #${+s.origin_rank} (${s.origin === "pump_alltime" ? "all time" : "PnL board"}, snapshot 14 Nov 2026)${s.wallet ? ` · wallet <a href="https://solscan.io/account/${encodeURIComponent(s.wallet)}" target="_blank" rel="noopener nofollow">${esc(short(s.wallet))}</a>` : ""}` : "";
+    const origin = s.origin === "early_caller" ? " · found because it posted a contract before a tracked account did" : s.origin ? ` · pump.fun leaderboard #${+s.origin_rank} (${s.origin === "pump_alltime" ? "all time" : "PnL board"}, snapshot 14 Nov 2026)${s.wallet ? ` · wallet <a href="https://solscan.io/account/${encodeURIComponent(s.wallet)}" target="_blank" rel="noopener nofollow">${esc(short(s.wallet))}</a>` : ""}` : "";
+    const tot = ["moon", "win", "flat", "dump", "rug"].reduce((n, k) => n + (+o[k] || 0), 0);
+    const bar = tot ? `<div class="c-obar" role="img" aria-label="Results: ${["moon", "win", "flat", "dump", "rug"].map((k) => (o[k] || 0) + " " + k).join(", ")}">${["moon", "win", "flat", "dump", "rug"].filter((k) => o[k]).map((k) => `<span class="${k}" style="flex:${+o[k]}">${+o[k]} ${k}</span>`).join("")}</div>` : "";
+    const scored = model.calls.filter((c) => c.points != null).slice().sort((x, y) => new Date(x.posted_at) - new Date(y.posted_at));
+    let run = 0; const cum = scored.map((c) => (run += +c.points));
+    const chains = Object.entries(a.chains || {}).sort((x, y) => y[1] - x[1]).map(([k, n]) => `${esc(CHAIN[k] || k)} ${+n}`).join(" · ");
     v.innerHTML = `<p class="c-fine" style="margin:0 0 4px"><a href="#/board">← Leaderboard</a></p>
-      <div class="c-phead"><div><h2>${esc(s.platform === "x" ? "@" + s.handle : s.name || s.handle)}</h2><p>${s.platform === "x" ? "X" : "Telegram"} · <a href="${esc(srcUrl(s))}" target="_blank" rel="noopener nofollow">Open ${s.platform === "x" ? "profile" : "channel"}</a>${origin}</p></div>
+      <div class="c-phead"><div><h2>${esc(s.platform === "x" ? "@" + s.handle : s.name || s.handle)}</h2><p>${s.platform === "x" ? "X" : "Telegram"}${s.followers ? " · " + num(s.followers) + " followers" : ""} · <a href="${esc(srcUrl(s))}" target="_blank" rel="noopener nofollow">Open ${s.platform === "x" ? "profile" : "channel"}</a>${origin}</p>${s.active === false ? `<p class="down">No longer tracked: ${esc(s.dropped_reason || "dropped")}.</p>` : ""}</div>
       <span class="c-score ${s.score >= 55 ? "hi" : s.score < 45 ? "lo" : ""}" style="font-size:22px;padding:8px 14px">${s.score == null ? "–" : num(s.score, 1)}</span></div>
-      <div class="c-tiles">${tile("Rank", s.rank ? "#" + (+s.rank) : "–")}${tile("Scored calls", (+s.scored || 0) + " / " + (+s.calls || 0))}${tile("Win rate", s.scored ? pct(s.wins / s.scored) : "–")}${tile("Median peak", s.med_peak == null ? "–" : (+s.med_peak).toFixed(2) + "×")}${tile("Time above entry", pct(s.hold))}${tile("Dumps + rugs", (+s.dumps || 0) + (+s.rugs || 0))}</div>
-      ${(s.call_list || []).length ? `<div class="c-calls">${s.call_list.map(callRow).join("")}</div>` : `<div class="c-empty"><b>No measured calls yet</b>This account has not posted a contract address since tracking started.</div>`}`;
+      <div class="c-tiles">${tile("Rank", s.rank ? "#" + (+s.rank) : "–")}${tile("Scored calls", (+s.scored || 0) + " / " + (+s.calls || 0))}${tile("Win rate", s.scored ? pct(s.wins / s.scored) : "–")}${tile("Median peak", s.med_peak == null ? "–" : (+s.med_peak).toFixed(2) + "×")}${tile("Avg at 24 h", s.avg_24h == null ? "–" : (+s.avg_24h).toFixed(2) + "×")}${tile("Time above entry", pct(s.hold))}
+        ${tile("Avg time to peak", esc(dur(a.avg_secs_to_peak)))}${tile("Avg deepest drop", a.avg_dd == null ? "–" : Math.round(a.avg_dd * 100) + "%")}${tile("Halved in 1st hour", (+a.fast_dumps || 0) + (s.scored ? " of " + s.scored : ""))}${tile("Best peak", a.best_peak == null ? "–" : (+a.best_peak).toFixed(2) + "×")}${tile("Worst at 24 h", a.worst_24h == null ? "–" : (+a.worst_24h).toFixed(2) + "×")}${tile("Calls, last 7 days", +a.calls_7d || 0)}</div>
+      ${bar}${cum.length > 1 ? `<div class="c-chartbox"><div class="c-charthead"><b>Cumulative points</b><span class="dim">${cum.length} scored calls, oldest to newest</span></div><div class="c-chart">${lineChart(cum)}</div></div>` : ""}
+      ${chains ? `<p class="c-fine" style="margin:0 0 14px">Chains: ${chains}</p>` : ""}
+      ${liveBar}${model.calls.length ? `<div class="c-toolbar"><span></span><div class="c-filters" id="cTools" role="group" aria-label="Sort and filter"></div></div><div class="c-calls" id="cList"></div>` : `<div class="c-empty"><b>No measured calls yet</b>This account has not posted a contract address since tracking started.</div>`}`;
+    model.allPlat = true; renderCalls();
+    startLive(() => get().then((x) => x.call_list || []));
   }
 
   // ---------- routing ----------
   async function route() {
-    clearInterval(state.timer);
+    clearInterval(state.timer); clearInterval(state.t2); clearInterval(state.t3);
     const me = state.me, land = $("#cLanding"), app = $("#cApp"), h = location.hash || "";
     const wantsJoin = h === "#/join" || h === "#join";
     if (!me || !me.member || wantsJoin) {
@@ -259,7 +440,7 @@
     const v = $("#cView");
     try {
       if (m) await viewAccount(v, +m[1]);
-      else if (tab === "calls") { await viewCalls(v); state.timer = setInterval(() => { if (!document.hidden) viewCalls(v, true).catch(() => {}); }, 60000); }
+      else if (tab === "calls") await viewCalls(v);
       else await viewBoard(v);
     } catch (e) {
       if (e.status === 402 || e.status === 401) { state.me = e.data && e.data.me || null; return route(); }
