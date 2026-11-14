@@ -182,3 +182,17 @@ html[data-theme="light"] .c-h1 em{background:linear-gradient(90deg,#C2410C,#E850
   .c-dgrid{grid-template-columns:1fr;} .c-sum{grid-template-columns:repeat(2,1fr);} .c-detail{padding:12px;} .c-tiles{grid-template-columns:repeat(2,1fr);}
 }
 @media (prefers-reduced-motion:reduce){ .fl-up,.fl-down,.c-livedot{animation:none;} .c-chev{transition:none;} }
+
+/* ---- odds from past calls ---- */
+.warn{color:#FFC46B;}
+.c-main{grid-template-columns:minmax(0,1.45fr) minmax(0,1.2fr) repeat(8,minmax(50px,.5fr)) 104px 34px;}
+.c-odds{border:1px solid var(--line); border-radius:12px; background:var(--panel); padding:12px 14px; margin:12px 0 0;}
+.c-odds h4{margin:0 0 8px; font:600 12px 'JetBrains Mono',monospace; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);}
+.c-oddsline{margin:0 0 12px; font-size:15px; line-height:1.55; color:var(--soft);} .c-oddsline b{color:var(--ink);} .c-oddsline b.down{color:#FF8FA8;} .c-oddsline b.up{color:var(--mint);} .c-oddsline b.warn{color:#FFC46B;}
+.c-otable{min-width:420px; font-size:14px;} .c-otable td, .c-otable th{padding:9px 12px;} .c-otable th:nth-child(2), .c-otable td:nth-child(2){text-align:right;}
+.c-otable tr.best td{background:rgba(28,227,155,.06);}
+.c-pbar{display:inline-block; vertical-align:middle; width:90px; height:6px; border-radius:3px; background:var(--line); margin-right:10px; overflow:hidden;} .c-pbar i{display:block; height:100%; background:var(--orange-bright); border-radius:3px;}
+.c-phead + .c-tiles + .c-obar + .c-odds, .c-tiles + .c-odds{margin:0 0 16px;}
+@media (max-width:1100px){ .c-main{grid-template-columns:repeat(8,1fr) 34px;} .c-main .tok{grid-column:1/5;} .c-main .src{grid-column:5/9; text-align:right;} .c-main .c-chev{grid-row:1; grid-column:9;} }
+@media (max-width:560px){ .c-main{grid-template-columns:repeat(4,1fr);} .c-main .tok{grid-column:1/4;} .c-main .c-chev{grid-column:4;} .c-main .src{grid-column:1/-1; text-align:left;} .c-pbar{width:54px;} }
+.c-pv{display:inline-block; width:44px; text-align:right;}

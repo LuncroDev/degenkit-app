@@ -201,6 +201,28 @@
   const nowX = (c) => { const l = live.get(key(c.token)), b = base(c); return l && l.price && b ? l.price / b : c.x_now; };
   const clock = (t) => new Date(t).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
 
+  // ---------- odds from past calls ----------
+  const MIN_N = 5;
+  function calcOdds(list) {
+    const f = list.filter((c) => c.status === "final" && c.x_peak != null && c.x_24h != null), n = f.length; if (!n) return null;
+    const avg = (fn) => f.reduce((a, c) => a + fn(c), 0) / n;
+    return { n, below24: avg((c) => +(c.x_24h < 1)), fast: avg((c) => +!!c.dumped_fast), rug: avg((c) => +(c.outcome === "rug")), hold_ev: avg((c) => +c.x_24h),
+      targets: [1.2, 1.5, 2, 3, 5].map((m) => ({ m, p: avg((c) => +(c.x_peak >= m)), ev: avg((c) => c.x_peak >= m ? m : +c.x_24h) })) };
+  }
+  function riskOf(c) { const o = c.source.odds; if (o && o.n >= MIN_N) return { p: +o.below24, own: true }; const b = model.base; return b && b.n >= MIN_N ? { p: b.below24, own: false } : null; }
+  const riskCls = (p) => p >= 0.65 ? "down" : p >= 0.45 ? "warn" : "up";
+  function oddsCard(o, who, note) {
+    if (!o || !o.n) return `<section class="c-odds"><h4>Odds from past calls</h4><p class="c-fine" style="margin:0">No finished calls yet. Odds appear once the first calls reach 24 hours.</p></section>`;
+    const best = o.targets.slice().sort((a, b) => b.ev - a.ev)[0], hold = +o.hold_ev, t15 = o.targets.find((t) => +t.m === 1.5), t2 = o.targets.find((t) => +t.m === 2);
+    const tag = ' <span class="c-badge win">best in history</span>';
+    const rows = o.targets.map((t) => `<tr class="${t === best && t.ev > hold ? "best" : ""}"><td>${+t.m}×</td><td><span class="c-pbar"><i style="width:${Math.round(t.p * 100)}%"></i></span><span class="c-pv">${pct(t.p)}</span></td><td class="${t.ev >= 1 ? "up" : "down"}">${(+t.ev).toFixed(2)}×${t === best && t.ev > hold ? tag : ""}</td></tr>`).join("");
+    return `<section class="c-odds"><h4>Odds from past calls · ${who}</h4>
+      <p class="c-oddsline">In ${+o.n} finished call${+o.n === 1 ? "" : "s"}: <b>${pct(t15.p)}</b> reached 1.5×, <b>${pct(t2.p)}</b> reached 2×. After 24 hours <b class="${riskCls(+o.below24)}">${pct(o.below24)}</b> were below entry${+o.fast > 0 ? `, and <b>${pct(o.fast)}</b> had halved within the first hour` : ""}.</p>
+      <div class="c-tablewrap"><table class="c-table c-otable"><thead><tr><th>Exit target</th><th>Calls that reached it</th><th>Average result if sold there</th></tr></thead><tbody>${rows}
+      <tr class="${hold >= best.ev ? "best" : ""}"><td>Held 24 h</td><td class="dim">–</td><td class="${hold >= 1 ? "up" : "down"}">${hold.toFixed(2)}×${hold >= best.ev ? tag : ""}</td></tr></tbody></table></div>
+      <p class="c-fine">${note ? note + " " : ""}“Average result if sold there” counts calls that never reached the target at their 24-hour price. It assumes a buy in the minute of the call and a fill exactly at the target, which real trades rarely get. ${+o.n < 20 ? "With only " + (+o.n) + " calls these numbers swing a lot. " : ""}Past calls do not predict this one. Not advice.</p></section>`;
+  }
+
   async function pollLive() {
     const by = new Map();
     for (const c of model.calls) { if (!by.has(c.token.chain)) by.set(c.token.chain, new Set()); by.get(c.token.chain).add(c.token.address); }
@@ -245,7 +267,7 @@
     const liveNow = c.status !== "final", x = nowX(c), l = live.get(key(t));
     const badge = c.status === "final" ? `<span class="c-badge ${esc(c.outcome)}">${esc(c.outcome)}</span>` : c.status === "tracking" ? '<span class="c-badge live">Tracking</span>' : c.status === "no_data" ? '<span class="c-badge">No data</span>' : '<span class="c-badge live">New</span>';
     const pts = c.points == null ? "" : `<small class="${c.points >= 0 ? "up" : "down"}">${c.points > 0 ? "+" : ""}${num(c.points, 1)} pts${liveNow ? " so far" : ""}</small>`;
-    const open = model.open === c.id;
+    const open = model.open === c.id, risk = riskOf(c);
     return `<article class="c-row${open ? " open" : ""}" data-id="${+c.id}">
       <div class="c-main">
         <div class="tok">${img}<div style="min-width:0"><b>${esc(t.symbol || "Unknown token")}</b><span>${esc(CHAIN[t.chain] || t.chain)} · ${esc(short(t.address))}</span></div></div>
@@ -255,6 +277,7 @@
         <div class="m"><i>Now</i><span class="f-now" data-v="${x == null ? "" : (+x).toFixed(3)}">${fx(x)}</span></div>
         <div class="m"><i>Peak</i><span class="f-peak">${fx(c.x_peak == null ? null : liveNow ? Math.max(+c.x_peak, x || 0) : c.x_peak)}</span></div>
         <div class="m"><i>1 h</i>${fx(c.x_1h)}</div><div class="m"><i>6 h</i>${fx(c.x_6h)}</div><div class="m"><i>24 h</i>${fx(c.x_24h)}</div>
+        <div class="m"><i>Risk</i>${risk ? `<b class="${riskCls(risk.p)}">${risk.own ? "" : "~"}${pct(risk.p)}</b>` : '<b class="dim">–</b>'}</div>
         <div class="res">${badge}${pts}</div>
         <button class="c-chev" data-open="${+c.id}" aria-expanded="${open}" aria-label="${open ? "Hide" : "Show"} analysis for ${esc(t.symbol || "token")}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
@@ -274,6 +297,8 @@
     const firstBy = (c.others || []).some((o) => new Date(o.at).getTime() < t0) ? "" : (c.others || []).length ? '<p class="c-fine up" style="margin:0 0 8px">First of the tracked accounts to post it.</p>' : "";
     const why = c.points == null ? "Scoring starts 3 minutes after the call, once the first candles exist." :
       `Blended return ${c.blend == null ? "–" : (+c.blend).toFixed(2) + "×"} (1 h counts 50%, 6 h 30%, 24 h 20%), price above entry ${pct(c.hold)} of the time${c.dumped_fast ? ", halved within the first hour" : ""}: <b class="${c.points >= 0 ? "up" : "down"}">${c.points > 0 ? "+" : ""}${num(c.points, 2)} points</b>${c.status !== "final" ? " so far; final at 24 h" : ""}.`;
+    const o = c.source.odds, who = esc(c.source.platform === "x" ? "@" + c.source.handle : c.source.handle);
+    const odds = (o && o.n >= MIN_N) || !model.base ? oddsCard(o, who) : oddsCard(model.base, "all tracked accounts", `${who} has ${o ? +o.n : 0} finished call${o && +o.n === 1 ? "" : "s"}, too few for its own odds, so this table uses the last ${+model.base.n} finished calls across all accounts.`);
     return `<div class="c-chartbox"><div class="c-charthead"><b>Price since the call</b><span class="dim" id="cChartNote">Loading candles…</span></div><div id="cChart" class="c-chart"></div></div>
       <div class="c-dgrid">
         <section><h4>Since the call</h4>${kv([["Called at", esc(clock(c.posted_at)) + " · " + esc(day(c.posted_at))], [c.entry ? "Entry price" : "First price seen", usd(base(c))], ["Peak", fx(c.x_peak) + (c.secs_to_peak != null ? ` <span class="dim">after ${esc(dur(c.secs_to_peak))}</span>` : "")], ["Deepest drop", c.dd == null ? "–" : `<span class="${c.dd < -0.3 ? "down" : ""}">${Math.round(c.dd * 100)}%</span>`],
@@ -282,6 +307,7 @@
         <section><h4>Who called it</h4>${firstBy}<ul class="c-others"><li><a href="#/a/${+c.source.id}">${esc(c.source.platform === "x" ? "@" + c.source.handle : c.source.handle)}</a> <span class="dim">this call${c.source.score != null ? " · score " + num(c.source.score, 0) : ""}${c.source.rank ? " · rank #" + (+c.source.rank) : ""}</span></li>${others}</ul>
           ${others ? "" : '<p class="c-fine" style="margin:8px 0 0">No other tracked account has posted this contract.</p>'}${c.repeats ? `<p class="c-fine" style="margin:8px 0 0">Posted again ${+c.repeats}× by the same account.</p>` : ""}</section>
       </div>
+      ${odds}
       <p class="c-why">${why}</p>
       <div class="c-dlinks"><q>${esc((c.excerpt || "").replace(/\s+/g, " "))}</q>${post ? `<a href="${esc(post)}" target="_blank" rel="noopener nofollow">Open post</a>` : ""}<a href="https://dexscreener.com/${encodeURIComponent(t.chain)}/${encodeURIComponent(t.address)}" target="_blank" rel="noopener nofollow">Open full chart</a><button class="c-link" data-copy="${esc(t.address)}">Copy address</button></div>`;
   }
@@ -356,6 +382,7 @@
   const chips = () => `<div class="c-filters" role="group" aria-label="Source">${[["all", "All sources"], ["x", "X"], ["telegram", "Telegram"]].map(([k, l]) => chip(`data-plat="${k}"`, state.plat === k, l)).join("")}</div>`;
   function renderCalls() {
     const box = $("#cList"); if (!box) return;
+    model.base = model.allPlat ? null : calcOdds(model.calls);
     let list = model.calls.filter((r) => (model.allPlat || state.plat === "all" || r.source.platform === state.plat) && (!model.liveOnly || r.status !== "final"));
     if (model.sort !== "new") list = list.slice().sort((a, b) => { const x = nowX(a), y = nowX(b); return (x == null) - (y == null) || (model.sort === "best" ? y - x : x - y); });
     const tools = $("#cTools"); if (tools) tools.innerHTML = [["new", "Newest"], ["best", "Best now"], ["worst", "Worst now"]].map(([k, l]) => chip(`data-sort="${k}"`, model.sort === k, l)).join("") + chip("data-liveonly", model.liveOnly, "Still tracking only");
@@ -390,7 +417,7 @@
     const get = () => api("calls", { limit: 120 }).then((r) => r.rows);
     model.calls = await get(); model.open = null; model.allPlat = false;
     v.innerHTML = liveBar + `<div class="c-sum" id="cSum">${summary()}</div><div class="c-toolbar">${chips()}<div class="c-filters" id="cTools" role="group" aria-label="Sort and filter"></div></div><div class="c-calls" id="cList"></div>
-      <p class="c-fine">Multiples compare the price with the entry price in the minute of the call. Select a call for its chart and full breakdown.</p>`;
+      <p class="c-fine">Multiples compare the price with the entry price in the minute of the call. Risk is the share of that account's finished calls that were below entry after 24 hours; “~” marks accounts with fewer than 5 finished calls, where the figure is the average of all accounts. Select a call for its chart, odds and full breakdown.</p>`;
     renderCalls(); startLive(get);
   }
   function lineChart(vals) {
@@ -416,7 +443,7 @@
       <span class="c-score ${s.score >= 55 ? "hi" : s.score < 45 ? "lo" : ""}" style="font-size:22px;padding:8px 14px">${s.score == null ? "–" : num(s.score, 1)}</span></div>
       <div class="c-tiles">${tile("Rank", s.rank ? "#" + (+s.rank) : "–")}${tile("Scored calls", (+s.scored || 0) + " / " + (+s.calls || 0))}${tile("Win rate", s.scored ? pct(s.wins / s.scored) : "–")}${tile("Median peak", s.med_peak == null ? "–" : (+s.med_peak).toFixed(2) + "×")}${tile("Avg at 24 h", s.avg_24h == null ? "–" : (+s.avg_24h).toFixed(2) + "×")}${tile("Time above entry", pct(s.hold))}
         ${tile("Avg time to peak", esc(dur(a.avg_secs_to_peak)))}${tile("Avg deepest drop", a.avg_dd == null ? "–" : Math.round(a.avg_dd * 100) + "%")}${tile("Halved in 1st hour", (+a.fast_dumps || 0) + (s.scored ? " of " + s.scored : ""))}${tile("Best peak", a.best_peak == null ? "–" : (+a.best_peak).toFixed(2) + "×")}${tile("Worst at 24 h", a.worst_24h == null ? "–" : (+a.worst_24h).toFixed(2) + "×")}${tile("Calls, last 7 days", +a.calls_7d || 0)}</div>
-      ${bar}${cum.length > 1 ? `<div class="c-chartbox"><div class="c-charthead"><b>Cumulative points</b><span class="dim">${cum.length} scored calls, oldest to newest</span></div><div class="c-chart">${lineChart(cum)}</div></div>` : ""}
+      ${bar}${oddsCard(s.odds, esc(s.platform === "x" ? "@" + s.handle : s.name || s.handle))}${cum.length > 1 ? `<div class="c-chartbox"><div class="c-charthead"><b>Cumulative points</b><span class="dim">${cum.length} scored calls, oldest to newest</span></div><div class="c-chart">${lineChart(cum)}</div></div>` : ""}
       ${chains ? `<p class="c-fine" style="margin:0 0 14px">Chains: ${chains}</p>` : ""}
       ${liveBar}${model.calls.length ? `<div class="c-toolbar"><span></span><div class="c-filters" id="cTools" role="group" aria-label="Sort and filter"></div></div><div class="c-calls" id="cList"></div>` : `<div class="c-empty"><b>No measured calls yet</b>This account has not posted a contract address since tracking started.</div>`}`;
     model.allPlat = true; renderCalls();
