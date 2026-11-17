@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>ERC-20 vs BEP-20: What&#x27;s the Difference? | DegenKit</title>
+<meta name="description" content="ERC-20 vs BEP-20 explained. The same token interface on two different chains, with different gas coins, fees and DEXs, and one costly mistake to avoid.">
+<link rel="canonical" href="https://degenkit.app/blog/erc20-vs-bep20/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-16">
+<meta property="article:modified_time" content="2026-11-16">
+<meta property="og:image:alt" content="A cream poster with a headline comparing ERC-20 and BEP-20 beside yellow halftone shapes and two overlapping circles.">
+<meta property="article:tag" content="Ethereum">
+<meta property="article:tag" content="BNB Chain">
+<meta property="article:tag" content="Explainer">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ERC-20 vs BEP-20: What&#x27;s the Difference? | DegenKit">
+<meta property="og:description" content="ERC-20 vs BEP-20 explained. The same token interface on two different chains, with different gas coins, fees and DEXs, and one costly mistake to avoid.">
+<meta property="og:url" content="https://degenkit.app/blog/erc20-vs-bep20/">
+<meta property="og:image" content="https://degenkit.app/blog/img/erc20-vs-bep20-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="ERC-20 vs BEP-20: What&#x27;s the Difference? | DegenKit">
+<meta name="twitter:description" content="ERC-20 vs BEP-20 explained. The same token interface on two different chains, with different gas coins, fees and DEXs, and one costly mistake to avoid.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/erc20-vs-bep20-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "ERC-20 vs BEP-20: What's the Difference for Token Creators?", "description": "ERC-20 vs BEP-20 explained. The same token interface on two different chains, with different gas coins, fees and DEXs, and one costly mistake to avoid.", "datePublished": "2026-11-16", "dateModified": "2026-11-16", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/erc20-vs-bep20/"}, "url": "https://degenkit.app/blog/erc20-vs-bep20/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/erc20-vs-bep20-cover.webp", "keywords": "Ethereum, BNB Chain, Explainer", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "ERC-20 vs BEP-20: What's the Difference for Token Creators?", "item": "https://degenkit.app/blog/erc20-vs-bep20/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is BEP-20 the same as ERC-20?", "acceptedAnswer": {"@type": "Answer", "text": "It uses the same interface and is described by BNB Chain as an extension of ERC-20, but it runs on BNB Smart Chain, not Ethereum."}}, {"@type": "Question", "name": "Can I use the same MetaMask address for ERC-20 and BEP-20?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The address is the same. Switch the network to see each chain's balances."}}, {"@type": "Question", "name": "What happens if I send BEP-20 tokens to an Ethereum address?", "acceptedAnswer": {"@type": "Answer", "text": "They arrive on BNB Smart Chain at that address. If the receiver only checks Ethereum, they will not see them, and an exchange may not credit them."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/tools/">Tools</a>
+      <a class="navlink" href="/club/">Club</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">Ethereum</span><span class="chip">BNB Chain</span><span class="chip">Explainer</span></div>
+      <h1>ERC-20 vs BEP-20: What&#x27;s the Difference for Token Creators?</h1>
+      <p class="lede">ERC-20 vs BEP-20 explained. The same token interface on two different chains, with different gas coins, fees and DEXs, and one costly mistake to avoid.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 16, 2026 · 5 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/erc20-vs-bep20-cover.webp" alt="A cream poster with a headline comparing ERC-20 and BEP-20 beside yellow halftone shapes and two overlapping circles." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>ERC-20 and BEP-20 are the same kind of token on different blockchains. ERC-20 is Ethereum&#x27;s token standard. BEP-20 is BNB Smart Chain&#x27;s, built as an extension of ERC-20, so the functions, decimals and 0x addresses work the same way. What differs is the chain: gas is paid in ETH or BNB, fees and DEXs differ, and a token on one chain does not exist on the other.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li><strong>BEP-20</strong> &quot;is an extension of the Ethereum ERC-20 token standard&quot; (BNB Chain docs).</li><li><strong>Gas:</strong> ERC-20 transfers pay in <strong>ETH</strong>, BEP-20 transfers in <strong>BNB</strong> (Trust Wallet).</li><li><strong>Same interface:</strong> transfer, approve, balanceOf, totalSupply. Most wallets handle both.</li><li><strong>Base and Robinhood Chain</strong> also use ERC-20, with ETH for gas.</li></ul></aside>
+<aside class="callout note"><strong>Not affiliated</strong><p>DegenKit is not affiliated with the Ethereum Foundation, BNB Chain or Trust Wallet.</p></aside>
+<h2 id="what-is-the-same">What is the same?</h2>
+<p>A token standard is a shared set of functions that wallets, exchanges and DEXs know how to call. BNB Chain&#x27;s docs describe BEP-20 as an extension of ERC-20, and both define similar rules for transfers, burning and minting. In practice:</p>
+<ul><li><strong>Functions:</strong> <code>transfer</code>, <code>approve</code>, <code>transferFrom</code>, <code>balanceOf</code> and <code>totalSupply</code> work the same.</li><li><strong>Decimals:</strong> 18 is the usual choice on both. DegenKit&#x27;s EVM Token Creator uses 18.</li><li><strong>Addresses:</strong> both chains use the same 0x address format, so one MetaMask account works on both.</li><li><strong>Tooling:</strong> the same wallets and explorers work, with Etherscan on Ethereum and BscScan on BNB Smart Chain.</li></ul>
+<p>This is why DegenKit uses the same token contract design on Ethereum, BNB Chain, Base and Robinhood Chain.</p>
+<figure><img src="/blog/img/erc20-vs-bep20-1.webp" alt="ERC-20 vs BEP-20: what is the same (functions, decimals, address format) and what differs (chain, gas coin, fees, DEX)." loading="lazy" decoding="async"><figcaption>One interface, two separate blockchains.</figcaption></figure>
+<h2 id="what-is-different">What is different?</h2>
+<div class="tbl"><table><thead><tr><th></th><th>ERC-20 (Ethereum)</th><th>BEP-20 (BNB Smart Chain)</th></tr></thead><tbody><tr><td>Gas coin</td><td>ETH</td><td>BNB</td></tr><tr><td>Typical fee</td><td>Higher, depends on congestion</td><td>Median below $0.01 in mid-2026</td></tr><tr><td>Block time</td><td>About 12 seconds</td><td>0.45 seconds since January 2026</td></tr><tr><td>Main DEX</td><td>Uniswap</td><td>PancakeSwap</td></tr><tr><td>Explorer</td><td>Etherscan</td><td>BscScan</td></tr></tbody></table></div>
+<p>BNB Chain&#x27;s Fermi hard fork on January 14, 2026 cut block times to 0.45 seconds (Yahoo Finance). Coin Turk reported in June 2026 that BNB Chain&#x27;s minimum gas price was cut from 1 gwei to 0.05 gwei, and that median fees had fallen below $0.01. On Ethereum, fees vary widely with congestion. See <a href="/blog/ethereum-gas-fees-explained/">Ethereum gas fees explained</a>.</p>
+<h2 id="what-is-the-costly-mistake">What is the costly mistake?</h2>
+<p><strong>Sending a token on the wrong network.</strong> The same 0x address exists on both chains, so a wallet will accept the transfer, but the tokens arrive on the network they were sent on. Trust Wallet warns that sending an ERC-20 token to a BEP-20 address, or the reverse, &quot;without a proper bridge can result in lost funds&quot;.</p>
+<p>Exchanges make this easy to get wrong because they offer withdrawals on several networks. Always check the network before you confirm. Read <a href="/blog/add-token-to-metamask/">how to add a token to MetaMask</a> to see the right network in your wallet.</p>
+<figure><video src="/blog/img/erc20-vs-bep20-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="ERC-20 vs BEP-20 in 20 seconds: same functions, different gas coin, different DEX, and a warning about the wrong network."></video></figure>
+<h2 id="is-a-bep-20-token-the-same-token-as-its-erc-20-version">Is a BEP-20 token the same token as its ERC-20 version?</h2>
+<p>No. Two contracts on two chains are two tokens, even with the same name. Big projects keep a single supply across chains by using bridges. A common example is a &quot;pegged&quot; token on BNB Chain backed by the original on Ethereum. A new token you create on one chain has no version on the other unless you build one.</p>
+<h2 id="which-should-you-choose-for-your-token">Which should you choose for your token?</h2>
+<ul><li><strong>ERC-20 on Ethereum</strong> for maximum credibility and deep liquidity, if your budget can absorb gas. See <a href="/blog/create-erc20-token-on-ethereum/">creating an ERC-20 token on Ethereum</a>.</li><li><strong>BEP-20 on BNB Chain</strong> for very low fees and a large retail audience on PancakeSwap. See <a href="/blog/how-to-launch-a-token-on-bnb-chain/">how to launch a token on BNB Chain</a>.</li><li><strong>ERC-20 on Base</strong> for Ethereum-style tooling with low fees. Compare <a href="/blog/base-vs-bnb-chain/">Base vs BNB Chain</a>.</li></ul>
+<p>DegenKit makes plain and tax tokens on all of them from the <a href="/launch/">launcher</a>.</p>
+<figure><img src="/blog/img/erc20-vs-bep20-2.webp" alt="Which standard fits: ERC-20 on Ethereum for credibility, BEP-20 on BNB Chain for low fees, ERC-20 on Base for cheap Ethereum tooling." loading="lazy" decoding="async"><figcaption>Launch where your buyers already are.</figcaption></figure>
+<h2 id="what-are-the-risks">What are the risks?</h2>
+<ul><li><strong>Wrong-network transfers</strong> can be unrecoverable.</li><li><strong>Look-alike tokens</strong> with the same name exist on every chain. Check the contract address.</li><li><strong>Bridged tokens</strong> depend on the bridge&#x27;s security.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="is-bep-20-the-same-as-erc-20">Is BEP-20 the same as ERC-20?</h3>
+<p>It uses the same interface and is described by BNB Chain as an extension of ERC-20, but it runs on BNB Smart Chain, not Ethereum.</p>
+<h3 id="can-i-use-the-same-metamask-address-for-erc-20-and-bep-20">Can I use the same MetaMask address for ERC-20 and BEP-20?</h3>
+<p>Yes. The address is the same. Switch the network to see each chain&#x27;s balances.</p>
+<h3 id="what-happens-if-i-send-bep-20-tokens-to-an-ethereum-address">What happens if I send BEP-20 tokens to an Ethereum address?</h3>
+<p>They arrive on BNB Smart Chain at that address. If the receiver only checks Ethereum, they will not see them, and an exchange may not credit them.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://docs.bnbchain.org/docs/BEP20" target="_blank" rel="noopener noreferrer">BNB Chain docs: BEP-20</a></li><li><a href="https://trustwallet.com/glossary/bep-20" target="_blank" rel="noopener noreferrer">Trust Wallet: BEP-20</a></li><li><a href="https://finance.yahoo.com/news/bnb-chain-hits-0-45s-151727992.html" target="_blank" rel="noopener noreferrer">Yahoo Finance: BNB Chain hits 0.45s block times with Fermi</a></li><li><a href="https://en.coin-turk.com/bnb-transaction-fees-fall-below-0-01-after-four-upgrades/" target="_blank" rel="noopener noreferrer">Coin Turk: BNB transaction fees fall below $0.01</a></li></ul>
+<p>Create an ERC-20 or BEP-20 token without code on the <a href="/launch/">DegenKit launcher</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=ERC-20%20vs%20BEP-20%3A%20What%27s%20the%20Difference%20for%20Token%20Creators%3F%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Ferc20-vs-bep20%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/erc20-vs-bep20/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/erc20-token-generator/">
+  <div class="cover"><img src="/blog/img/erc20-token-generator-cover.webp" alt="A dark technical cover with a glowing hexagonal ERC-20 token wireframe beside the headline ERC-20 token generator." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Ethereum</span><span class="chip">Base</span><span class="chip">BNB Chain</span><span>November 17, 2026</span></div>
+    <h2>ERC-20 Token Generator for Ethereum, Base and BNB Chain</h2>
+    <p>How an ERC-20 token generator works on Ethereum, Base, BNB Chain, Robinhood Chain and Elysium. Factory contracts, 18 decimals, fixed supply and what you sign.</p>
+  </div>
+</a><a class="card" href="/blog/add-token-logo-etherscan/">
+  <div class="cover"><img src="/blog/img/add-token-logo-etherscan-cover.webp" alt="A cream poster with a headline about adding a token logo on Etherscan beside pink halftone shapes and a tag symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Ethereum</span><span class="chip">Base</span><span class="chip">BNB Chain</span><span>November 16, 2026</span></div>
+    <h2>How to Add a Token Logo on Etherscan, BaseScan or BscScan</h2>
+    <p>How to add a token logo on Etherscan. The token info form, the requirements (verified source, website, domain email, 256x256 PNG) and how long review takes.</p>
+  </div>
+</a><a class="card" href="/blog/add-token-to-metamask/">
+  <div class="cover"><img src="/blog/img/add-token-to-metamask-cover.webp" alt="A cream poster with a headline about adding a token to MetaMask beside orange halftone shapes and a plus symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Ethereum</span><span class="chip">Base</span><span class="chip">BNB Chain</span><span>November 16, 2026</span></div>
+    <h2>How to Add a Token to MetaMask on Ethereum, Base or BNB</h2>
+    <p>How to add a token to MetaMask. Pick the right network, use Manage tokens and Add custom token with the contract address, and avoid fake tokens.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <a class="tp-badge" href="https://www.trustpilot.com/evaluate/degenkit.app" target="_blank" rel="noopener" aria-label="Review DegenKit on Trustpilot" style="display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;padding:9px 14px;border:1px solid #00b67a;border-radius:8px;color:inherit;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#00b67a"/><path d="M12 4.2l2.3 5.1 5.5.5-4.2 3.7 1.3 5.4L12 16l-4.9 2.9 1.3-5.4L4.2 9.8l5.5-.5z" fill="#fff"/></svg><span>Review us on Trustpilot</span></a>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>

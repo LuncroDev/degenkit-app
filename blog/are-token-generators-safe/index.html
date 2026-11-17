@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Are Token Generators Safe? 7 Checks Before You Use One</title>
+<meta name="description" content="Are token generators safe? Seven checks before you connect a wallet, from seed phrase requests and hidden mint functions to public code and what you actually…">
+<link rel="canonical" href="https://degenkit.app/blog/are-token-generators-safe/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-17">
+<meta property="article:modified_time" content="2026-11-17">
+<meta property="og:image:alt" content="A dark technical cover with a glowing shield wireframe and scan lines beside the headline Are token generators safe.">
+<meta property="article:tag" content="Security">
+<meta property="article:tag" content="Guide">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Are Token Generators Safe? 7 Checks Before You Use One">
+<meta property="og:description" content="Are token generators safe? Seven checks before you connect a wallet, from seed phrase requests and hidden mint functions to public code and what you actually sign.">
+<meta property="og:url" content="https://degenkit.app/blog/are-token-generators-safe/">
+<meta property="og:image" content="https://degenkit.app/blog/img/are-token-generators-safe-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="Are Token Generators Safe? 7 Checks Before You Use One">
+<meta name="twitter:description" content="Are token generators safe? Seven checks before you connect a wallet, from seed phrase requests and hidden mint functions to public code and what you actually sign.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/are-token-generators-safe-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Are Token Generators Safe? 7 Checks Before You Use One", "description": "Are token generators safe? Seven checks before you connect a wallet, from seed phrase requests and hidden mint functions to public code and what you actually sign.", "datePublished": "2026-11-17", "dateModified": "2026-11-17", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/are-token-generators-safe/"}, "url": "https://degenkit.app/blog/are-token-generators-safe/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/are-token-generators-safe-cover.webp", "keywords": "Security, Guide", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "Are Token Generators Safe? 7 Checks Before You Use One", "item": "https://degenkit.app/blog/are-token-generators-safe/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are token generators legit?", "acceptedAnswer": {"@type": "Answer", "text": "Many are. Check that they are non-custodial, show fees, create clean tokens and publish their code."}}, {"@type": "Question", "name": "Can a token generator steal my crypto?", "acceptedAnswer": {"@type": "Answer", "text": "A fake one can, if you type your seed phrase or approve a malicious contract. A legitimate one cannot move your funds."}}, {"@type": "Question", "name": "Is DegenKit audited?", "acceptedAnswer": {"@type": "Answer", "text": "No. DegenKit's docs state it has not been audited by a third-party security firm, and its code is public on GitHub."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/tools/">Tools</a>
+      <a class="navlink" href="/club/">Club</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">Security</span><span class="chip">Guide</span></div>
+      <h1>Are Token Generators Safe? 7 Checks Before You Use One</h1>
+      <p class="lede">Are token generators safe? Seven checks before you connect a wallet, from seed phrase requests and hidden mint functions to public code and what you actually sign.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 17, 2026 · 5 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/are-token-generators-safe-cover.webp" alt="A dark technical cover with a glowing shield wireframe and scan lines beside the headline Are token generators safe." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>A token generator is safe when it is non-custodial, shows every fee before you sign, creates tokens without hidden owner powers, and has code you can inspect. The risk is not the idea of a generator. It is fake sites that drain wallets, and templates that hide a mint or blacklist function. Seven quick checks separate the two.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li><strong>Non-custodial</strong> generators never ask for a seed phrase or private key.</li><li><strong>Hidden mint functions</strong> can be renamed, hidden behind a proxy or tied to a secret role (Dedaub).</li><li><strong>Audits cost money:</strong> a simple ERC-20 audit typically costs <strong>$5,000 to $20,000</strong> (Sherlock, 2026).</li><li><strong>DegenKit:</strong> non-custodial, public code, no mint function on EVM tokens, revoked authorities on Solana. Not audited by a third-party firm.</li></ul></aside>
+<h2 id="what-can-go-wrong-with-a-token-generator">What can go wrong with a token generator?</h2>
+<p>Two kinds of risk:</p>
+<ol><li><strong>Risk to you, the creator.</strong> A fake site asks for your seed phrase, or tricks you into signing an approval that drains your wallet.</li><li><strong>Risk to your buyers.</strong> The generated token contains hidden powers, such as minting more supply, blocking sells or changing fees, and the tool&#x27;s owner, or you, can use them later.</li></ol>
+<h2 id="what-are-the-seven-checks">What are the seven checks?</h2>
+<ol><li><strong>No seed phrase, ever.</strong> A legitimate generator asks you to <em>sign</em> in your wallet. It never asks you to <em>type</em> your recovery phrase or private key.</li><li><strong>The right domain.</strong> Bookmark the real site. Wallet drainers copy well-known tools.</li><li><strong>The fee is shown before you sign.</strong> Your wallet prompt should match what the page says.</li><li><strong>You understand what you sign.</strong> Creating a token is one transaction. A request for unlimited token approvals during creation is a red flag. See <a href="/blog/erc20-token-approvals-explained/">ERC-20 token approvals</a>.</li><li><strong>No hidden powers in the token.</strong> Check the contract for mint, blacklist, pause or fee-change functions. Dedaub notes that hidden mints can be renamed or added later through a proxy upgrade. See <a href="/blog/how-to-spot-a-honeypot-token/">how to spot a honeypot token</a>.</li><li><strong>You own it, or nobody does.</strong> After creation, ownership should be your wallet, or renounced. On Solana, mint and freeze authority should be revoked. See <a href="/blog/mint-authority-vs-freeze-authority/">mint authority vs freeze authority</a>.</li><li><strong>Public code.</strong> If the generator&#x27;s code is public, anyone can check what it does.</li></ol>
+<figure><img src="/blog/img/are-token-generators-safe-1.webp" alt="Seven checks before using a token generator: seed phrase, domain, fee, signature, token code, ownership and public code." loading="lazy" decoding="async"><figcaption>Fail one check, stop.</figcaption></figure>
+<h2 id="how-does-degenkit-answer-these-checks">How does DegenKit answer these checks?</h2>
+<p>From DegenKit&#x27;s <a href="/docs/security/">security docs</a>:</p>
+<ul><li><strong>Non-custodial.</strong> It never asks for your seed phrase and cannot move your funds.</li><li><strong>One transaction on Solana</strong> creates the mint, account, supply and metadata, then revokes the authorities. The fee goes to a public fee address.</li><li><strong>EVM tokens have no mint function.</strong> The service fee is read from the factory contract.</li><li><strong>Public code</strong> on GitHub at LuncroDev/degenkit-app.</li><li><strong>Honest limits:</strong> it has not been audited by a third-party security firm. The docs recommend testing with a small amount first.</li></ul>
+<p>Read more in <a href="/blog/is-degenkit-safe/">is DegenKit safe?</a>.</p>
+<figure><video src="/blog/img/are-token-generators-safe-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Checking a token generator in 20 seconds: no seed phrase, fee shown, one signature, a clean contract and public code."></video></figure>
+<h2 id="why-does-an-audit-matter-and-why-do-generators-rarely-have-one">Why does an audit matter, and why do generators rarely have one?</h2>
+<p>An audit is an independent security review of the code. Sherlock&#x27;s 2026 pricing reference puts a simple ERC-20 audit at $5,000 to $20,000. A generator that uses one small, fixed template has less code to go wrong than a custom contract. But &quot;no audit&quot; still means you should test small first. Compare the trade-offs in <a href="/blog/token-generator-vs-custom-smart-contract/">token generator vs custom smart contract</a>.</p>
+<h2 id="how-do-you-check-a-token-after-creating-it">How do you check a token after creating it?</h2>
+<ul><li><strong>Solana:</strong> paste the mint into a scanner. Mint and freeze should be revoked, metadata locked.</li><li><strong>EVM:</strong> open the contract on the explorer. Look at the functions and the owner.</li></ul>
+<p>See <a href="/blog/how-to-spot-rug-pull-risk/">how to spot rug pull risk</a> and the <a href="/blog/wallet-security-for-token-creators/">wallet security guide</a>.</p>
+<figure><img src="/blog/img/are-token-generators-safe-2.webp" alt="After creation: scan the token, read the contract functions, check the owner and test with a small amount first." loading="lazy" decoding="async"><figcaption>Check your token the way buyers will.</figcaption></figure>
+<h2 id="what-are-the-risks">What are the risks?</h2>
+<ul><li><strong>Phishing copies</strong> of real generators.</li><li><strong>Malicious approvals</strong> that drain wallets later.</li><li><strong>Unaudited code</strong> on any tool, including DegenKit.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="are-token-generators-legit">Are token generators legit?</h3>
+<p>Many are. Check that they are non-custodial, show fees, create clean tokens and publish their code.</p>
+<h3 id="can-a-token-generator-steal-my-crypto">Can a token generator steal my crypto?</h3>
+<p>A fake one can, if you type your seed phrase or approve a malicious contract. A legitimate one cannot move your funds.</p>
+<h3 id="is-degenkit-audited">Is DegenKit audited?</h3>
+<p>No. DegenKit&#x27;s docs state it has not been audited by a third-party security firm, and its code is public on GitHub.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://tokin.dedaub.com/learn/hidden-mint" target="_blank" rel="noopener noreferrer">Dedaub: Hidden mint functions</a></li><li><a href="https://sherlock.xyz/post/smart-contract-audit-pricing-a-market-reference-for-2026" target="_blank" rel="noopener noreferrer">Sherlock: Smart contract audit pricing 2026</a></li><li><a href="https://degenkit.app/docs/security/">DegenKit docs: Security</a></li></ul>
+<p>Read the security page, then try the <a href="/launch/">DegenKit token generator</a> with a small amount first. For the full picture, see the <a href="/blog/token-generator/">token generator guide</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=Are%20Token%20Generators%20Safe%3F%207%20Checks%20Before%20You%20Use%20One%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Fare-token-generators-safe%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/are-token-generators-safe/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/free-token-generator/">
+  <div class="cover"><img src="/blog/img/free-token-generator-cover.webp" alt="A dark technical cover with a glowing gift-box wireframe and a price readout beside the headline Free token generator." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Guide</span><span class="chip">Security</span><span>November 17, 2026</span></div>
+    <h2>Free Token Generator: What &quot;Free&quot; Really Costs</h2>
+    <p>Is there a free token generator? Why every mainnet token costs gas, how &quot;free&quot; tools make money, and the hidden catches to check before you sign anything.</p>
+  </div>
+</a><a class="card" href="/blog/elysium-explorer/">
+  <div class="cover"><img src="/blog/img/elysium-explorer-cover.webp" alt="A cream poster with a headline about the Elysium explorer beside yellow halftone shapes and a bar chart symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Guide</span><span class="chip">Security</span><span>November 14, 2026</span></div>
+    <h2>Elysium Explorer: How to Read a Token on Blockscout</h2>
+    <p>How to use the Elysium explorer. Find a token by contract address, read its holders, transfers and contract tabs, and spot the warning signs on a new chain.</p>
+  </div>
+</a><a class="card" href="/blog/elysium-liquidity-lock/">
+  <div class="cover"><img src="/blog/img/elysium-liquidity-lock-cover.webp" alt="A cream poster with a headline about Elysium liquidity locks beside violet halftone shapes and a padlock symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">News</span><span class="chip">Security</span><span class="chip">Guide</span><span>November 12, 2026</span></div>
+    <h2>Elysium Liquidity Lock: How to Lock or Burn Your LP</h2>
+    <p>How to lock or burn liquidity for an Elysium token on Uniswap, why it matters on a new chain, and how buyers can check any token&#x27;s LP on the Elysium explorer.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <a class="tp-badge" href="https://www.trustpilot.com/evaluate/degenkit.app" target="_blank" rel="noopener" aria-label="Review DegenKit on Trustpilot" style="display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;padding:9px 14px;border:1px solid #00b67a;border-radius:8px;color:inherit;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#00b67a"/><path d="M12 4.2l2.3 5.1 5.5.5-4.2 3.7 1.3 5.4L12 16l-4.9 2.9 1.3-5.4L4.2 9.8l5.5-.5z" fill="#fff"/></svg><span>Review us on Trustpilot</span></a>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369032243"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18369032243');
+</script>
+<!-- X Pixel base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','rfyik');
+</script>
+<!-- End X Pixel base code -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>ERC-20 Token Generator: No-Code Guide | DegenKit</title>
+<meta name="description" content="How an ERC-20 token generator works on Ethereum, Base, BNB Chain, Robinhood Chain and Elysium. Factory contracts, 18 decimals, fixed supply and what you sign.">
+<link rel="canonical" href="https://degenkit.app/blog/erc20-token-generator/">
+<link rel="alternate" type="application/rss+xml" title="DegenKit Blog" href="/blog/rss.xml">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-17">
+<meta property="article:modified_time" content="2026-11-17">
+<meta property="og:image:alt" content="A dark technical cover with a glowing hexagonal ERC-20 token wireframe beside the headline ERC-20 token generator.">
+<meta property="article:tag" content="Ethereum">
+<meta property="article:tag" content="Base">
+<meta property="article:tag" content="BNB Chain">
+<meta property="article:tag" content="Tools">
+<meta property="og:site_name" content="DegenKit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ERC-20 Token Generator: No-Code Guide | DegenKit">
+<meta property="og:description" content="How an ERC-20 token generator works on Ethereum, Base, BNB Chain, Robinhood Chain and Elysium. Factory contracts, 18 decimals, fixed supply and what you sign.">
+<meta property="og:url" content="https://degenkit.app/blog/erc20-token-generator/">
+<meta property="og:image" content="https://degenkit.app/blog/img/erc20-token-generator-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DegenKitApp">
+<meta name="twitter:title" content="ERC-20 Token Generator: No-Code Guide | DegenKit">
+<meta name="twitter:description" content="How an ERC-20 token generator works on Ethereum, Base, BNB Chain, Robinhood Chain and Elysium. Factory contracts, 18 decimals, fixed supply and what you sign.">
+<meta name="twitter:image" content="https://degenkit.app/blog/img/erc20-token-generator-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/theme-icons.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script>try{var t=localStorage.getItem('degenkit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "ERC-20 Token Generator for Ethereum, Base and BNB Chain", "description": "How an ERC-20 token generator works on Ethereum, Base, BNB Chain, Robinhood Chain and Elysium. Factory contracts, 18 decimals, fixed supply and what you sign.", "datePublished": "2026-11-17", "dateModified": "2026-11-17", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://degenkit.app/blog/erc20-token-generator/"}, "url": "https://degenkit.app/blog/erc20-token-generator/", "inLanguage": "en", "image": "https://degenkit.app/blog/img/erc20-token-generator-cover.webp", "keywords": "Ethereum, Base, BNB Chain, Tools", "author": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/"}, "publisher": {"@type": "Organization", "name": "DegenKit", "url": "https://degenkit.app/", "logo": {"@type": "ImageObject", "url": "https://degenkit.app/assets/icon.png"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DegenKit", "item": "https://degenkit.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://degenkit.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "ERC-20 Token Generator for Ethereum, Base and BNB Chain", "item": "https://degenkit.app/blog/erc20-token-generator/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is an ERC-20 token generator?", "acceptedAnswer": {"@type": "Answer", "text": "A no-code tool that deploys a standard ERC-20 token for you through a factory contract."}}, {"@type": "Question", "name": "Can I create a BEP-20 token with an ERC-20 generator?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. On BNB Chain the same kind of token is called BEP-20."}}, {"@type": "Question", "name": "Can I mint more tokens later?", "acceptedAnswer": {"@type": "Answer", "text": "No. DegenKit's EVM tokens have no mint function. The supply is created once."}}, {"@type": "Question", "name": "How many decimals does the token have?", "acceptedAnswer": {"@type": "Answer", "text": "18, the standard for ERC-20 tokens."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></a>
+    <nav class="site-nav">
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#roadmap">Roadmap</a>
+      <a class="navlink" href="/tools/">Tools</a>
+      <a class="navlink" href="/club/">Club</a>
+      <a class="navlink" href="/docs/">Docs</a>
+      <a class="navlink" href="/blog/">Blog</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </div>
+  </div>
+</header>
+<main class="bwrap">
+  <article class="post">
+    <div class="p-head">
+      <nav aria-label="Breadcrumb"><a class="back" href="/blog/">← All posts</a></nav>
+      <div class="chips"><span class="chip">Ethereum</span><span class="chip">Base</span><span class="chip">BNB Chain</span></div>
+      <h1>ERC-20 Token Generator for Ethereum, Base and BNB Chain</h1>
+      <p class="lede">How an ERC-20 token generator works on Ethereum, Base, BNB Chain, Robinhood Chain and Elysium. Factory contracts, 18 decimals, fixed supply and what you sign.</p>
+      <div class="byline"><img src="/assets/icon.png" alt=""><span><b>DegenKit</b><i>November 17, 2026 · 5 min read</i></span></div>
+    </div>
+    <div class="cover hero"><img src="/blog/img/erc20-token-generator-cover.webp" alt="A dark technical cover with a glowing hexagonal ERC-20 token wireframe beside the headline ERC-20 token generator." loading="lazy" decoding="async"></div>
+    <div class="prose">
+<p>An ERC-20 token generator creates a standard Ethereum-style token through a factory contract. You enter the name, symbol and supply, sign one transaction, and the factory deploys your token with the full supply in your wallet. The same token works on Ethereum, Base, BNB Chain (as BEP-20), Robinhood Chain and Elysium, because all of them run the EVM.</p>
+<aside class="callout note"><strong>Key facts</strong><ul><li><strong>Networks on DegenKit:</strong> Ethereum, BNB Chain, Base, Robinhood Chain and Elysium.</li><li><strong>Token:</strong> fixed supply, <strong>18 decimals</strong>, <strong>no mint function</strong>, permanent name and symbol (DegenKit docs).</li><li><strong>Tax option:</strong> <strong>Tax Token</strong> with buy and sell rates from 0% to 100%, applied only to marked pools.</li><li><strong>Fee:</strong> read from the factory contract and shown on the form before you sign, plus gas.</li></ul></aside>
+<h2 id="what-is-a-factory-contract">What is a factory contract?</h2>
+<p>A factory is a smart contract whose job is to create other contracts. When you click create, your wallet calls the factory with your settings. The factory deploys a new ERC-20 with those settings and mints the whole supply to your address in the same transaction. After that, the token has no function that creates more tokens.</p>
+<p>This is safer than pasting code you found online. Every token comes from the same reviewed template, and the explorer shows which factory created it.</p>
+<figure><img src="/blog/img/erc20-token-generator-1.webp" alt="How an ERC-20 token generator works: your wallet calls the factory, the factory deploys the token, the full supply arrives in your wallet." loading="lazy" decoding="async"><figcaption>One call to the factory, one new token.</figcaption></figure>
+<h2 id="which-evm-chain-should-you-pick">Which EVM chain should you pick?</h2>
+<div class="tbl"><table><thead><tr><th>Network</th><th>Gas coin</th><th>Token type</th><th>Main DEX</th></tr></thead><tbody><tr><td>Ethereum</td><td>ETH</td><td>ERC-20</td><td>Uniswap</td></tr><tr><td>BNB Chain</td><td>BNB</td><td>BEP-20</td><td>PancakeSwap</td></tr><tr><td>Base</td><td>ETH</td><td>ERC-20</td><td>Aerodrome, Uniswap</td></tr><tr><td>Robinhood Chain</td><td>ETH</td><td>ERC-20</td><td>Uniswap</td></tr><tr><td>Elysium</td><td>HYPE</td><td>ERC-20</td><td>Uniswap</td></tr></tbody></table></div>
+<p>BNB Chain&#x27;s docs describe BEP-20 as an extension of the ERC-20 standard, with the same functions. Ethereum gas is the highest. Use the <a href="/tools/eth-gas-calculator/">ETH gas calculator</a> to estimate it. See <a href="/blog/how-to-launch-a-token-on-base/">how to launch a token on Base</a> and <a href="/blog/how-to-launch-a-token-on-bnb-chain/">how to launch a token on BNB Chain</a>.</p>
+<h2 id="how-do-you-generate-an-erc-20-token">How do you generate an ERC-20 token?</h2>
+<ol><li>Open the network&#x27;s page from the <a href="/launch/">DegenKit launcher</a>: Ethereum, BNB Chain, Base, Robinhood Chain or Elysium.</li><li>Connect MetaMask or another EVM wallet and accept the network switch.</li><li>Choose <strong>Token Creator</strong> (plain) or <strong>Tax Token</strong>.</li><li>Enter <strong>name</strong>, <strong>symbol</strong> and <strong>total supply</strong>.</li><li>Check the summary and the <strong>service fee</strong> read from the factory.</li><li>Sign. The <strong>contract address</strong> appears when the transaction confirms.</li></ol>
+<p>Then add the token to your wallet by its contract address so the balance shows.</p>
+<figure><video src="/blog/img/erc20-token-generator-demo.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Generating an ERC-20 token in 20 seconds: network selected, name and supply typed, factory called, contract address shown."></video></figure>
+<h2 id="what-does-the-token-look-like-on-the-explorer">What does the token look like on the explorer?</h2>
+<p>On Etherscan, BscScan, BaseScan or Blockscout, the token page shows the name, symbol, 18 decimals, total supply and one holder: you. The transaction shows the factory as the contract you called. Our guide to <a href="/blog/read-token-page-etherscan-blockscout/">reading a token page on Etherscan or Blockscout</a> explains each tab.</p>
+<h2 id="plain-token-or-tax-token">Plain token or tax token?</h2>
+<ul><li><strong>Token Creator:</strong> no owner powers, no tax. The cleanest signal for buyers.</li><li><strong>Tax Token:</strong> you set buy and sell rates and a tax wallet, and can change them until you renounce ownership. The tax applies only to pools you mark, never to wallet transfers. See <a href="/blog/how-token-buy-sell-tax-works/">how buy and sell tax works</a> and the <a href="/tools/token-tax-calculator/">token tax calculator</a>.</li></ul>
+<figure><img src="/blog/img/erc20-token-generator-2.webp" alt="Plain ERC-20 vs tax token: owner powers, tax, what can change later and how buyers see each one." loading="lazy" decoding="async"><figcaption>No owner is the cleanest signal.</figcaption></figure>
+<h2 id="what-comes-next">What comes next?</h2>
+<p>Add liquidity on Uniswap or PancakeSwap. See <a href="/blog/add-liquidity-uniswap-erc20/">adding liquidity on Uniswap</a>. Approving the DEX to move your token is a normal step. See <a href="/blog/erc20-token-approvals-explained/">ERC-20 token approvals</a>. For the bigger picture, read the <a href="/blog/token-generator/">token generator guide</a>.</p>
+<h2 id="what-are-the-risks">What are the risks?</h2>
+<ul><li><strong>Gas spikes on Ethereum</strong> can make creation and liquidity expensive.</li><li><strong>Wrong network</strong> when funding your wallet or sending tokens.</li><li><strong>Approval scams</strong> that ask you to approve a malicious contract. Check with the <a href="/tools/token-approval-checker/">token approval checker</a>.</li></ul>
+<p>You can lose money in crypto. This is not financial advice.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="what-is-an-erc-20-token-generator">What is an ERC-20 token generator?</h3>
+<p>A no-code tool that deploys a standard ERC-20 token for you through a factory contract.</p>
+<h3 id="can-i-create-a-bep-20-token-with-an-erc-20-generator">Can I create a BEP-20 token with an ERC-20 generator?</h3>
+<p>Yes. On BNB Chain the same kind of token is called BEP-20.</p>
+<h3 id="can-i-mint-more-tokens-later">Can I mint more tokens later?</h3>
+<p>No. DegenKit&#x27;s EVM tokens have no mint function. The supply is created once.</p>
+<h3 id="how-many-decimals-does-the-token-have">How many decimals does the token have?</h3>
+<p>18, the standard for ERC-20 tokens.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://degenkit.app/docs/evm-token-creator/">DegenKit docs: Token Creator (EVM)</a></li><li><a href="https://degenkit.app/docs/tax-token/">DegenKit docs: Tax Token</a></li><li><a href="https://degenkit.app/docs/fees/">DegenKit docs: Fees</a></li><li><a href="https://docs.bnbchain.org/docs/BEP20" target="_blank" rel="noopener noreferrer">BNB Chain docs: BEP-20</a></li><li><a href="https://trustwallet.com/glossary/bep-20" target="_blank" rel="noopener noreferrer">Trust Wallet: BEP-20</a></li></ul>
+<p>Generate an ERC-20 or BEP-20 token on the <a href="/launch/">DegenKit launcher</a>.</p>
+    </div>
+    <div class="share">
+      <b>Share this post</b>
+      <div class="share-btns">
+        <a class="s-x" href="https://x.com/intent/post?text=ERC-20%20Token%20Generator%20for%20Ethereum%2C%20Base%20and%20BNB%20Chain%20%E2%80%94%20via%20%40DegenKitApp&amp;url=https%3A%2F%2Fdegenkit.app%2Fblog%2Ferc20-token-generator%2F" target="_blank" rel="noopener noreferrer">Share on 𝕏</a>
+        <button class="s-copy" type="button" data-copy="https://degenkit.app/blog/erc20-token-generator/">Copy link</button>
+      </div>
+    </div>
+    <aside class="cta">
+      <div><h3>Ready to launch your token?</h3><p>Pick a network, set the details, sign once. No code.</p></div>
+      <a class="btn-launch" href="/launch/">Launch App</a>
+    </aside>
+  </article>
+  <section class="related"><h3>Keep reading</h3><div class="grid"><a class="card" href="/blog/add-token-logo-etherscan/">
+  <div class="cover"><img src="/blog/img/add-token-logo-etherscan-cover.webp" alt="A cream poster with a headline about adding a token logo on Etherscan beside pink halftone shapes and a tag symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Ethereum</span><span class="chip">Base</span><span class="chip">BNB Chain</span><span>November 16, 2026</span></div>
+    <h2>How to Add a Token Logo on Etherscan, BaseScan or BscScan</h2>
+    <p>How to add a token logo on Etherscan. The token info form, the requirements (verified source, website, domain email, 256x256 PNG) and how long review takes.</p>
+  </div>
+</a><a class="card" href="/blog/add-token-to-metamask/">
+  <div class="cover"><img src="/blog/img/add-token-to-metamask-cover.webp" alt="A cream poster with a headline about adding a token to MetaMask beside orange halftone shapes and a plus symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Ethereum</span><span class="chip">Base</span><span class="chip">BNB Chain</span><span>November 16, 2026</span></div>
+    <h2>How to Add a Token to MetaMask on Ethereum, Base or BNB</h2>
+    <p>How to add a token to MetaMask. Pick the right network, use Manage tokens and Add custom token with the contract address, and avoid fake tokens.</p>
+  </div>
+</a><a class="card" href="/blog/lock-liquidity-ethereum-base-bnb/">
+  <div class="cover"><img src="/blog/img/lock-liquidity-ethereum-base-bnb-cover.webp" alt="A cream poster with a headline about locking liquidity on Ethereum, Base and BNB Chain beside violet halftone shapes and a padlock symbol." loading="lazy" decoding="async"></div>
+  <div class="c-body">
+    <div class="c-meta"><span class="chip">Ethereum</span><span class="chip">Base</span><span class="chip">BNB Chain</span><span>November 16, 2026</span></div>
+    <h2>How to Lock Liquidity on Ethereum, Base and BNB Chain</h2>
+    <p>How to lock liquidity on Ethereum, Base and BNB Chain. Lock LP tokens with a locker until a date or burn them, and let buyers verify it on the explorer.</p>
+  </div>
+</a></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="/assets/icon.png" alt="" class="logo-icon"><span class="logo-text">DegenKit</span></div>
+        <p>Token creation, without the guesswork. Launch on Solana, Ethereum, BNB Chain, Base, Robinhood Chain and Elysium.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/launch/">Launch App</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a><a href="/tools/">Free tools</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/terms/">Terms &amp; Conditions</a><a href="/security/">Security</a><a href="/privacy/">Privacy Policy</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="/support/">Support</a></div>
+      </div>
+    </div>
+    <a class="tp-badge" href="https://www.trustpilot.com/evaluate/degenkit.app" target="_blank" rel="noopener" aria-label="Review DegenKit on Trustpilot" style="display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;padding:9px 14px;border:1px solid #00b67a;border-radius:8px;color:inherit;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#00b67a"/><path d="M12 4.2l2.3 5.1 5.5.5-4.2 3.7 1.3 5.4L12 16l-4.9 2.9 1.3-5.4L4.2 9.8l5.5-.5z" fill="#fff"/></svg><span>Review us on Trustpilot</span></a>
+    <div class="footer-bottom">
+      <p>© 2026 DegenKit. All rights reserved.</p>
+      <div class="footer-socials"><a class="social-icn" href="https://x.com/DegenKitApp" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');
+if(b)b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('degenkit-theme',n)}catch(e){}});
+document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var u=el.getAttribute('data-copy'),t=el.textContent;
+(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){el.textContent='Copied ✓';setTimeout(function(){el.textContent=t},1600)}).catch(function(){window.prompt('Copy link',u)})})});})();
+</script>
+</body>
+</html>

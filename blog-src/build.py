@@ -15,6 +15,13 @@ DEFAULT_COVER = "/assets/mascot-hero.png"
 esc = lambda s: html.escape(str(s), quote=True)
 
 # ---------------------------------------------------------------- helpers
+def _unq(v):
+    """Strip YAML quotes; inside single quotes a doubled apostrophe means one apostrophe."""
+    v = v.strip()
+    if len(v) >= 2 and v[0] == v[-1] == "'": return v[1:-1].replace("''", "'")
+    if len(v) >= 2 and v[0] == v[-1] == '"': return v[1:-1].replace('\\"', '"')
+    return v.strip('"').strip("'")
+
 def parse_front(text):
     m = re.match(r"^---\s*\n(.*?)\n---\s*\n?(.*)$", text, re.S)
     if not m:
@@ -24,11 +31,11 @@ def parse_front(text):
     for line in m.group(1).splitlines():
         st = line.strip()
         if st.startswith("- ") and last:                      # YAML list item (tags: / - Guide)
-            meta[last] = (meta.get(last, "") + "," if meta.get(last) else "") + st[2:].strip().strip('"').strip("'")
+            meta[last] = (meta.get(last, "") + "," if meta.get(last) else "") + _unq(st[2:])
         elif ":" in line and not st.startswith("#"):
             k, v = line.split(":", 1)
             last = k.strip().lower()
-            v = v.strip().strip('"').strip("'")
+            v = _unq(v)
             if last == "tags": v = v.strip("[]")
             meta[last] = v
     return meta, m.group(2)
